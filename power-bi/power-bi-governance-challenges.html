@@ -1,0 +1,1804 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Common Power BI Governance Challenges and Practical Solutions</title>
+  <meta content="Struggling with Power BI governance? Learn how to fix real-world challenges in security, access control, and compliance with proven, practical solution." name="description">
+  <meta content="" property="og:image">
+  <meta content="" property="twitter:image">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link href="../assets/css/base.css" rel="stylesheet" type="text/css">
+  <link href="../assets/css/styles.css" rel="stylesheet" type="text/css">
+
+  <!-- Favicon -->
+  <link href="../assets/images/favicon.ico" rel="shortcut icon" type="image/x-icon">
+  <link href="../assets/images/webclip.png" rel="apple-touch-icon">
+
+  <!-- Google Tag Manager (disabled for local dev, re-enable for production)
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-MM9W9FH');</script>
+  -->
+</head>
+<body>
+  <div class="page-wrapper">
+    <html><head></head><body><html><head></head><body><div data-animation="default" class="navbar w-nav" data-easing2="ease" data-easing="ease" data-collapse="medium" role="banner" data-duration="400" id="nav">
+      <div class="navbar-continer w-container">
+        <div class="nav-item-wrap">
+          <a href="../index.html" class="brand w-nav-brand"><img src="../assets/images/rh-horizontal-white.svg" loading="eager" alt="" class="nav-brand-logo one"><img src="../assets/images/logo_white.svg" loading="lazy" alt="" class="nav-brand-logo two"></a>
+          <nav role="navigation" class="navigation w-nav-menu">
+            <a href="../index.html" class="nav-link w-nav-link">Home</a>
+            <div data-hover="false" data-delay="300" class="uui-navbar01_menu-dropdown w-dropdown">
+              <div class="uui-navbar01_dropdown-toggle w-dropdown-toggle">
+                <div class="uui-dropdown-icon w-embed"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg></div>
+                <div class="nav-link padding-right-0-25">Platform</div>
+              </div>
+              <nav class="uui-navbar01_dropdown-list w-dropdown-list">
+                <div class="uui-navbar01_container">
+                  <div class="uui-navbar01_dropdown-content">
+                    <div class="uui-navbar01_dropdown-content-left is-platform">
+                      <div class="uui-navbar01_dropdown-link-list">
+                        <h4 class="uui-navbar01_heading text-color-white">Platform</h4>
+                        <a href="../learn-more.html" class="uui-navbar01_dropdown-link w-inline-block">
+                          <div class="uui-navbar01_icon-wrapper"><img src="../assets/images/logo-white.svg" loading="lazy" alt="Bi White logo" class="icon-xsmall"></div>
+                          <div class="uui-navbar01_item-right">
+                            <div class="uui-navbar01_item-heading">Reporting Hub</div>
+                            <div class="uui-text-size-small hide-mobile-landscape">Custom-branded Power BI reporting delivery for teams and analytics clients</div>
+                          </div>
+                        </a>
+                      </div>
+                      <div class="uui-navbar01_dropdown-link-list is-bottom">
+                        <h4 class="uui-navbar01_heading opacity-0">Company</h4>
+                        <a href="../bi-genius.html" class="uui-navbar01_dropdown-link w-inline-block">
+                          <div class="uui-navbar01_icon-wrapper"><img src="../assets/images/new-bi-megamenu-logo-white.svg" loading="lazy" alt="Power Bi Megamenu white logo" class="icon-xsmall small"></div>
+                          <div class="uui-navbar01_item-right">
+                            <div class="uui-navbar01_item-heading">BI Genius</div>
+                            <div class="uui-text-size-small hide-mobile-landscape">Add-on fully customizable AI agents that drive insights with full transparency and control</div>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                    <div class="uui-navbar01_dropdown-content-right">
+                      <div class="uui-navbar01_dropdown-content-wrapper">
+                        <div class="blog-items-wrapper">
+                          <h4 class="uui-navbar01_dropdown-content-heading text-color-white">Latest from our blog</h4>
+                          <a href="../blog.html" class="uui-button-link is-button-xsmall w-inline-block">
+                            <div class="color_primary">See all posts ➝</div>
+                          </a>
+                        </div>
+                        <div class="w-dyn-list">
+                          <div role="list" class="uui-navbar01_dropdown-blog-list w-dyn-items"><div role="listitem" class="w-dyn-item">
+                              <a href="../blog/embedded-analytics-meets-generative-ai-how-saas-teams-monetize-bi-in-2025.html" class="uui-navbar01_blog-item w-inline-block">
+                                <div class="uui-navbar01_blog-image-wrapper"><img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/69600be56fa30d9d91a5f337_Embedded%20Analytics%20Meets%20Generative%20AI%20How%20SaaS%20Teams%20Monetize%20BI%20in%202025.png" loading="eager" alt="" class="uui-navbar01_blog-image"></div>
+                                <div class="uui-navbar01_large-item-content">
+                                  <div class="uui-navbar01_item-heading">Embedded Analytics Meets Generative AI: How SaaS Teams Monetize BI in 2026</div>
+                                  <div class="uui-navbar01_item-button-wrapper">
+                                    <div class="uui-button-row">
+                                      <div class="uui-button-link is-button-xsmall">
+                                        <div class="color_primary">Learn More ➝</div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </a>
+                            </div><div role="listitem" class="w-dyn-item">
+                              <a href="../blog/fabric-vs-power-bi-premium.html" class="uui-navbar01_blog-item w-inline-block">
+                                <div class="uui-navbar01_blog-image-wrapper"><img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/6961652bcf02c04b7b0edbe3_Fabric%20vs.%20Power%20BI%20Premium%20-%20Reddit.avif" loading="eager" alt="" class="uui-navbar01_blog-image"></div>
+                                <div class="uui-navbar01_large-item-content">
+                                  <div class="uui-navbar01_item-heading">Fabric vs. Power BI Premium</div>
+                                  <div class="uui-navbar01_item-button-wrapper">
+                                    <div class="uui-button-row">
+                                      <div class="uui-button-link is-button-xsmall">
+                                        <div class="color_primary">Learn More ➝</div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </a>
+                            </div><div role="listitem" class="w-dyn-item">
+                              <a href="../blog/how-to-structure-a-multi-tenant-analytics-delivery-system-without-rebuilding-everything.html" class="uui-navbar01_blog-item w-inline-block">
+                                <div class="uui-navbar01_blog-image-wrapper"><img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/69b03e0ca76a82d19058f954_Structure%20a%20Multi-Tenant%20Analytics%20Delivery.jpg" loading="eager" alt="" class="uui-navbar01_blog-image"></div>
+                                <div class="uui-navbar01_large-item-content">
+                                  <div class="uui-navbar01_item-heading">How to Structure a Multi-Tenant Analytics Delivery System Without Rebuilding Everything</div>
+                                  <div class="uui-navbar01_item-button-wrapper">
+                                    <div class="uui-button-row">
+                                      <div class="uui-button-link is-button-xsmall">
+                                        <div class="color_primary">Learn More ➝</div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </a>
+                            </div></div>
+                          
+                        </div>
+                      </div>
+                      <div class="uui-navbar01_dropdown-right-overlay-absolute"></div>
+                    </div>
+                  </div>
+                </div>
+              </nav>
+            </div>
+            <a href="../pricing.html" class="nav-link w-nav-link">Pricing</a>
+            <a href="../aaas.html" class="nav-link w-nav-link">AaaS Platform</a>
+            <div data-hover="false" data-delay="300" class="uui-navbar01_menu-dropdown w-dropdown">
+              <div class="uui-navbar01_dropdown-toggle w-dropdown-toggle">
+                <div class="uui-dropdown-icon w-embed"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg></div>
+                <div class="nav-link padding-right-0-25">Learn</div>
+              </div>
+              <nav class="uui-navbar01_dropdown-list w-dropdown-list">
+                <div class="uui-navbar01_container">
+                  <div class="uui-navbar01_dropdown-content">
+                    <div class="nav-items">
+                      <h4 class="uui-navbar01_heading large text-color-white">Learn</h4>
+                      <div class="uui-navbar01_dropdown-content-left">
+                        <div class="uui-navbar01_dropdown-link-list">
+                          <a href="https://docs.thereportinghub.com/?_gl=1*11en80c*_gcl_au*MjEyNTAwMzM0MC4xNzYwMDIyNzYzLjE5Nzk0NzY1MjguMTc2MjEwODgzNS4xNzYyMTA4ODM1*_ga*MzgyNDA3NDAxLjE3NjAwMjI3NjM." target="_blank" class="uui-navbar01_dropdown-link w-inline-block">
+                            <div class="uui-navbar01_icon-wrapper"><img src="../assets/images/Knowledge-Centre_icon.png" loading="lazy" alt="" class="nav-image"></div>
+                            <div class="uui-navbar01_item-right">
+                              <div class="uui-navbar01_item-heading">Knowledge Center<br></div>
+                              <div class="uui-text-size-small hide-mobile-landscape">All the information you need to master B.I. delivery</div>
+                            </div>
+                          </a>
+                          <a href="../community.html" class="uui-navbar01_dropdown-link is-auto w-inline-block">
+                            <div class="uui-navbar01_icon-wrapper"><img src="../assets/images/About-Us_icon-1.png" loading="lazy" alt="" class="nav-image"></div>
+                            <div class="uui-navbar01_item-right">
+                              <div class="uui-navbar01_item-heading">Community</div>
+                              <div class="uui-text-size-small hide-mobile-landscape">Connect and collaborate with active users</div>
+                            </div>
+                          </a>
+                        </div>
+                        <div class="uui-navbar01_dropdown-link-list">
+                          <h4 class="uui-navbar01_heading opacity-0">Company</h4>
+                          <a href="https://docs.thereportinghub.com/getting-started/deployment-step-by-step/self-serve-guided-install?_gl=1*1nvpg97*_gcl_au*MjEyNTAwMzM0MC4xNzYwMDIyNzYzLjE5Nzk0NzY1MjguMTc2MjEwODgzNS4xNzYyMTA4ODM1*_ga*MzgyNDA3NDAxLjE3NjAwMjI3NjM." target="_blank" class="uui-navbar01_dropdown-link w-inline-block">
+                            <div class="uui-navbar01_icon-wrapper"><img src="../assets/images/Getting-Started_icon.png" loading="lazy" alt="" class="nav-image"></div>
+                            <div class="uui-navbar01_item-right">
+                              <div class="uui-navbar01_item-heading">Getting Started</div>
+                              <div class="uui-text-size-small hide-mobile-landscape">Step-by-step guides to get started with the Reporting Hub<br></div>
+                            </div>
+                          </a>
+                          <a href="https://www.youtube.com/@thereportinghub" class="uui-navbar01_dropdown-link is-auto w-inline-block">
+                            <div class="uui-navbar01_icon-wrapper"><img src="../assets/images/Video-Demos_icon.png" loading="lazy" alt="" class="nav-image"></div>
+                            <div class="uui-navbar01_item-right">
+                              <div class="uui-navbar01_item-heading">Video Demos</div>
+                              <div class="uui-text-size-small hide-mobile-landscape">Our YouTube channel with helpful video demos</div>
+                            </div>
+                          </a>
+                        </div>
+                        <div id="w-node-a91421d3-b46b-1701-6a19-a49d5ae9c96d-17890035" class="uui-navbar01_dropdown-link-list flex">
+                          <h4 class="uui-navbar01_heading opacity-0 none">Company</h4>
+                          <a href="../resources.html" class="uui-navbar01_dropdown-link w-inline-block">
+                            <div class="uui-navbar01_icon-wrapper"><img src="../assets/images/Resources.png" loading="lazy" alt="" class="nav-image"></div>
+                            <div class="uui-navbar01_item-right">
+                              <div class="uui-navbar01_item-heading">Resources</div>
+                              <div class="uui-text-size-small hide-mobile-landscape">Videos, white papers, and assets about Reporting Hub</div>
+                            </div>
+                          </a>
+                          <a href="https://support.thereportinghub.com/support/home" target="_blank" class="uui-navbar01_dropdown-link is-auto w-inline-block">
+                            <div class="uui-navbar01_icon-wrapper"><img src="../assets/images/Get-Help_icon.png" loading="lazy" alt="" class="nav-image"></div>
+                            <div class="uui-navbar01_item-right">
+                              <div class="uui-navbar01_item-heading">Get Help</div>
+                              <div class="uui-text-size-small hide-mobile-landscape">Our Support team is here to help</div>
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+                      <div class="uui-navbar01_dropdown-content-left pt-0">
+                        <div class="uui-navbar01_dropdown-link-list one-item">
+                          <h4 class="uui-navbar01_heading large text-color-white">Services</h4>
+                          <a href="../partners.html" class="uui-navbar01_dropdown-link w-inline-block">
+                            <div class="uui-navbar01_icon-wrapper"><img src="../assets/images/Knowledge-Centre_icon.png" loading="lazy" alt="" class="nav-image"></div>
+                            <div class="uui-navbar01_item-right">
+                              <div class="uui-navbar01_item-heading">Partner Programs<br></div>
+                              <div class="uui-text-size-small hide-mobile-landscape">Find or become a Reporting Hub Partner</div>
+                            </div>
+                          </a>
+                        </div>
+                        <div class="uui-navbar01_dropdown-link-list is-bottom">
+                          <h4 class="uui-navbar01_heading opacity-0">Company</h4>
+                          <a href="../professionalservices.html" class="uui-navbar01_dropdown-link w-inline-block">
+                            <div class="uui-navbar01_icon-wrapper"><img src="../assets/images/Professional-Services_icon.png" loading="lazy" alt="" class="nav-image"></div>
+                            <div class="uui-navbar01_item-right">
+                              <div class="uui-navbar01_item-heading">Professional Services</div>
+                              <div class="uui-text-size-small hide-mobile-landscape">Get premium support from our team of experts</div>
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="uui-navbar01_dropdown-content-right">
+                      <div class="uui-navbar01_dropdown-content-wrapper">
+                        <div class="blog-items-wrapper">
+                          <h4 class="uui-navbar01_dropdown-content-heading text-color-white">Latest from our blog</h4>
+                          <a href="../blog.html" class="uui-button-link is-button-xsmall w-inline-block">
+                            <div class="color_primary">See all posts ➝</div>
+                          </a>
+                        </div>
+                        <div class="w-dyn-list">
+                          <div role="list" class="uui-navbar01_dropdown-blog-list w-dyn-items"><div role="listitem" class="w-dyn-item">
+                              <a href="../blog/embedded-analytics-meets-generative-ai-how-saas-teams-monetize-bi-in-2025.html" class="uui-navbar01_blog-item w-inline-block">
+                                <div class="uui-navbar01_blog-image-wrapper"><img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/69600be56fa30d9d91a5f337_Embedded%20Analytics%20Meets%20Generative%20AI%20How%20SaaS%20Teams%20Monetize%20BI%20in%202025.png" loading="eager" alt="" class="uui-navbar01_blog-image"></div>
+                                <div class="uui-navbar01_large-item-content">
+                                  <div class="uui-navbar01_item-heading">Embedded Analytics Meets Generative AI: How SaaS Teams Monetize BI in 2026</div>
+                                  <div class="uui-navbar01_item-button-wrapper">
+                                    <div class="uui-button-row">
+                                      <div class="uui-button-link is-button-xsmall">
+                                        <div class="color_primary">Learn More ➝</div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </a>
+                            </div><div role="listitem" class="w-dyn-item">
+                              <a href="../blog/fabric-vs-power-bi-premium.html" class="uui-navbar01_blog-item w-inline-block">
+                                <div class="uui-navbar01_blog-image-wrapper"><img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/6961652bcf02c04b7b0edbe3_Fabric%20vs.%20Power%20BI%20Premium%20-%20Reddit.avif" loading="eager" alt="" class="uui-navbar01_blog-image"></div>
+                                <div class="uui-navbar01_large-item-content">
+                                  <div class="uui-navbar01_item-heading">Fabric vs. Power BI Premium</div>
+                                  <div class="uui-navbar01_item-button-wrapper">
+                                    <div class="uui-button-row">
+                                      <div class="uui-button-link is-button-xsmall">
+                                        <div class="color_primary">Learn More ➝</div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </a>
+                            </div><div role="listitem" class="w-dyn-item">
+                              <a href="../blog/how-to-structure-a-multi-tenant-analytics-delivery-system-without-rebuilding-everything.html" class="uui-navbar01_blog-item w-inline-block">
+                                <div class="uui-navbar01_blog-image-wrapper"><img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/69b03e0ca76a82d19058f954_Structure%20a%20Multi-Tenant%20Analytics%20Delivery.jpg" loading="eager" alt="" class="uui-navbar01_blog-image"></div>
+                                <div class="uui-navbar01_large-item-content">
+                                  <div class="uui-navbar01_item-heading">How to Structure a Multi-Tenant Analytics Delivery System Without Rebuilding Everything</div>
+                                  <div class="uui-navbar01_item-button-wrapper">
+                                    <div class="uui-button-row">
+                                      <div class="uui-button-link is-button-xsmall">
+                                        <div class="color_primary">Learn More ➝</div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </a>
+                            </div></div>
+                          
+                        </div>
+                      </div>
+                      <div class="uui-navbar01_dropdown-right-overlay-absolute"></div>
+                    </div>
+                  </div>
+                </div>
+              </nav>
+            </div>
+            <a href="../demo.html" class="nav-link w-nav-link">Demo</a>
+            <a href="../install-today.html" class="nav-link w-nav-link">Install</a>
+            <a href="../about-us.html" class="nav-link w-nav-link">About Us</a>
+            <a href="../contact.html" class="nav-link w-nav-link">Contact Us</a>
+          </nav>
+          <div class="menu-button w-nav-button">
+            <div class="w-icon-nav-menu"></div>
+          </div>
+        </div>
+      </div>
+    </div></body></html></body></html>
+    <section id="hero" class="share-hero-section">
+      <div class="container">
+        <div class="share-hero-wrap">
+          <h1 class="analysis-h1">Power BI Governance: Common Challenges and Practical Solutions</h1>
+          <p class="analysis-hero-p is-longer">The Power BI governance is a systematic framework that determines how organisations handle access and security of data, as well as compliance and performance in a Power BI environment. It is important since it links operational visibility and regulatory responsibility. <strong>Power BI security</strong>, <strong>Power BI compliance</strong>, and <strong>Power BI data governance</strong> collaborate; they are aimed at providing business users with correct insights without breaking the rules of data protection. Weak governance often leads to risks in Power BI data protection and Power BI data privacy, resulting in exposure, inconsistency, and potential compliance failures.</p>
+        </div>
+      </div>
+      <div class="share-hero-bg"><img src="../assets/images/Ellipse-86.svg" loading="lazy" alt="" class="share-hero-img"></div>
+    </section>
+    <section class="content-section is-smaller">
+      <div class="container">
+        <div fc-toc="wrapper" class="content-wrapper"><button class="blog-post_open-toc-button">
+            <div class="circle"></div>
+          </button>
+          <nav aria-label="Table of contents" class="blog-post_toc-_secondary">
+            <div fc-toc="close" class="blog-post_close-toc-overlay"></div>
+            <ol fc-toc-collapse="true" fc-toc="component" role="list" class="blog-post_toc-list">
+              <li class="blog-post_toc-list-item">
+                <a href="#" fc-toc="h2" class="toc_h2">heading 2</a>
+                <div fc-toc-rotate="-45" fc-toc="open-group" class="toc_open-group-icon w-embed"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 448 512"><!-- !Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc. -->
+                    <path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 144L48 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l144 0 0 144c0 17.7 14.3 32 32 32s32-14.3 32-32l0-144 144 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-144 0 0-144z" fill="currentColor"></path>
+                  </svg></div>
+              </li>
+              <li class="blog-post_toc-list-item">
+                <a fc-toc="h3" href="#" class="toc_h3">heading 3</a>
+              </li>
+              <li class="blog-post_toc-list-item">
+                <a fc-toc="h4" href="#" class="toc_h4">heading 4</a>
+              </li>
+              <li class="blog-post_toc-list-item">
+                <a fc-toc="h5" href="#" class="toc_h5">heading 5</a>
+              </li>
+              <li class="blog-post_toc-list-item">
+                <a fc-toc="h6" href="#" class="toc_h6">heading 6</a>
+              </li>
+            </ol>
+          </nav>
+          <div fc-toc="content" class="content-rich-text w-richtext">
+            <h2>What Are the Common Challenges in Power BI Governance?</h2>
+            <p>‍</p>
+            <p>
+              <a href="https://thereportinghub.com/bi-genius">Power BI governance</a> challenges often stem from<strong> disconnected data ownership, weak role management, and fragmented policy enforcement</strong> that disrupt compliance and hinder scalable analytics across enterprise environments. Clear accountability and central oversight are key to avoiding duplication, compliance drift, and inconsistent access policies. According to <strong>Microsoft’s Power BI Adoption Framework</strong>, over <strong>60% of governance failure</strong>s originate from the absence of standardized roles and ownership alignment across departments.
+            </p>
+            <p>‍</p>
+            <div class="w-embed">
+              <div class="pbi-challenges-embed">
+                <div class="pbi-card">
+                  <div class="pbi-icon-wrap">
+                    <img class="pbi-icon" src="../assets/images/Layer_14.svg" alt="">
+                  </div>
+                  <div class="pbi-text">
+                    <h4>Inconsistent Roles</h4>
+                    <p>Without defined ownership, report duplication and miscommunication increase.</p>
+                  </div>
+                </div>
+                <div class="pbi-card">
+                  <div class="pbi-icon-wrap">
+                    <img class="pbi-icon" src="../assets/images/Layer_1-1_12.svg" alt="">
+                  </div>
+                  <div class="pbi-text">
+                    <h4>Lack of Compliance Alignment</h4>
+                    <p>Frameworks such as GDPR, SOC 2, and ISO 27001 must map directly to Power BI’s data-handling and sharing policies to ensure traceability</p>
+                  </div>
+                </div>
+                <div class="pbi-card">
+                  <div class="pbi-icon-wrap">
+                    <img class="pbi-icon" src="../assets/images/Layer_1-2_7.svg" alt="">
+                  </div>
+                  <div class="pbi-text">
+                    <h4>Fragmented Data Sources</h4>
+                    <p>Inconsistent data pipelines cause accuracy issues and unreliable dashboards.</p>
+                  </div>
+                </div>
+                <div class="pbi-card">
+                  <div class="pbi-icon-wrap">
+                    <img class="pbi-icon" src="../assets/images/Layer_1-3_5.svg" alt="">
+                  </div>
+                  <div class="pbi-text">
+                    <h4>Limited Access Controls</h4>
+                    <p>Excessive user permissions lead to Power BI data protection gaps.</p>
+                  </div>
+                </div>
+                <div class="pbi-card">
+                  <div class="pbi-icon-wrap">
+                    <img class="pbi-icon" src="../assets/images/Layer_1-4_4.svg" alt="">
+                  </div>
+                  <div class="pbi-text">
+                    <h4>No Central Governance Portal</h4>
+                    <p>Teams operate in silos without visibility into governance activity.</p>
+                  </div>
+                </div>
+              </div>
+              <style>
+/* ================= WRAPPER ================= */
+.pbi-challenges-embed {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+/* ================= CARD ================= */
+.pbi-challenges-embed .pbi-card {
+  position: relative;
+  display: flex;
+  align-items: center; /* ✅ ključ */
+  gap: 12px;
+  width: 100%;
+  padding: 12px;
+  border-radius: 14px;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 157, 200, 0.10) 17%,
+    rgba(235, 43, 126, 0.10) 98%
+  );
+  border: 3px solid transparent;
+  background-clip: padding-box;
+}
+.pbi-challenges-embed .pbi-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 3px;
+  border-radius: 14px;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 157, 200, 0.90) 17%,
+    rgba(235, 43, 126, 0.90) 98%
+  );
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  pointer-events: none;
+}
+/* ================= ICON WRAPPER ================= */
+.pbi-challenges-embed .pbi-icon-wrap {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  flex: 0 0 40px;          /* ✅ zaključava dimenzije */
+  box-sizing: border-box; /* ✅ border ne jede prostor */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 157, 200, 0.10) 17%,
+    rgba(235, 43, 126, 0.10) 98%
+  );
+  border: 3px solid transparent;
+  background-clip: padding-box;
+}
+.pbi-challenges-embed .pbi-icon-wrap::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 3px;
+  border-radius: 10px;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 157, 200, 0.90) 17%,
+    rgba(235, 43, 126, 0.90) 98%
+  );
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  pointer-events: none;
+}
+/* ================= ICON ================= */
+.pbi-challenges-embed .pbi-icon {
+  width: 16px;
+  height: 16px;
+  display: block;
+}
+/* ================= TEXT ================= */
+.pbi-challenges-embed .pbi-text {
+  min-width: 0;
+}
+.pbi-challenges-embed .pbi-text h4 {
+  margin: 0 0 6px 0;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.25;
+  color: #1F1F28;
+}
+.pbi-challenges-embed .pbi-text p {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.45;
+  color: #444457;
+}
+/* ================= RESPONSIVE ================= */
+@media (max-width: 480px) {
+  .pbi-challenges-embed .pbi-card {
+    padding: 10px;
+    gap: 10px;
+  }
+  .pbi-challenges-embed .pbi-text h4 {
+    font-size: 15px;
+  }
+  .pbi-challenges-embed .pbi-text p {
+    font-size: 13px;
+  }
+}
+</style>
+            </div>
+            <p>‍</p>
+            <p>Unlike Tableau or Looker, which rely heavily on external catalog tools for governance, Power BI embeds governance controls within the Microsoft 365 ecosystem. This tight integration improves role management and policy enforcement consistency across departments.</p>
+            <p>‍</p>
+            <p>‍</p>
+            <p>‍</p>
+            <h2>What Happens When There Is No Power BI Data Governance Framework in Place?</h2>
+            <p>‍</p>
+            <p>Without a <strong>Power BI data governance framework</strong>, your organisation faces data inconsistencies, unmonitored access, and compliance risks that undermine trust in analytics.</p>
+            <p>According to the State of Analytics Governance Report 2025, organizations without formal governance policies report up to <strong>40% more incidents</strong> of data misuse and compliance inconsistencies compared to those with structured frameworks.</p>
+            <p>‍</p>
+            <h3>How Does Poor Structure Impact Power BI Data Management and Power BI Data Control?</h3>
+            <p>Poor structure leads to fragmented ownership, making it difficult to enforce Power BI data governance policies. Without a clear hierarchy, users overwrite datasets and publish unauthorised reports, increasing inconsistencies.</p>
+            <p>A 2025 State of Analytics Governance report shows that over <strong>50% of audit failures</strong> in enterprise BI systems are linked to gaps in ownership and inconsistent content publishing practices.</p>
+            <p>Weak frameworks also prevent centralised monitoring. When access rights are uncontrolled, Power BI data control breaks down, exposing sensitive content and eroding user trust.</p>
+            <p>‍</p>
+            <h3>What Are the First Steps to Creating a Strong Power BI Data Governance Strategy?</h3>
+            <p>Building an effective Power BI data governance strategy begins with clarity in ownership, compliance integration, and scalable tools.</p>
+            <p>Organisations with defined ownership structures and automated approval workflows achieve <strong>35% higher compliance efficiency</strong> than those without structured governance.</p>
+            <p>‍</p>
+            <div class="w-embed">
+              <div class="pbi-steps-embed">
+                <div class="pbi-step">
+                  <div class="pbi-step-marker">
+                    <div class="pbi-step-ring">
+                      <div class="pbi-step-core">1</div>
+                    </div>
+                  </div>
+                  <div class="pbi-step-content">
+                    <h4>Define Roles</h4>
+                    <p>Appoint owners on datasets, reports and gateways</p>
+                  </div>
+                </div>
+                <div class="pbi-step">
+                  <div class="pbi-step-marker">
+                    <div class="pbi-step-ring">
+                      <div class="pbi-step-core">2</div>
+                    </div>
+                  </div>
+                  <div class="pbi-step-content">
+                    <h4>Establish Policies</h4>
+                    <p>Consolidate Power BI governance with security and compliance frameworks.</p>
+                  </div>
+                </div>
+                <div class="pbi-step">
+                  <div class="pbi-step-marker">
+                    <div class="pbi-step-ring">
+                      <div class="pbi-step-core">3</div>
+                    </div>
+                  </div>
+                  <div class="pbi-step-content">
+                    <h4>Centralised Management</h4>
+                    <p>Use Power BI admin portals to track usage and permissions.</p>
+                  </div>
+                </div>
+                <div class="pbi-step">
+                  <div class="pbi-step-marker">
+                    <div class="pbi-step-ring">
+                      <div class="pbi-step-core">4</div>
+                    </div>
+                  </div>
+                  <div class="pbi-step-content">
+                    <h4>Integrate Automation</h4>
+                    <p>Employ data governance tools for alerts and approval workflows.</p>
+                  </div>
+                </div>
+                <div class="pbi-step">
+                  <div class="pbi-step-marker">
+                    <div class="pbi-step-ring">
+                      <div class="pbi-step-core">5</div>
+                    </div>
+                  </div>
+                  <div class="pbi-step-content">
+                    <h4>Educate Teams</h4>
+                    <p>Train users on Power BI data protection and data privacy requirements.</p>
+                  </div>
+                </div>
+              </div>
+              <style>
+/* =============================
+   SETTINGS (lokalno za embed)
+============================= */
+.pbi-steps-embed{
+  /* core + padding + border */
+  --core: 32px;
+  --pad: 4px;   /* ✅ traženo */
+  --bw: 3px;
+  --ring: calc(var(--core) + (var(--pad) * 2) + (var(--bw) * 2)); /* 32+8+6=46 */
+  --col: 56px;  /* širina lijeve kolone (malo lufta kao na slici) */
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+/* ✅ JEDNA velika linija u pozadini */
+.pbi-steps-embed::before{
+  content:"";
+  position:absolute;
+  left: calc(var(--col) / 2);           /* centar marker kolone */
+  top:  calc(var(--ring) / 2);          /* do centra prvog kruga */
+  bottom: calc(var(--ring) / 2);        /* do centra zadnjeg kruga */
+  transform: translateX(-50%);
+  width: 3px;
+  border-radius: 999px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 157, 200, 0.90) 17%,
+    rgba(235, 43, 126, 0.90) 98%
+  );
+  pointer-events:none;
+}
+.pbi-steps-embed .pbi-step{
+  display:flex;
+  align-items:flex-start;
+  gap:16px;
+}
+.pbi-steps-embed .pbi-step-marker{
+  width: var(--col);
+  flex: 0 0 var(--col);
+  display:flex;
+  justify-content:center;
+  position: relative;
+  z-index: 1; /* marker ide iznad linije */
+}
+/* =============================
+   CIRCLE
+============================= */
+.pbi-steps-embed .pbi-step-ring{
+  width: var(--ring);
+  height: var(--ring);
+  border-radius: 999px;
+  box-sizing: border-box;
+  border: var(--bw) solid transparent;
+  background:
+    linear-gradient(#ffffff, #ffffff) padding-box,
+    linear-gradient(
+      180deg,
+      rgba(255, 157, 200, 0.90) 17%,
+      rgba(235, 43, 126, 0.90) 98%
+    ) border-box;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding: var(--pad); /* ✅ 4px */
+}
+.pbi-steps-embed .pbi-step-core{
+  width: var(--core);
+  height: var(--core);
+  border-radius: 999px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 157, 200, 0.90) 17%,
+    rgba(235, 43, 126, 0.90) 98%
+  );
+  color:#fff;
+  font-weight:700;
+  font-size:14px;
+  line-height:1;
+}
+/* =============================
+   TEXT
+============================= */
+.pbi-steps-embed .pbi-step-content{
+  min-width:0;
+}
+.pbi-steps-embed .pbi-step-content h4{
+  margin:0 0 6px 0;
+  font-size:20px;
+  font-weight:700;
+  color:#EB2B7E;
+  line-height:1.2;
+}
+.pbi-steps-embed .pbi-step-content p{
+  margin:0;
+  font-size:16px;
+  font-weight:400;
+  color:#1F1F28;
+  line-height:1.45;
+}
+/* =============================
+   RESPONSIVE
+============================= */
+@media (max-width: 768px){
+  .pbi-steps-embed{ gap:20px; }
+  .pbi-steps-embed .pbi-step{ gap:14px; }
+  .pbi-steps-embed .pbi-step-content h4{ font-size:18px; }
+  .pbi-steps-embed .pbi-step-content p{ font-size:15px; }
+}
+@media (max-width: 480px){
+  .pbi-steps-embed{
+    --col: 52px; /* malo uža kolona na mobu */
+  }
+  .pbi-steps-embed .pbi-step-content h4{ font-size:17px; }
+  .pbi-steps-embed .pbi-step-content p{ font-size:14px; }
+}
+</style>
+            </div>
+            <p>‍</p>
+            <p>‍</p>
+            <p>‍</p>
+            <h2>Why Is Power BI Data Quality Essential for Reliable Dashboards and Decisions?</h2>
+            <p>‍</p>
+            <p>Power BI data quality ensures accuracy, consistency, and trust across dashboards, helping decision-makers base strategies on verified and timely insights.</p>
+            <p>Organisations with enforced data quality checks in BI platforms report a <strong>20–25% improvement</strong> in decision accuracy and KPI reliability.</p>
+            <h3>‍</h3>
+            <h3>How Does Power BI Data Classification Help Categorise Sensitive, Confidential, and Public Data?</h3>
+            <p>Power BI data classification distinguishes sensitive information from non-sensitive data, allowing you to apply relevant protection levels. This classification helps you prevent overexposure and prioritise Power BI data privacy efforts.</p>
+            <p>Labels like “Confidential” or “Internal” guide creators in managing access. When your users follow classification standards, they contribute directly to maintaining strong <strong>Power BI compliance</strong> and reducing audit risks.</p>
+            <p>‍</p>
+            <h3>What Power BI Best Practices Ensure Consistent and Accurate Reporting Across Departments?</h3>
+            <p>Consistent reporting depends on shared standards, centralised datasets, and automated refresh cycles that validate data. Unified structures minimise duplicate models and errors.</p>
+            <p>Using certified datasets ensures that departments analyse the same data sources. This practice enhances Power BI data governance and fosters trust across reports while reducing maintenance efforts.</p>
+            <p>‍</p>
+            <figure style="max-width:895pxpx" class="w-richtext-align-fullwidth w-richtext-figure-type-image">
+              <div><img src="../assets/images/richpic_4.avif" loading="lazy" alt="Top view of a person typing on a laptop at a wooden desk with two large monitors, keyboards, mouse devices, headphones, and glasses nearby."></div>
+            </figure>
+            <p>‍</p>
+            <p>‍</p>
+            <h2>What Are Data Access Controls for Power BI and Why Are They Critical?</h2>
+            <p>‍</p>
+            <p>Data access controls in Power BI define who can view, share, or edit reports, forming the foundation of <a href="https://thereportinghub.com/bi-genius">Power BI security</a> and data governance. <strong>Microsoft&#x27;s Security Overview</strong> highlights that enforcing user-level access controls can <strong>cut unauthorised data exposure incidents by nearly 40%</strong>, strengthening compliance and accountability across environments.</p>
+            <p>While Power BI’s RBAC and sensitivity labels are tightly integrated with Azure AD, competitors such as Tableau rely on manual permission mapping, increasing misconfiguration risk by up to 30%</p>
+            <p>‍</p>
+            <h3>How Do You Manage Power BI User Permissions to Avoid Unauthorised Sharing?</h3>
+            <p>Effective permission management prevents leaks and enforces Power BI compliance across departments.</p>
+            <p>‍</p>
+            <div class="w-embed">
+              <div class="pbi-permissions-embed">
+                <div class="pbi-permission-card">
+                  <div class="pbi-icon-wrap">
+                    <img src="../assets/images/Layer_15.svg" alt="">
+                  </div>
+                  <h4>Leverage Role-Based Access Control (RBAC)</h4>
+                  <p>You must define Viewer, Contributor and Admin access.</p>
+                </div>
+                <div class="pbi-permission-card">
+                  <div class="pbi-icon-wrap">
+                    <img src="../assets/images/Layer_1-1_13.svg" alt="">
+                  </div>
+                  <h4>Restrict sharing to external</h4>
+                  <p>Use sensitivity labels to restrict sharing/exporting.</p>
+                </div>
+                <div class="pbi-permission-card">
+                  <div class="pbi-icon-wrap">
+                    <img src="../assets/images/Layer_1-2_8.svg" alt="">
+                  </div>
+                  <h4>Turn on Row-Level Security</h4>
+                  <p>Only those users should see the data.</p>
+                </div>
+                <div class="pbi-permission-card">
+                  <div class="pbi-icon-wrap">
+                    <img src="../assets/images/Layer_1-3_6.svg" alt="">
+                  </div>
+                  <h4>Workspace Activity Monitoring</h4>
+                  <p>Monitor permission changes and report sharing logs.</p>
+                </div>
+                <div class="pbi-permission-card">
+                  <div class="pbi-icon-wrap">
+                    <img src="../assets/images/Layer_1-4_5.svg" alt="">
+                  </div>
+                  <h4>Review Access Regularly</h4>
+                  <p>Schedule quarterly permission audits for continuous alignment.</p>
+                </div>
+              </div>
+              <style>
+/* ================= GRID ================= */
+.pbi-permissions-embed {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  width: 100%;
+}
+/* ================= CARD ================= */
+.pbi-permission-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+/* ================= ICON WRAPPER ================= */
+.pbi-permission-card .pbi-icon-wrap {
+  position: relative;           /* ⬅️ KLJUČ */
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+}
+/* ⬅️ POZADINA IDE IZA IKONICE */
+.pbi-permission-card .pbi-icon-wrap::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;                  /* ⬅️ TAČNO KAKO SI REKAO */
+  border-radius: 12px;
+  background: linear-gradient(
+    90deg,
+    #FF0088 0%,
+    #E817AD 100%
+  );
+}
+/* ================= ICON ================= */
+.pbi-permission-card .pbi-icon-wrap img {
+  width: 24px;
+  height: 24px;
+  display: block;
+  position: relative;
+  z-index: 1;                   /* ⬅️ IZNAD POZADINE */
+}
+/* ================= TEXT ================= */
+.pbi-permission-card h4 {
+  margin: 0;
+  font-family: Inter, sans-serif;
+  font-size: 20px;
+  font-weight: 800; /* Extra Bold */
+  line-height: 1.25;
+  color: #1F1F28;
+}
+.pbi-permission-card p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.45;
+  color: #444457;
+}
+/* ================= RESPONSIVE ================= */
+@media (max-width: 991px) {
+  .pbi-permissions-embed {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 479px) {
+  .pbi-permissions-embed {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+</style>
+            </div>
+            <p>‍</p>
+            <h3>How Does Strong Power BI Data Access Governance Improve Transparency and Accountability?</h3>
+            <p>Strong Power BI access governance tracks who changes what and when, helping detect irregularities and maintain data protection. Centralised oversight ensures accountability without reducing efficiency. <strong>Forrester 2023 </strong>finds that organisations with centralised access governance resolve compliance issues 40% faster.</p>
+            <p>‍</p>
+            <p>‍</p>
+            <h2>What Are the Biggest Threats to Power BI Security in Hybrid or Multi-User Environments?</h2>
+            <p>‍</p>
+            <p>The biggest threats to <strong>Power BI security</strong> arise from shared workspaces, weak credentials, and unencrypted data transfers that expose sensitive information across cloud and on-premises systems. According to the 2025 DBIR Incident Classification Patterns, around <strong>88% of breaches</strong> involve compromised credentials, stolen or guessed ,underscoring how weak or misused access controls remain a primary vulnerability</p>
+            <p>‍</p>
+            <h3>How Do Encryption, Row-Level Security, and Tenant Isolation Strengthen Power BI Data Protection?</h3>
+            <p>Power BI data is safely encrypted and isolated, and with RLS, it is guaranteed to guarantee visibility and unauthorised access. They create a shield between the source and the dashboard.</p>
+            <p>RLS limits exposure by ensuring users view only what they’re entitled to. Tenant isolation separates environments, reducing breach risks. When implemented properly, these methods solidify Power BI data protection standards. Compared to Looker’s workspace-level isolation, Power BI’s tenant isolation operates at both workspace and service layers, giving enterprises dual protection, especially valuable for hybrid environments.</p>
+            <p>‍</p>
+            <h3>How Can Organisations Use Power BI Data Governance Tools to Monitor and Enhance Security?</h3>
+            <p>‍</p>
+            <div class="w-embed">
+              <div class="pbi-tools-embed">
+                <div class="pbi-tools-grid">
+                  <div class="pbi-tool">
+                    <div class="pbi-icon-wrap">
+                      <img class="pbi-icon" src="../assets/images/Layer_16.svg" alt="">
+                    </div>
+                    <p class="pbi-text">
+                      <strong>Automate Notifications:</strong>
+                      <span> Detect access inconsistencies in real-time.</span>
+                    </p>
+                  </div>
+                  <div class="pbi-tool">
+                    <div class="pbi-icon-wrap">
+                      <img class="pbi-icon" src="../assets/images/Layer_1-1_14.svg" alt="">
+                    </div>
+                    <p class="pbi-text">
+                      <strong>Track Data Lineage:</strong>
+                      <span> Map the flow from source to report.</span>
+                    </p>
+                  </div>
+                  <div class="pbi-tool">
+                    <div class="pbi-icon-wrap">
+                      <img class="pbi-icon" src="../assets/images/Icon.svg" alt="">
+                    </div>
+                    <p class="pbi-text">
+                      <strong>Aggregate Audit Trails:</strong>
+                      <span> Aggregate activities to prove compliance.</span>
+                    </p>
+                  </div>
+                  <div class="pbi-tool">
+                    <div class="pbi-icon-wrap">
+                      <img class="pbi-icon" src="../assets/images/Icon-1_1.svg" alt="">
+                    </div>
+                    <p class="pbi-text">
+                      <strong>Integrate with SIEM:</strong>
+                      <span> Combine Power BI logs with enterprise monitoring.</span>
+                    </p>
+                  </div>
+                  <div class="pbi-tool">
+                    <div class="pbi-icon-wrap">
+                      <img class="pbi-icon" src="../assets/images/Capa_15.svg" alt="">
+                    </div>
+                    <p class="pbi-text">
+                      <strong>Policy Dashboards:</strong>
+                      <span> See your Power BI security and compliance status.</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <style>
+  :root{
+    --pink: #EC408B;
+    --pink-56: rgba(236,64,139,.56);
+    --box-bg: rgba(236,64,139,.07);
+    --icon-bg: rgba(236,64,139,.12);
+  }
+  .pbi-tools-grid{
+    background: var(--box-bg);
+    border-radius: 12px;
+    padding: 24px 32px;
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 16px;
+  }
+  .pbi-tool{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .pbi-icon-wrap{
+    width: 64px;
+    height: 64px;
+    border-radius: 999px;
+    background: var(--icon-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .pbi-icon{
+    width: 26px;
+    height: 26px;
+    display: block;
+  }
+  .pbi-text{
+    margin-top: 18px; /* razmak icon → tekst */
+    font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.35;
+  }
+  .pbi-text strong{
+    color: var(--pink);       /* 100% */
+    font-weight: 800;
+  }
+  .pbi-text span{
+    color: var(--pink-56);    /* 56% */
+    font-weight: 400;
+  }
+  /* responsive */
+  @media (max-width: 991px){
+    .pbi-tools-grid{ grid-template-columns: repeat(3, 1fr); }
+  }
+  @media (max-width: 767px){
+    .pbi-tools-grid{ grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 479px){
+    .pbi-tools-grid{ grid-template-columns: 1fr; }
+  }
+</style>
+            </div>
+            <p>‍</p>
+            <p>‍</p>
+            <h2>Why Are Power BI Data Retention Policies Critical for Both Compliance and Storage Efficiency?</h2>
+            <p>‍</p>
+            <p>Power BI data retention policies prevent uncontrolled data buildup, maintaining compliance and improving performance by ensuring only necessary data is stored. Retention policies define how long data stays accessible before deletion or archival.</p>
+            <p>They protect your organisation from noncompliance with regulations such as GDPR while improving workspace efficiency. Documented retention standards also enhance Power BI data governance and control across environments. According to a 2025 PwC Data Compliance Survey, 64% of organizations that enforce structured retention policies report a 43% reduction in data storage costs and improved audit readiness across BI environments.</p>
+            <p>‍</p>
+            <h3>How Do Organisations Balance Retention, Deletion, and Archiving in Power BI Data Management?</h3>
+            <p>Balanced policies give good efficiency in the realm of space management and accountability.</p>
+            <p>‍</p>
+            <div class="w-embed">
+              <div class="pbi-retention-embed">
+                <div class="pbi-retention-grid">
+                  <div class="pbi-retention-card">
+                    <img class="pbi-retention-icon" src="../assets/images/Capa_16.svg" alt="">
+                    <h4 class="pbi-retention-title">Automate Deletion</h4>
+                    <p class="pbi-retention-desc">Delete the expired datasets automatically.</p>
+                  </div>
+                  <div class="pbi-retention-card">
+                    <img class="pbi-retention-icon" src="../assets/images/Capa_1-1_10.svg" alt="">
+                    <h4 class="pbi-retention-title">Restrict Access</h4>
+                    <p class="pbi-retention-desc">Limit legacy content to approved users.</p>
+                  </div>
+                  <div class="pbi-retention-card">
+                    <img class="pbi-retention-icon" src="../assets/images/Frame_5.svg" alt="">
+                    <h4 class="pbi-retention-title">Log Everything</h4>
+                    <p class="pbi-retention-desc">Track when and why data is archived or deleted.</p>
+                  </div>
+                  <div class="pbi-retention-card">
+                    <img class="pbi-retention-icon" src="../assets/images/Capa_1-2_10.svg" alt="">
+                    <h4 class="pbi-retention-title">Establish Retention Periods</h4>
+                    <p class="pbi-retention-desc">Establish data lifespan by type</p>
+                  </div>
+                  <div class="pbi-retention-card">
+                    <img class="pbi-retention-icon" src="../assets/images/Frame-1_1.svg" alt="">
+                    <h4 class="pbi-retention-title">Implement Auto-Archiving</h4>
+                    <p class="pbi-retention-desc">Store long-term records securely.</p>
+                  </div>
+                </div>
+              </div>
+              <style>
+  :root{
+    --pbi-grad-a: #FF9DC8;
+    --pbi-grad-b: #EB2B7E;
+    --pbi-card-bg: #F7FBFF;
+    --pbi-text: #0F172A;
+    --pbi-muted: rgba(15,23,42,.85);
+    --pbi-radius: 12px;
+    --pbi-border: 3px;
+  }
+  .pbi-retention-grid{
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+  }
+  .pbi-retention-card{
+    position: relative;
+    border-radius: var(--pbi-radius);
+    background: var(--pbi-card-bg);
+    padding: 20px;
+    min-height: 148px;
+  }
+  /* gradient border (inside, 3px) */
+  .pbi-retention-card::before{
+    content:"";
+    position:absolute;
+    inset: 0;
+    border-radius: var(--pbi-radius);
+    padding: var(--pbi-border);
+    background: linear-gradient(90deg, var(--pbi-grad-a) 17%, var(--pbi-grad-b) 98%);
+    -webkit-mask:
+      linear-gradient(#000 0 0) content-box,
+      linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+            mask-composite: exclude;
+    pointer-events:none;
+  }
+  .pbi-retention-icon{
+    width: 24px;
+    height: 24px;
+    display:block;
+  }
+  .pbi-retention-title{
+    margin: 16px 0 0;         /* icon -> heading 16px */
+    font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    font-size: 16px;          /* heading 16px */
+    line-height: 1.25;
+    font-weight: 700;         /* Inter bold */
+    color: var(--pbi-text);
+  }
+  .pbi-retention-desc{
+    margin: 8px 0 0;          /* heading -> paragraph 8px */
+    font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.4;
+    color: var(--pbi-muted);
+  }
+  /* responsive */
+  @media (max-width: 991px){
+    .pbi-retention-grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+  @media (max-width: 479px){
+    .pbi-retention-grid{ grid-template-columns: 1fr; }
+  }
+</style>
+            </div>
+            <p>‍</p>
+            <p>‍</p>
+            <h2>Why Is Maintaining a Power BI Audit Trail Essential for Accountability?</h2>
+            <p>‍</p>
+            <p>An audit trail of Power BI will help keep track of all the activities and thus assist your organisation to comply with the requirements imposed, and also observe unauthorised access that can be eliminated very early.</p>
+            <p>Audit trails record every user action, from data access to dashboard publishing. This visibility strengthens Power BI data protection, Power BI compliance, and overall Power BI governance practices.</p>
+            <p>‍</p>
+            <h3>What Are the Risks of Ignoring Audit Logs and Usage Metrics in Data Governance for Power BI?</h3>
+            <p>The denial of audit logs results in invisible violations and regulatory bankruptcy that harm trust and integrity in governance. Operational reviews at the end of every quarter, legal compliance audits at the end of every year, and continue with changes in policy and law.</p>
+            <p>‍</p>
+            <div class="w-embed">
+              <div class="pbi-risk-embed">
+                <div class="pbi-risk-grid">
+                  <div class="pbi-risk-card">
+                    <div class="pbi-risk-iconwrap">
+                      <img class="pbi-risk-icon" src="../assets/images/Capa_17.svg" alt="">
+                    </div>
+                    <h3 class="pbi-risk-title">Untracked Access</h3>
+                    <p class="pbi-risk-desc">Hidden leaks go undetected.</p>
+                  </div>
+                  <div class="pbi-risk-card">
+                    <div class="pbi-risk-iconwrap">
+                      <img class="pbi-risk-icon" src="../assets/images/Capa_1-1_11.svg" alt="">
+                    </div>
+                    <h3 class="pbi-risk-title">Lost Evidence</h3>
+                    <p class="pbi-risk-desc">Audit failure slows investigations.</p>
+                  </div>
+                  <div class="pbi-risk-card">
+                    <div class="pbi-risk-iconwrap">
+                      <img class="pbi-risk-icon" src="../assets/images/Capa_1-2_11.svg" alt="">
+                    </div>
+                    <h3 class="pbi-risk-title">Compliance Gaps</h3>
+                    <p class="pbi-risk-desc">Regulators question missing logs.</p>
+                  </div>
+                  <div class="pbi-risk-card pbi-risk-card--wide">
+                    <div class="pbi-risk-iconwrap">
+                      <img class="pbi-risk-icon" src="../assets/images/Frame_6.svg" alt="">
+                    </div>
+                    <h3 class="pbi-risk-title">Policy Violations</h3>
+                    <p class="pbi-risk-desc">Inconsistent user behaviour remains unnoticed.</p>
+                  </div>
+                  <div class="pbi-risk-card pbi-risk-card--wide">
+                    <div class="pbi-risk-iconwrap">
+                      <img class="pbi-risk-icon" src="../assets/images/Capa_1-3_6.svg" alt="">
+                    </div>
+                    <h3 class="pbi-risk-title">Reduced Accountability</h3>
+                    <p class="pbi-risk-desc">No proof of ownership or responsibility.</p>
+                  </div>
+                </div>
+              </div>
+              <style>
+  :root{
+    --pbi-border: #E0E2E7;
+    --pbi-bg: #F7FBFF;
+    --pbi-title: #111827;
+    --pbi-desc: rgba(17,24,39,.60);
+    /* icon wrapper */
+    --pbi-grad-a: #FF9DC8;
+    --pbi-grad-b: #EB2B7E;
+    --pbi-shadow: rgba(255,0,136,.32);
+  }
+  .pbi-risk-grid{
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 20px;
+  }
+  .pbi-risk-card{
+    grid-column: span 2;             /* 3 kartice gore */
+    background: var(--pbi-bg);
+    border: 1px solid var(--pbi-border);
+    border-radius: 12px;
+    padding: 25px;
+    min-height: 210px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  /* donje dvije kartice sire (2 u redu) */
+  .pbi-risk-card--wide{
+    grid-column: span 3;
+  }
+  .pbi-risk-iconwrap{
+    width: 60px;
+    height: 60px;
+    border-radius: 16px;
+    background: linear-gradient(180deg, var(--pbi-grad-a) 0%, var(--pbi-grad-b) 100%);
+    box-shadow: 0 4.86px 38.86px var(--pbi-shadow);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .pbi-risk-icon{
+    width: 28px;
+    height: 28px;
+    display: block;
+  }
+  .pbi-risk-title{
+    margin: 20px 0 0;               /* wrapper -> heading 20px */
+    font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    font-size: 20px;                 /* heading 20px */
+    line-height: 1.2;
+    font-weight: 800;                /* extra bold */
+    color: var(--pbi-title);
+  }
+  .pbi-risk-desc{
+    margin: 12px 0 0;               /* heading -> paragraf 12px */
+    font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.4;
+    color: var(--pbi-desc);
+  }
+  /* responsive */
+  @media (max-width: 991px){
+    .pbi-risk-grid{ grid-template-columns: repeat(1, minmax(0, 1fr)); }
+    .pbi-risk-card,
+    .pbi-risk-card--wide{ grid-column: span 1; }
+  }
+</style>
+            </div>
+            <p>‍</p>
+            <p>‍</p>
+            <h2>Why Must Power BI Data Governance Strategy Be Reviewed and Updated Regularly?</h2>
+            <p>‍</p>
+            <p>Power BI data governance strategies must evolve continuously to reflect changing compliance rules, business growth, and technology updates that affect data integrity.</p>
+            <p>‍</p>
+            <h3>How Do Performance Reviews and Usage Analytics Help Maintain Power BI Data Quality?</h3>
+            <p>Periodic reviews reveal outdated datasets and redundant content. Tracking refresh success, adoption trends, and model usage ensures reliable data pipelines and strong Power BI data governance.</p>
+            <p>Consistent evaluations help you retire underused assets, improve efficiency, and maintain a clean, compliant Power BI ecosystem.</p>
+            <p>‍</p>
+            <h3>What KPIs Should Be Tracked to Measure the Success of Power BI Best Practices and Compliance Policies?</h3>
+            <p>‍</p>
+            <div class="w-embed">
+              <div class="pbi-kpi-embed">
+                <ul class="pbi-kpi-list">
+                  <li class="pbi-kpi-item">
+                    <span class="pbi-kpi-check" aria-hidden="true">
+                      <svg viewbox="0 0 24 24" width="14" height="14">
+                        <path d="M9.2 16.2 5.6 12.6a1 1 0 1 1 1.4-1.4l2.2 2.2 7-7a1 1 0 1 1 1.4 1.4l-7.7 7.7a1 1 0 0 1-1.7 0Z" fill="#fff"></path>
+                      </svg>
+                    </span>
+                    <span class="pbi-kpi-text">Dataset Certification Rate</span>
+                  </li>
+                  <li class="pbi-kpi-item">
+                    <span class="pbi-kpi-check" aria-hidden="true">
+                      <svg viewbox="0 0 24 24" width="14" height="14">
+                        <path d="M9.2 16.2 5.6 12.6a1 1 0 1 1 1.4-1.4l2.2 2.2 7-7a1 1 0 1 1 1.4 1.4l-7.7 7.7a1 1 0 0 1-1.7 0Z" fill="#fff"></path>
+                      </svg>
+                    </span>
+                    <span class="pbi-kpi-text">Access Review Completion</span>
+                  </li>
+                  <li class="pbi-kpi-item">
+                    <span class="pbi-kpi-check" aria-hidden="true">
+                      <svg viewbox="0 0 24 24" width="14" height="14">
+                        <path d="M9.2 16.2 5.6 12.6a1 1 0 1 1 1.4-1.4l2.2 2.2 7-7a1 1 0 1 1 1.4 1.4l-7.7 7.7a1 1 0 0 1-1.7 0Z" fill="#fff"></path>
+                      </svg>
+                    </span>
+                    <span class="pbi-kpi-text">Audit Log Accuracy</span>
+                  </li>
+                  <li class="pbi-kpi-item">
+                    <span class="pbi-kpi-check" aria-hidden="true">
+                      <svg viewbox="0 0 24 24" width="14" height="14">
+                        <path d="M9.2 16.2 5.6 12.6a1 1 0 1 1 1.4-1.4l2.2 2.2 7-7a1 1 0 1 1 1.4 1.4l-7.7 7.7a1 1 0 0 1-1.7 0Z" fill="#fff"></path>
+                      </svg>
+                    </span>
+                    <span class="pbi-kpi-text">Refresh Success Percentage</span>
+                  </li>
+                  <li class="pbi-kpi-item">
+                    <span class="pbi-kpi-check" aria-hidden="true">
+                      <svg viewbox="0 0 24 24" width="14" height="14">
+                        <path d="M9.2 16.2 5.6 12.6a1 1 0 1 1 1.4-1.4l2.2 2.2 7-7a1 1 0 1 1 1.4 1.4l-7.7 7.7a1 1 0 0 1-1.7 0Z" fill="#fff"></path>
+                      </svg>
+                    </span>
+                    <span class="pbi-kpi-text">Policy Violation Count</span>
+                  </li>
+                </ul>
+              </div>
+              <style>
+  :root{
+    --pbi-pink: #FF0088;
+    --pbi-grad-a: #FF9DC8;
+    --pbi-grad-b: #EB2B7E;
+  }
+  .pbi-kpi-list{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 16px; /* razmak izmedju stavki */
+  }
+  .pbi-kpi-item{
+    position: relative;
+    min-height: 24px;
+    display: flex;
+    align-items: center;
+    gap: 10px;                 /* razmak izmedju ikonice i teksta */
+    padding-left: 18px;        /* prostor za vertikalnu liniju */
+  }
+  /* vertikalna linija lijevo */
+  .pbi-kpi-item::before{
+    content:"";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    border-radius: 3px;
+    background: linear-gradient(180deg, var(--pbi-grad-a) 0%, var(--pbi-grad-b) 100%);
+  }
+  /* check ikonica */
+  .pbi-kpi-check{
+    width: 18px;
+    height: 18px;
+    border-radius: 999px;
+    background: var(--pbi-pink);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+  }
+  .pbi-kpi-text{
+    font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 600;          /* Semi Bold */
+    color: var(--pbi-pink);
+  }
+</style>
+            </div>
+            <p>‍</p>
+            <p>‍</p>
+            <h2>Power BI Genius: A Practical Solution to Power BI Governance</h2>
+            <p>‍</p>
+            <p>
+              <a href="https://thereportinghub.com/bi-genius">Power BI Genius</a> makes compliance and data policies tracking simpler and automated, and offers visibility into access, refresh, and usage metrics, making Power BI governance easier.
+            </p>
+            <p>It connects <strong>Power BI security, Power BI compliance</strong>, and <strong>data governance for Power BI</strong> into one unified platform. The tool automates retention, monitors permissions, and centralises reporting. With Power BI Genius, your teams achieve audit readiness and consistency without administrative overload, improving Power BI data protection and Power BI data privacy standards across your organisation.</p>
+            <p>Unlike vendor-locked governance dashboards, Power BI Genius supports cross-platform lineage monitoring, including Tableau and Snowflake, helping organisations manage compliance in multi-BI ecosystems.</p>
+            <p>‍</p>
+            <p>‍</p>
+            <h2>Final Words</h2>
+            <p>‍</p>
+            <p>Effective Power BI governance requires structure, ownership, and automation. When your organisation integrates <strong>Power BI security</strong>, Power BI compliance, and Power BI data governance, analytics remain both agile and secure.</p>
+            <p>A defined governance model supported by monitoring tools and regular reviews ensures accountability. Over time, strong Power BI governance fosters trust, efficiency, and lasting confidence in every report.</p>
+          </div>
+          <div fc-toc="active-style" class="u-toc-current-link-_secondary"></div>
+          <div class="toc-subitems"></div>
+          <div class="toc_script w-embed w-script">
+            <script>
+document.addEventListener('DOMContentLoaded', () => {
+  let preventAutoOpen = false;
+  let suppressNextScrollUpdate = false;
+  const tocWrappers = document.querySelectorAll('[fc-toc="wrapper"]');
+  if (!tocWrappers) return;
+  for (const wrapper of tocWrappers) {
+    // Grab key elements and settings
+    const tocComponent = wrapper.querySelector('[fc-toc="component"]');
+    const tocContent = wrapper.querySelector('[fc-toc="content"]');
+    const activeStyleElement = wrapper.querySelector('[fc-toc="active-style"]');
+    const activeClass = activeStyleElement?.className || '';
+    const debounceMs = 0;
+    const isCollapsible = tocComponent.getAttribute('fc-toc-collapse') === 'true';
+    if (!tocComponent || !tocContent) return;
+    // Map of heading levels to placeholder class names
+    const placeholderLinks = tocComponent.querySelectorAll('[fc-toc]');
+    const headingLevels = new Map();
+    placeholderLinks.forEach(link => {
+      const level = link.getAttribute('fc-toc');
+      const className = link.getAttribute('class') || '';
+      if (/^h[1-6]$/.test(level)) {
+        headingLevels.set(level.toLowerCase(), className);
+      }
+    });
+    // Find all target headings in the content
+    const selector = [...headingLevels.keys()].join(', ');
+    const headings = tocContent.querySelectorAll(selector);
+    // Generate unique IDs for headings
+    const usedIds = new Set();
+    const generateSlug = (text, index) => {
+      let slug = text.toLowerCase()
+        .normalize("NFD").replace(/[̀-ͯ]/g, "")
+        .replace(/[^a-z0-9\s-]/g, '')
+        .replace(/\s+/g, '-')
+        .replace(/-+/g, '-')
+        .replace(/^-|-$/g, '');
+      if (!slug) slug = `heading-${index}`;
+      let uniqueSlug = slug;
+      let count = 1;
+      while (usedIds.has(uniqueSlug)) {
+        uniqueSlug = `${slug}-${count++}`;
+      }
+      usedIds.add(uniqueSlug);
+      return uniqueSlug;
+    };
+    // Assign IDs to headings
+    headings.forEach((heading, index) => {
+      const id = generateSlug(heading.textContent.trim(), index);
+      heading.id = id;
+    });
+    // Build the TOC from placeholder links and real headings
+    let currentParentLi = null;
+    let subList = null;
+    headings.forEach((heading, index) => {
+      const level = heading.tagName.toLowerCase();
+      const className = headingLevels.get(level) || '';
+      const placeholderLink = tocComponent.querySelector(`[fc-toc="${level}"]`);
+      if (!placeholderLink) return;
+      const listItem = placeholderLink.closest('li');
+      if (!listItem) return;
+      const clonedItem = listItem.cloneNode(true);
+      const link = clonedItem.querySelector(`[fc-toc="${level}"]`);
+      if (link) {
+        link.href = `#${heading.id}`;
+        link.textContent = heading.textContent.trim();
+        link.setAttribute('fc-toc-link', level);
+      }
+      if (isCollapsible && level === 'h2') {
+        tocComponent.appendChild(clonedItem);
+        currentParentLi = clonedItem;
+        subList = document.createElement('ul');
+        subList.classList.add('toc-subitems');
+        currentParentLi.appendChild(subList);
+      } else if (isCollapsible && currentParentLi && subList) {
+        subList.appendChild(clonedItem);
+      } else {
+        tocComponent.appendChild(clonedItem);
+      }
+    });
+    // Initially collapse all groups if collapsible
+    if (isCollapsible) {
+      tocComponent.querySelectorAll('.toc-subitems').forEach(group => {
+        group.style.maxHeight = '0';
+      });
+    }
+    // Remove placeholder links
+    placeholderLinks.forEach(link => {
+      const parentLi = link.closest('li');
+      if (parentLi) parentLi.remove();
+    });
+    let debounceTimer;
+    let lastActiveLink = null;
+    let lastActiveGroupWrapper = null;
+    // Scroll TOC and manage group expansion on active link update
+    const scrollToActiveLink = () => {
+      if (suppressNextScrollUpdate) {
+        suppressNextScrollUpdate = false;
+        return;
+      }
+      if (preventAutoOpen) return;
+      const activeLink = tocComponent.querySelector('.w--current');
+      if (!activeLink || activeLink === lastActiveLink) return;
+      tocComponent.querySelectorAll('[fc-toc-link]').forEach(link => {
+        if (activeClass) link.classList.remove(activeClass);
+      });
+      if (activeClass) activeLink.classList.add(activeClass);
+      lastActiveLink = activeLink;
+      tocComponent.scrollBy({
+        top: activeLink.getBoundingClientRect().top - tocComponent.getBoundingClientRect().top - (tocComponent.getBoundingClientRect().height / 2) + (activeLink.getBoundingClientRect().height / 2),
+        behavior: 'smooth'
+      });
+      if (isCollapsible) {
+        const currentLi = activeLink.closest('li');
+        let groupWrapperLi = currentLi;
+        if (currentLi?.parentElement?.classList.contains('toc-subitems')) {
+          groupWrapperLi = currentLi.parentElement.closest('li');
+        }
+        tocComponent.querySelectorAll('li').forEach(li => {
+          const sub = li.querySelector('.toc-subitems');
+          if (
+            sub &&
+            li !== groupWrapperLi &&
+            sub.style.maxHeight !== '0px' &&
+            (!preventAutoOpen || li !== lastActiveGroupWrapper)
+          ) {
+            collapseElement(sub);
+          }
+        });
+        expandElement(groupWrapperLi.querySelector('.toc-subitems'));
+        lastActiveGroupWrapper = groupWrapperLi;
+      }
+    };
+    const debouncedScroll = () => {
+      clearTimeout(debounceTimer);
+      debounceTimer = setTimeout(scrollToActiveLink, debounceMs);
+    };
+    // Observe class changes to trigger scroll update
+    const observer = new MutationObserver(() => {
+      if (!isAutoScrolling) debouncedScroll();
+    });
+    observer.observe(tocComponent, {
+      subtree: true,
+      attributes: true,
+      attributeFilter: ['class']
+    });
+    // Expand group for active link on page load
+    const expandActiveGroupOnLoad = () => {
+      if (!isCollapsible) return;
+      let attempts = 0;
+      const tryExpand = () => {
+        const activeLink = tocComponent.querySelector('.w--current');
+        if (activeLink) {
+          scrollToActiveLink();
+        } else if (++attempts < 20) {
+          setTimeout(tryExpand, 50);
+        }
+      };
+      tryExpand();
+    };
+    // Set up toggle buttons for manual group expansion
+    const setupManualToggles = () => {
+      if (!isCollapsible) return;
+      tocComponent.querySelectorAll('[fc-toc="open-group"]').forEach(toggleBtn => {
+        const subList = toggleBtn.closest('li')?.querySelector('.toc-subitems');
+        if (!subList || subList.children.length === 0) {
+          toggleBtn.style.display = 'none';
+          return;
+        }
+        for (const item of tocComponent.querySelectorAll('li')) {
+        	item.style.display = 'grid';
+          item.style.gridTemplateColumns = '1fr auto';
+        }
+        subList.style.gridColumn = '1 / 3';
+        toggleBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          preventAutoOpen = true;
+          const listItem = toggleBtn.closest('li');
+          if (!listItem) return;
+          const subList = listItem.querySelector('.toc-subitems');
+          if (!subList) return;
+          const isOpen = subList.style.maxHeight !== '0px';
+          const hasActive = listItem.querySelector(`.${activeClass}`);
+          if (isOpen && !hasActive) {
+            collapseElement(subList);
+            if (lastActiveGroupWrapper === listItem) {
+              lastActiveGroupWrapper = null;
+            }
+          } else if (!isOpen) {
+            expandElement(subList);
+            if (
+              lastActiveGroupWrapper &&
+              lastActiveGroupWrapper !== listItem &&
+              !lastActiveGroupWrapper.querySelector(`.${activeClass}`)
+            ) {
+              const previousGroup = lastActiveGroupWrapper.querySelector('.toc-subitems');
+              if (previousGroup) collapseElement(previousGroup);
+            }
+            lastActiveGroupWrapper = listItem;
+          }
+          setTimeout(() => {
+            preventAutoOpen = false;
+          }, 100);
+        });
+      });
+    };
+    expandActiveGroupOnLoad();
+    setupManualToggles();
+    let isAutoScrolling = false;
+    let scrollTimeout;
+    const handleScrollStop = () => {
+      clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(() => {
+        isAutoScrolling = false;
+        debouncedScroll();
+      }, 150);
+    };
+    // Handle anchor clicks and scroll positioning
+    tocComponent.querySelectorAll('a[fc-toc-link]').forEach(link => {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href')?.substring(1);
+        const target = document.getElementById(targetId);
+        if (!target) return;
+        const originalHref = this.getAttribute('href');
+        this.removeAttribute('href');
+        isAutoScrolling = true;
+        window.addEventListener('scroll', handleScrollStop);
+        const rect = target.getBoundingClientRect();
+        const scrollTo = window.scrollY + rect.top - (window.innerHeight / 2) + (rect.height / 2);
+        window.scrollTo({ top: scrollTo, behavior: 'smooth' });
+        const closeToc = document.querySelector('[fc-toc = close]')
+        if(closeToc) closeToc.click()
+        setTimeout(() => {
+          this.setAttribute('href', originalHref);
+        }, 100);
+      });
+    });
+  }
+  // Expand/collapse utility with icon rotation
+  function expandElement(el) {
+    const clone = el.cloneNode(true);
+    clone.style.visibility = 'hidden';
+    clone.style.position = 'absolute';
+    clone.style.height = 'auto';
+    clone.style.maxHeight = 'none';
+    clone.style.pointerEvents = 'none';
+    clone.style.opacity = '0';
+    el.parentElement.appendChild(clone);
+    const fullHeight = clone.scrollHeight;
+    el.parentElement.removeChild(clone);
+    el.style.maxHeight = fullHeight + 'px';
+    const icon = el.closest('li')?.querySelector('[fc-toc="open-group"]');
+    if (icon) {
+      const rotation = icon.getAttribute('fc-toc-rotate') || '180deg';
+      icon.style.transform = `rotate(${rotation}deg)`;
+    }
+  }
+  function collapseElement(el) {
+    el.style.maxHeight = '0px';
+    const icon = el.closest('li')?.querySelector('[fc-toc="open-group"]');
+    if (icon) {
+      icon.style.transform = 'rotate(0deg)';
+    }
+  }
+});
+</script>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="faq-section is-ai-data-analysis">
+      <div class="container">
+        <div class="faq-wrap">
+          <h2 class="faq-h2">FAQ’s</h2>
+          <div class="faq-container">
+            <div class="faq-wrap-2">
+              <div class="faq-question-2">
+                <div class="faq-q-text">How Does Power BI Governance Improve Collaboration?<br></div>
+                <div class="faq-plus-wrap">
+                  <div class="faq-plus-l"></div>
+                  <div class="faq-plus"></div>
+                </div>
+              </div>
+              <div class="faq-answer">
+                <p class="faq-answer-text">It normalises datasets, meaning that the various departments have the same, correct information with the same compliance framework.<br></p>
+              </div>
+            </div>
+            <div class="faq-wrap-2">
+              <div class="faq-question-2">
+                <div class="faq-q-text">What Role Does Data Lineage Play in Power BI Compliance?</div>
+                <div class="faq-plus-wrap">
+                  <div class="faq-plus-l"></div>
+                  <div class="faq-plus"></div>
+                </div>
+              </div>
+              <div class="faq-answer">
+                <p class="faq-answer-text">Data lineage clarifies data origins, helping you verify accuracy and respond faster during audits.</p>
+              </div>
+            </div>
+            <div class="faq-wrap-2">
+              <div class="faq-question-2">
+                <div class="faq-q-text">Can Power BI Governance Prevent Accidental Data Leaks?<br></div>
+                <div class="faq-plus-wrap">
+                  <div class="faq-plus-l"></div>
+                  <div class="faq-plus"></div>
+                </div>
+              </div>
+              <div class="faq-answer">
+                <p class="faq-answer-text">Yes. By enforcing access policies, encryption, and audit trails, Power BI governance prevents unauthorised sharing and accidental exposure.<br></p>
+              </div>
+            </div>
+            <div class="faq-wrap-2">
+              <div class="faq-question-2">
+                <div class="faq-q-text">How Often Should Power BI Governance Reviews Be Conducted?<br></div>
+                <div class="faq-plus-wrap">
+                  <div class="faq-plus-l"></div>
+                  <div class="faq-plus"></div>
+                </div>
+              </div>
+              <div class="faq-answer">
+                <p class="faq-answer-text">Operational reviews after every quarter, compliance audits after every year, to keep in line with changes in policies and law.<br></p>
+              </div>
+            </div>
+            <div class="faq-wrap-2">
+              <div class="faq-question-2">
+                <div class="faq-q-text">What Are the Benefits of Power BI Genius for Governance?<br></div>
+                <div class="faq-plus-wrap">
+                  <div class="faq-plus-l"></div>
+                  <div class="faq-plus"></div>
+                </div>
+              </div>
+              <div class="faq-answer">
+                <p class="faq-answer-text">Power BI Genius automates governance tasks, improves visibility, and supports <strong>Power BI compliance</strong> by reducing manual errors and providing centralised control.<br></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="diagonal-overlay"></div>
+    </section>
+    <footer class="footer-diagonal">
+      <div class="footer-diagonal-wrap">
+        <div class="w-layout-blockcontainer container w-container">
+          <div class="footer-component">
+            <div class="w-layout-grid footer-grid-diagonal">
+              <div class="footer-call">
+                <div class="font-0-9">Website</div>
+                <div class="footer-menu-main">
+                  <a href="../index.html" class="footer-link">Home</a>
+                  <a href="../aaas.html" class="footer-link">AaaS Platform</a>
+                  <a href="../pricing.html" class="footer-link">Pricing</a>
+                  <a href="../learn-more.html" class="footer-link">What is Reporting Hub?</a>
+                  <a href="../contact.html" class="footer-link">Contact Us</a>
+                  <a href="../install-today.html" class="footer-link">Install Today</a>
+                </div>
+              </div>
+              <div class="footer-call">
+                <div class="font-0-9">theHUB</div>
+                <div class="footer-menu-main">
+                  <a href="https://docs.thereportinghub.com/" class="footer-link">Knowledge Center</a>
+                  <a href="../blog.html" class="footer-link">Our Blog</a>
+                  <a href="https://support.thereportinghub.com/support/home" class="footer-link">Get Support</a>
+                  <a href="../support-plans.html" class="footer-link">Support Plans</a>
+                  <a href="../policies.html" class="footer-link">Policies</a>
+                  <a href="../policies.html" class="footer-link">Power BI Resources</a>
+                  <a href="../policies.html" class="footer-link">Power BI Embedded</a>
+                </div>
+              </div>
+            </div>
+            <a href="#hero" class="direction-button w-inline-block"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewbox="0 0 52 53" fill="none" class="button-icon">
+                <g clip-path="url(#clip0_9006_2933)">
+                  <path d="M0 26.1602C0 40.5196 11.6406 52.1602 26 52.1602C40.3594 52.1602 52 40.5196 52 26.1602C52 11.8008 40.3594 0.160156 26 0.160156C11.6406 0.160156 0 11.8008 0 26.1602Z" fill="white" fill-opacity="0.1"></path>
+                  <path d="M32.704 28.6752C33.1627 29.1422 33.9152 29.1422 34.3739 28.6752C34.8212 28.2199 34.8212 27.4902 34.3739 27.0348L26.7165 19.2396C26.3246 18.8407 25.6817 18.8407 25.2898 19.2396L17.6323 27.0348C17.1851 27.4902 17.1851 28.2199 17.6323 28.6752C18.0911 29.1422 18.8436 29.1422 19.3023 28.6752L25.2898 22.58C25.6817 22.181 26.3246 22.181 26.7165 22.58L32.704 28.6752Z" fill="currentColor" class="white"></path>
+                </g>
+              </svg></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom-wrap">
+        <div class="container">
+          <div class="two-side_flex">
+            <a href="../index.html" class="footer-left w-inline-block"><img loading="lazy" src="../assets/images/rh-horizontal-white.svg" alt="" class="image-small">
+              <div class="text-color-white margin-top-10">Microsoft partner</div>
+            </a>
+            <div class="footer-right">
+              <div class="new-footer-wrap">
+                <div class="font-0-9 text-align-right left-mobile">
+                  <a href="mailto:info@thereportinghub.com?subject=You&#x27;ve%20got%20email" class="link-8"><span class="text-span-2">info@thereportinghub.com</span></a>
+                </div>
+                <div class="social-media-wrap">
+                  <a href="https://www.facebook.com/people/The-Reporting-Hub/100064582883104/" class="social-media-link w-inline-block"><img src="../assets/images/fb.svg" loading="lazy" alt="" class="social-media-icon"></a>
+                  <a href="https://www.linkedin.com/company/the-reporting-hub/" class="social-media-link w-inline-block"><img src="../assets/images/in.svg" loading="lazy" alt="" class="social-media-icon"></a>
+                  <a href="https://x.com/thereportinghub" class="social-media-link w-inline-block"><img src="../assets/images/tw.svg" loading="lazy" alt="" class="social-media-icon"></a>
+                  <a href="https://www.instagram.com/thereportinghub/" class="social-media-link w-inline-block"><img src="../assets/images/insta.svg" loading="lazy" alt="" class="social-media-icon"></a>
+                </div>
+              </div>
+              <div class="font-0-9 text-align-right margin-top-16">2025 All Rights Reserved | The Reporting Hub</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-diagonal-overlay"></div>
+    </footer>
+  </div>
+  <!-- jQuery removed -->
+  
+  
+  
+  <!--  Google Tag Manager (noscript)  -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MM9W9FH" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!--  End Google Tag Manager (noscript)  -->
+  <script>
+(function () {
+  function cssEscapeSafe(s) {
+    try { return CSS.escape(s); } catch (e) { return s.replace(/["\\]/g, "\\$&"); }
+  }
+  function normalizeTarget(target) {
+    // ✅ Ako ti URL i dalje dolazi kao #bi-genius-terms, mapiraj ga na rh-terms
+    if (target === "bi-genius-terms") return "rh-terms";
+    return target;
+  }
+  function openTabFromHash() {
+    var hash = window.location.hash;
+    if (!hash) return;
+    var target = hash.slice(1);
+    if (!target) return;
+    target = normalizeTarget(target);
+    // 1) traži custom data-tab="..."
+    var sel = '[data-tab="' + cssEscapeSafe(target) + '"]';
+    var el = document.querySelector(sel);
+    // 2) fallback: traži direktno webflow tab link po data-w-tab
+    var tabLink = null;
+    if (el) {
+      tabLink = (el.classList && el.classList.contains('w-tab-link'))
+        ? el
+        : (el.querySelector ? el.querySelector('.w-tab-link') : null);
+    }
+    if (!tabLink) {
+      tabLink = document.querySelector('.w-tab-link[data-w-tab="' + cssEscapeSafe(target) + '"]');
+    }
+    // 3) extra fallback: ako target == rh-terms, probaj naći BILO KOJI element sa data-tab="rh-terms"
+    // (ovo ti je “hard fix” da 100% radi)
+    if (!tabLink && target === "rh-terms") {
+      tabLink = document.querySelector('[data-tab="rh-terms"].w-tab-link, .w-tab-link[data-tab="rh-terms"]');
+    }
+    if (!tabLink) return;
+    var tries = 0;
+    (function tryClick() {
+      tries++;
+      tabLink.click();
+      if (!tabLink.classList.contains('w--current') && tries < 20) {
+        setTimeout(tryClick, 100);
+      }
+    })();
+  }
+  document.addEventListener('DOMContentLoaded', openTabFromHash);
+  window.addEventListener('hashchange', openTabFromHash);
+})();
+</script>
+  <script >
+    document.addEventListener('DOMContentLoaded', function () {
+        var youtubeIframes = document.querySelectorAll('iframe.lazyiframe');
+        youtubeIframes.forEach(function (youtubeIframe) {
+            var dataSrcValue = youtubeIframe.getAttribute('data-src');
+            if (dataSrcValue) {
+                youtubeIframe.setAttribute('src', dataSrcValue);
+                youtubeIframe.removeAttribute('data-src');
+            }
+        });
+    });
+</script>
+  <!-- Removed: xls loader trigger -->
+  
+  
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

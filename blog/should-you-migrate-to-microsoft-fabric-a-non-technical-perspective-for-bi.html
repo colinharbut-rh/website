@@ -1,0 +1,1852 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="utf-8">
+  <title>Should You Migrate to Microsoft Fabric? A Non-Technical Perspective for BI</title>
+  <meta content="Business intelligence often involves managing multiple tools, which can lead to delays, confusion, and missed opportunities. Microsoft Fabric consolidates the e" name="description">
+  <meta content="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/6941a4cf7550fa5b8c561c60_blogimg13.webp" property="og:image">
+  <meta content="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/6941a4cf7550fa5b8c561c60_blogimg13.webp" property="twitter:image">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&amp;display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link href="../assets/css/base.css" rel="stylesheet" type="text/css">
+  <link href="../assets/css/styles.css" rel="stylesheet" type="text/css">
+
+  <!-- Favicon -->
+  <link href="../assets/images/favicon.ico" rel="shortcut icon" type="image/x-icon">
+  <link href="../assets/images/webclip.png" rel="apple-touch-icon">
+</head>
+<body>
+  <div id="trtb" class="page-wrapper">
+    <div data-animation="default" class="navbar w-variant-5639baf4-9975-3636-61ef-0b730048b257 w-nav" data-easing2="ease" data-easing="ease" data-collapse="medium" role="banner" data-duration="400" id="nav">
+      <div class="navbar-continer w-container">
+        <div class="nav-item-wrap">
+          <a href="../index.html" class="brand w-nav-brand"><img src="../assets/images/rh-horizontal-white.svg" loading="eager" alt="" class="nav-brand-logo one"><img src="../assets/images/logo_white.svg" loading="lazy" alt="" class="nav-brand-logo two"></a>
+          <nav role="navigation" class="navigation w-nav-menu">
+            <a href="../index.html" class="nav-link w-nav-link">Home</a>
+            <div data-hover="false" data-delay="300" class="uui-navbar01_menu-dropdown w-dropdown">
+              <div class="uui-navbar01_dropdown-toggle w-dropdown-toggle">
+                <div class="uui-dropdown-icon w-embed"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg></div>
+                <div class="nav-link padding-right-0-25">Platform</div>
+              </div>
+              <nav class="uui-navbar01_dropdown-list w-dropdown-list">
+                <div class="uui-navbar01_container">
+                  <div class="uui-navbar01_dropdown-content">
+                    <div class="uui-navbar01_dropdown-content-left is-platform">
+                      <div class="uui-navbar01_dropdown-link-list">
+                        <h4 class="uui-navbar01_heading text-color-white">Platform</h4>
+                        <a href="../learn-more.html" class="uui-navbar01_dropdown-link w-inline-block">
+                          <div class="uui-navbar01_icon-wrapper"><img src="../assets/images/logo-white.svg" loading="lazy" alt="Bi White logo" class="icon-xsmall"></div>
+                          <div class="uui-navbar01_item-right">
+                            <div class="uui-navbar01_item-heading">Reporting Hub</div>
+                            <div class="uui-text-size-small hide-mobile-landscape">Custom-branded Power BI reporting delivery for teams and analytics clients</div>
+                          </div>
+                        </a>
+                      </div>
+                      <div class="uui-navbar01_dropdown-link-list is-bottom">
+                        <h4 class="uui-navbar01_heading opacity-0">Company</h4>
+                        <a href="../bi-genius.html" class="uui-navbar01_dropdown-link w-inline-block">
+                          <div class="uui-navbar01_icon-wrapper"><img src="../assets/images/new-bi-megamenu-logo-white.svg" loading="lazy" alt="Power Bi Megamenu white logo" class="icon-xsmall small"></div>
+                          <div class="uui-navbar01_item-right">
+                            <div class="uui-navbar01_item-heading">BI Genius</div>
+                            <div class="uui-text-size-small hide-mobile-landscape">Add-on fully customizable AI agents that drive insights with full transparency and control</div>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                    <div class="uui-navbar01_dropdown-content-right">
+                      <div class="uui-navbar01_dropdown-content-wrapper">
+                        <div class="blog-items-wrapper">
+                          <h4 class="uui-navbar01_dropdown-content-heading text-color-white">Latest from our blog</h4>
+                          <a href="../blog.html" class="uui-button-link is-button-xsmall w-inline-block">
+                            <div class="color_primary">See all posts ➝</div>
+                          </a>
+                        </div>
+                        <div class="w-dyn-list">
+                          <div role="list" class="uui-navbar01_dropdown-blog-list w-dyn-items"><div role="listitem" class="w-dyn-item">
+                              <a href="../blog/embedded-analytics-meets-generative-ai-how-saas-teams-monetize-bi-in-2025.html" class="uui-navbar01_blog-item w-inline-block">
+                                <div class="uui-navbar01_blog-image-wrapper"><img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/69600be56fa30d9d91a5f337_Embedded%20Analytics%20Meets%20Generative%20AI%20How%20SaaS%20Teams%20Monetize%20BI%20in%202025.png" loading="eager" alt="" class="uui-navbar01_blog-image"></div>
+                                <div class="uui-navbar01_large-item-content">
+                                  <div class="uui-navbar01_item-heading">Embedded Analytics Meets Generative AI: How SaaS Teams Monetize BI in 2026</div>
+                                  <div class="uui-navbar01_item-button-wrapper">
+                                    <div class="uui-button-row">
+                                      <div class="uui-button-link is-button-xsmall">
+                                        <div class="color_primary">Learn More ➝</div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </a>
+                            </div><div role="listitem" class="w-dyn-item">
+                              <a href="../blog/fabric-vs-power-bi-premium.html" class="uui-navbar01_blog-item w-inline-block">
+                                <div class="uui-navbar01_blog-image-wrapper"><img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/6961652bcf02c04b7b0edbe3_Fabric%20vs.%20Power%20BI%20Premium%20-%20Reddit.avif" loading="eager" alt="" class="uui-navbar01_blog-image"></div>
+                                <div class="uui-navbar01_large-item-content">
+                                  <div class="uui-navbar01_item-heading">Fabric vs. Power BI Premium</div>
+                                  <div class="uui-navbar01_item-button-wrapper">
+                                    <div class="uui-button-row">
+                                      <div class="uui-button-link is-button-xsmall">
+                                        <div class="color_primary">Learn More ➝</div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </a>
+                            </div><div role="listitem" class="w-dyn-item">
+                              <a href="../blog/how-to-structure-a-multi-tenant-analytics-delivery-system-without-rebuilding-everything.html" class="uui-navbar01_blog-item w-inline-block">
+                                <div class="uui-navbar01_blog-image-wrapper"><img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/69b03e0ca76a82d19058f954_Structure%20a%20Multi-Tenant%20Analytics%20Delivery.jpg" loading="eager" alt="" class="uui-navbar01_blog-image"></div>
+                                <div class="uui-navbar01_large-item-content">
+                                  <div class="uui-navbar01_item-heading">How to Structure a Multi-Tenant Analytics Delivery System Without Rebuilding Everything</div>
+                                  <div class="uui-navbar01_item-button-wrapper">
+                                    <div class="uui-button-row">
+                                      <div class="uui-button-link is-button-xsmall">
+                                        <div class="color_primary">Learn More ➝</div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </a>
+                            </div></div>
+                          
+                        </div>
+                      </div>
+                      <div class="uui-navbar01_dropdown-right-overlay-absolute"></div>
+                    </div>
+                  </div>
+                </div>
+              </nav>
+            </div>
+            <a href="../pricing.html" class="nav-link w-nav-link">Pricing</a>
+            <a href="../aaas.html" class="nav-link w-nav-link">AaaS Platform</a>
+            <div data-hover="false" data-delay="300" class="uui-navbar01_menu-dropdown w-dropdown">
+              <div class="uui-navbar01_dropdown-toggle w-dropdown-toggle">
+                <div class="uui-dropdown-icon w-embed"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg></div>
+                <div class="nav-link padding-right-0-25">Learn</div>
+              </div>
+              <nav class="uui-navbar01_dropdown-list w-dropdown-list">
+                <div class="uui-navbar01_container">
+                  <div class="uui-navbar01_dropdown-content">
+                    <div class="nav-items">
+                      <h4 class="uui-navbar01_heading large text-color-white">Learn</h4>
+                      <div class="uui-navbar01_dropdown-content-left">
+                        <div class="uui-navbar01_dropdown-link-list">
+                          <a href="https://docs.thereportinghub.com/?_gl=1*11en80c*_gcl_au*MjEyNTAwMzM0MC4xNzYwMDIyNzYzLjE5Nzk0NzY1MjguMTc2MjEwODgzNS4xNzYyMTA4ODM1*_ga*MzgyNDA3NDAxLjE3NjAwMjI3NjM." target="_blank" class="uui-navbar01_dropdown-link w-inline-block">
+                            <div class="uui-navbar01_icon-wrapper"><img src="../assets/images/Knowledge-Centre_icon.png" loading="lazy" alt="" class="nav-image"></div>
+                            <div class="uui-navbar01_item-right">
+                              <div class="uui-navbar01_item-heading">Knowledge Center<br></div>
+                              <div class="uui-text-size-small hide-mobile-landscape">All the information you need to master B.I. delivery</div>
+                            </div>
+                          </a>
+                          <a href="../community.html" class="uui-navbar01_dropdown-link is-auto w-inline-block">
+                            <div class="uui-navbar01_icon-wrapper"><img src="../assets/images/About-Us_icon-1.png" loading="lazy" alt="" class="nav-image"></div>
+                            <div class="uui-navbar01_item-right">
+                              <div class="uui-navbar01_item-heading">Community</div>
+                              <div class="uui-text-size-small hide-mobile-landscape">Connect and collaborate with active users</div>
+                            </div>
+                          </a>
+                        </div>
+                        <div class="uui-navbar01_dropdown-link-list">
+                          <h4 class="uui-navbar01_heading opacity-0">Company</h4>
+                          <a href="https://docs.thereportinghub.com/getting-started/deployment-step-by-step/self-serve-guided-install?_gl=1*1nvpg97*_gcl_au*MjEyNTAwMzM0MC4xNzYwMDIyNzYzLjE5Nzk0NzY1MjguMTc2MjEwODgzNS4xNzYyMTA4ODM1*_ga*MzgyNDA3NDAxLjE3NjAwMjI3NjM." target="_blank" class="uui-navbar01_dropdown-link w-inline-block">
+                            <div class="uui-navbar01_icon-wrapper"><img src="../assets/images/Getting-Started_icon.png" loading="lazy" alt="" class="nav-image"></div>
+                            <div class="uui-navbar01_item-right">
+                              <div class="uui-navbar01_item-heading">Getting Started</div>
+                              <div class="uui-text-size-small hide-mobile-landscape">Step-by-step guides to get started with the Reporting Hub<br></div>
+                            </div>
+                          </a>
+                          <a href="https://www.youtube.com/@thereportinghub" class="uui-navbar01_dropdown-link is-auto w-inline-block">
+                            <div class="uui-navbar01_icon-wrapper"><img src="../assets/images/Video-Demos_icon.png" loading="lazy" alt="" class="nav-image"></div>
+                            <div class="uui-navbar01_item-right">
+                              <div class="uui-navbar01_item-heading">Video Demos</div>
+                              <div class="uui-text-size-small hide-mobile-landscape">Our YouTube channel with helpful video demos</div>
+                            </div>
+                          </a>
+                        </div>
+                        <div id="w-node-a91421d3-b46b-1701-6a19-a49d5ae9c96d-17890035" class="uui-navbar01_dropdown-link-list flex">
+                          <h4 class="uui-navbar01_heading opacity-0 none">Company</h4>
+                          <a href="../resources.html" class="uui-navbar01_dropdown-link w-inline-block">
+                            <div class="uui-navbar01_icon-wrapper"><img src="../assets/images/Resources.png" loading="lazy" alt="" class="nav-image"></div>
+                            <div class="uui-navbar01_item-right">
+                              <div class="uui-navbar01_item-heading">Resources</div>
+                              <div class="uui-text-size-small hide-mobile-landscape">Videos, white papers, and assets about Reporting Hub</div>
+                            </div>
+                          </a>
+                          <a href="https://support.thereportinghub.com/support/home" target="_blank" class="uui-navbar01_dropdown-link is-auto w-inline-block">
+                            <div class="uui-navbar01_icon-wrapper"><img src="../assets/images/Get-Help_icon.png" loading="lazy" alt="" class="nav-image"></div>
+                            <div class="uui-navbar01_item-right">
+                              <div class="uui-navbar01_item-heading">Get Help</div>
+                              <div class="uui-text-size-small hide-mobile-landscape">Our Support team is here to help</div>
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+                      <div class="uui-navbar01_dropdown-content-left pt-0">
+                        <div class="uui-navbar01_dropdown-link-list one-item">
+                          <h4 class="uui-navbar01_heading large text-color-white">Services</h4>
+                          <a href="../partners.html" class="uui-navbar01_dropdown-link w-inline-block">
+                            <div class="uui-navbar01_icon-wrapper"><img src="../assets/images/Knowledge-Centre_icon.png" loading="lazy" alt="" class="nav-image"></div>
+                            <div class="uui-navbar01_item-right">
+                              <div class="uui-navbar01_item-heading">Partner Programs<br></div>
+                              <div class="uui-text-size-small hide-mobile-landscape">Find or become a Reporting Hub Partner</div>
+                            </div>
+                          </a>
+                        </div>
+                        <div class="uui-navbar01_dropdown-link-list is-bottom">
+                          <h4 class="uui-navbar01_heading opacity-0">Company</h4>
+                          <a href="../professionalservices.html" class="uui-navbar01_dropdown-link w-inline-block">
+                            <div class="uui-navbar01_icon-wrapper"><img src="../assets/images/Professional-Services_icon.png" loading="lazy" alt="" class="nav-image"></div>
+                            <div class="uui-navbar01_item-right">
+                              <div class="uui-navbar01_item-heading">Professional Services</div>
+                              <div class="uui-text-size-small hide-mobile-landscape">Get premium support from our team of experts</div>
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="uui-navbar01_dropdown-content-right">
+                      <div class="uui-navbar01_dropdown-content-wrapper">
+                        <div class="blog-items-wrapper">
+                          <h4 class="uui-navbar01_dropdown-content-heading text-color-white">Latest from our blog</h4>
+                          <a href="../blog.html" class="uui-button-link is-button-xsmall w-inline-block">
+                            <div class="color_primary">See all posts ➝</div>
+                          </a>
+                        </div>
+                        <div class="w-dyn-list">
+                          <div role="list" class="uui-navbar01_dropdown-blog-list w-dyn-items"><div role="listitem" class="w-dyn-item">
+                              <a href="../blog/embedded-analytics-meets-generative-ai-how-saas-teams-monetize-bi-in-2025.html" class="uui-navbar01_blog-item w-inline-block">
+                                <div class="uui-navbar01_blog-image-wrapper"><img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/69600be56fa30d9d91a5f337_Embedded%20Analytics%20Meets%20Generative%20AI%20How%20SaaS%20Teams%20Monetize%20BI%20in%202025.png" loading="eager" alt="" class="uui-navbar01_blog-image"></div>
+                                <div class="uui-navbar01_large-item-content">
+                                  <div class="uui-navbar01_item-heading">Embedded Analytics Meets Generative AI: How SaaS Teams Monetize BI in 2026</div>
+                                  <div class="uui-navbar01_item-button-wrapper">
+                                    <div class="uui-button-row">
+                                      <div class="uui-button-link is-button-xsmall">
+                                        <div class="color_primary">Learn More ➝</div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </a>
+                            </div><div role="listitem" class="w-dyn-item">
+                              <a href="../blog/fabric-vs-power-bi-premium.html" class="uui-navbar01_blog-item w-inline-block">
+                                <div class="uui-navbar01_blog-image-wrapper"><img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/6961652bcf02c04b7b0edbe3_Fabric%20vs.%20Power%20BI%20Premium%20-%20Reddit.avif" loading="eager" alt="" class="uui-navbar01_blog-image"></div>
+                                <div class="uui-navbar01_large-item-content">
+                                  <div class="uui-navbar01_item-heading">Fabric vs. Power BI Premium</div>
+                                  <div class="uui-navbar01_item-button-wrapper">
+                                    <div class="uui-button-row">
+                                      <div class="uui-button-link is-button-xsmall">
+                                        <div class="color_primary">Learn More ➝</div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </a>
+                            </div><div role="listitem" class="w-dyn-item">
+                              <a href="../blog/how-to-structure-a-multi-tenant-analytics-delivery-system-without-rebuilding-everything.html" class="uui-navbar01_blog-item w-inline-block">
+                                <div class="uui-navbar01_blog-image-wrapper"><img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/69b03e0ca76a82d19058f954_Structure%20a%20Multi-Tenant%20Analytics%20Delivery.jpg" loading="eager" alt="" class="uui-navbar01_blog-image"></div>
+                                <div class="uui-navbar01_large-item-content">
+                                  <div class="uui-navbar01_item-heading">How to Structure a Multi-Tenant Analytics Delivery System Without Rebuilding Everything</div>
+                                  <div class="uui-navbar01_item-button-wrapper">
+                                    <div class="uui-button-row">
+                                      <div class="uui-button-link is-button-xsmall">
+                                        <div class="color_primary">Learn More ➝</div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </a>
+                            </div></div>
+                          
+                        </div>
+                      </div>
+                      <div class="uui-navbar01_dropdown-right-overlay-absolute"></div>
+                    </div>
+                  </div>
+                </div>
+              </nav>
+            </div>
+            <a href="../demo.html" class="nav-link w-nav-link">Demo</a>
+            <a href="../install-today.html" class="nav-link w-nav-link">Install</a>
+            <a href="../about-us.html" class="nav-link w-nav-link">About Us</a>
+            <a href="../contact.html" class="nav-link w-nav-link">Contact Us</a>
+          </nav>
+          <div class="menu-button w-nav-button">
+            <div class="w-icon-nav-menu"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="main">
+      <section class="section blog-hero">
+        <div class="w-layout-blockcontainer container w-container">
+          <div class="blog-hero-contents">
+            <div class="blog-hero-left"><img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/6941a4cf7550fa5b8c561c60_blogimg13.webp" loading="lazy" alt="" class="human-centered-image"></div>
+            <div>
+              <h1 class="heading-2">Should You Migrate to Microsoft Fabric? A Non-Technical Perspective for BI</h1>
+              <a href="../https://thereportinghub.com/author/brian-d" class="writer-image-wrap w-inline-block"><img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/69402fd5bced9202fb52a58e_Author%20BrianDeLuca.webp" loading="lazy" alt="" class="writer-image">
+                <div class="text-color-gray">Brian DeLuca</div>
+              </a>
+              <div>
+                <div class="space-1"></div>
+                <div class="text-color-gray">January 30, 2026</div>
+                <div class="space-1"></div>
+                <div class="time-icon"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFoAAABaCAYAAAA4qEECAAAACXBIWXMAAAsTAAALEwEAmpwYAAAD8klEQVR4nO2dSWsVQRDHC4wbil7VCCLiF4h6UjGIelUPKrhhNHpJIG7BqzeXUwj4NeJ2UPQDCBKNmosX9eKCZvVkBONPirTwxPdetl5qZvoH7zLMTHf9mdfTVV1dI5LJZDKZTCaTyWQymbkBLAF2AOeA28A94A3wDhgHfrrfuDv2xp1zy12zXe8xx+aqBbARuAg8BL6zeCaBB0AP0CpVBlgJnAKeAtOE4xfwBDgJrJCqAKx2T9on4vMNuA6slbICLAV6gTHSo324on2SMgHsBoaxx1tgnxQdHROBO8BvD6JMuadwnftddccWi/atH1guRQTYCrzEH1fqtKFDkS8GgS1SJPTv6GmaVsu6Ou2sxy86LdwrRQA4DPzwLABN2vONOkPHxDLAhVBzYmncZgjUhvNiEeCQcw6CII3bJaDYR8USOq55mgE0pEnbIdFh5IAYml34fvH9R5P2QzOZfDaic0/gRQRjadKHGAwmnWc7ZyQK0rgPseiPq+6/brUPj29ONOlHLNTWPbFFbgFeRzQSA0Lj4jXxAlGeXd8iCa1cihlPHq2w0KOqQQyhryUwDkNC1w1whQh7fk5hmdgS+osuxYUU+nQiwzAmtHI8pNC6kJoEsSf0o1Ait4YMGhVQ6OkgqQwu7yIZYk9opTuE0JrckgyxKfRAiDStiZQWiU2hJ7ymn7lcuKSITaGVbT6F7kxtjdgVusOn0JrVmRSxK/QNn0LfT22N2BXa3wsxdki0YEIP+RT6w0LTt7x1ogGk5734YgFh0bDRrRpIz4j4wi27z4fgT/JfSM+UJBR6vbfGZ4GSCT3foaPXW+OzQMmGjoW8DHtjPNmU7GWYfHpnmKFSOSyGGSiVC24Yry647kjN1OdMqcKkhmkrVeDfKH4D/05s3VudCbmU5YTWbcWZf+kKIfSGlOkGBvkVLKbjqgRkQibQOKG17EMmQkrYikTlH6wRNskxVRK6QS4HFdkJvUpDg1SX0SiJ6E5sXQ+sKj1RRK7ZLPSK6jEcvWoNsCvm9jcDxN/+ViO2Vm6pCn1JRK7Zoqzbd8vOc2BZMqGd2FvcxvQyR+g2iwWA9hBVZwygaRb7xRLAwZIFnaaBI2IRLY8TuPxlLPSB6RTLuJI/RR5GpsyV+Jml9M9kQV987VIkgE3AM4rDYPKSPoucZ/cb9yC1b33J58ke3fXX2EP7tFPKBDOBqEtGQqwjbrG5RcoKM/FsNfJjAoG/ukLda6QqMLMsdgJ4HNjR0Xs/0jW+SpWer4ermtsN3HVfo1gs4+5eXTG3eRQKZtLP2oCzwE3NBtIcZPcpkLGaz4OMuWND7hw9t8Ndmz8PkslkMplMJpPJZDIyR/4AHP79tg/mkAIAAAAASUVORK5CYII=" alt="Clock" class="icon-gray">
+                  <div class="text-color-gray">8 minutes</div>
+                </div>
+                <div class="space-1-5"></div>
+                <div class="text-color-gray">Subscribe to our blog to stay up to date on all the latest information from the Reporting Hub team! We’ll never share your email with anyone else.</div>
+                <div class="code-embed-9 w-embed w-script">
+                  <script charset="utf-8" type="text/javascript" src="https://js.hsforms.net/forms/embed/v2.js"></script>
+                  <div class="custom_hbs_form paidsearchpage blog-email-only">
+                    <script>
+    hbspt.forms.create({
+      portalId: "44531319",
+      formId: "a2f8d2cb-1390-4014-a681-a1c3a2b62e28",
+      region: "na1",
+      onFormReady: function ($form) {
+        var $captcha = $form.find('.hs_recaptcha');
+        var $submit  = $form.find('.hs_submit');
+        // 1) reCAPTCHA uvijek ispod submit-a
+        if ($captcha.length && $submit.length) {
+          $captcha.insertAfter($submit);
+        }
+        // 2) Email input uvijek prazan (ubij autofill)
+        var $email = $form.find('input[type="email"], input[name="email"], .hs-input[type="email"]').first();
+        if ($email.length) {
+          $email.attr('autocomplete', 'off');
+          $email.attr('autocapitalize', 'off');
+          $email.attr('autocorrect', 'off');
+          $email.attr('spellcheck', 'false');
+          function clearEmail() { $email.val(''); }
+          clearEmail();
+          setTimeout(clearEmail, 50);
+          setTimeout(clearEmail, 200);
+          setTimeout(clearEmail, 600);
+          setTimeout(clearEmail, 1200);
+        }
+      }
+    });
+  </script>
+                  </div>
+                  <style>
+/* ===== BLOG EMAIL ONLY STYLING ===== */
+/* HUBSPOT parent reset – bez ovoga input nece biti 100% */
+.custom_hbs_form.blog-email-only .hs-form,
+.custom_hbs_form.blog-email-only .hs-form fieldset,
+.custom_hbs_form.blog-email-only .hs-form .form-columns-1,
+.custom_hbs_form.blog-email-only .hs-form .form-columns-2,
+.custom_hbs_form.blog-email-only .hs-form .hs-form-field,
+.custom_hbs_form.blog-email-only .hs-form .input {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  box-sizing: border-box !important;
+}
+/* Input wrapper bez dodatnog razmaka */
+.custom_hbs_form.blog-email-only .hs-form-field .input {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+/* Email input – 100% + bez crnog bordera */
+.custom_hbs_form.blog-email-only .hs-input,
+.custom_hbs_form.blog-email-only input[type="email"]{
+  width: 100% !important;
+  display: block !important;
+  box-sizing: border-box !important;
+  min-height: 56px !important;
+  padding: 14px 16px !important;
+  font-size: 1rem !important;
+  line-height: 1.2 !important;
+  border: 0 !important;               /* skida crni border */
+  box-shadow: none !important;
+  outline: none !important;
+  border-radius: 6px !important;
+  background: #ffffff !important;
+}
+/* (opciono) lijep focus */
+.custom_hbs_form.blog-email-only .hs-input:focus,
+.custom_hbs_form.blog-email-only input[type="email"]:focus {
+  border: 1px solid rgba(23,142,232,.6) !important;
+}
+/* Submit button: duze + plavo */
+.custom_hbs_form.blog-email-only .hs_submit input[type="submit"]{
+  width: 100% !important;
+  display: block !important;
+  background: #178EE8 !important;
+  border-color: #178EE8 !important;
+  color: #fff !important;
+  margin-top: 16px !important;
+  padding: 1.05rem 1rem !important;
+  border-radius: 6px !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+  opacity: 1 !important;
+}
+/* reCAPTCHA spacing */
+.custom_hbs_form.blog-email-only .hs_recaptcha{
+  margin-top: 0.75rem !important;
+}
+/* Error uvijek u flow-u i tik ispod */
+.custom_hbs_form.blog-email-only .hs-error-msgs,
+.custom_hbs_form.blog-email-only .hs-error-msgs li,
+.custom_hbs_form.blog-email-only .hs-error-msg {
+  position: relative !important;
+  z-index: 0 !important;
+  display: block !important;
+  margin: 4px 0 0 !important;
+  padding: 0 !important;
+  line-height: 1.15 !important;
+  white-space: normal !important;
+  overflow-wrap: anywhere !important;
+  top: auto !important;
+  left: auto !important;
+  right: auto !important;
+  bottom: auto !important;
+}
+</style>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section blog-elements">
+        <div class="w-layout-blockcontainer container w-container">
+          <div class="single-blog-contents-wrapper">
+            <div fc-toc="wrapper" class="post-content-wrapper"><button class="blog-post_open-toc-button">
+                <div class="circle"></div>
+              </button>
+              <div fc-toc="content" class="w-richtext"><p>Business intelligence often involves managing multiple tools, which can lead to delays, confusion, and missed opportunities. Microsoft Fabric consolidates the entire analytics lifecycle – data integration, storage, transformation, and visualization into one platform. Teams can harness Power BI dashboards, AI capabilities, and automated pipelines within a unified environment, making insights accessible, accurate, and actionable for everyone across the organization.</p><p>‍</p><figure class="w-richtext-figure-type-image w-richtext-align-floatleft" style="max-width:50%" data-rt-type="image" data-rt-align="floatleft" data-rt-max-width="50%"><div><img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/6947c82cba8cd19b0872cd14_What-Is-Microsoft-Fabric-in-Business-Intelligence-1024x1024.webp" loading="lazy" alt="__wf_reserved_inherit" width="auto" height="auto"></div></figure><h3>What Is Microsoft Fabric in Business Intelligence?</h3><p>Microsoft Fabric is a comprehensive business intelligence solution that aggregates the entire data lifecycle into one complete and compelling solution.</p><p>In short, organizations can pull their data from both cloud services and on-premises applications, as well as industry extensions, take that data, and store it in OneLake. Fabric’s unified logical data lake is built on Azure Data Lake Storage Gen2 (ADLS Gen2).</p><p>This creates a single source of truth across the organization, making it easier to trust and share data.</p><p>‍</p><p>‍</p><p>‍</p><p>‍</p><h3>How Microsoft Fabric Transforms BI Approach</h3><p>Microsoft Fabric simplifies data management by linking tools and sources together. Leaders no longer waste time gathering information; they can focus on insights and decisions, confident that the data is consistent and up-to-date.</p><div data-rt-embed-type="true"><div class="bloglist-fabricimpact-cm1147">
+
+  <!-- Card 1 -->
+  <div class="bloglist-fabricimpact-cm1147__card">
+    <div class="bloglist-fabricimpact-cm1147__icon">
+      <img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/6947fb41179c7c7383eb0fad_Icon-for-Should-You-Migrate-to-Microsoft-Fabric-A-Non-Technical-Perspective-for-BI-34.webp" alt="">
+    </div>
+    <div class="bloglist-fabricimpact-cm1147__content">
+      <div class="bloglist-fabricimpact-cm1147__title">
+        Impact on collaboration between data teams and stakeholders
+      </div>
+      <div class="bloglist-fabricimpact-cm1147__text">
+        One of the biggest challenges in BI is the divide between technical teams and business stakeholders. Fabric closes that gap by standardizing how the source of truth data is stored, prepared, and shared. Analysts can build models and reports once, and business users can explore the models and reports interactively without any need to export or double work. It eliminates confusion, silos, and creates a stronger collaborative culture.
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 2 -->
+  <div class="bloglist-fabricimpact-cm1147__card">
+    <div class="bloglist-fabricimpact-cm1147__icon">
+      <img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/6947fb396c1d9a052e53d74b_Icon-for-Should-You-Migrate-to-Microsoft-Fabric-A-Non-Technical-Perspective-for-BI-33.webp" alt="">
+    </div>
+    <div class="bloglist-fabricimpact-cm1147__content">
+      <div class="bloglist-fabricimpact-cm1147__title">
+        How it streamlines reporting and insights delivery
+      </div>
+      <div class="bloglist-fabricimpact-cm1147__text">
+        In the BI world, people traditionally wait for reports to be compiled and checked, and to be sent. With Fabric, dashboards can be refreshed in real time, and insights can be delivered to recipients inside the tools they are already using (like Power BI). In other words, we are no longer sending out static reports that go out of date quickly; instead, decision-makers get a live report.
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 3 -->
+  <div class="bloglist-fabricimpact-cm1147__card">
+    <div class="bloglist-fabricimpact-cm1147__icon">
+      <img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/6947fb2ee8a0dd4efbf40b85_Icon-for-Should-You-Migrate-to-Microsoft-Fabric-A-Non-Technical-Perspective-for-BI-32.webp" alt="">
+    </div>
+    <div class="bloglist-fabricimpact-cm1147__content">
+      <div class="bloglist-fabricimpact-cm1147__title">
+        Role in modern BI adoption
+      </div>
+      <div class="bloglist-fabricimpact-cm1147__text">
+        Moving to Fabric is more than a technical transition; it’s a fundamental change in the way organizations think about analytics. Teams move away from exporting spreadsheets and sharing slide decks, and move to a more interactive, visual, and collaborative way of being together with data. With built-in AI, automation, and governance, Fabric reduces the barriers to BI adoption by meeting users where they are, with tools that are intuitive and will scale with the future.
+      </div>
+    </div>
+  </div>
+
+</div>
+<style>
+/* ===== Section Wrapper (100% fluid) ===== */
+.bloglist-fabricimpact-cm1147 {
+  width: 100%;
+  padding: 20px 0;
+}
+
+/* Card */
+.bloglist-fabricimpact-cm1147__card {
+  display: flex;
+  gap: 18px;
+  padding: 22px 24px;
+  margin-bottom: 18px;
+  border-radius: 14px;
+  background:#e4eef7;
+	  align-items: flex-start;
+}
+
+/* Icon */
+.bloglist-fabricimpact-cm1147__icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bloglist-fabricimpact-cm1147__icon img {
+  width:50px;
+  height: 50px;
+	max-width: 50px;
+}
+
+/* Content */
+.bloglist-fabricimpact-cm1147__content {
+  flex: 1;
+}
+
+/* Title */
+.bloglist-fabricimpact-cm1147__title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #007bff;
+}
+
+/* Text */
+.bloglist-fabricimpact-cm1147__text {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #333;
+}
+.human-centered-image {
+    height: auto;
+}
+
+
+
+/* Mobile */
+@media (max-width: 768px) {
+  .bloglist-fabricimpact-cm1147__card {
+    align-items: flex-start;
+  }
+}
+</style></div><p>‍</p><p>‍</p><h3>Where Microsoft Fabric Fits in Your BI Roadmap</h3><p>Microsoft Fabric is suited for organizations that want scalability, faster performance, and decreased complexity when dealing with complicated data. Organizations that are stitching together a few tools, drowning in siloed data sources, and wanting to modernize old stack systems that are non-functional will benefit from the migration to Fabric. Fabric creates a single source of truth for data into OneLake that will grow as the organization’s needs change.</p><p>‍</p><figure class="w-richtext-figure-type-image w-richtext-align-floatleft" style="max-width:50%" data-rt-type="image" data-rt-align="floatleft" data-rt-max-width="50%"><div><img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/6947c9a26601956bb558a6a0_Where-Microsoft-Fabric-Fits-in-Your-BI-Roadmap-1024x1024.webp" loading="lazy" alt="__wf_reserved_inherit" width="auto" height="auto"></div></figure><p><strong>How it fits with existing Microsoft tools</strong></p><p>Fabric does not replace what the organizations are using now, but brings a new level of usability to the existing tools.</p><p>Power BI becomes the visualization layer on top of a single data platform – carving an interactive dashboard to pull directly from OneLake with Direct Lake mode. Excel is still there to help explore the data, while Azure services link and help manage advanced workloads.</p><p>The ecosystem will become a powerful repository with Microsoft tools, but without the friction of disconnected systems.</p><p>‍</p><p>‍</p><p>‍</p><p>‍</p><p>‍</p><h4><strong>Industry examples and use cases:</strong>‍</h4><div data-rt-embed-type="true"><div class="bloglist-industryuse-cm6683">
+
+  <div class="bloglist-industryuse-cm6683__grid">
+
+    <!-- Retail -->
+    <div class="bloglist-industryuse-cm6683__card">
+      <div class="bloglist-industryuse-cm6683__icon">
+        <img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/6947fd9072d09d9a6f1bca2e_Icon-for-Should-You-Migrate-to-Microsoft-Fabric-A-Non-Technical-Perspective-for-BI-30.webp" alt="">
+      </div>
+      <div class="bloglist-industryuse-cm6683__content">
+        <div class="bloglist-industryuse-cm6683__title">Retail:</div>
+        <div class="bloglist-industryuse-cm6683__text">
+          Bring all sales, inventory, and customer information together on a single platform for performance dashboards, giving real-time information.
+        </div>
+      </div>
+    </div>
+
+    <!-- Finance -->
+    <div class="bloglist-industryuse-cm6683__card">
+      <div class="bloglist-industryuse-cm6683__icon">
+        <img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/6947fd87400b09fb5f1d5d5e_Icon-for-Should-You-Migrate-to-Microsoft-Fabric-A-Non-Technical-Perspective-for-BI-29.webp" alt="">
+      </div>
+      <div class="bloglist-industryuse-cm6683__content">
+        <div class="bloglist-industryuse-cm6683__title">Finance:</div>
+        <div class="bloglist-industryuse-cm6683__text">
+          Take advantage of Fabric’s governance and security capabilities for sensitive data and provide senior management with live updates to their portfolio.
+        </div>
+      </div>
+    </div>
+
+    <!-- Manufacturing -->
+    <div class="bloglist-industryuse-cm6683__card">
+      <div class="bloglist-industryuse-cm6683__icon">
+        <img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/6947fd7ede2a6de57b901839_Icon-for-Should-You-Migrate-to-Microsoft-Fabric-A-Non-Technical-Perspective-for-BI-28.webp" alt="">
+      </div>
+      <div class="bloglist-industryuse-cm6683__content">
+        <div class="bloglist-industryuse-cm6683__title">Manufacturing:</div>
+        <div class="bloglist-industryuse-cm6683__text">
+          Merge IoT data streams and reports on production to establish efficiencies and forecast maintenance needs.
+        </div>
+      </div>
+    </div>
+
+    <!-- Healthcare -->
+    <div class="bloglist-industryuse-cm6683__card">
+      <div class="bloglist-industryuse-cm6683__icon">
+        <img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/6947fd73a1a321bf4730682e_Icon-for-Should-You-Migrate-to-Microsoft-Fabric-A-Non-Technical-Perspective-for-BI-27.webp" alt="">
+      </div>
+      <div class="bloglist-industryuse-cm6683__content">
+        <div class="bloglist-industryuse-cm6683__title">Healthcare:</div>
+        <div class="bloglist-industryuse-cm6683__text">
+          Load all patient, operational, and compliance data into a report and present a real view of outcomes.
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<style>
+/* ===== Section Wrapper (100% fluid) ===== */
+.bloglist-industryuse-cm6683 {
+  width: 100%;
+  padding: 30px 0;
+}
+
+/* Grid */
+.bloglist-industryuse-cm6683__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+/* Card */
+.bloglist-industryuse-cm6683__card {
+  background: #fdeff3;
+  border-radius: 14px;
+  padding: 22px 24px;
+  display: flex;
+  gap: 16px;
+	    align-items: flex-start;
+}
+
+/* Icon */
+.bloglist-industryuse-cm6683__icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bloglist-industryuse-cm6683__icon img {
+  width: 50px;
+  height: 50px;
+	max-width: 50px;
+}
+
+/* Content */
+.bloglist-industryuse-cm6683__content {
+  flex: 1;
+}
+
+/* Title */
+.bloglist-industryuse-cm6683__title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #ff4f8b;
+  margin-bottom: 6px;
+}
+
+/* Text */
+.bloglist-industryuse-cm6683__text {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .bloglist-industryuse-cm6683__grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style></div><p>‍</p><h3>Key Features of Microsoft Fabric</h3><div data-rt-embed-type="true"><div class="bloglist-fabricfeatures-cm9054">
+
+  <!-- End-to-End Analytics -->
+  <div class="bloglist-fabricfeatures-cm9054__card">
+    <div class="bloglist-fabricfeatures-cm9054__icon">
+      <img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/694803888fc622a99d1ee0cc_Icon-for-Should-You-Migrate-to-Microsoft-Fabric-A-Non-Technical-Perspective-for-BI-26.webp" alt="">
+    </div>
+    <div class="bloglist-fabricfeatures-cm9054__content">
+      <div class="bloglist-fabricfeatures-cm9054__title">
+        End-to-End Analytics
+      </div>
+      <div class="bloglist-fabricfeatures-cm9054__text">
+        All elements of the data lifecycle-from ingestion, transformation, and visualization housed within one platform for teams to use without cobbling together different tools.
+      </div>
+    </div>
+  </div>
+
+  <!-- Lakehouse Architecture -->
+  <div class="bloglist-fabricfeatures-cm9054__card">
+    <div class="bloglist-fabricfeatures-cm9054__icon">
+      <img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/69480390400b09fb5f1df92b_Icon-for-Should-You-Migrate-to-Microsoft-Fabric-A-Non-Technical-Perspective-for-BI-25.webp" alt="">
+    </div>
+    <div class="bloglist-fabricfeatures-cm9054__content">
+      <div class="bloglist-fabricfeatures-cm9054__title">
+        Lakehouse Architecture
+      </div>
+      <div class="bloglist-fabricfeatures-cm9054__text">
+        This architecture offers the best of data lakes (flexibility) and data warehouses (structured query capabilities) within one solution, providing your organization with a unified environment for both raw and structured data.
+      </div>
+    </div>
+  </div>
+
+  <!-- Power BI Integration -->
+  <div class="bloglist-fabricfeatures-cm9054__card">
+    <div class="bloglist-fabricfeatures-cm9054__icon">
+      <img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/694803977e823c6c93665b02_Icon-for-Should-You-Migrate-to-Microsoft-Fabric-A-Non-Technical-Perspective-for-BI-24.webp" alt="">
+    </div>
+    <div class="bloglist-fabricfeatures-cm9054__content">
+      <div class="bloglist-fabricfeatures-cm9054__title">
+        Power BI Integration
+      </div>
+      <div class="bloglist-fabricfeatures-cm9054__text">
+        Fabric is deeply integrated with Power BI, enabling Direct Lake mode, where Power BI can query OneLake directly without needing data movement. This allows raw data to be transformed into interactive dashboards quickly.
+      </div>
+    </div>
+  </div>
+
+  <!-- Data Factory -->
+  <div class="bloglist-fabricfeatures-cm9054__card">
+    <div class="bloglist-fabricfeatures-cm9054__icon">
+      <img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/6948039ef28f33a78e92d878_Icon-for-Should-You-Migrate-to-Microsoft-Fabric-A-Non-Technical-Perspective-for-BI-23.webp" alt="">
+    </div>
+    <div class="bloglist-fabricfeatures-cm9054__content">
+      <div class="bloglist-fabricfeatures-cm9054__title">
+        Data Factory
+      </div>
+      <div class="bloglist-fabricfeatures-cm9054__text">
+        The built-in data factory creates automated pipelines to clean and move data, all with very little user effort. Your reporting will always receive accurate inputs and timely outputs.
+      </div>
+    </div>
+  </div>
+
+  <!-- Future Proofing -->
+  <div class="bloglist-fabricfeatures-cm9054__card">
+    <div class="bloglist-fabricfeatures-cm9054__icon">
+      <img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/694803a536982ec06565173b_Icon-for-Should-You-Migrate-to-Microsoft-Fabric-A-Non-Technical-Perspective-for-BI-22.webp" alt="">
+    </div>
+    <div class="bloglist-fabricfeatures-cm9054__content">
+      <div class="bloglist-fabricfeatures-cm9054__title">
+        Future Proofing
+      </div>
+      <div class="bloglist-fabricfeatures-cm9054__text">
+        Fabric runs on Azure’s elastic infrastructure, which allows organizations to scale with business needs. Costs are managed through Fabric capacity SKUs, providing predictable pricing models based on chosen capacity tiers
+      </div>
+    </div>
+  </div>
+
+</div>
+<style>
+/* ===== Section Wrapper (100% fluid) ===== */
+.bloglist-fabricfeatures-cm9054 {
+  width: 100%;
+  padding: 20px 0;
+}
+
+/* Card */
+.bloglist-fabricfeatures-cm9054__card {
+  display: flex;
+  gap: 18px;
+  padding: 22px 24px;
+  margin-bottom: 18px;
+  border-radius: 14px;
+  background: linear-gradient(90deg, #eef7fb 0%, #f4f1fb 100%);
+}
+
+/* Icon */
+.bloglist-fabricfeatures-cm9054__icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bloglist-fabricfeatures-cm9054__icon img {
+  width:50px;
+  height:50px;
+}
+
+/* Content */
+.bloglist-fabricfeatures-cm9054__content {
+  flex: 1;
+}
+
+/* Title */
+.bloglist-fabricfeatures-cm9054__title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #1a33ff;
+}
+
+/* Text */
+.bloglist-fabricfeatures-cm9054__text {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .bloglist-fabricfeatures-cm9054__card {
+    align-items: flex-start;
+  }
+}
+</style></div><figure class="w-richtext-figure-type-image w-richtext-align-fullwidth" style="max-width:1024px" data-rt-type="image" data-rt-align="fullwidth" data-rt-max-width="1024px"><div><img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/694804a38cdab9ed6524764c_What-to-Watch-Out-for-When-Migrating-to-Microsoft-Fabric-2-1024x572.webp" loading="lazy" alt="__wf_reserved_inherit" width="auto" height="auto"></div></figure><p>‍</p><h3>Why Businesses Consider Migrating to Microsoft Fabric</h3><div data-rt-embed-type="true"><div class="bloglist-fabricbenefits-cm7816">
+
+  <!-- Cost Efficiency -->
+  <div class="bloglist-fabricbenefits-cm7816__card">
+    <div class="bloglist-fabricbenefits-cm7816__icon">
+      <img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/694805fe6a9a8de4104ad834_Icon-for-Should-You-Migrate-to-Microsoft-Fabric-A-Non-Technical-Perspective-for-BI-20.webp" alt="">
+    </div>
+    <div class="bloglist-fabricbenefits-cm7816__content">
+      <div class="bloglist-fabricbenefits-cm7816__title">
+        Cost Efficiency via Consolidation
+      </div>
+      <div class="bloglist-fabricbenefits-cm7816__text">
+        Often running analytics means going through many tools for storage, transformation, and reporting. Companies can save money through license and infrastructure consolidation, simplifying operations. With all data on one platform, teams save time not having to maintain so many systems, and can better focus on delivering the analytics.
+      </div>
+    </div>
+  </div>
+
+  <!-- Governance -->
+  <div class="bloglist-fabricbenefits-cm7816__card">
+    <div class="bloglist-fabricbenefits-cm7816__icon">
+      <img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/69480608607da6c5b72a09a9_Better-Governance-and-Data-Security.webp" alt="">
+    </div>
+    <div class="bloglist-fabricbenefits-cm7816__content">
+      <div class="bloglist-fabricbenefits-cm7816__title">
+        Better Governance and Data Security
+      </div>
+      <div class="bloglist-fabricbenefits-cm7816__text">
+        It is hard to enforce governance policies on multiple tools with data being everywhere. Fabric centralizes governance by integrating with Microsoft Purview and using OneLake as the single storage layer.
+      </div>
+      <div class="bloglist-fabricbenefits-cm7816__text">
+        Access controls are managed through Microsoft Entra ID (Azure Active Directory), ensuring consistent policies across the environment, making it easier to enforce consistent policies, mitigate risk of data leaks, and remain in compliance with regulations applicable to the enforcement of data policies.
+      </div>
+      <div class="bloglist-fabricbenefits-cm7816__text">
+        For organizations sharing analytics with clients, the ability to provide a secure separation of environments represents a significant benefit.
+      </div>
+    </div>
+  </div>
+
+  <!-- Faster Deployment -->
+  <div class="bloglist-fabricbenefits-cm7816__card">
+    <div class="bloglist-fabricbenefits-cm7816__icon">
+      <img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/6948061171296e600dc40e3c_Icon-for-Should-You-Migrate-to-Microsoft-Fabric-A-Non-Technical-Perspective-for-BI-19.webp" alt="">
+    </div>
+    <div class="bloglist-fabricbenefits-cm7816__content">
+      <div class="bloglist-fabricbenefits-cm7816__title">
+        Faster Deployment of BI Projects
+      </div>
+      <div class="bloglist-fabricbenefits-cm7816__text">
+        Creating pipelines and dashboards in multiple platforms slows down timelines, where business users are not receiving their insights as quickly as they want.
+      </div>
+      <div class="bloglist-fabricbenefits-cm7816__text">
+        Because Fabric’s services encompass movement of data, data storage, data transformation, and data visualizations available as one service, it speeds the entire project timeline.
+      </div>
+      <div class="bloglist-fabricbenefits-cm7816__text">
+        Fabric uses automated data flows and fully end-to-end integrated pipelines (eliminates handoff of data), enabling teams to deliver BI projects much faster, meaning business users can act on their insights even faster.
+      </div>
+    </div>
+  </div>
+
+  <!-- Analytics Differentiator -->
+  <div class="bloglist-fabricbenefits-cm7816__card">
+    <div class="bloglist-fabricbenefits-cm7816__icon">
+      <img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/6948061171296e600dc40e3c_Icon-for-Should-You-Migrate-to-Microsoft-Fabric-A-Non-Technical-Perspective-for-BI-19.webp" alt="">
+    </div>
+    <div class="bloglist-fabricbenefits-cm7816__content">
+      <div class="bloglist-fabricbenefits-cm7816__title">
+        Analytics as a Differentiator
+      </div>
+      <div class="bloglist-fabricbenefits-cm7816__text">
+        Analytics is more than just reporting what happened – analytics is about getting ahead and taking advantage of what the competitor isn’t doing. Fabric gives companies the power of simplicity, the ability to collaborate more easily, and that enables their non-technical users of their data to self-serve with insights at a fast pace. Using data with Fabric becomes something to accelerate differentiation in their business.
+      </div>
+    </div>
+  </div>
+
+</div>
+<style>
+/* ===== Section Wrapper (100% fluid) ===== */
+.bloglist-fabricbenefits-cm7816 {
+  width: 100%;
+  padding: 24px 0;
+}
+
+/* Card */
+.bloglist-fabricbenefits-cm7816__card {
+  display: flex;
+  gap: 18px;
+  padding: 22px 24px;
+  margin-bottom: 18px;
+  border-radius: 14px;
+  background: #eaf3f9;
+	 align-items: flex-start;
+}
+
+/* Icon */
+.bloglist-fabricbenefits-cm7816__icon {
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bloglist-fabricbenefits-cm7816__icon img {
+  width: 50px;
+  height: 50px;
+	max-width: 50px;
+}
+
+/* Content */
+.bloglist-fabricbenefits-cm7816__content {
+  flex: 1;
+}
+
+/* Title */
+.bloglist-fabricbenefits-cm7816__title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #007bff;
+}
+
+/* Text */
+.bloglist-fabricbenefits-cm7816__text {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.bloglist-fabricbenefits-cm7816__text:last-child {
+  margin-bottom: 0;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .bloglist-fabricbenefits-cm7816__card {
+    align-items: flex-start;
+  }
+}
+</style></div><h3>Who Should Lead a Microsoft Fabric Migration</h3><div data-rt-embed-type="true"><div class="bloglist-stakeholderalign-cm3492">
+
+  <div class="bloglist-stakeholderalign-cm3492__grid">
+
+    <!-- Column 1 -->
+    <div class="bloglist-stakeholderalign-cm3492__item">
+      <div class="bloglist-stakeholderalign-cm3492__icon">
+        <img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/694809c86c1d9a052e556c2b_icons-for-Designing-for-Engagement-Keeping-Users-in-Your-Reports-3.webp" alt="">
+      </div>
+      <div class="bloglist-stakeholderalign-cm3492__title">
+        The role of business stakeholders vs. technical teams
+      </div>
+      <div class="bloglist-stakeholderalign-cm3492__text">
+        A Fabric migration isn’t only an IT decision. Technical teams may handle the pipelines and integrations, but business stakeholders define the “why.”
+      </div>
+      <div class="bloglist-stakeholderalign-cm3492__text">
+        They decide which dashboards matter most, which workflows need improvement, and how insights should support real-world decisions. Without that input, the project risks being technically solid but irrelevant to business needs.
+      </div>
+    </div>
+
+    <!-- Column 2 -->
+    <div class="bloglist-stakeholderalign-cm3492__item">
+      <div class="bloglist-stakeholderalign-cm3492__icon">
+        <img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/694809d173b78faada6ede37_Icons-for-Designing-for-Engagement-Keeping-Users-in-Your-Reports-1.webp" alt="">
+      </div>
+      <div class="bloglist-stakeholderalign-cm3492__title">
+        How to align migration with strategic goals
+      </div>
+      <div class="bloglist-stakeholderalign-cm3492__text">
+        Because Fabric unifies reporting, analytics, and data storage, migration should be tied to measurable outcomes like speeding up client reporting, reducing costs, or making insights easier to access.
+      </div>
+      <div class="bloglist-stakeholderalign-cm3492__text">
+        Instead of lifting everything at once, phase the migration around goals that stakeholders care about.
+      </div>
+    </div>
+
+    <!-- Column 3 -->
+    <div class="bloglist-stakeholderalign-cm3492__item">
+      <div class="bloglist-stakeholderalign-cm3492__icon">
+        <img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/694809dd414b9c71497bf1a1_Icons-for-Designing-for-Engagement-Keeping-Users-in-Your-Reports-2.webp" alt="">
+      </div>
+      <div class="bloglist-stakeholderalign-cm3492__title">
+        Tips for engaging decision-makers in the process
+      </div>
+      <div class="bloglist-stakeholderalign-cm3492__text">
+        Executives don’t need the details of pipelines or architecture. They want to know how the move will reduce manual reporting, improve scalability, and support faster decision-making.
+      </div>
+      <div class="bloglist-stakeholderalign-cm3492__text">
+        Keeping the conversation focused on outcomes helps secure leadership buy-in and ensures adoption across the business.
+      </div>
+    </div>
+
+  </div>
+
+</div>
+<style>
+/* ===== Section Wrapper (100% fluid) ===== */
+.bloglist-stakeholderalign-cm3492 {
+  width: 100%;
+  padding: 30px 0;
+}
+
+/* Grid */
+.bloglist-stakeholderalign-cm3492__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+/* Item */
+.bloglist-stakeholderalign-cm3492__item {
+  position: relative;
+  padding-left: 22px;
+}
+
+/* Vertical line */
+.bloglist-stakeholderalign-cm3492__item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 3px;
+  height: 100%;
+  background: #8b5cf6;
+  border-radius: 3px;
+}
+
+/* Icon */
+.bloglist-stakeholderalign-cm3492__icon {
+display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-bottom: 12px;
+}
+
+.bloglist-stakeholderalign-cm3492__icon img {
+  width: 50px;
+  height:50px;
+	max-width: 50px;
+}
+
+/* Title */
+.bloglist-stakeholderalign-cm3492__title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #000;
+  margin-bottom: 10px;
+}
+
+/* Text */
+.bloglist-stakeholderalign-cm3492__text {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.bloglist-stakeholderalign-cm3492__text:last-child {
+  margin-bottom: 0;
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+  .bloglist-stakeholderalign-cm3492__grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style></div><figure class="w-richtext-figure-type-image w-richtext-align-fullwidth" style="max-width:1024px" data-rt-type="image" data-rt-align="fullwidth" data-rt-max-width="1024px"><div><img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/69480a7230df146ed594cb17_Who-Should-Lead-a-Microsoft-Fabric-Migration-1024x572.webp" loading="lazy" alt="__wf_reserved_inherit" width="auto" height="auto"></div></figure><p>‍</p><h3><strong>‍</strong></h3><h3><strong>‍</strong>How to Plan a Microsoft Fabric Migration Without Technical Overload</h3><p>‍</p><figure class="w-richtext-figure-type-image w-richtext-align-floatleft" style="max-width:50%" data-rt-type="image" data-rt-align="floatleft" data-rt-max-width="50%"><div><img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/6947ca0e383c67149b32c1a0_How-to-Plan-a-Microsoft-Fabric-Migration-Without-Technical-Overload-908x1024.webp" loading="lazy" alt="__wf_reserved_inherit" width="auto" height="auto"></div></figure><p><strong>A Step-by-Step Business-Focused Migration Process</strong></p><p>When thinking about Fabric migration, imagine it less as a “system upgrade” and more as an organization and business change program.</p><p>You can start to think about Fabric tools by looking to the highest-value reports, dashboards, or processes, which will ultimately bring the most benefit from consolidation. You also may want to phase or time your migration with the Team per project, from the higher-value ‘client reporting’ or the executive dashboards down to the back-office integration.</p><p><strong>The idea is to have the project remain focused on tangible high-impact changes rather than just boiling the ocean all at once.</strong></p><p>‍</p><p>‍</p><p>‍</p><p>‍</p><p>‍</p><h4><strong>Finding your ROI before beginning</strong></h4><p>Moving to Fabric is not just about fancy new technology. There is also a basic reduction in time and costs of reporting, a team-oriented improvement in your collaboration, and even just getting rid of duplicate systems.</p><div data-rt-embed-type="true"><div class="bloglist-roicheck-cm5519">
+
+
+
+  <div class="bloglist-roicheck-cm5519__item">
+    <div class="bloglist-roicheck-cm5519__number">1</div>
+    <div class="bloglist-roicheck-cm5519__text">
+      Saving hours by automating the manual reports
+    </div>
+  </div>
+
+  <div class="bloglist-roicheck-cm5519__item">
+    <div class="bloglist-roicheck-cm5519__number">2</div>
+    <div class="bloglist-roicheck-cm5519__text">
+      Getting your decision-makers to their insights faster and not sitting on data for too long
+    </div>
+  </div>
+
+  <div class="bloglist-roicheck-cm5519__item">
+    <div class="bloglist-roicheck-cm5519__number">3</div>
+    <div class="bloglist-roicheck-cm5519__text">
+      Reductions in legacy licensing and/or maintenance by retiring legacy tools and costs
+    </div>
+  </div>
+
+  <div class="bloglist-roicheck-cm5519__footer">
+    This should result in migration based on an outcome that is linked to a measurable business value rather than some abstract IT aim.
+  </div>
+
+</div>
+	
+	<style>
+/* ===== Section Wrapper (100% fluid) ===== */
+.bloglist-roicheck-cm5519 {
+  width: 100%;
+  padding: 20px 0;
+}
+
+/* Heading */
+.bloglist-roicheck-cm5519__heading {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 22px;
+  color: #000;
+}
+
+/* Item Row */
+.bloglist-roicheck-cm5519__item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+/* ===== Number Icon (MATCHES DESIGN) ===== */
+.bloglist-roicheck-cm5519__number {
+  position: relative;
+  width: 34px;
+  height: 34px;
+  min-width: 34px;
+  border-radius: 50%;
+  border: 2px solid #f15599; /* outer ring */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 14px;
+  color: #ffffff; /* number color */
+  z-index: 1;
+}
+
+/* Inner filled circle */
+.bloglist-roicheck-cm5519__number::before {
+  content: "";
+  position: absolute;
+  inset: 4px;
+  border-radius: 50%;
+  background: #f15599;
+  z-index: -1;
+}
+
+/* Text */
+.bloglist-roicheck-cm5519__text {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* Footer Paragraph */
+.bloglist-roicheck-cm5519__footer {
+  margin-top: 18px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .bloglist-roicheck-cm5519__item {
+    gap: 12px;
+  }
+}
+</style></div><h4>‍<strong>Vendor and Partner Consideration</strong></h4><p>Fabric is a large and robust technology. Picking who takes you to the next step is equally important as the technology. Some organizations prefer to build their skills internally, while others use partners who have depth, experience, and knowledge of Fabric.</p><p>‍</p><h3>What to Watch Out for When Migrating to Microsoft Fabric</h3><p>‍</p><figure class="w-richtext-figure-type-image w-richtext-align-floatleft" style="max-width:50%" data-rt-type="image" data-rt-align="floatleft" data-rt-max-width="50%"><div><img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/69480e3e282f4f9e6cb013a6_What-to-Watch-Out-for-When-Migrating-to-Microsoft-Fabric-848x1024.webp" loading="lazy" alt="__wf_reserved_inherit" width="auto" height="auto"></div></figure><p><strong>There are still challenges after adopting a unified business intelligence platform such as Fabric.</strong></p><p>Training may be necessary to ensure teams know how to use new tools, such as OneLake or Copilot. Additionally, change management will become increasingly important as you want your analysts, managers, and executives to embrace the adoption of Microsoft Fabric with enthusiasm.</p><p><strong>Licensing may change during migration, as Power BI Premium capacities are being unified under Microsoft Fabric.</strong></p><p>Organizations may need to transition workloads to Fabric capacities, which requires reviewing user numbers and workloads to avoid unexpected costs. Licensing and the number of employees using Fabric across the organization should be reviewed carefully to mitigate any unexpected license costs.</p><p>‍</p><p>‍</p><p>‍</p><p>‍</p><h3>Key Features of Microsoft Fabric</h3><p>‍</p><div data-rt-embed-type="true"><div class="bloglist-migrationsteps-cm4429">
+
+  <!-- Unplugging existing BI workflows -->
+  <div class="bloglist-migrationsteps-cm4429__card">
+    <div class="bloglist-migrationsteps-cm4429__icon">
+      <img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/69480f079e236cb84bd00fa4_Icon-for-Should-You-Migrate-to-Microsoft-Fabric-A-Non-Technical-Perspective-for-BI-26.webp" alt="">
+    </div>
+    <div class="bloglist-migrationsteps-cm4429__content">
+      <div class="bloglist-migrationsteps-cm4429__title">
+        Unplugging existing BI workflows
+      </div>
+      <div class="bloglist-migrationsteps-cm4429__text">
+        Migrations should not disrupt existing dashboards or reports currently being utilized by your teams on a daily basis. Identify due diligence workflows and ensure they are functional when you begin the migration process.
+      </div>
+      <div class="bloglist-migrationsteps-cm4429__text">
+        Adopting a phased migration approach can help manage any downtime or confusion in your workflows so that your business can continue to operate without interruption.
+      </div>
+    </div>
+  </div>
+
+  <!-- Consideration of pacing the adoption -->
+  <div class="bloglist-migrationsteps-cm4429__card">
+    <div class="bloglist-migrationsteps-cm4429__icon">
+      <img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/69480ef2f28f33a78e9401be_Icon-for-Should-You-Migrate-to-Microsoft-Fabric-A-Non-Technical-Perspective-for-BI-6.webp" alt="">
+    </div>
+    <div class="bloglist-migrationsteps-cm4429__content">
+      <div class="bloglist-migrationsteps-cm4429__title">
+        Consideration of pacing the adoption
+      </div>
+      <div class="bloglist-migrationsteps-cm4429__text">
+        You do not need to adopt Fabric in one fell swoop. Consider leveraging Fabric in phases. Begin your migration with non-mission-critical processes or pilot projects to measure their performance, learn about new user practices, and refine workflows.
+      </div>
+      <div class="bloglist-migrationsteps-cm4429__text">
+        This will reduce your level of risk while allowing your teams time to adjust to the changes at a reasonable pace and celebrate early successes that can build momentum toward a full migration.
+      </div>
+    </div>
+  </div>
+
+</div>
+<style>
+/* ===== Section Wrapper (100% fluid) ===== */
+.bloglist-migrationsteps-cm4429 {
+  width: 100%;
+  padding: 24px 0;
+}
+
+/* Card */
+.bloglist-migrationsteps-cm4429__card {
+  display: flex;
+  gap: 18px;
+  padding: 22px 24px;
+  margin-bottom: 18px;
+  border-radius: 14px;
+  background: linear-gradient(90deg, #eef7fb 0%, #f4f1fb 100%);
+}
+
+/* Icon */
+.bloglist-migrationsteps-cm4429__icon {
+  flex-shrink: 0;
+   display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bloglist-migrationsteps-cm4429__icon img {
+  width: 50px;
+  height: 50px;
+	max-width: 50px;
+}
+
+/* Content */
+.bloglist-migrationsteps-cm4429__content {
+  flex: 1;
+}
+
+/* Title */
+.bloglist-migrationsteps-cm4429__title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #1a33ff;
+}
+
+/* Text */
+.bloglist-migrationsteps-cm4429__text {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.bloglist-migrationsteps-cm4429__text:last-child {
+  margin-bottom: 0;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .bloglist-migrationsteps-cm4429__card {
+    align-items: flex-start;
+  }
+}
+</style></div><p>‍</p><figure class="w-richtext-figure-type-image w-richtext-align-fullwidth" style="max-width:1024px" data-rt-type="image" data-rt-align="fullwidth" data-rt-max-width="1024px"><div><img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/694804a38cdab9ed6524764c_What-to-Watch-Out-for-When-Migrating-to-Microsoft-Fabric-2-1024x572.webp" loading="lazy" alt="__wf_reserved_inherit" width="auto" height="auto"></div></figure><h3>Simplifying Your BI Migration and Delivery</h3><p>‍</p><figure class="w-richtext-figure-type-image w-richtext-align-floatleft" style="max-width:50%" data-rt-type="image" data-rt-align="floatleft" data-rt-max-width="50%"><div><img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/69480fbe3e789783e0370e8d_Simplifying-Your-BI-Migration-and-Delivery-990x1024.webp" loading="lazy" alt="__wf_reserved_inherit" width="auto" height="auto"></div></figure><p>Migrating to Microsoft Fabric offers a unified, scalable analytics platform, but even the best technology requires careful planning, business alignment, and phased adoption to deliver real value.</p><p><strong>For organizations looking to maximize their Power BI investment while keeping the process simple, The Reporting Hub provides a ready-made solution.</strong></p><p>With its turnkey Power BI Embedded portal, you can deliver interactive, branded dashboards to unlimited users without requiring licenses for report consumers.</p><p>It integrates directly with your Power BI tenant and Azure environment, giving you full control over the user experience while reducing technical overhead.</p><p>‍</p><p>‍</p><p>‍</p><p>‍</p><h4><strong>By combining a thoughtful Fabric migration strategy with a platform like Reporting Hub, you can:</strong></h4><div data-rt-embed-type="true"><div class="bloglist-analyticsvalue-cm9184">
+
+  <div class="bloglist-analyticsvalue-cm9184__grid">
+
+    <!-- Item 1 -->
+    <div class="bloglist-analyticsvalue-cm9184__item">
+      <div class="bloglist-analyticsvalue-cm9184__icon">
+        <img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/6948107aa6bca65e5d909524_Icon-for-Should-You-Migrate-to-Microsoft-Fabric-A-Non-Technical-Perspective-for-BI-3.webp" alt="">
+      </div>
+      <div class="bloglist-analyticsvalue-cm9184__text">
+        Deliver analytics-as-a-service to customers and internal teams effortlessly.
+      </div>
+    </div>
+
+    <!-- Item 2 -->
+    <div class="bloglist-analyticsvalue-cm9184__item">
+      <div class="bloglist-analyticsvalue-cm9184__icon">
+        <img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/69481084ebffe80d2e434416_Icon-for-Should-You-Migrate-to-Microsoft-Fabric-A-Non-Technical-Perspective-for-BI-2.webp" alt="">
+      </div>
+      <div class="bloglist-analyticsvalue-cm9184__text">
+        Securely share insights without disrupting existing workflows.
+      </div>
+    </div>
+
+    <!-- Item 3 -->
+    <div class="bloglist-analyticsvalue-cm9184__item">
+      <div class="bloglist-analyticsvalue-cm9184__icon">
+        <img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/6948108ff5796ad4cb29a038_Icon-for-Should-You-Migrate-to-Microsoft-Fabric-A-Non-Technical-Perspective-for-BI-1.webp" alt="">
+      </div>
+      <div class="bloglist-analyticsvalue-cm9184__text">
+        Scale your BI capabilities quickly while maintaining brand control.
+      </div>
+    </div>
+
+  </div>
+
+</div>
+<style>
+/* ===== Section Wrapper (100% fluid) ===== */
+.bloglist-analyticsvalue-cm9184 {
+  width: 100%;
+  padding: 30px 0;
+}
+
+/* Grid */
+.bloglist-analyticsvalue-cm9184__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+/* Item */
+.bloglist-analyticsvalue-cm9184__item {
+  position: relative;
+  padding-left: 22px;
+}
+
+/* Vertical divider */
+.bloglist-analyticsvalue-cm9184__item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 3px;
+  height: 100%;
+  background: #8b5cf6;
+  border-radius: 3px;
+}
+
+/* Icon */
+.bloglist-analyticsvalue-cm9184__icon {
+  display: flex;
+  align-items: flex-start;
+  justify-content:flex-start;
+  margin-bottom: 14px;
+}
+
+.bloglist-analyticsvalue-cm9184__icon img {
+  width: 50px;
+  height: auto;
+	  width: 50px;
+	  width: 50px;
+}
+
+/* Text */
+.bloglist-analyticsvalue-cm9184__text {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #000;
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+  .bloglist-analyticsvalue-cm9184__grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style></div><p>‍</p><p>In short, planning your migration with a business-focused approach and leveraging tools like Reporting Hub turns a complex technical project into a strategic advantage, making data accessible, actionable, and impactful across your organization.</p></div>
+              <nav aria-label="Table of contents" class="blog-post_toc">
+                <div>Table of Contents</div>
+                <div fc-toc="close" class="blog-post_close-toc-overlay"></div>
+                <ol fc-toc-collapse="true" fc-toc="component" role="list" class="blog-post_toc-list"><li class="blog-post_toc-list-item"><a href="#what-increases-time-spent-in-your-reports" fc-toc="h2" class="toc_h2">What Increases Time Spent in Your Reports</a></li>
+<li class="blog-post_toc-list-item"><a href="#how-microsoft-fabric-transforms-bi-approach" fc-toc="h2" class="toc_h2">How Microsoft Fabric Transforms BI Approach</a></li>
+<li class="blog-post_toc-list-item"><a href="#where-microsoft-fabric-fits-in-your-bi-roadmap" fc-toc="h2" class="toc_h2">Where Microsoft Fabric Fits in Your BI Roadmap</a></li>
+<li class="blog-post_toc-list-item"><a href="#key-features-of-microsoft-fabric" fc-toc="h2" class="toc_h2">Key Features of Microsoft Fabric</a></li>
+<li class="blog-post_toc-list-item"><a href="#why-businesses-consider-migrating-to-microsoft-fabric" fc-toc="h2" class="toc_h2">Why Businesses Consider Migrating to Microsoft Fabric</a></li>
+<li class="blog-post_toc-list-item"><a href="#how-to-plan-a-microsoft-fabric-migration-without-technical-overload" fc-toc="h2" class="toc_h2">How to Plan a Microsoft Fabric Migration Without Technical Overload</a></li>
+<li class="blog-post_toc-list-item"><a href="#what-to-watch-out-for-when-migrating-to-microsoft-fabric" fc-toc="h2" class="toc_h2">What to Watch Out for When Migrating to Microsoft Fabric</a></li>
+<li class="blog-post_toc-list-item"><a href="#key-features-of-microsoft-fabric" fc-toc="h2" class="toc_h2">Key Features of Microsoft Fabric</a></li>
+<li class="blog-post_toc-list-item"><a href="#simplifying-your-bi-migration-and-delivery" fc-toc="h2" class="toc_h2">Simplifying Your BI Migration and Delivery</a></li>
+</ol>
+                <div class="related-blogs w-dyn-list">
+                  <div role="list" class="related-blogs-list w-dyn-items"><div role="listitem" class="related-blog-item w-dyn-item">
+                      <a href="embedded-analytics-meets-generative-ai-how-saas-teams-monetize-bi-in-2025.html" class="related-blog-link w-inline-block">
+                        <div class="related-blog-wrap"><img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/69600be56fa30d9d91a5f337_Embedded%20Analytics%20Meets%20Generative%20AI%20How%20SaaS%20Teams%20Monetize%20BI%20in%202025.png" loading="lazy" alt="" class="related-blog-img">
+                          <h3 class="related-blogs-h3">Embedded Analytics Meets Generative AI: How SaaS Teams Monetize BI in 2026</h3>
+                        </div>
+                      </a>
+                    </div><div role="listitem" class="related-blog-item w-dyn-item">
+                      <a href="fabric-vs-power-bi-premium.html" class="related-blog-link w-inline-block">
+                        <div class="related-blog-wrap"><img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/6961652bcf02c04b7b0edbe3_Fabric%20vs.%20Power%20BI%20Premium%20-%20Reddit.avif" loading="lazy" alt="" class="related-blog-img">
+                          <h3 class="related-blogs-h3">Fabric vs. Power BI Premium</h3>
+                        </div>
+                      </a>
+                    </div><div role="listitem" class="related-blog-item w-dyn-item">
+                      <a href="how-to-structure-a-multi-tenant-analytics-delivery-system-without-rebuilding-everything.html" class="related-blog-link w-inline-block">
+                        <div class="related-blog-wrap"><img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/69b03e0ca76a82d19058f954_Structure%20a%20Multi-Tenant%20Analytics%20Delivery.jpg" loading="lazy" alt="" class="related-blog-img">
+                          <h3 class="related-blogs-h3">How to Structure a Multi-Tenant Analytics Delivery System Without Rebuilding Everything</h3>
+                        </div>
+                      </a>
+                    </div></div>
+                  
+                </div>
+              </nav>
+              <div fc-toc="active-style" class="u-toc-current-link"></div>
+              <div class="toc-subitems"></div>
+              <div class="toc_script w-embed w-script">
+                <script>
+document.addEventListener('DOMContentLoaded', () => {
+  let preventAutoOpen = false;
+  let suppressNextScrollUpdate = false;
+  const tocWrappers = document.querySelectorAll('[fc-toc="wrapper"]');
+  if (!tocWrappers) return;
+  for (const wrapper of tocWrappers) {
+    // Grab key elements and settings
+    const tocComponent = wrapper.querySelector('[fc-toc="component"]');
+    const tocContent = wrapper.querySelector('[fc-toc="content"]');
+    const activeStyleElement = wrapper.querySelector('[fc-toc="active-style"]');
+    const activeClass = activeStyleElement?.className || '';
+    const debounceMs = 0;
+    const isCollapsible = tocComponent.getAttribute('fc-toc-collapse') === 'true';
+    if (!tocComponent || !tocContent) return;
+    // Map of heading levels to placeholder class names
+    const placeholderLinks = tocComponent.querySelectorAll('[fc-toc]');
+    const headingLevels = new Map();
+    placeholderLinks.forEach(link => {
+      const level = link.getAttribute('fc-toc');
+      const className = link.getAttribute('class') || '';
+      if (/^h[1-6]$/.test(level)) {
+        headingLevels.set(level.toLowerCase(), className);
+      }
+    });
+    // Find all target headings in the content
+    const selector = [...headingLevels.keys()].join(', ');
+    const headings = tocContent.querySelectorAll(selector);
+    // Generate unique IDs for headings
+    const usedIds = new Set();
+    const generateSlug = (text, index) => {
+      let slug = text.toLowerCase()
+        .normalize("NFD").replace(/[̀-ͯ]/g, "")
+        .replace(/[^a-z0-9\s-]/g, '')
+        .replace(/\s+/g, '-')
+        .replace(/-+/g, '-')
+        .replace(/^-|-$/g, '');
+      if (!slug) slug = `heading-${index}`;
+      let uniqueSlug = slug;
+      let count = 1;
+      while (usedIds.has(uniqueSlug)) {
+        uniqueSlug = `${slug}-${count++}`;
+      }
+      usedIds.add(uniqueSlug);
+      return uniqueSlug;
+    };
+    // Assign IDs to headings
+    headings.forEach((heading, index) => {
+      const id = generateSlug(heading.textContent.trim(), index);
+      heading.id = id;
+    });
+    // Build the TOC from placeholder links and real headings
+    let currentParentLi = null;
+    let subList = null;
+    headings.forEach((heading, index) => {
+      const level = heading.tagName.toLowerCase();
+      const className = headingLevels.get(level) || '';
+      const placeholderLink = tocComponent.querySelector(`[fc-toc="${level}"]`);
+      if (!placeholderLink) return;
+      const listItem = placeholderLink.closest('li');
+      if (!listItem) return;
+      const clonedItem = listItem.cloneNode(true);
+      const link = clonedItem.querySelector(`[fc-toc="${level}"]`);
+      if (link) {
+        link.href = `#${heading.id}`;
+        link.textContent = heading.textContent.trim();
+        link.setAttribute('fc-toc-link', level);
+      }
+      if (isCollapsible && level === 'h2') {
+        tocComponent.appendChild(clonedItem);
+        currentParentLi = clonedItem;
+        subList = document.createElement('ul');
+        subList.classList.add('toc-subitems');
+        currentParentLi.appendChild(subList);
+      } else if (isCollapsible && currentParentLi && subList) {
+        subList.appendChild(clonedItem);
+      } else {
+        tocComponent.appendChild(clonedItem);
+      }
+    });
+    // Initially collapse all groups if collapsible
+    if (isCollapsible) {
+      tocComponent.querySelectorAll('.toc-subitems').forEach(group => {
+        group.style.maxHeight = '0';
+      });
+    }
+    // Remove placeholder links
+    placeholderLinks.forEach(link => {
+      const parentLi = link.closest('li');
+      if (parentLi) parentLi.remove();
+    });
+    let debounceTimer;
+    let lastActiveLink = null;
+    let lastActiveGroupWrapper = null;
+    // Scroll TOC and manage group expansion on active link update
+    const scrollToActiveLink = () => {
+      if (suppressNextScrollUpdate) {
+        suppressNextScrollUpdate = false;
+        return;
+      }
+      if (preventAutoOpen) return;
+      const activeLink = tocComponent.querySelector('.w--current');
+      if (!activeLink || activeLink === lastActiveLink) return;
+      tocComponent.querySelectorAll('[fc-toc-link]').forEach(link => {
+        if (activeClass) link.classList.remove(activeClass);
+      });
+      if (activeClass) activeLink.classList.add(activeClass);
+      lastActiveLink = activeLink;
+      tocComponent.scrollBy({
+        top: activeLink.getBoundingClientRect().top - tocComponent.getBoundingClientRect().top - (tocComponent.getBoundingClientRect().height / 2) + (activeLink.getBoundingClientRect().height / 2),
+        behavior: 'smooth'
+      });
+      if (isCollapsible) {
+        const currentLi = activeLink.closest('li');
+        let groupWrapperLi = currentLi;
+        if (currentLi?.parentElement?.classList.contains('toc-subitems')) {
+          groupWrapperLi = currentLi.parentElement.closest('li');
+        }
+        tocComponent.querySelectorAll('li').forEach(li => {
+          const sub = li.querySelector('.toc-subitems');
+          if (
+            sub &&
+            li !== groupWrapperLi &&
+            sub.style.maxHeight !== '0px' &&
+            (!preventAutoOpen || li !== lastActiveGroupWrapper)
+          ) {
+            collapseElement(sub);
+          }
+        });
+        expandElement(groupWrapperLi.querySelector('.toc-subitems'));
+        lastActiveGroupWrapper = groupWrapperLi;
+      }
+    };
+    const debouncedScroll = () => {
+      clearTimeout(debounceTimer);
+      debounceTimer = setTimeout(scrollToActiveLink, debounceMs);
+    };
+    // Observe class changes to trigger scroll update
+    const observer = new MutationObserver(() => {
+      if (!isAutoScrolling) debouncedScroll();
+    });
+    observer.observe(tocComponent, {
+      subtree: true,
+      attributes: true,
+      attributeFilter: ['class']
+    });
+    // Expand group for active link on page load
+    const expandActiveGroupOnLoad = () => {
+      if (!isCollapsible) return;
+      let attempts = 0;
+      const tryExpand = () => {
+        const activeLink = tocComponent.querySelector('.w--current');
+        if (activeLink) {
+          scrollToActiveLink();
+        } else if (++attempts < 20) {
+          setTimeout(tryExpand, 50);
+        }
+      };
+      tryExpand();
+    };
+    // Set up toggle buttons for manual group expansion
+    const setupManualToggles = () => {
+      if (!isCollapsible) return;
+      tocComponent.querySelectorAll('[fc-toc="open-group"]').forEach(toggleBtn => {
+        const subList = toggleBtn.closest('li')?.querySelector('.toc-subitems');
+        if (!subList || subList.children.length === 0) {
+          toggleBtn.style.display = 'none';
+          return;
+        }
+        for (const item of tocComponent.querySelectorAll('li')) {
+        	item.style.display = 'grid';
+          item.style.gridTemplateColumns = '1fr auto';
+        }
+        subList.style.gridColumn = '1 / 3';
+        toggleBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          preventAutoOpen = true;
+          const listItem = toggleBtn.closest('li');
+          if (!listItem) return;
+          const subList = listItem.querySelector('.toc-subitems');
+          if (!subList) return;
+          const isOpen = subList.style.maxHeight !== '0px';
+          const hasActive = listItem.querySelector(`.${activeClass}`);
+          if (isOpen && !hasActive) {
+            collapseElement(subList);
+            if (lastActiveGroupWrapper === listItem) {
+              lastActiveGroupWrapper = null;
+            }
+          } else if (!isOpen) {
+            expandElement(subList);
+            if (
+              lastActiveGroupWrapper &&
+              lastActiveGroupWrapper !== listItem &&
+              !lastActiveGroupWrapper.querySelector(`.${activeClass}`)
+            ) {
+              const previousGroup = lastActiveGroupWrapper.querySelector('.toc-subitems');
+              if (previousGroup) collapseElement(previousGroup);
+            }
+            lastActiveGroupWrapper = listItem;
+          }
+          setTimeout(() => {
+            preventAutoOpen = false;
+          }, 100);
+        });
+      });
+    };
+    expandActiveGroupOnLoad();
+    setupManualToggles();
+    let isAutoScrolling = false;
+    let scrollTimeout;
+    const handleScrollStop = () => {
+      clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(() => {
+        isAutoScrolling = false;
+        debouncedScroll();
+      }, 150);
+    };
+    // Handle anchor clicks and scroll positioning
+    tocComponent.querySelectorAll('a[fc-toc-link]').forEach(link => {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href')?.substring(1);
+        const target = document.getElementById(targetId);
+        if (!target) return;
+        const originalHref = this.getAttribute('href');
+        this.removeAttribute('href');
+        isAutoScrolling = true;
+        window.addEventListener('scroll', handleScrollStop);
+        const rect = target.getBoundingClientRect();
+        const scrollTo = window.scrollY + rect.top - (window.innerHeight / 2) + (rect.height / 2);
+        window.scrollTo({ top: scrollTo, behavior: 'smooth' });
+        const closeToc = document.querySelector('[fc-toc = close]')
+        if(closeToc) closeToc.click()
+        setTimeout(() => {
+          this.setAttribute('href', originalHref);
+        }, 100);
+      });
+    });
+  }
+  // Expand/collapse utility with icon rotation
+  function expandElement(el) {
+    const clone = el.cloneNode(true);
+    clone.style.visibility = 'hidden';
+    clone.style.position = 'absolute';
+    clone.style.height = 'auto';
+    clone.style.maxHeight = 'none';
+    clone.style.pointerEvents = 'none';
+    clone.style.opacity = '0';
+    el.parentElement.appendChild(clone);
+    const fullHeight = clone.scrollHeight;
+    el.parentElement.removeChild(clone);
+    el.style.maxHeight = fullHeight + 'px';
+    const icon = el.closest('li')?.querySelector('[fc-toc="open-group"]');
+    if (icon) {
+      const rotation = icon.getAttribute('fc-toc-rotate') || '180deg';
+      icon.style.transform = `rotate(${rotation}deg)`;
+    }
+  }
+  function collapseElement(el) {
+    el.style.maxHeight = '0px';
+    const icon = el.closest('li')?.querySelector('[fc-toc="open-group"]');
+    if (icon) {
+      icon.style.transform = 'rotate(0deg)';
+    }
+  }
+});
+</script>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="space-7"></div>
+    </div>
+    <section class="footer-section varsion-2">
+      <div class="foooter-top top-padding-5">
+        <div class="icon-wrap"><img loading="lazy" src="../assets/images/Symbol-1_2.webp" alt="White upward arrow inside a black speech bubble shape." class="icon"></div>
+        <div class="space-1-5"></div>
+        <div class="footer-title-top">Setup your <span class="highlight-text pure-blue">free trial</span> today!</div>
+        <div class="space-1"></div>
+        <p class="paragraph-regular">Get started today with a no-obligation 30-day free trial. The<br>Reporting Hub can be fully deployed to your Azure environment<br>by following our self-serve guided installer. <a href="#" class="span-link">Learn more</a>
+        </p>
+        <div class="space-2"></div>
+        <div class="button-wrap left">
+          <a href="../install-today.html" class="button color-blue w-inline-block">
+            <div>Install Today</div>
+          </a>
+          <a href="../demo.html" class="button bg-transparent text-blue w-inline-block">
+            <div>Get a Demo</div><img loading="lazy" src="../assets/images/Symbol-7.webp" alt="Arrow" class="button-arrow">
+          </a>
+        </div>
+        <div class="footer-image-wrap"><img src="../assets/images/dashboard-trial-new-1_1.webp" loading="lazy" width="1968" sizes="100vw" alt="" srcset="../assets/images/dashboard-trial-new-1_1-p-500.webp 500w, ../assets/images/dashboard-trial-new-1_1-p-800.webp 800w, ../assets/images/dashboard-trial-new-1_1-p-1080.webp 1080w, ../assets/images/dashboard-trial-new-1_1-p-1600.webp 1600w, ../assets/images/dashboard-trial-new-1_1-p-2000.webp 2000w, ../assets/images/dashboard-trial-new-1_1-p-2600.webp 2600w, ../assets/images/dashboard-trial-new-1_1-p-3200.webp 3200w, ../assets/images/dashboard-trial-new-1_1.webp 3936w" class="new-footer-img"></div>
+      </div>
+      <div class="space-5"></div>
+      <div class="w-layout-blockcontainer container w-container">
+        <div class="footer-component">
+          <div class="w-layout-grid footer-grid-wrap">
+            <div class="footer-left-call">
+              <div class="font-0-9">Contact US</div>
+              <div class="footer-menu-left">
+                <div class="footer-menu-group"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 15 12" fill="none" class="social-icon">
+                    <g clip-path="url(#clip0_9006_2830)">
+                      <path d="M1.52344 2.61654C1.52344 2.26292 1.66392 1.92378 1.91396 1.67373C2.16401 1.42368 2.50315 1.2832 2.85677 1.2832H12.1901C12.5437 1.2832 12.8828 1.42368 13.1329 1.67373C13.3829 1.92378 13.5234 2.26292 13.5234 2.61654M1.52344 2.61654V9.2832C1.52344 9.63683 1.66392 9.97596 1.91396 10.226C2.16401 10.476 2.50315 10.6165 2.85677 10.6165H12.1901C12.5437 10.6165 12.8828 10.476 13.1329 10.226C13.3829 9.97596 13.5234 9.63683 13.5234 9.2832V2.61654M1.52344 2.61654L7.52344 6.61654L13.5234 2.61654" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </g>
+                  </svg>
+                  <a href="#" class="footer-link">info@thereportinghub.com</a>
+                </div>
+                <div class="footer-menu-group"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 17 18" fill="none" class="social-icon">
+                    <path d="M3.85938 6.75618C3.85938 4.35756 5.94871 2.41309 8.52603 2.41309C11.1033 2.41309 13.1927 4.35756 13.1927 6.75618C13.1927 9.13601 11.7032 11.913 9.37942 12.9061C8.83769 13.1376 8.21439 13.1376 7.67267 12.9061C5.34882 11.913 3.85938 9.13601 3.85938 6.75618Z" stroke="currentColor" stroke-width="1.5"></path>
+                    <path d="M9.85417 7.0804C9.85417 7.81678 9.25722 8.41373 8.52084 8.41373C7.78446 8.41373 7.1875 7.81678 7.1875 7.0804C7.1875 6.34402 7.78446 5.74707 8.52084 5.74707C9.25722 5.74707 9.85417 6.34402 9.85417 7.0804Z" stroke="currentColor" stroke-width="1.5"></path>
+                    <path d="M14.4997 11.4131C14.9433 11.8147 15.1927 12.2675 15.1927 12.7464C15.1927 14.4033 12.2079 15.7464 8.52603 15.7464C4.84414 15.7464 1.85938 14.4033 1.85938 12.7464C1.85938 12.2675 2.10878 11.8147 2.55234 11.4131" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+                  </svg>
+                  <div class="max-width-11">
+                    <a href="#" class="footer-link">1150, 707 - 7th Avenue SW Calgary, ABCanada T2P 3H6</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="footer-call">
+              <div class="font-0-9">Website</div>
+              <div class="footer-menu-main">
+                <a href="../index.html" class="footer-link">Home</a>
+                <a href="../aaas.html" class="footer-link">AaaS Platform</a>
+                <a href="../pricing.html" class="footer-link">Pricing</a>
+                <a href="../learn-more.html" class="footer-link">What is Reporting Hub?</a>
+                <a href="../demo.html" class="footer-link">Demo</a>
+                <a href="../install-today.html" class="footer-link">Install Today</a>
+                <a href="../about-us.html" class="footer-link">About Us</a>
+                <a href="../contact.html" class="footer-link">Contact Us</a>
+              </div>
+            </div>
+            <div class="footer-call">
+              <div class="font-0-9">theHUB</div>
+              <div class="footer-menu-main">
+                <a href="https://docs.thereportinghub.com/" target="_blank" class="footer-link">Knowledge Center</a>
+                <a href="../blog.html" class="footer-link">Our Blog</a>
+                <a href="../power-bi.html" class="footer-link">About Power BI</a>
+                <a href="https://support.thereportinghub.com/support/home" target="_blank" class="footer-link">Get Support</a>
+                <a href="#" class="footer-link">Support Plans</a>
+                <a href="../policies.html" class="footer-link">Policies</a>
+                <a href="/policies#rh-terms" class="footer-link">Terms of Service</a>
+              </div>
+            </div>
+          </div>
+          <a href="#" class="direction-button w-inline-block"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 52 53" fill="none" class="button-icon">
+              <g clip-path="url(#clip0_9006_2933)">
+                <path d="M0 26.1602C0 40.5196 11.6406 52.1602 26 52.1602C40.3594 52.1602 52 40.5196 52 26.1602C52 11.8008 40.3594 0.160156 26 0.160156C11.6406 0.160156 0 11.8008 0 26.1602Z" fill="white" fill-opacity="0.1"></path>
+                <path d="M32.704 28.6752C33.1627 29.1422 33.9152 29.1422 34.3739 28.6752C34.8212 28.2199 34.8212 27.4902 34.3739 27.0348L26.7165 19.2396C26.3246 18.8407 25.6817 18.8407 25.2898 19.2396L17.6323 27.0348C17.1851 27.4902 17.1851 28.2199 17.6323 28.6752C18.0911 29.1422 18.8436 29.1422 19.3023 28.6752L25.2898 22.58C25.6817 22.181 26.3246 22.181 26.7165 22.58L32.704 28.6752Z" fill="currentColor" class="white"></path>
+              </g>
+            </svg></a>
+        </div>
+      </div>
+      <div class="space-3"></div>
+      <div class="global-line"></div>
+      <div class="footer-bottom">
+        <div class="space-3"></div>
+        <div class="w-layout-blockcontainer container w-container">
+          <div class="footer-bottom-contents">
+            <div class="footer-left">
+              <a href="../index.html" class="w-inline-block"><img loading="lazy" src="../assets/images/rh-horizontal-white.svg.webp" alt="Reporting Hub logo with stylized letter R and text 'REPORTING HUB' in uppercase." class="image-small"></a>
+              <div class="text-color-white margin-top-10">Microsoft partner</div>
+            </div>
+            <div class="footer-right">
+              <div class="new-footer-wrap">
+                <div class="font-0-9 text-align-right left-mobile">
+                  <a href="mailto:info@thereportinghub.com?subject=You've%20got%20email" class="link-8"><span class="text-span-2">info@thereportinghub.com</span></a>
+                </div>
+                <div class="social-media-wrap">
+                  <a href="https://www.facebook.com/people/The-Reporting-Hub/100064582883104/" class="social-media-link w-inline-block"><img src="../assets/images/fb.svg" loading="lazy" alt="" class="social-media-icon"></a>
+                  <a href="https://www.linkedin.com/company/the-reporting-hub/" class="social-media-link w-inline-block"><img src="../assets/images/in.svg" loading="lazy" alt="" class="social-media-icon"></a>
+                  <a href="https://x.com/thereportinghub" class="social-media-link w-inline-block"><img src="../assets/images/tw.svg" loading="lazy" alt="" class="social-media-icon"></a>
+                  <a href="https://www.instagram.com/thereportinghub/" class="social-media-link w-inline-block"><img src="../assets/images/insta.svg" loading="lazy" alt="" class="social-media-icon"></a>
+                </div>
+              </div>
+              <div class="font-0-9 text-align-right margin-top-16">2025 All Rights Reserved | The Reporting Hub</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  
+  
+  
+  
+  <!--  Google Tag Manager (noscript)  -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MM9W9FH" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!--  End Google Tag Manager (noscript)  -->
+  <script>
+(function () {
+  function cssEscapeSafe(s) {
+    try { return CSS.escape(s); } catch (e) { return s.replace(/["\\]/g, "\\$&"); }
+  }
+  function normalizeTarget(target) {
+    // ✅ Ako ti URL i dalje dolazi kao #bi-genius-terms, mapiraj ga na rh-terms
+    if (target === "bi-genius-terms") return "rh-terms";
+    return target;
+  }
+  function openTabFromHash() {
+    var hash = window.location.hash;
+    if (!hash) return;
+    var target = hash.slice(1);
+    if (!target) return;
+    target = normalizeTarget(target);
+    // 1) traži custom data-tab="..."
+    var sel = '[data-tab="' + cssEscapeSafe(target) + '"]';
+    var el = document.querySelector(sel);
+    // 2) fallback: traži direktno webflow tab link po data-w-tab
+    var tabLink = null;
+    if (el) {
+      tabLink = (el.classList && el.classList.contains('w-tab-link'))
+        ? el
+        : (el.querySelector ? el.querySelector('.w-tab-link') : null);
+    }
+    if (!tabLink) {
+      tabLink = document.querySelector('.w-tab-link[data-w-tab="' + cssEscapeSafe(target) + '"]');
+    }
+    // 3) extra fallback: ako target == rh-terms, probaj naći BILO KOJI element sa data-tab="rh-terms"
+    // (ovo ti je “hard fix” da 100% radi)
+    if (!tabLink && target === "rh-terms") {
+      tabLink = document.querySelector('[data-tab="rh-terms"].w-tab-link, .w-tab-link[data-tab="rh-terms"]');
+    }
+    if (!tabLink) return;
+    var tries = 0;
+    (function tryClick() {
+      tries++;
+      tabLink.click();
+      if (!tabLink.classList.contains('w--current') && tries < 20) {
+        setTimeout(tryClick, 100);
+      }
+    })();
+  }
+  document.addEventListener('DOMContentLoaded', openTabFromHash);
+  window.addEventListener('hashchange', openTabFromHash);
+})();
+</script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var youtubeIframes = document.querySelectorAll('iframe.lazyiframe');
+        youtubeIframes.forEach(function (youtubeIframe) {
+            var dataSrcValue = youtubeIframe.getAttribute('data-src');
+            if (dataSrcValue) {
+                youtubeIframe.setAttribute('src', dataSrcValue);
+                youtubeIframe.removeAttribute('data-src');
+            }
+        });
+    });
+</script>
+  
+  
+  
+
+<script src="../assets/js/main.js"></script>
+</body></html>

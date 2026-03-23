@@ -1,0 +1,1758 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="utf-8">
+  <title>The Consistency Problem: Why 200 Customers Shouldn't Get 200 Versions of the Truth</title>
+  <meta content="/* ── BRAND TOKENS ───────────────────────────────────────── */
+  :root {
+    --rh-bg:           #ffffff;
+    --rh-surface:      #eaf6fd;
+    --rh-surface-2:   " name="description">
+  <meta content="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/69b3e737a95743b5eab87e49_Picture1.jpg" property="og:image">
+  <meta content="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/69b3e737a95743b5eab87e49_Picture1.jpg" property="twitter:image">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&amp;display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link href="../assets/css/base.css" rel="stylesheet" type="text/css">
+  <link href="../assets/css/styles.css" rel="stylesheet" type="text/css">
+
+  <!-- Favicon -->
+  <link href="../assets/images/favicon.ico" rel="shortcut icon" type="image/x-icon">
+  <link href="../assets/images/webclip.png" rel="apple-touch-icon">
+</head>
+<body>
+  <div id="trtb" class="page-wrapper">
+    <div data-animation="default" class="navbar w-variant-5639baf4-9975-3636-61ef-0b730048b257 w-nav" data-easing2="ease" data-easing="ease" data-collapse="medium" role="banner" data-duration="400" id="nav">
+      <div class="navbar-continer w-container">
+        <div class="nav-item-wrap">
+          <a href="../index.html" class="brand w-nav-brand"><img src="../assets/images/rh-horizontal-white.svg" loading="eager" alt="" class="nav-brand-logo one"><img src="../assets/images/logo_white.svg" loading="lazy" alt="" class="nav-brand-logo two"></a>
+          <nav role="navigation" class="navigation w-nav-menu">
+            <a href="../index.html" class="nav-link w-nav-link">Home</a>
+            <div data-hover="false" data-delay="300" class="uui-navbar01_menu-dropdown w-dropdown">
+              <div class="uui-navbar01_dropdown-toggle w-dropdown-toggle">
+                <div class="uui-dropdown-icon w-embed"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg></div>
+                <div class="nav-link padding-right-0-25">Platform</div>
+              </div>
+              <nav class="uui-navbar01_dropdown-list w-dropdown-list">
+                <div class="uui-navbar01_container">
+                  <div class="uui-navbar01_dropdown-content">
+                    <div class="uui-navbar01_dropdown-content-left is-platform">
+                      <div class="uui-navbar01_dropdown-link-list">
+                        <h4 class="uui-navbar01_heading text-color-white">Platform</h4>
+                        <a href="../learn-more.html" class="uui-navbar01_dropdown-link w-inline-block">
+                          <div class="uui-navbar01_icon-wrapper"><img src="../assets/images/logo-white.svg" loading="lazy" alt="Bi White logo" class="icon-xsmall"></div>
+                          <div class="uui-navbar01_item-right">
+                            <div class="uui-navbar01_item-heading">Reporting Hub</div>
+                            <div class="uui-text-size-small hide-mobile-landscape">Custom-branded Power BI reporting delivery for teams and analytics clients</div>
+                          </div>
+                        </a>
+                      </div>
+                      <div class="uui-navbar01_dropdown-link-list is-bottom">
+                        <h4 class="uui-navbar01_heading opacity-0">Company</h4>
+                        <a href="../bi-genius.html" class="uui-navbar01_dropdown-link w-inline-block">
+                          <div class="uui-navbar01_icon-wrapper"><img src="../assets/images/new-bi-megamenu-logo-white.svg" loading="lazy" alt="Power Bi Megamenu white logo" class="icon-xsmall small"></div>
+                          <div class="uui-navbar01_item-right">
+                            <div class="uui-navbar01_item-heading">BI Genius</div>
+                            <div class="uui-text-size-small hide-mobile-landscape">Add-on fully customizable AI agents that drive insights with full transparency and control</div>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                    <div class="uui-navbar01_dropdown-content-right">
+                      <div class="uui-navbar01_dropdown-content-wrapper">
+                        <div class="blog-items-wrapper">
+                          <h4 class="uui-navbar01_dropdown-content-heading text-color-white">Latest from our blog</h4>
+                          <a href="../blog.html" class="uui-button-link is-button-xsmall w-inline-block">
+                            <div class="color_primary">See all posts ➝</div>
+                          </a>
+                        </div>
+                        <div class="w-dyn-list">
+                          <div role="list" class="uui-navbar01_dropdown-blog-list w-dyn-items"><div role="listitem" class="w-dyn-item">
+                              <a href="../blog/embedded-analytics-meets-generative-ai-how-saas-teams-monetize-bi-in-2025.html" class="uui-navbar01_blog-item w-inline-block">
+                                <div class="uui-navbar01_blog-image-wrapper"><img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/69600be56fa30d9d91a5f337_Embedded%20Analytics%20Meets%20Generative%20AI%20How%20SaaS%20Teams%20Monetize%20BI%20in%202025.png" loading="eager" alt="" class="uui-navbar01_blog-image"></div>
+                                <div class="uui-navbar01_large-item-content">
+                                  <div class="uui-navbar01_item-heading">Embedded Analytics Meets Generative AI: How SaaS Teams Monetize BI in 2026</div>
+                                  <div class="uui-navbar01_item-button-wrapper">
+                                    <div class="uui-button-row">
+                                      <div class="uui-button-link is-button-xsmall">
+                                        <div class="color_primary">Learn More ➝</div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </a>
+                            </div><div role="listitem" class="w-dyn-item">
+                              <a href="../blog/fabric-vs-power-bi-premium.html" class="uui-navbar01_blog-item w-inline-block">
+                                <div class="uui-navbar01_blog-image-wrapper"><img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/6961652bcf02c04b7b0edbe3_Fabric%20vs.%20Power%20BI%20Premium%20-%20Reddit.avif" loading="eager" alt="" class="uui-navbar01_blog-image"></div>
+                                <div class="uui-navbar01_large-item-content">
+                                  <div class="uui-navbar01_item-heading">Fabric vs. Power BI Premium</div>
+                                  <div class="uui-navbar01_item-button-wrapper">
+                                    <div class="uui-button-row">
+                                      <div class="uui-button-link is-button-xsmall">
+                                        <div class="color_primary">Learn More ➝</div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </a>
+                            </div><div role="listitem" class="w-dyn-item">
+                              <a href="../blog/how-to-structure-a-multi-tenant-analytics-delivery-system-without-rebuilding-everything.html" class="uui-navbar01_blog-item w-inline-block">
+                                <div class="uui-navbar01_blog-image-wrapper"><img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/69b03e0ca76a82d19058f954_Structure%20a%20Multi-Tenant%20Analytics%20Delivery.jpg" loading="eager" alt="" class="uui-navbar01_blog-image"></div>
+                                <div class="uui-navbar01_large-item-content">
+                                  <div class="uui-navbar01_item-heading">How to Structure a Multi-Tenant Analytics Delivery System Without Rebuilding Everything</div>
+                                  <div class="uui-navbar01_item-button-wrapper">
+                                    <div class="uui-button-row">
+                                      <div class="uui-button-link is-button-xsmall">
+                                        <div class="color_primary">Learn More ➝</div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </a>
+                            </div></div>
+                          
+                        </div>
+                      </div>
+                      <div class="uui-navbar01_dropdown-right-overlay-absolute"></div>
+                    </div>
+                  </div>
+                </div>
+              </nav>
+            </div>
+            <a href="../pricing.html" class="nav-link w-nav-link">Pricing</a>
+            <a href="../aaas.html" class="nav-link w-nav-link">AaaS Platform</a>
+            <div data-hover="false" data-delay="300" class="uui-navbar01_menu-dropdown w-dropdown">
+              <div class="uui-navbar01_dropdown-toggle w-dropdown-toggle">
+                <div class="uui-dropdown-icon w-embed"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg></div>
+                <div class="nav-link padding-right-0-25">Learn</div>
+              </div>
+              <nav class="uui-navbar01_dropdown-list w-dropdown-list">
+                <div class="uui-navbar01_container">
+                  <div class="uui-navbar01_dropdown-content">
+                    <div class="nav-items">
+                      <h4 class="uui-navbar01_heading large text-color-white">Learn</h4>
+                      <div class="uui-navbar01_dropdown-content-left">
+                        <div class="uui-navbar01_dropdown-link-list">
+                          <a href="https://docs.thereportinghub.com/?_gl=1*11en80c*_gcl_au*MjEyNTAwMzM0MC4xNzYwMDIyNzYzLjE5Nzk0NzY1MjguMTc2MjEwODgzNS4xNzYyMTA4ODM1*_ga*MzgyNDA3NDAxLjE3NjAwMjI3NjM." target="_blank" class="uui-navbar01_dropdown-link w-inline-block">
+                            <div class="uui-navbar01_icon-wrapper"><img src="../assets/images/Knowledge-Centre_icon.png" loading="lazy" alt="" class="nav-image"></div>
+                            <div class="uui-navbar01_item-right">
+                              <div class="uui-navbar01_item-heading">Knowledge Center<br></div>
+                              <div class="uui-text-size-small hide-mobile-landscape">All the information you need to master B.I. delivery</div>
+                            </div>
+                          </a>
+                          <a href="../community.html" class="uui-navbar01_dropdown-link is-auto w-inline-block">
+                            <div class="uui-navbar01_icon-wrapper"><img src="../assets/images/About-Us_icon-1.png" loading="lazy" alt="" class="nav-image"></div>
+                            <div class="uui-navbar01_item-right">
+                              <div class="uui-navbar01_item-heading">Community</div>
+                              <div class="uui-text-size-small hide-mobile-landscape">Connect and collaborate with active users</div>
+                            </div>
+                          </a>
+                        </div>
+                        <div class="uui-navbar01_dropdown-link-list">
+                          <h4 class="uui-navbar01_heading opacity-0">Company</h4>
+                          <a href="https://docs.thereportinghub.com/getting-started/deployment-step-by-step/self-serve-guided-install?_gl=1*1nvpg97*_gcl_au*MjEyNTAwMzM0MC4xNzYwMDIyNzYzLjE5Nzk0NzY1MjguMTc2MjEwODgzNS4xNzYyMTA4ODM1*_ga*MzgyNDA3NDAxLjE3NjAwMjI3NjM." target="_blank" class="uui-navbar01_dropdown-link w-inline-block">
+                            <div class="uui-navbar01_icon-wrapper"><img src="../assets/images/Getting-Started_icon.png" loading="lazy" alt="" class="nav-image"></div>
+                            <div class="uui-navbar01_item-right">
+                              <div class="uui-navbar01_item-heading">Getting Started</div>
+                              <div class="uui-text-size-small hide-mobile-landscape">Step-by-step guides to get started with the Reporting Hub<br></div>
+                            </div>
+                          </a>
+                          <a href="https://www.youtube.com/@thereportinghub" class="uui-navbar01_dropdown-link is-auto w-inline-block">
+                            <div class="uui-navbar01_icon-wrapper"><img src="../assets/images/Video-Demos_icon.png" loading="lazy" alt="" class="nav-image"></div>
+                            <div class="uui-navbar01_item-right">
+                              <div class="uui-navbar01_item-heading">Video Demos</div>
+                              <div class="uui-text-size-small hide-mobile-landscape">Our YouTube channel with helpful video demos</div>
+                            </div>
+                          </a>
+                        </div>
+                        <div id="w-node-a91421d3-b46b-1701-6a19-a49d5ae9c96d-17890035" class="uui-navbar01_dropdown-link-list flex">
+                          <h4 class="uui-navbar01_heading opacity-0 none">Company</h4>
+                          <a href="../resources.html" class="uui-navbar01_dropdown-link w-inline-block">
+                            <div class="uui-navbar01_icon-wrapper"><img src="../assets/images/Resources.png" loading="lazy" alt="" class="nav-image"></div>
+                            <div class="uui-navbar01_item-right">
+                              <div class="uui-navbar01_item-heading">Resources</div>
+                              <div class="uui-text-size-small hide-mobile-landscape">Videos, white papers, and assets about Reporting Hub</div>
+                            </div>
+                          </a>
+                          <a href="https://support.thereportinghub.com/support/home" target="_blank" class="uui-navbar01_dropdown-link is-auto w-inline-block">
+                            <div class="uui-navbar01_icon-wrapper"><img src="../assets/images/Get-Help_icon.png" loading="lazy" alt="" class="nav-image"></div>
+                            <div class="uui-navbar01_item-right">
+                              <div class="uui-navbar01_item-heading">Get Help</div>
+                              <div class="uui-text-size-small hide-mobile-landscape">Our Support team is here to help</div>
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+                      <div class="uui-navbar01_dropdown-content-left pt-0">
+                        <div class="uui-navbar01_dropdown-link-list one-item">
+                          <h4 class="uui-navbar01_heading large text-color-white">Services</h4>
+                          <a href="../partners.html" class="uui-navbar01_dropdown-link w-inline-block">
+                            <div class="uui-navbar01_icon-wrapper"><img src="../assets/images/Knowledge-Centre_icon.png" loading="lazy" alt="" class="nav-image"></div>
+                            <div class="uui-navbar01_item-right">
+                              <div class="uui-navbar01_item-heading">Partner Programs<br></div>
+                              <div class="uui-text-size-small hide-mobile-landscape">Find or become a Reporting Hub Partner</div>
+                            </div>
+                          </a>
+                        </div>
+                        <div class="uui-navbar01_dropdown-link-list is-bottom">
+                          <h4 class="uui-navbar01_heading opacity-0">Company</h4>
+                          <a href="../professionalservices.html" class="uui-navbar01_dropdown-link w-inline-block">
+                            <div class="uui-navbar01_icon-wrapper"><img src="../assets/images/Professional-Services_icon.png" loading="lazy" alt="" class="nav-image"></div>
+                            <div class="uui-navbar01_item-right">
+                              <div class="uui-navbar01_item-heading">Professional Services</div>
+                              <div class="uui-text-size-small hide-mobile-landscape">Get premium support from our team of experts</div>
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="uui-navbar01_dropdown-content-right">
+                      <div class="uui-navbar01_dropdown-content-wrapper">
+                        <div class="blog-items-wrapper">
+                          <h4 class="uui-navbar01_dropdown-content-heading text-color-white">Latest from our blog</h4>
+                          <a href="../blog.html" class="uui-button-link is-button-xsmall w-inline-block">
+                            <div class="color_primary">See all posts ➝</div>
+                          </a>
+                        </div>
+                        <div class="w-dyn-list">
+                          <div role="list" class="uui-navbar01_dropdown-blog-list w-dyn-items"><div role="listitem" class="w-dyn-item">
+                              <a href="../blog/embedded-analytics-meets-generative-ai-how-saas-teams-monetize-bi-in-2025.html" class="uui-navbar01_blog-item w-inline-block">
+                                <div class="uui-navbar01_blog-image-wrapper"><img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/69600be56fa30d9d91a5f337_Embedded%20Analytics%20Meets%20Generative%20AI%20How%20SaaS%20Teams%20Monetize%20BI%20in%202025.png" loading="eager" alt="" class="uui-navbar01_blog-image"></div>
+                                <div class="uui-navbar01_large-item-content">
+                                  <div class="uui-navbar01_item-heading">Embedded Analytics Meets Generative AI: How SaaS Teams Monetize BI in 2026</div>
+                                  <div class="uui-navbar01_item-button-wrapper">
+                                    <div class="uui-button-row">
+                                      <div class="uui-button-link is-button-xsmall">
+                                        <div class="color_primary">Learn More ➝</div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </a>
+                            </div><div role="listitem" class="w-dyn-item">
+                              <a href="../blog/fabric-vs-power-bi-premium.html" class="uui-navbar01_blog-item w-inline-block">
+                                <div class="uui-navbar01_blog-image-wrapper"><img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/6961652bcf02c04b7b0edbe3_Fabric%20vs.%20Power%20BI%20Premium%20-%20Reddit.avif" loading="eager" alt="" class="uui-navbar01_blog-image"></div>
+                                <div class="uui-navbar01_large-item-content">
+                                  <div class="uui-navbar01_item-heading">Fabric vs. Power BI Premium</div>
+                                  <div class="uui-navbar01_item-button-wrapper">
+                                    <div class="uui-button-row">
+                                      <div class="uui-button-link is-button-xsmall">
+                                        <div class="color_primary">Learn More ➝</div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </a>
+                            </div><div role="listitem" class="w-dyn-item">
+                              <a href="../blog/how-to-structure-a-multi-tenant-analytics-delivery-system-without-rebuilding-everything.html" class="uui-navbar01_blog-item w-inline-block">
+                                <div class="uui-navbar01_blog-image-wrapper"><img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/69b03e0ca76a82d19058f954_Structure%20a%20Multi-Tenant%20Analytics%20Delivery.jpg" loading="eager" alt="" class="uui-navbar01_blog-image"></div>
+                                <div class="uui-navbar01_large-item-content">
+                                  <div class="uui-navbar01_item-heading">How to Structure a Multi-Tenant Analytics Delivery System Without Rebuilding Everything</div>
+                                  <div class="uui-navbar01_item-button-wrapper">
+                                    <div class="uui-button-row">
+                                      <div class="uui-button-link is-button-xsmall">
+                                        <div class="color_primary">Learn More ➝</div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </a>
+                            </div></div>
+                          
+                        </div>
+                      </div>
+                      <div class="uui-navbar01_dropdown-right-overlay-absolute"></div>
+                    </div>
+                  </div>
+                </div>
+              </nav>
+            </div>
+            <a href="../demo.html" class="nav-link w-nav-link">Demo</a>
+            <a href="../install-today.html" class="nav-link w-nav-link">Install</a>
+            <a href="../about-us.html" class="nav-link w-nav-link">About Us</a>
+            <a href="../contact.html" class="nav-link w-nav-link">Contact Us</a>
+          </nav>
+          <div class="menu-button w-nav-button">
+            <div class="w-icon-nav-menu"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="main">
+      <section class="section blog-hero">
+        <div class="w-layout-blockcontainer container w-container">
+          <div class="blog-hero-contents">
+            <div class="blog-hero-left"><img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/69b3e737a95743b5eab87e49_Picture1.jpg" loading="lazy" alt="" class="human-centered-image"></div>
+            <div>
+              <h1 class="heading-2">The Consistency Problem: Why 200 Customers Shouldn't Get 200 Versions of the Truth</h1>
+              <a href="../https://thereportinghub.com/author/brian-d" class="writer-image-wrap w-inline-block"><img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/69a99a578c71f856bd49e336_691d5c42a10399b97686cc51_DSC00077-768x768.webp" loading="lazy" alt="" class="writer-image">
+                <div class="text-color-gray">Brian DeLuca</div>
+              </a>
+              <div>
+                <div class="space-1"></div>
+                <div class="text-color-gray">March 18, 2026</div>
+                <div class="space-1"></div>
+                <div class="time-icon"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFoAAABaCAYAAAA4qEECAAAACXBIWXMAAAsTAAALEwEAmpwYAAAD8klEQVR4nO2dSWsVQRDHC4wbil7VCCLiF4h6UjGIelUPKrhhNHpJIG7BqzeXUwj4NeJ2UPQDCBKNmosX9eKCZvVkBONPirTwxPdetl5qZvoH7zLMTHf9mdfTVV1dI5LJZDKZTCaTyWQymbkBLAF2AOeA28A94A3wDhgHfrrfuDv2xp1zy12zXe8xx+aqBbARuAg8BL6zeCaBB0AP0CpVBlgJnAKeAtOE4xfwBDgJrJCqAKx2T9on4vMNuA6slbICLAV6gTHSo324on2SMgHsBoaxx1tgnxQdHROBO8BvD6JMuadwnftddccWi/atH1guRQTYCrzEH1fqtKFDkS8GgS1SJPTv6GmaVsu6Ou2sxy86LdwrRQA4DPzwLABN2vONOkPHxDLAhVBzYmncZgjUhvNiEeCQcw6CII3bJaDYR8USOq55mgE0pEnbIdFh5IAYml34fvH9R5P2QzOZfDaic0/gRQRjadKHGAwmnWc7ZyQK0rgPseiPq+6/brUPj29ONOlHLNTWPbFFbgFeRzQSA0Lj4jXxAlGeXd8iCa1cihlPHq2w0KOqQQyhryUwDkNC1w1whQh7fk5hmdgS+osuxYUU+nQiwzAmtHI8pNC6kJoEsSf0o1Ait4YMGhVQ6OkgqQwu7yIZYk9opTuE0JrckgyxKfRAiDStiZQWiU2hJ7ymn7lcuKSITaGVbT6F7kxtjdgVusOn0JrVmRSxK/QNn0LfT22N2BXa3wsxdki0YEIP+RT6w0LTt7x1ogGk5734YgFh0bDRrRpIz4j4wi27z4fgT/JfSM+UJBR6vbfGZ4GSCT3foaPXW+OzQMmGjoW8DHtjPNmU7GWYfHpnmKFSOSyGGSiVC24Yry647kjN1OdMqcKkhmkrVeDfKH4D/05s3VudCbmU5YTWbcWZf+kKIfSGlOkGBvkVLKbjqgRkQibQOKG17EMmQkrYikTlH6wRNskxVRK6QS4HFdkJvUpDg1SX0SiJ6E5sXQ+sKj1RRK7ZLPSK6jEcvWoNsCvm9jcDxN/+ViO2Vm6pCn1JRK7Zoqzbd8vOc2BZMqGd2FvcxvQyR+g2iwWA9hBVZwygaRb7xRLAwZIFnaaBI2IRLY8TuPxlLPSB6RTLuJI/RR5GpsyV+Jml9M9kQV987VIkgE3AM4rDYPKSPoucZ/cb9yC1b33J58ke3fXX2EP7tFPKBDOBqEtGQqwjbrG5RcoKM/FsNfJjAoG/ukLda6QqMLMsdgJ4HNjR0Xs/0jW+SpWer4ermtsN3HVfo1gs4+5eXTG3eRQKZtLP2oCzwE3NBtIcZPcpkLGaz4OMuWND7hw9t8Ndmz8PkslkMplMJpPJZDIyR/4AHP79tg/mkAIAAAAASUVORK5CYII=" alt="Clock" class="icon-gray">
+                  <div class="text-color-gray">4 minutes</div>
+                </div>
+                <div class="space-1-5"></div>
+                <div class="text-color-gray">Subscribe to our blog to stay up to date on all the latest information from the Reporting Hub team! We’ll never share your email with anyone else.</div>
+                <div class="code-embed-9 w-embed w-script">
+                  <script charset="utf-8" type="text/javascript" src="https://js.hsforms.net/forms/embed/v2.js"></script>
+                  <div class="custom_hbs_form paidsearchpage blog-email-only">
+                    <script>
+    hbspt.forms.create({
+      portalId: "44531319",
+      formId: "a2f8d2cb-1390-4014-a681-a1c3a2b62e28",
+      region: "na1",
+      onFormReady: function ($form) {
+        var $captcha = $form.find('.hs_recaptcha');
+        var $submit  = $form.find('.hs_submit');
+        // 1) reCAPTCHA uvijek ispod submit-a
+        if ($captcha.length && $submit.length) {
+          $captcha.insertAfter($submit);
+        }
+        // 2) Email input uvijek prazan (ubij autofill)
+        var $email = $form.find('input[type="email"], input[name="email"], .hs-input[type="email"]').first();
+        if ($email.length) {
+          $email.attr('autocomplete', 'off');
+          $email.attr('autocapitalize', 'off');
+          $email.attr('autocorrect', 'off');
+          $email.attr('spellcheck', 'false');
+          function clearEmail() { $email.val(''); }
+          clearEmail();
+          setTimeout(clearEmail, 50);
+          setTimeout(clearEmail, 200);
+          setTimeout(clearEmail, 600);
+          setTimeout(clearEmail, 1200);
+        }
+      }
+    });
+  </script>
+                  </div>
+                  <style>
+/* ===== BLOG EMAIL ONLY STYLING ===== */
+/* HUBSPOT parent reset – bez ovoga input nece biti 100% */
+.custom_hbs_form.blog-email-only .hs-form,
+.custom_hbs_form.blog-email-only .hs-form fieldset,
+.custom_hbs_form.blog-email-only .hs-form .form-columns-1,
+.custom_hbs_form.blog-email-only .hs-form .form-columns-2,
+.custom_hbs_form.blog-email-only .hs-form .hs-form-field,
+.custom_hbs_form.blog-email-only .hs-form .input {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  box-sizing: border-box !important;
+}
+/* Input wrapper bez dodatnog razmaka */
+.custom_hbs_form.blog-email-only .hs-form-field .input {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+/* Email input – 100% + bez crnog bordera */
+.custom_hbs_form.blog-email-only .hs-input,
+.custom_hbs_form.blog-email-only input[type="email"]{
+  width: 100% !important;
+  display: block !important;
+  box-sizing: border-box !important;
+  min-height: 56px !important;
+  padding: 14px 16px !important;
+  font-size: 1rem !important;
+  line-height: 1.2 !important;
+  border: 0 !important;               /* skida crni border */
+  box-shadow: none !important;
+  outline: none !important;
+  border-radius: 6px !important;
+  background: #ffffff !important;
+}
+/* (opciono) lijep focus */
+.custom_hbs_form.blog-email-only .hs-input:focus,
+.custom_hbs_form.blog-email-only input[type="email"]:focus {
+  border: 1px solid rgba(23,142,232,.6) !important;
+}
+/* Submit button: duze + plavo */
+.custom_hbs_form.blog-email-only .hs_submit input[type="submit"]{
+  width: 100% !important;
+  display: block !important;
+  background: #178EE8 !important;
+  border-color: #178EE8 !important;
+  color: #fff !important;
+  margin-top: 16px !important;
+  padding: 1.05rem 1rem !important;
+  border-radius: 6px !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+  opacity: 1 !important;
+}
+/* reCAPTCHA spacing */
+.custom_hbs_form.blog-email-only .hs_recaptcha{
+  margin-top: 0.75rem !important;
+}
+/* Error uvijek u flow-u i tik ispod */
+.custom_hbs_form.blog-email-only .hs-error-msgs,
+.custom_hbs_form.blog-email-only .hs-error-msgs li,
+.custom_hbs_form.blog-email-only .hs-error-msg {
+  position: relative !important;
+  z-index: 0 !important;
+  display: block !important;
+  margin: 4px 0 0 !important;
+  padding: 0 !important;
+  line-height: 1.15 !important;
+  white-space: normal !important;
+  overflow-wrap: anywhere !important;
+  top: auto !important;
+  left: auto !important;
+  right: auto !important;
+  bottom: auto !important;
+}
+</style>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section blog-elements">
+        <div class="w-layout-blockcontainer container w-container">
+          <div class="single-blog-contents-wrapper">
+            <div fc-toc="wrapper" class="post-content-wrapper"><button class="blog-post_open-toc-button">
+                <div class="circle"></div>
+              </button>
+              <div fc-toc="content" class="w-richtext"><div data-rt-embed-type="true"><style>
+  /* ── BRAND TOKENS ───────────────────────────────────────── */
+  :root {
+    --rh-bg:           #ffffff;
+    --rh-surface:      #eaf6fd;
+    --rh-surface-2:    #d4eef9;
+    --rh-border:       #dde3e7;
+    --rh-teal:         #5BC6F7;
+    --rh-teal-light:   #82d5fa;
+    --rh-teal-muted:   rgba(91,198,247,0.12);
+    --rh-blue-muted:   rgba(91,198,247,0.08);
+    --rh-blue-accent:  #2aa8e0;
+    --rh-danger:       #e05a5a;
+    --rh-white:        #ffffff;
+    --rh-text-primary: #0d1b2a;
+    --rh-text-body:    #2e4a5e;
+    --rh-text-muted:   #5a7a90;
+    --rh-link:         #2aa8e0;
+    --rh-font:         'Segoe UI', 'Inter', Arial, sans-serif;
+    --rh-radius:       8px;
+    --rh-radius-lg:    14px;
+  }
+
+  /* ── RESET ──────────────────────────────────────────────── */
+  .bloglist-wrap-cp11 *,
+  .bloglist-wrap-cp11 *::before,
+  .bloglist-wrap-cp11 *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  .bloglist-wrap-cp11 {
+    font-family: var(--rh-font);
+    color: var(--rh-text-body);
+    font-size: 16px;
+    line-height: 1.8;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 0 20px 60px;
+  }
+
+  .bloglist-wrap-cp11 a {
+    color: var(--rh-link);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(91,198,247,0.35);
+    transition: color .2s, border-color .2s;
+  }
+  .bloglist-wrap-cp11 a:hover {
+    color: var(--rh-teal);
+    border-color: var(--rh-teal);
+  }
+
+  /* ── INTRO LEAD ─────────────────────────────────────────── */
+  .bloglist-intro-wq34 { margin-bottom: 36px; }
+  .bloglist-intro-wq34__lead {
+    font-size: 18px;
+    line-height: 1.85;
+    color: var(--rh-text-primary);
+    border-left: 3px solid var(--rh-teal);
+    padding-left: 20px;
+    margin-bottom: 18px;
+  }
+  .bloglist-intro-wq34__text {
+    font-size: 16px;
+    color: var(--rh-text-body);
+    margin-bottom: 14px;
+  }
+
+  /* ── KEY TAKEAWAYS ──────────────────────────────────────── */
+  .bloglist-takeaways-hb56 {
+    background: var(--rh-surface);
+    border: 1px solid var(--rh-border);
+    border-top: 3px solid var(--rh-teal);
+    border-radius: var(--rh-radius-lg);
+    padding: 26px 28px;
+    margin: 32px 0 44px;
+  }
+  .bloglist-takeaways-hb56__header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 18px;
+  }
+  .bloglist-takeaways-hb56__header-icon {
+    width: 22px; height: 22px;
+    color: var(--rh-teal);
+    flex-shrink: 0;
+  }
+  .bloglist-takeaways-hb56__header-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--rh-blue-accent);
+    text-transform: uppercase;
+    letter-spacing: .08em;
+  }
+  .bloglist-takeaways-hb56__list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .bloglist-takeaways-hb56__item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 15px;
+    color: var(--rh-text-body);
+    line-height: 1.65;
+  }
+  .bloglist-takeaways-hb56__icon {
+    width: 17px; height: 17px;
+    color: var(--rh-teal);
+    flex-shrink: 0;
+    margin-top: 4px;
+  }
+
+  /* ── H2 HEADING ─────────────────────────────────────────── */
+  .bloglist-h2-td83 {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    margin: 52px 0 18px;
+  }
+  .bloglist-h2-td83__icon {
+    width: 34px; height: 34px;
+    color: var(--rh-teal);
+    flex-shrink: 0;
+  }
+  .bloglist-h2-td83__text {
+    font-size: 23px;
+    font-weight: 700;
+    color: var(--rh-text-primary);
+    line-height: 1.3;
+  }
+
+  /* ── H3 SUB-HEADING ─────────────────────────────────────── */
+  .bloglist-h3-fn27 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 36px 0 14px;
+  }
+  .bloglist-h3-fn27__icon {
+    width: 26px; height: 26px;
+    color: var(--rh-teal);
+    flex-shrink: 0;
+  }
+  .bloglist-h3-fn27__text {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--rh-text-primary);
+  }
+
+  /* ── H4 MINOR HEADING ───────────────────────────────────── */
+  .bloglist-h4-xm09 {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--rh-blue-accent);
+    margin: 28px 0 10px;
+    padding-left: 14px;
+    border-left: 3px solid var(--rh-teal);
+  }
+
+  /* ── BODY PARAGRAPH ─────────────────────────────────────── */
+  .bloglist-para-sv62 {
+    font-size: 16px;
+    color: var(--rh-text-body);
+    line-height: 1.8;
+    margin-bottom: 16px;
+  }
+
+  /* ── BULLET LIST ────────────────────────────────────────── */
+  .bloglist-bullets-ek19 {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 14px 0 24px 4px;
+  }
+  .bloglist-bullets-ek19__item {
+    display: flex;
+    align-items: flex-start;
+    gap: 11px;
+    font-size: 15.5px;
+    color: var(--rh-text-body);
+    line-height: 1.7;
+  }
+  .bloglist-bullets-ek19__icon {
+    width: 18px; height: 18px;
+    color: var(--rh-teal);
+    flex-shrink: 0;
+    margin-top: 4px;
+  }
+  .bloglist-bullets-ek19__text strong {
+    color: var(--rh-text-primary);
+    font-weight: 700;
+  }
+
+  /* ── WARNING BULLET LIST (risk items) ───────────────────── */
+  .bloglist-risks-gt44 {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 14px 0 24px 4px;
+  }
+  .bloglist-risks-gt44__item {
+    display: flex;
+    align-items: flex-start;
+    gap: 11px;
+    font-size: 15.5px;
+    color: var(--rh-text-body);
+    line-height: 1.7;
+  }
+  .bloglist-risks-gt44__icon {
+    width: 18px; height: 18px;
+    color: var(--rh-danger);
+    flex-shrink: 0;
+    margin-top: 4px;
+  }
+
+  /* ── STAT CALLOUT ───────────────────────────────────────── */
+  .bloglist-stat-jz03 {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    background: rgba(91,198,247,0.08);
+    border-left: 4px solid var(--rh-blue-accent);
+    border-radius: 0 var(--rh-radius) var(--rh-radius) 0;
+    padding: 18px 22px;
+    margin: 22px 0 28px;
+  }
+  .bloglist-stat-jz03__icon {
+    width: 24px; height: 24px;
+    color: var(--rh-blue-accent);
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .bloglist-stat-jz03__text {
+    font-size: 15px;
+    color: var(--rh-text-body);
+    line-height: 1.7;
+  }
+  .bloglist-stat-jz03__text strong {
+    color: var(--rh-text-primary);
+    font-weight: 700;
+  }
+
+  /* ── WARNING CALLOUT (regulatory/risk) ──────────────────── */
+  .bloglist-warning-rk75 {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    background: rgba(224,90,90,0.06);
+    border-left: 4px solid var(--rh-danger);
+    border-radius: 0 var(--rh-radius) var(--rh-radius) 0;
+    padding: 18px 22px;
+    margin: 22px 0 28px;
+  }
+  .bloglist-warning-rk75__icon {
+    width: 24px; height: 24px;
+    color: var(--rh-danger);
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .bloglist-warning-rk75__text {
+    font-size: 15px;
+    color: var(--rh-text-body);
+    line-height: 1.7;
+  }
+  .bloglist-warning-rk75__text strong {
+    color: #b03030;
+    font-weight: 700;
+  }
+
+  /* ── NUMBERED REQUIREMENTS ──────────────────────────────── */
+  .bloglist-reqs-pa58 {
+    list-style: none;
+    counter-reset: req;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin: 18px 0 32px;
+  }
+  .bloglist-reqs-pa58__item {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    counter-increment: req;
+    padding: 18px 20px;
+    background: var(--rh-surface);
+    border: 1px solid var(--rh-border);
+    border-radius: var(--rh-radius);
+    transition: border-color .2s;
+  }
+  .bloglist-reqs-pa58__item:hover {
+    border-color: rgba(91,198,247,.5);
+  }
+  .bloglist-reqs-pa58__num {
+    width: 34px; height: 34px;
+    border-radius: 50%;
+    background: rgba(91,198,247,.12);
+    border: 1.5px solid var(--rh-teal);
+    color: var(--rh-blue-accent);
+    font-size: 13px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .bloglist-reqs-pa58__num::before { content: counter(req); }
+  .bloglist-reqs-pa58__content { flex: 1; }
+  .bloglist-reqs-pa58__title {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--rh-text-primary);
+    margin-bottom: 6px;
+  }
+  .bloglist-reqs-pa58__text {
+    font-size: 14.5px;
+    color: var(--rh-text-body);
+    line-height: 1.7;
+  }
+  .bloglist-reqs-pa58__subbullets {
+    list-style: none;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .bloglist-reqs-pa58__subbullet {
+    display: flex;
+    gap: 8px;
+    font-size: 14px;
+    color: var(--rh-text-body);
+    align-items: flex-start;
+  }
+  .bloglist-reqs-pa58__subbullet-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--rh-teal);
+    flex-shrink: 0;
+    margin-top: 7px;
+  }
+
+  /* ── ICON ROW CARDS ─────────────────────────────────────── */
+  .bloglist-iconrow-uf85 {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin: 18px 0 30px;
+  }
+  .bloglist-iconrow-uf85__item {
+    display: flex;
+    gap: 18px;
+    align-items: flex-start;
+    padding: 18px 20px;
+    background: var(--rh-surface);
+    border: 1px solid var(--rh-border);
+    border-radius: var(--rh-radius);
+    transition: border-color .22s, transform .2s;
+  }
+  .bloglist-iconrow-uf85__item:hover {
+    border-color: rgba(91,198,247,.55);
+    transform: translateX(3px);
+  }
+  .bloglist-iconrow-uf85__icon {
+    width: 34px; height: 34px;
+    color: var(--rh-teal);
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .bloglist-iconrow-uf85__content { flex: 1; }
+  .bloglist-iconrow-uf85__title {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--rh-text-primary);
+    margin-bottom: 5px;
+  }
+  .bloglist-iconrow-uf85__text {
+    font-size: 14.5px;
+    color: var(--rh-text-body);
+    line-height: 1.7;
+  }
+
+  /* ── PULL QUOTE ─────────────────────────────────────────── */
+  .bloglist-quote-mb21 {
+    background: rgba(91,198,247,0.09);
+    border-left: 4px solid var(--rh-teal);
+    border-radius: 0 var(--rh-radius) var(--rh-radius) 0;
+    padding: 22px 26px;
+    margin: 28px 0;
+    position: relative;
+  }
+  .bloglist-quote-mb21__mark {
+    font-size: 52px;
+    line-height: 1;
+    color: var(--rh-teal);
+    opacity: .4;
+    position: absolute;
+    top: 10px; left: 20px;
+    font-family: Georgia, serif;
+  }
+  .bloglist-quote-mb21__text {
+    font-size: 16px;
+    font-style: italic;
+    font-weight: 500;
+    color: var(--rh-text-primary);
+    line-height: 1.75;
+    padding-left: 28px;
+  }
+
+  /* ── SECTION DIVIDER ────────────────────────────────────── */
+  .bloglist-divider-lw66 {
+    border: none;
+    border-top: 1px solid var(--rh-border);
+    margin: 48px 0;
+  }
+
+  /* ── SOURCES ────────────────────────────────────────────── */
+  .bloglist-sources-oy13 {
+    margin-top: 44px;
+    padding-top: 20px;
+    border-top: 1px solid var(--rh-border);
+  }
+  .bloglist-sources-oy13__title {
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .07em;
+    color: var(--rh-text-muted);
+    margin-bottom: 10px;
+  }
+  .bloglist-sources-oy13__list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .bloglist-sources-oy13__item {
+    font-size: 13.5px;
+    color: var(--rh-text-muted);
+    line-height: 1.6;
+  }
+
+  /* ── CONCLUSION BOX ─────────────────────────────────────── */
+  .bloglist-conclusion-ez47 {
+    background: linear-gradient(135deg, var(--rh-surface) 0%, rgba(91,198,247,.08) 100%);
+    border: 1px solid rgba(91,198,247,.35);
+    border-radius: var(--rh-radius-lg);
+    padding: 30px 28px;
+    margin-top: 50px;
+  }
+  .bloglist-conclusion-ez47__header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 14px;
+  }
+  .bloglist-conclusion-ez47__icon {
+    width: 30px; height: 30px;
+    color: var(--rh-teal);
+    flex-shrink: 0;
+  }
+  .bloglist-conclusion-ez47__title {
+    font-size: 19px;
+    font-weight: 700;
+    color: var(--rh-text-primary);
+  }
+  .bloglist-conclusion-ez47__text {
+    font-size: 15.5px;
+    color: var(--rh-text-body);
+    line-height: 1.8;
+    margin-bottom: 10px;
+  }
+  .bloglist-conclusion-ez47__text:last-child { margin-bottom: 0; }
+  
+  .human-centered-image {
+    height: auto;
+}
+
+  /* ── RESPONSIVE ─────────────────────────────────────────── */
+  @media (max-width: 640px) {
+    .bloglist-wrap-cp11     { padding: 0 14px 40px; }
+    .bloglist-h2-td83__text { font-size: 19px; }
+  }
+</style></div><div data-rt-embed-type="true"><div class="bloglist-intro-wq34">
+    <p class="bloglist-intro-wq34__lead">
+      Ask your team a simple question: if 200 customers open a report today, will they all see the same result? Not just the same data, but the same explanation of the same AI-generated summary. In other words, will they all receive the same version of the truth?
+    </p>
+    <p class="bloglist-intro-wq34__text">
+     For many organizations that deliver analytics externally, the honest answer will be 'No'. You may be able to avoid that inconsistency at first, but over time, it becomes more than a technical issue. It becomes a trust and compliance problem, and eventually a business risk.
+    </p>
+  </div></div><div data-rt-embed-type="true"><div class="bloglist-takeaways-hb56">
+    <div class="bloglist-takeaways-hb56__header">
+      <svg class="bloglist-takeaways-hb56__header-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line>
+      </svg>
+      <span class="bloglist-takeaways-hb56__header-title">Key Takeaways</span>
+    </div>
+    <ul class="bloglist-takeaways-hb56__list">
+      <li class="bloglist-takeaways-hb56__item">
+        <svg class="bloglist-takeaways-hb56__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        Inconsistent AI explanations create trust and compliance risks.
+      </li>
+      <li class="bloglist-takeaways-hb56__item">
+        <svg class="bloglist-takeaways-hb56__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        The delivery layer, not the data, drives inconsistency issues.
+      </li>
+      <li class="bloglist-takeaways-hb56__item">
+        <svg class="bloglist-takeaways-hb56__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        Internal BI governance does not extend beyond the organisation.
+      </li>
+      <li class="bloglist-takeaways-hb56__item">
+        <svg class="bloglist-takeaways-hb56__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        AI outputs require approval, version control, and traceability.
+      </li>
+      <li class="bloglist-takeaways-hb56__item">
+        <svg class="bloglist-takeaways-hb56__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        Regulators demand audit trails for external AI delivery.
+      </li>
+      <li class="bloglist-takeaways-hb56__item">
+        <svg class="bloglist-takeaways-hb56__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        Governed infrastructure ensures one version of the truth.
+      </li>
+    </ul>
+  </div></div><div data-rt-embed-type="true"><div class="bloglist-h2-td83">
+    <svg class="bloglist-h2-td83__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line>
+    </svg>
+    <h2 class="bloglist-h2-td83__text">The Hidden Cost of Inconsistency</h2>
+  </div>
+
+  <p class="bloglist-para-sv62">
+    Most organizations that run Power BI internally have already solved the internal consistency problem. <a href="https://thereportinghub.com/blog/what-is-a-semantic-model-in-power-bi-understanding-the-foundation-of-data-analysis" target="_blank" rel="noopener">Semantic models</a> are standardized. Metrics are defined clearly. Finance, operations, and marketing work from the same definitions of revenue, churn, and performance.
+  </p>
+  <p class="bloglist-para-sv62">
+    However, once analytics are delivered externally, that internal governance often stops at the boundary. Different customers may receive slightly different versions of reports. AI-generated summaries can vary between sessions.
+  </p>
+  <p class="bloglist-para-sv62">
+    Enterprise analytics teams often say, "Different customers are getting different AI explanations for the same data." That issue rarely appears in dashboards or monitoring systems until someone raises a complaint.
+  </p></div><div data-rt-embed-type="true"><div class="bloglist-h3-fn27">
+    <svg class="bloglist-h3-fn27__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+    </svg>
+    <h3 class="bloglist-h3-fn27__text">Where the Problem Actually Lives</h3>
+  </div>
+
+  <p class="bloglist-para-sv62">This is not usually a data quality problem. The underlying data and models are often accurate and well managed.</p>
+
+  <p class="bloglist-para-sv62">The consistency gap exists at the delivery layer. That layer controls:</p>
+
+  <ul class="bloglist-bullets-ek19">
+    <li class="bloglist-bullets-ek19__item">
+      <svg class="bloglist-bullets-ek19__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+      <span class="bloglist-bullets-ek19__text">What customers see</span>
+    </li>
+    <li class="bloglist-bullets-ek19__item">
+      <svg class="bloglist-bullets-ek19__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+      <span class="bloglist-bullets-ek19__text">How AI explains it</span>
+    </li>
+    <li class="bloglist-bullets-ek19__item">
+      <svg class="bloglist-bullets-ek19__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+      <span class="bloglist-bullets-ek19__text">Which version of the report is active</span>
+    </li>
+    <li class="bloglist-bullets-ek19__item">
+      <svg class="bloglist-bullets-ek19__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+      <span class="bloglist-bullets-ek19__text">Whether any of it can be traced later</span>
+    </li>
+  </ul>
+
+  <hr class="bloglist-divider-lw66"></div><div data-rt-embed-type="true"><div class="bloglist-h2-td83">
+    <svg class="bloglist-h2-td83__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <line x1="17" y1="17" x2="3" y2="3"></line><path d="M21 3H9v12"></path><path d="M3 9v12h12"></path>
+    </svg>
+    <h2 class="bloglist-h2-td83__text">Why the Internal-External Divide Creates Risk?</h2>
+  </div>
+
+  <p class="bloglist-para-sv62">
+    Internal BI systems were designed for internal users. Power BI workspaces assume employees with managed credentials. Governance controls such as <a href="https://thereportinghub.com/blog/securing-data-access-implementing-row-level-security-in-power-bi-embedded" target="_blank" rel="noopener">Row Level Security</a> and sensitivity labels are built around that assumption.
+  </p>
+  <p class="bloglist-para-sv62">External delivery was not part of that original design. As a result, organizations often improvise when pushing analytics outward. Some teams export reports and email them as PDFs. Others expose shared dashboards behind a single login. </p>
+
+ <p class="bloglist-para-sv62">Some rebuild reports in secondary systems. None of these approaches guarantees consistency at scale. </p></div><div data-rt-embed-type="true"><div class="bloglist-h3-fn27">
+    <svg class="bloglist-h3-fn27__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+    </svg>
+    <h3 class="bloglist-h3-fn27__text">How AI Makes It Worse</h3>
+  </div>
+
+  <p class="bloglist-para-sv62">The issue becomes more serious when an AI-generated narrative is layered on top of analytics. AI systems generate summaries, explain variances, and highlight trends dynamically. Without approval workflows or version control, those outputs can vary from session to session.</p>
+ <p class="bloglist-para-sv62">
+This creates several immediate risks:
+</p>
+
+  <ul class="bloglist-risks-gt44">
+    <li class="bloglist-risks-gt44__item">
+      <svg class="bloglist-risks-gt44__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+      <span>AI summaries are not guaranteed to say the same thing each time</span>
+    </li>
+    <li class="bloglist-risks-gt44__item">
+      <svg class="bloglist-risks-gt44__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+      <span>There may be no record of what the AI communicated on a specific date</span>
+    </li>
+    <li class="bloglist-risks-gt44__item">
+      <svg class="bloglist-risks-gt44__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+      <span>Legal and compliance teams have limited visibility into external AI output</span>
+    </li>
+    <li class="bloglist-risks-gt44__item">
+      <svg class="bloglist-risks-gt44__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+      <span>Customer disputes cannot be traced back to a definitive explanation</span>
+    </li>
+  </ul>
+
+  <p class="bloglist-para-sv62">When AI is customer-facing, inconsistency is no longer harmless variation. It becomes exposure.</p>
+
+  <hr class="bloglist-divider-lw66"></div><div data-rt-embed-type="true"><div class="bloglist-h2-td83">
+    <svg class="bloglist-h2-td83__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+    </svg>
+    <h2 class="bloglist-h2-td83__text">The Regulatory Pressure Is Increasing</h2>
+  </div>
+
+  <div class="bloglist-warning-rk75">
+    <svg class="bloglist-warning-rk75__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line>
+    </svg>
+    <p class="bloglist-warning-rk75__text">The EU AI Act's high-risk AI provisions take full effect in <strong>August 2026</strong>. Serious violations can result in fines up to <strong>€35 million or 7% of global revenue</strong>. The regulation explicitly requires auditability, traceability, and version control for AI systems in regulated contexts.</p>
+  </div>
+
+  <p class="bloglist-para-sv62">U.S. regulators are applying similar scrutiny. Banking regulators, such as the OCC, and healthcare regulators, such as the FDA, are increasing oversight of AI-driven systems.</p></div><div data-rt-embed-type="true"><div class="bloglist-h3-fn27">
+    <svg class="bloglist-h3-fn27__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line>
+    </svg>
+    <h3 class="bloglist-h3-fn27__text">What This Means in Practice</h3>
+  </div>
+
+  <p class="bloglist-para-sv62">Organizations delivering AI-generated analytics externally must be able to demonstrate:</p>
+
+  <ul class="bloglist-bullets-ek19">
+    <li class="bloglist-bullets-ek19__item">
+      <svg class="bloglist-bullets-ek19__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+      <span class="bloglist-bullets-ek19__text">What was delivered</span>
+    </li>
+    <li class="bloglist-bullets-ek19__item">
+      <svg class="bloglist-bullets-ek19__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+      <span class="bloglist-bullets-ek19__text">To which customer</span>
+    </li>
+    <li class="bloglist-bullets-ek19__item">
+      <svg class="bloglist-bullets-ek19__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+      <span class="bloglist-bullets-ek19__text">On what date</span>
+    </li>
+    <li class="bloglist-bullets-ek19__item">
+      <svg class="bloglist-bullets-ek19__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+      <span class="bloglist-bullets-ek19__text">Under which version</span>
+    </li>
+    <li class="bloglist-bullets-ek19__item">
+      <svg class="bloglist-bullets-ek19__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+      <span class="bloglist-bullets-ek19__text">With what AI reasoning</span>
+    </li>
+  </ul>
+
+  <p class="bloglist-para-sv62">Stating that content was reviewed before release is not enough. Evidence must be retrievable. According to IBM's 2025 Cost of a Data Breach Report, shadow AI accounts for roughly 20% of data breaches, adding an average of $670,000 to incident costs. 
+</p>
+
+
+
+  <p class="bloglist-para-sv62">Most analytics delivery systems were not built to meet these standards. Creating audit-ready logging, approval workflows, and per-customer version tracking internally often becomes a <strong>12–18 month, $200K+ engineering effort</strong>.</p>
+
+  <hr class="bloglist-divider-lw66"></div><div data-rt-embed-type="true"><div class="bloglist-h2-td83">
+    <svg class="bloglist-h2-td83__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline>
+    </svg>
+    <h2 class="bloglist-h2-td83__text">What Governed Intelligence Delivery Requires?</h2>
+  </div>
+
+  <p class="bloglist-para-sv62">Solving the consistency problem requires more than policy statements or minor configuration changes. It requires infrastructure built specifically for external delivery.</p>
+
+  <ol class="bloglist-reqs-pa58">
+    <li class="bloglist-reqs-pa58__item">
+      <div class="bloglist-reqs-pa58__num"></div>
+      <div class="bloglist-reqs-pa58__content">
+        <div class="bloglist-reqs-pa58__title">Version-Controlled Analytics</div>
+        <p class="bloglist-reqs-pa58__text">Every customer should receive the same approved version of a report and its associated AI narrative. Updates must propagate centrally without creating drift between tenants. Consistency must be systematic, not manual.</p>
+      </div>
+    </li>
+    <li class="bloglist-reqs-pa58__item">
+      <div class="bloglist-reqs-pa58__num"></div>
+      <div class="bloglist-reqs-pa58__content">
+        <div class="bloglist-reqs-pa58__title">Controlled AI Publication</div>
+        <p class="bloglist-reqs-pa58__text">AI-generated narrative should not be published externally without review. Structured approval workflows ensure that summaries and explanations are validated before customers see them. Human oversight must be part of the delivery process.</p>
+      </div>
+    </li>
+    <li class="bloglist-reqs-pa58__item">
+      <div class="bloglist-reqs-pa58__num"></div>
+      <div class="bloglist-reqs-pa58__content">
+        <div class="bloglist-reqs-pa58__title">Complete Audit Trails</div>
+        <p class="bloglist-reqs-pa58__text">The system must log:
+		  <br>
+<br>
+
+		
+
+What each customer received<br>
+
+Which version was active<br>
+
+What the AI explanation included<br>
+
+The exact date and time of delivery<br>
+<br>
+<br>
+These records must be retrievable for compliance and dispute resolution.
+
+</p>
+		  
+		  
+		  
+      </div>
+    </li>
+    <li class="bloglist-reqs-pa58__item">
+      <div class="bloglist-reqs-pa58__num"></div>
+      <div class="bloglist-reqs-pa58__content">
+        <div class="bloglist-reqs-pa58__title">Tenant-Level Isolation</div>
+        <p class="bloglist-reqs-pa58__text">Customer A must never see Customer B's data, even when both rely on the same semantic model. <a href="https://thereportinghub.com/blog/how-to-handle-secure-access-across-clients-in-multi-tenant-bi" target="_blank">Per-tenant controls</a> must enforce strict separation while maintaining consistency.</p>
+        <p class="bloglist-reqs-pa58__text">Internal governance focuses on data accuracy. External intelligence delivery requires governance at the experience layer.</p>
+      </div>
+    </li>
+  </ol>
+
+  <hr class="bloglist-divider-lw66"></div><div data-rt-embed-type="true"><div class="bloglist-h2-td83">
+    <svg class="bloglist-h2-td83__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+    </svg>
+    <h2 class="bloglist-h2-td83__text">How Reporting Hub Addresses the Gap?</h2>
+  </div>
+
+  <p class="bloglist-para-sv62">Reporting Hub is designed to bridge the gap between internal analytics governance and external delivery requirements. Built on top of Power BI, it introduces structured orchestration and control without replacing the existing analytics foundation.</p>
+
+  <div class="bloglist-iconrow-uf85">
+    <div class="bloglist-iconrow-uf85__item">
+      <svg class="bloglist-iconrow-uf85__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <polyline points="17 1 21 5 17 9"></polyline><path d="M3 11V9a4 4 0 0 1 4-4h14"></path><polyline points="7 23 3 19 7 15"></polyline><path d="M21 13v2a4 4 0 0 1-4 4H3"></path>
+      </svg>
+      <div class="bloglist-iconrow-uf85__content">
+        <div class="bloglist-iconrow-uf85__title">Version-Controlled Intelligence Delivery</div>
+        <p class="bloglist-iconrow-uf85__text">Every report and AI-generated narrative is versioned. When a new version is approved, it becomes the authoritative version across all customer tenants simultaneously. This eliminates drift and ensures alignment.</p>
+      </div>
+    </div>
+    <div class="bloglist-iconrow-uf85__item">
+      <svg class="bloglist-iconrow-uf85__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+      </svg>
+      <div class="bloglist-iconrow-uf85__content">
+        <div class="bloglist-iconrow-uf85__title">BI Genius Approval Workflows</div>
+        <p class="bloglist-iconrow-uf85__text">AI-generated content produced by BI Genius passes through a structured review before external publication. Nothing reaches a customer without a human sign-off.</p>
+      </div>
+    </div>
+    <div class="bloglist-iconrow-uf85__item">
+      <svg class="bloglist-iconrow-uf85__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line>
+      </svg>
+      <div class="bloglist-iconrow-uf85__content">
+        <div class="bloglist-iconrow-uf85__title">Compliance-Grade Audit Logging</div>
+        <p class="bloglist-iconrow-uf85__text">Each delivery event is recorded. The system captures what was shown, which version was active, what the AI explained, and when it occurred. Enterprise-tier configurations retain this information for compliance needs.</p>
+      </div>
+    </div>
+    <div class="bloglist-iconrow-uf85__item">
+      <svg class="bloglist-iconrow-uf85__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+      </svg>
+      <div class="bloglist-iconrow-uf85__content">
+        <div class="bloglist-iconrow-uf85__title">Built-In Multi-Tenant Isolation</div>
+        <p class="bloglist-iconrow-uf85__text">Customer tenants are isolated by design. AI agents can be configured per tenant while maintaining strict data separation.</p>
+      </div>
+    </div>
+  </div>
+
+  <p class="bloglist-para-sv62">At a small scale, teams may attempt to manage consistency manually. But at 100 or 200 customers, manual consistency becomes impossible. Only a systematic governance infrastructure can maintain control.</p>
+
+  <hr class="bloglist-divider-lw66"></div><div data-rt-embed-type="true"><div class="bloglist-h2-td83">
+    <svg class="bloglist-h2-td83__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+    </svg>
+    <h2 class="bloglist-h2-td83__text">The Business Impact of Inconsistency</h2>
+  </div>
+
+  <p class="bloglist-para-sv62">The cost of inconsistency is often invisible until it becomes expensive. It may appear as:</p>
+
+  <ul class="bloglist-risks-gt44">
+    <li class="bloglist-risks-gt44__item">
+      <svg class="bloglist-risks-gt44__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+      <span>A customer receiving different explanations for the same metric across reporting periods</span>
+    </li>
+    <li class="bloglist-risks-gt44__item">
+      <svg class="bloglist-risks-gt44__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+      <span>A regulator requesting evidence of what was communicated during a specific timeframe</span>
+    </li>
+    <li class="bloglist-risks-gt44__item">
+      <svg class="bloglist-risks-gt44__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+      <span>A compliance team is blocking AI deployment due to a lack of audit visibility</span>
+    </li>
+  </ul>
+<p class="bloglist-para-sv62">The decision is not whether governed intelligence delivery is needed. It is whether to build that infrastructure internally or deploy a platform designed for this purpose.</p>
+  <div class="bloglist-stat-jz03">
+    <svg class="bloglist-stat-jz03__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line>
+    </svg>
+    <p class="bloglist-stat-jz03__text">Internal builds often take <strong>12 to 18 months</strong> and cost <strong>$150K to $300K</strong> in initial costs, followed by ongoing maintenance expenses. In contrast, deploying a structured infrastructure enables organizations to operationalise governed delivery within weeks.</p>
+  </div>
+
+  
+
+  <p class="bloglist-para-sv62">Insight generation is increasingly commoditized. AI generation is widely available. Governed, consistent intelligence delivery is becoming the true differentiator.</p></div><div data-rt-embed-type="true"><div class="bloglist-conclusion-ez47">
+    <div class="bloglist-conclusion-ez47__header">
+      <svg class="bloglist-conclusion-ez47__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+      </svg>
+      <h2 class="bloglist-conclusion-ez47__title">Final Words</h2>
+    </div>
+    <p class="bloglist-conclusion-ez47__text">Consistency in external analytics is a trust requirement. When customers receive different explanations for the same data, confidence declines quickly. Governed intelligence delivery ensures that every report, every AI summary, and every interaction is controlled, traceable, and aligned.</p>
+    <p class="bloglist-conclusion-ez47__text">At scale, consistency is not optional — it is essential.</p>
+  </div></div><div data-rt-embed-type="true"><div class="bloglist-sources-oy13">
+    <div class="bloglist-sources-oy13__title">Sources</div>
+    <ul class="bloglist-sources-oy13__list">
+      <li class="bloglist-sources-oy13__item">1. Cost of a Data Breach Report 2025 — <a href="https://www.ibm.com/reports/data-breach" target="_blank" rel="noopener">ibm.com</a></li>
+      <li class="bloglist-sources-oy13__item">2. Artificial Intelligence Act, Article 99: Penalties — <a href="https://artificialintelligenceact.eu/article/99/" target="_blank" rel="noopener">artificialintelligenceact.eu</a></li>
+    </ul>
+  </div></div><p>‍</p></div>
+              <nav aria-label="Table of contents" class="blog-post_toc">
+                <div>Table of Contents</div>
+                <div fc-toc="close" class="blog-post_close-toc-overlay"></div>
+                <ol fc-toc-collapse="true" fc-toc="component" role="list" class="blog-post_toc-list">
+                  <li class="blog-post_toc-list-item">
+                    <a href="#" fc-toc="h2" class="toc_h2">heading 2</a>
+                    <div fc-toc-rotate="-45" fc-toc="open-group" class="toc_open-group-icon w-embed"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- !Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc. -->
+                        <path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 144L48 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l144 0 0 144c0 17.7 14.3 32 32 32s32-14.3 32-32l0-144 144 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-144 0 0-144z" fill="currentColor"></path>
+                      </svg></div>
+                  </li>
+                  <li class="blog-post_toc-list-item">
+                    <a fc-toc="h3" href="#" class="toc_h3">heading 3</a>
+                  </li>
+                  <li class="blog-post_toc-list-item">
+                    <a fc-toc="h4" href="#" class="toc_h4">heading 4</a>
+                  </li>
+                  <li class="blog-post_toc-list-item">
+                    <a fc-toc="h5" href="#" class="toc_h5">heading 5</a>
+                  </li>
+                  <li class="blog-post_toc-list-item">
+                    <a fc-toc="h6" href="#" class="toc_h6">heading 6</a>
+                  </li>
+                </ol>
+                <div class="related-blogs w-dyn-list">
+                  <div role="list" class="related-blogs-list w-dyn-items"><div role="listitem" class="related-blog-item w-dyn-item">
+                      <a href="embedded-analytics-meets-generative-ai-how-saas-teams-monetize-bi-in-2025.html" class="related-blog-link w-inline-block">
+                        <div class="related-blog-wrap"><img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/69600be56fa30d9d91a5f337_Embedded%20Analytics%20Meets%20Generative%20AI%20How%20SaaS%20Teams%20Monetize%20BI%20in%202025.png" loading="lazy" alt="" class="related-blog-img">
+                          <h3 class="related-blogs-h3">Embedded Analytics Meets Generative AI: How SaaS Teams Monetize BI in 2026</h3>
+                        </div>
+                      </a>
+                    </div><div role="listitem" class="related-blog-item w-dyn-item">
+                      <a href="fabric-vs-power-bi-premium.html" class="related-blog-link w-inline-block">
+                        <div class="related-blog-wrap"><img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/6961652bcf02c04b7b0edbe3_Fabric%20vs.%20Power%20BI%20Premium%20-%20Reddit.avif" loading="lazy" alt="" class="related-blog-img">
+                          <h3 class="related-blogs-h3">Fabric vs. Power BI Premium</h3>
+                        </div>
+                      </a>
+                    </div><div role="listitem" class="related-blog-item w-dyn-item">
+                      <a href="how-to-structure-a-multi-tenant-analytics-delivery-system-without-rebuilding-everything.html" class="related-blog-link w-inline-block">
+                        <div class="related-blog-wrap"><img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/69b03e0ca76a82d19058f954_Structure%20a%20Multi-Tenant%20Analytics%20Delivery.jpg" loading="lazy" alt="" class="related-blog-img">
+                          <h3 class="related-blogs-h3">How to Structure a Multi-Tenant Analytics Delivery System Without Rebuilding Everything</h3>
+                        </div>
+                      </a>
+                    </div></div>
+                  
+                </div>
+              </nav>
+              <div fc-toc="active-style" class="u-toc-current-link"></div>
+              <div class="toc-subitems"></div>
+              <div class="toc_script w-embed w-script">
+                <script>
+document.addEventListener('DOMContentLoaded', () => {
+  let preventAutoOpen = false;
+  let suppressNextScrollUpdate = false;
+  const tocWrappers = document.querySelectorAll('[fc-toc="wrapper"]');
+  if (!tocWrappers) return;
+  for (const wrapper of tocWrappers) {
+    // Grab key elements and settings
+    const tocComponent = wrapper.querySelector('[fc-toc="component"]');
+    const tocContent = wrapper.querySelector('[fc-toc="content"]');
+    const activeStyleElement = wrapper.querySelector('[fc-toc="active-style"]');
+    const activeClass = activeStyleElement?.className || '';
+    const debounceMs = 0;
+    const isCollapsible = tocComponent.getAttribute('fc-toc-collapse') === 'true';
+    if (!tocComponent || !tocContent) return;
+    // Map of heading levels to placeholder class names
+    const placeholderLinks = tocComponent.querySelectorAll('[fc-toc]');
+    const headingLevels = new Map();
+    placeholderLinks.forEach(link => {
+      const level = link.getAttribute('fc-toc');
+      const className = link.getAttribute('class') || '';
+      if (/^h[1-6]$/.test(level)) {
+        headingLevels.set(level.toLowerCase(), className);
+      }
+    });
+    // Find all target headings in the content
+    const selector = [...headingLevels.keys()].join(', ');
+    const headings = tocContent.querySelectorAll(selector);
+    // Generate unique IDs for headings
+    const usedIds = new Set();
+    const generateSlug = (text, index) => {
+      let slug = text.toLowerCase()
+        .normalize("NFD").replace(/[̀-ͯ]/g, "")
+        .replace(/[^a-z0-9\s-]/g, '')
+        .replace(/\s+/g, '-')
+        .replace(/-+/g, '-')
+        .replace(/^-|-$/g, '');
+      if (!slug) slug = `heading-${index}`;
+      let uniqueSlug = slug;
+      let count = 1;
+      while (usedIds.has(uniqueSlug)) {
+        uniqueSlug = `${slug}-${count++}`;
+      }
+      usedIds.add(uniqueSlug);
+      return uniqueSlug;
+    };
+    // Assign IDs to headings
+    headings.forEach((heading, index) => {
+      const id = generateSlug(heading.textContent.trim(), index);
+      heading.id = id;
+    });
+    // Build the TOC from placeholder links and real headings
+    let currentParentLi = null;
+    let subList = null;
+    headings.forEach((heading, index) => {
+      const level = heading.tagName.toLowerCase();
+      const className = headingLevels.get(level) || '';
+      const placeholderLink = tocComponent.querySelector(`[fc-toc="${level}"]`);
+      if (!placeholderLink) return;
+      const listItem = placeholderLink.closest('li');
+      if (!listItem) return;
+      const clonedItem = listItem.cloneNode(true);
+      const link = clonedItem.querySelector(`[fc-toc="${level}"]`);
+      if (link) {
+        link.href = `#${heading.id}`;
+        link.textContent = heading.textContent.trim();
+        link.setAttribute('fc-toc-link', level);
+      }
+      if (isCollapsible && level === 'h2') {
+        tocComponent.appendChild(clonedItem);
+        currentParentLi = clonedItem;
+        subList = document.createElement('ul');
+        subList.classList.add('toc-subitems');
+        currentParentLi.appendChild(subList);
+      } else if (isCollapsible && currentParentLi && subList) {
+        subList.appendChild(clonedItem);
+      } else {
+        tocComponent.appendChild(clonedItem);
+      }
+    });
+    // Initially collapse all groups if collapsible
+    if (isCollapsible) {
+      tocComponent.querySelectorAll('.toc-subitems').forEach(group => {
+        group.style.maxHeight = '0';
+      });
+    }
+    // Remove placeholder links
+    placeholderLinks.forEach(link => {
+      const parentLi = link.closest('li');
+      if (parentLi) parentLi.remove();
+    });
+    let debounceTimer;
+    let lastActiveLink = null;
+    let lastActiveGroupWrapper = null;
+    // Scroll TOC and manage group expansion on active link update
+    const scrollToActiveLink = () => {
+      if (suppressNextScrollUpdate) {
+        suppressNextScrollUpdate = false;
+        return;
+      }
+      if (preventAutoOpen) return;
+      const activeLink = tocComponent.querySelector('.w--current');
+      if (!activeLink || activeLink === lastActiveLink) return;
+      tocComponent.querySelectorAll('[fc-toc-link]').forEach(link => {
+        if (activeClass) link.classList.remove(activeClass);
+      });
+      if (activeClass) activeLink.classList.add(activeClass);
+      lastActiveLink = activeLink;
+      tocComponent.scrollBy({
+        top: activeLink.getBoundingClientRect().top - tocComponent.getBoundingClientRect().top - (tocComponent.getBoundingClientRect().height / 2) + (activeLink.getBoundingClientRect().height / 2),
+        behavior: 'smooth'
+      });
+      if (isCollapsible) {
+        const currentLi = activeLink.closest('li');
+        let groupWrapperLi = currentLi;
+        if (currentLi?.parentElement?.classList.contains('toc-subitems')) {
+          groupWrapperLi = currentLi.parentElement.closest('li');
+        }
+        tocComponent.querySelectorAll('li').forEach(li => {
+          const sub = li.querySelector('.toc-subitems');
+          if (
+            sub &&
+            li !== groupWrapperLi &&
+            sub.style.maxHeight !== '0px' &&
+            (!preventAutoOpen || li !== lastActiveGroupWrapper)
+          ) {
+            collapseElement(sub);
+          }
+        });
+        expandElement(groupWrapperLi.querySelector('.toc-subitems'));
+        lastActiveGroupWrapper = groupWrapperLi;
+      }
+    };
+    const debouncedScroll = () => {
+      clearTimeout(debounceTimer);
+      debounceTimer = setTimeout(scrollToActiveLink, debounceMs);
+    };
+    // Observe class changes to trigger scroll update
+    const observer = new MutationObserver(() => {
+      if (!isAutoScrolling) debouncedScroll();
+    });
+    observer.observe(tocComponent, {
+      subtree: true,
+      attributes: true,
+      attributeFilter: ['class']
+    });
+    // Expand group for active link on page load
+    const expandActiveGroupOnLoad = () => {
+      if (!isCollapsible) return;
+      let attempts = 0;
+      const tryExpand = () => {
+        const activeLink = tocComponent.querySelector('.w--current');
+        if (activeLink) {
+          scrollToActiveLink();
+        } else if (++attempts < 20) {
+          setTimeout(tryExpand, 50);
+        }
+      };
+      tryExpand();
+    };
+    // Set up toggle buttons for manual group expansion
+    const setupManualToggles = () => {
+      if (!isCollapsible) return;
+      tocComponent.querySelectorAll('[fc-toc="open-group"]').forEach(toggleBtn => {
+        const subList = toggleBtn.closest('li')?.querySelector('.toc-subitems');
+        if (!subList || subList.children.length === 0) {
+          toggleBtn.style.display = 'none';
+          return;
+        }
+        for (const item of tocComponent.querySelectorAll('li')) {
+        	item.style.display = 'grid';
+          item.style.gridTemplateColumns = '1fr auto';
+        }
+        subList.style.gridColumn = '1 / 3';
+        toggleBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          preventAutoOpen = true;
+          const listItem = toggleBtn.closest('li');
+          if (!listItem) return;
+          const subList = listItem.querySelector('.toc-subitems');
+          if (!subList) return;
+          const isOpen = subList.style.maxHeight !== '0px';
+          const hasActive = listItem.querySelector(`.${activeClass}`);
+          if (isOpen && !hasActive) {
+            collapseElement(subList);
+            if (lastActiveGroupWrapper === listItem) {
+              lastActiveGroupWrapper = null;
+            }
+          } else if (!isOpen) {
+            expandElement(subList);
+            if (
+              lastActiveGroupWrapper &&
+              lastActiveGroupWrapper !== listItem &&
+              !lastActiveGroupWrapper.querySelector(`.${activeClass}`)
+            ) {
+              const previousGroup = lastActiveGroupWrapper.querySelector('.toc-subitems');
+              if (previousGroup) collapseElement(previousGroup);
+            }
+            lastActiveGroupWrapper = listItem;
+          }
+          setTimeout(() => {
+            preventAutoOpen = false;
+          }, 100);
+        });
+      });
+    };
+    expandActiveGroupOnLoad();
+    setupManualToggles();
+    let isAutoScrolling = false;
+    let scrollTimeout;
+    const handleScrollStop = () => {
+      clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(() => {
+        isAutoScrolling = false;
+        debouncedScroll();
+      }, 150);
+    };
+    // Handle anchor clicks and scroll positioning
+    tocComponent.querySelectorAll('a[fc-toc-link]').forEach(link => {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href')?.substring(1);
+        const target = document.getElementById(targetId);
+        if (!target) return;
+        const originalHref = this.getAttribute('href');
+        this.removeAttribute('href');
+        isAutoScrolling = true;
+        window.addEventListener('scroll', handleScrollStop);
+        const rect = target.getBoundingClientRect();
+        const scrollTo = window.scrollY + rect.top - (window.innerHeight / 2) + (rect.height / 2);
+        window.scrollTo({ top: scrollTo, behavior: 'smooth' });
+        const closeToc = document.querySelector('[fc-toc = close]')
+        if(closeToc) closeToc.click()
+        setTimeout(() => {
+          this.setAttribute('href', originalHref);
+        }, 100);
+      });
+    });
+  }
+  // Expand/collapse utility with icon rotation
+  function expandElement(el) {
+    const clone = el.cloneNode(true);
+    clone.style.visibility = 'hidden';
+    clone.style.position = 'absolute';
+    clone.style.height = 'auto';
+    clone.style.maxHeight = 'none';
+    clone.style.pointerEvents = 'none';
+    clone.style.opacity = '0';
+    el.parentElement.appendChild(clone);
+    const fullHeight = clone.scrollHeight;
+    el.parentElement.removeChild(clone);
+    el.style.maxHeight = fullHeight + 'px';
+    const icon = el.closest('li')?.querySelector('[fc-toc="open-group"]');
+    if (icon) {
+      const rotation = icon.getAttribute('fc-toc-rotate') || '180deg';
+      icon.style.transform = `rotate(${rotation}deg)`;
+    }
+  }
+  function collapseElement(el) {
+    el.style.maxHeight = '0px';
+    const icon = el.closest('li')?.querySelector('[fc-toc="open-group"]');
+    if (icon) {
+      icon.style.transform = 'rotate(0deg)';
+    }
+  }
+});
+</script>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="space-7"></div>
+    </div>
+    <section class="footer-section varsion-2">
+      <div class="foooter-top top-padding-5">
+        <div class="icon-wrap"><img loading="lazy" src="../assets/images/Symbol-1_2.webp" alt="White upward arrow inside a black speech bubble shape." class="icon"></div>
+        <div class="space-1-5"></div>
+        <div class="footer-title-top">Setup your <span class="highlight-text pure-blue">free trial</span> today!</div>
+        <div class="space-1"></div>
+        <p class="paragraph-regular">Get started today with a no-obligation 30-day free trial. The<br>Reporting Hub can be fully deployed to your Azure environment<br>by following our self-serve guided installer. <a href="#" class="span-link">Learn more</a>
+        </p>
+        <div class="space-2"></div>
+        <div class="button-wrap left">
+          <a href="../install-today.html" class="button color-blue w-inline-block">
+            <div>Install Today</div>
+          </a>
+          <a href="../demo.html" class="button bg-transparent text-blue w-inline-block">
+            <div>Get a Demo</div><img loading="lazy" src="../assets/images/Symbol-7.webp" alt="Arrow" class="button-arrow">
+          </a>
+        </div>
+        <div class="footer-image-wrap"><img src="../assets/images/dashboard-trial-new-1_1.webp" loading="lazy" width="1968" sizes="100vw" alt="" srcset="../assets/images/dashboard-trial-new-1_1-p-500.webp 500w, ../assets/images/dashboard-trial-new-1_1-p-800.webp 800w, ../assets/images/dashboard-trial-new-1_1-p-1080.webp 1080w, ../assets/images/dashboard-trial-new-1_1-p-1600.webp 1600w, ../assets/images/dashboard-trial-new-1_1-p-2000.webp 2000w, ../assets/images/dashboard-trial-new-1_1-p-2600.webp 2600w, ../assets/images/dashboard-trial-new-1_1-p-3200.webp 3200w, ../assets/images/dashboard-trial-new-1_1.webp 3936w" class="new-footer-img"></div>
+      </div>
+      <div class="space-5"></div>
+      <div class="w-layout-blockcontainer container w-container">
+        <div class="footer-component">
+          <div class="w-layout-grid footer-grid-wrap">
+            <div class="footer-left-call">
+              <div class="font-0-9">Contact US</div>
+              <div class="footer-menu-left">
+                <div class="footer-menu-group"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 15 12" fill="none" class="social-icon">
+                    <g clip-path="url(#clip0_9006_2830)">
+                      <path d="M1.52344 2.61654C1.52344 2.26292 1.66392 1.92378 1.91396 1.67373C2.16401 1.42368 2.50315 1.2832 2.85677 1.2832H12.1901C12.5437 1.2832 12.8828 1.42368 13.1329 1.67373C13.3829 1.92378 13.5234 2.26292 13.5234 2.61654M1.52344 2.61654V9.2832C1.52344 9.63683 1.66392 9.97596 1.91396 10.226C2.16401 10.476 2.50315 10.6165 2.85677 10.6165H12.1901C12.5437 10.6165 12.8828 10.476 13.1329 10.226C13.3829 9.97596 13.5234 9.63683 13.5234 9.2832V2.61654M1.52344 2.61654L7.52344 6.61654L13.5234 2.61654" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </g>
+                  </svg>
+                  <a href="#" class="footer-link">info@thereportinghub.com</a>
+                </div>
+                <div class="footer-menu-group"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 17 18" fill="none" class="social-icon">
+                    <path d="M3.85938 6.75618C3.85938 4.35756 5.94871 2.41309 8.52603 2.41309C11.1033 2.41309 13.1927 4.35756 13.1927 6.75618C13.1927 9.13601 11.7032 11.913 9.37942 12.9061C8.83769 13.1376 8.21439 13.1376 7.67267 12.9061C5.34882 11.913 3.85938 9.13601 3.85938 6.75618Z" stroke="currentColor" stroke-width="1.5"></path>
+                    <path d="M9.85417 7.0804C9.85417 7.81678 9.25722 8.41373 8.52084 8.41373C7.78446 8.41373 7.1875 7.81678 7.1875 7.0804C7.1875 6.34402 7.78446 5.74707 8.52084 5.74707C9.25722 5.74707 9.85417 6.34402 9.85417 7.0804Z" stroke="currentColor" stroke-width="1.5"></path>
+                    <path d="M14.4997 11.4131C14.9433 11.8147 15.1927 12.2675 15.1927 12.7464C15.1927 14.4033 12.2079 15.7464 8.52603 15.7464C4.84414 15.7464 1.85938 14.4033 1.85938 12.7464C1.85938 12.2675 2.10878 11.8147 2.55234 11.4131" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+                  </svg>
+                  <div class="max-width-11">
+                    <a href="#" class="footer-link">1150, 707 - 7th Avenue SW Calgary, ABCanada T2P 3H6</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="footer-call">
+              <div class="font-0-9">Website</div>
+              <div class="footer-menu-main">
+                <a href="../index.html" class="footer-link">Home</a>
+                <a href="../aaas.html" class="footer-link">AaaS Platform</a>
+                <a href="../pricing.html" class="footer-link">Pricing</a>
+                <a href="../learn-more.html" class="footer-link">What is Reporting Hub?</a>
+                <a href="../demo.html" class="footer-link">Demo</a>
+                <a href="../install-today.html" class="footer-link">Install Today</a>
+                <a href="../about-us.html" class="footer-link">About Us</a>
+                <a href="../contact.html" class="footer-link">Contact Us</a>
+              </div>
+            </div>
+            <div class="footer-call">
+              <div class="font-0-9">theHUB</div>
+              <div class="footer-menu-main">
+                <a href="https://docs.thereportinghub.com/" target="_blank" class="footer-link">Knowledge Center</a>
+                <a href="../blog.html" class="footer-link">Our Blog</a>
+                <a href="../power-bi.html" class="footer-link">About Power BI</a>
+                <a href="https://support.thereportinghub.com/support/home" target="_blank" class="footer-link">Get Support</a>
+                <a href="#" class="footer-link">Support Plans</a>
+                <a href="../policies.html" class="footer-link">Policies</a>
+                <a href="/policies#rh-terms" class="footer-link">Terms of Service</a>
+              </div>
+            </div>
+          </div>
+          <a href="#" class="direction-button w-inline-block"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 52 53" fill="none" class="button-icon">
+              <g clip-path="url(#clip0_9006_2933)">
+                <path d="M0 26.1602C0 40.5196 11.6406 52.1602 26 52.1602C40.3594 52.1602 52 40.5196 52 26.1602C52 11.8008 40.3594 0.160156 26 0.160156C11.6406 0.160156 0 11.8008 0 26.1602Z" fill="white" fill-opacity="0.1"></path>
+                <path d="M32.704 28.6752C33.1627 29.1422 33.9152 29.1422 34.3739 28.6752C34.8212 28.2199 34.8212 27.4902 34.3739 27.0348L26.7165 19.2396C26.3246 18.8407 25.6817 18.8407 25.2898 19.2396L17.6323 27.0348C17.1851 27.4902 17.1851 28.2199 17.6323 28.6752C18.0911 29.1422 18.8436 29.1422 19.3023 28.6752L25.2898 22.58C25.6817 22.181 26.3246 22.181 26.7165 22.58L32.704 28.6752Z" fill="currentColor" class="white"></path>
+              </g>
+            </svg></a>
+        </div>
+      </div>
+      <div class="space-3"></div>
+      <div class="global-line"></div>
+      <div class="footer-bottom">
+        <div class="space-3"></div>
+        <div class="w-layout-blockcontainer container w-container">
+          <div class="footer-bottom-contents">
+            <div class="footer-left">
+              <a href="../index.html" class="w-inline-block"><img loading="lazy" src="../assets/images/rh-horizontal-white.svg.webp" alt="Reporting Hub logo with stylized letter R and text 'REPORTING HUB' in uppercase." class="image-small"></a>
+              <div class="text-color-white margin-top-10">Microsoft partner</div>
+            </div>
+            <div class="footer-right">
+              <div class="new-footer-wrap">
+                <div class="font-0-9 text-align-right left-mobile">
+                  <a href="mailto:info@thereportinghub.com?subject=You've%20got%20email" class="link-8"><span class="text-span-2">info@thereportinghub.com</span></a>
+                </div>
+                <div class="social-media-wrap">
+                  <a href="https://www.facebook.com/people/The-Reporting-Hub/100064582883104/" class="social-media-link w-inline-block"><img src="../assets/images/fb.svg" loading="lazy" alt="" class="social-media-icon"></a>
+                  <a href="https://www.linkedin.com/company/the-reporting-hub/" class="social-media-link w-inline-block"><img src="../assets/images/in.svg" loading="lazy" alt="" class="social-media-icon"></a>
+                  <a href="https://x.com/thereportinghub" class="social-media-link w-inline-block"><img src="../assets/images/tw.svg" loading="lazy" alt="" class="social-media-icon"></a>
+                  <a href="https://www.instagram.com/thereportinghub/" class="social-media-link w-inline-block"><img src="../assets/images/insta.svg" loading="lazy" alt="" class="social-media-icon"></a>
+                </div>
+              </div>
+              <div class="font-0-9 text-align-right margin-top-16">2025 All Rights Reserved | The Reporting Hub</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  
+  
+  
+  
+  <!--  Google Tag Manager (noscript)  -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MM9W9FH" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!--  End Google Tag Manager (noscript)  -->
+  <script>
+(function () {
+  function cssEscapeSafe(s) {
+    try { return CSS.escape(s); } catch (e) { return s.replace(/["\\]/g, "\\$&"); }
+  }
+  function normalizeTarget(target) {
+    // ✅ Ako ti URL i dalje dolazi kao #bi-genius-terms, mapiraj ga na rh-terms
+    if (target === "bi-genius-terms") return "rh-terms";
+    return target;
+  }
+  function openTabFromHash() {
+    var hash = window.location.hash;
+    if (!hash) return;
+    var target = hash.slice(1);
+    if (!target) return;
+    target = normalizeTarget(target);
+    // 1) traži custom data-tab="..."
+    var sel = '[data-tab="' + cssEscapeSafe(target) + '"]';
+    var el = document.querySelector(sel);
+    // 2) fallback: traži direktno webflow tab link po data-w-tab
+    var tabLink = null;
+    if (el) {
+      tabLink = (el.classList && el.classList.contains('w-tab-link'))
+        ? el
+        : (el.querySelector ? el.querySelector('.w-tab-link') : null);
+    }
+    if (!tabLink) {
+      tabLink = document.querySelector('.w-tab-link[data-w-tab="' + cssEscapeSafe(target) + '"]');
+    }
+    // 3) extra fallback: ako target == rh-terms, probaj naći BILO KOJI element sa data-tab="rh-terms"
+    // (ovo ti je “hard fix” da 100% radi)
+    if (!tabLink && target === "rh-terms") {
+      tabLink = document.querySelector('[data-tab="rh-terms"].w-tab-link, .w-tab-link[data-tab="rh-terms"]');
+    }
+    if (!tabLink) return;
+    var tries = 0;
+    (function tryClick() {
+      tries++;
+      tabLink.click();
+      if (!tabLink.classList.contains('w--current') && tries < 20) {
+        setTimeout(tryClick, 100);
+      }
+    })();
+  }
+  document.addEventListener('DOMContentLoaded', openTabFromHash);
+  window.addEventListener('hashchange', openTabFromHash);
+})();
+</script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var youtubeIframes = document.querySelectorAll('iframe.lazyiframe');
+        youtubeIframes.forEach(function (youtubeIframe) {
+            var dataSrcValue = youtubeIframe.getAttribute('data-src');
+            if (dataSrcValue) {
+                youtubeIframe.setAttribute('src', dataSrcValue);
+                youtubeIframe.removeAttribute('data-src');
+            }
+        });
+    });
+</script>
+  
+  
+  
+
+<script src="../assets/js/main.js"></script>
+</body></html>

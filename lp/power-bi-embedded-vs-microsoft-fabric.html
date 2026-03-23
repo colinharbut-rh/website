@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Power BI Embedded vs. Microsoft Fabric:</title>
+  <meta content="" name="description">
+  <meta content="" property="og:image">
+  <meta content="" property="twitter:image">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <meta content="noindex" name="robots">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link href="../assets/css/base.css" rel="stylesheet" type="text/css">
+  <link href="../assets/css/styles.css" rel="stylesheet" type="text/css">
+
+  <!-- Favicon -->
+  <link href="../assets/images/favicon.ico" rel="shortcut icon" type="image/x-icon">
+  <link href="../assets/images/webclip.png" rel="apple-touch-icon">
+
+  <!-- Google Tag Manager (disabled for local dev, re-enable for production)
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-MM9W9FH');</script>
+  -->
+</head>
+<body>
+  <div class="page-wrapper">
+    <html><head></head><body><html><head></head><body><div data-animation="default" class="navbar w-nav" data-easing2="ease" data-easing="ease" data-collapse="medium" role="banner" data-duration="400" id="nav">
+      <div class="navbar-continer w-container">
+        <div class="nav-item-wrap">
+          <a href="../index.html" class="brand w-nav-brand"><img src="../assets/images/rh-horizontal-white.svg" loading="eager" alt="" class="nav-brand-logo one"><img src="../assets/images/logo_white.svg" loading="lazy" alt="" class="nav-brand-logo two"></a>
+          <nav role="navigation" class="navigation w-nav-menu">
+            <a href="../index.html" class="nav-link w-nav-link">Home</a>
+            <div data-hover="false" data-delay="300" class="uui-navbar01_menu-dropdown w-dropdown">
+              <div class="uui-navbar01_dropdown-toggle w-dropdown-toggle">
+                <div class="uui-dropdown-icon w-embed"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg></div>
+                <div class="nav-link padding-right-0-25">Platform</div>
+              </div>
+              <nav class="uui-navbar01_dropdown-list w-dropdown-list">
+                <div class="uui-navbar01_container">
+                  <div class="uui-navbar01_dropdown-content">
+                    <div class="uui-navbar01_dropdown-content-left is-platform">
+                      <div class="uui-navbar01_dropdown-link-list">
+                        <h4 class="uui-navbar01_heading text-color-white">Platform</h4>
+                        <a href="../learn-more.html" class="uui-navbar01_dropdown-link w-inline-block">
+                          <div class="uui-navbar01_icon-wrapper"><img src="../assets/images/logo-white.svg" loading="lazy" alt="Bi White logo" class="icon-xsmall"></div>
+                          <div class="uui-navbar01_item-right">
+                            <div class="uui-navbar01_item-heading">Reporting Hub</div>
+                            <div class="uui-text-size-small hide-mobile-landscape">Custom-branded Power BI reporting delivery for teams and analytics clients</div>
+                          </div>
+                        </a>
+                      </div>
+                      <div class="uui-navbar01_dropdown-link-list is-bottom">
+                        <h4 class="uui-navbar01_heading opacity-0">Company</h4>
+                        <a href="../bi-genius.html" class="uui-navbar01_dropdown-link w-inline-block">
+                          <div class="uui-navbar01_icon-wrapper"><img src="../assets/images/new-bi-megamenu-logo-white.svg" loading="lazy" alt="Power Bi Megamenu white logo" class="icon-xsmall small"></div>
+                          <div class="uui-navbar01_item-right">
+                            <div class="uui-navbar01_item-heading">BI Genius</div>
+                            <div class="uui-text-size-small hide-mobile-landscape">Add-on fully customizable AI agents that drive insights with full transparency and control</div>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                    <div class="uui-navbar01_dropdown-content-right">
+                      <div class="uui-navbar01_dropdown-content-wrapper">
+                        <div class="blog-items-wrapper">
+                          <h4 class="uui-navbar01_dropdown-content-heading text-color-white">Latest from our blog</h4>
+                          <a href="../blog.html" class="uui-button-link is-button-xsmall w-inline-block">
+                            <div class="color_primary">See all posts ➝</div>
+                          </a>
+                        </div>
+                        <div class="w-dyn-list">
+                          <div role="list" class="uui-navbar01_dropdown-blog-list w-dyn-items"><div role="listitem" class="w-dyn-item">
+                              <a href="../blog/embedded-analytics-meets-generative-ai-how-saas-teams-monetize-bi-in-2025.html" class="uui-navbar01_blog-item w-inline-block">
+                                <div class="uui-navbar01_blog-image-wrapper"><img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/69600be56fa30d9d91a5f337_Embedded%20Analytics%20Meets%20Generative%20AI%20How%20SaaS%20Teams%20Monetize%20BI%20in%202025.png" loading="eager" alt="" class="uui-navbar01_blog-image"></div>
+                                <div class="uui-navbar01_large-item-content">
+                                  <div class="uui-navbar01_item-heading">Embedded Analytics Meets Generative AI: How SaaS Teams Monetize BI in 2026</div>
+                                  <div class="uui-navbar01_item-button-wrapper">
+                                    <div class="uui-button-row">
+                                      <div class="uui-button-link is-button-xsmall">
+                                        <div class="color_primary">Learn More ➝</div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </a>
+                            </div><div role="listitem" class="w-dyn-item">
+                              <a href="../blog/fabric-vs-power-bi-premium.html" class="uui-navbar01_blog-item w-inline-block">
+                                <div class="uui-navbar01_blog-image-wrapper"><img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/6961652bcf02c04b7b0edbe3_Fabric%20vs.%20Power%20BI%20Premium%20-%20Reddit.avif" loading="eager" alt="" class="uui-navbar01_blog-image"></div>
+                                <div class="uui-navbar01_large-item-content">
+                                  <div class="uui-navbar01_item-heading">Fabric vs. Power BI Premium</div>
+                                  <div class="uui-navbar01_item-button-wrapper">
+                                    <div class="uui-button-row">
+                                      <div class="uui-button-link is-button-xsmall">
+                                        <div class="color_primary">Learn More ➝</div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </a>
+                            </div><div role="listitem" class="w-dyn-item">
+                              <a href="../blog/how-to-structure-a-multi-tenant-analytics-delivery-system-without-rebuilding-everything.html" class="uui-navbar01_blog-item w-inline-block">
+                                <div class="uui-navbar01_blog-image-wrapper"><img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/69b03e0ca76a82d19058f954_Structure%20a%20Multi-Tenant%20Analytics%20Delivery.jpg" loading="eager" alt="" class="uui-navbar01_blog-image"></div>
+                                <div class="uui-navbar01_large-item-content">
+                                  <div class="uui-navbar01_item-heading">How to Structure a Multi-Tenant Analytics Delivery System Without Rebuilding Everything</div>
+                                  <div class="uui-navbar01_item-button-wrapper">
+                                    <div class="uui-button-row">
+                                      <div class="uui-button-link is-button-xsmall">
+                                        <div class="color_primary">Learn More ➝</div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </a>
+                            </div></div>
+                          
+                        </div>
+                      </div>
+                      <div class="uui-navbar01_dropdown-right-overlay-absolute"></div>
+                    </div>
+                  </div>
+                </div>
+              </nav>
+            </div>
+            <a href="../pricing.html" class="nav-link w-nav-link">Pricing</a>
+            <a href="../aaas.html" class="nav-link w-nav-link">AaaS Platform</a>
+            <div data-hover="false" data-delay="300" class="uui-navbar01_menu-dropdown w-dropdown">
+              <div class="uui-navbar01_dropdown-toggle w-dropdown-toggle">
+                <div class="uui-dropdown-icon w-embed"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg></div>
+                <div class="nav-link padding-right-0-25">Learn</div>
+              </div>
+              <nav class="uui-navbar01_dropdown-list w-dropdown-list">
+                <div class="uui-navbar01_container">
+                  <div class="uui-navbar01_dropdown-content">
+                    <div class="nav-items">
+                      <h4 class="uui-navbar01_heading large text-color-white">Learn</h4>
+                      <div class="uui-navbar01_dropdown-content-left">
+                        <div class="uui-navbar01_dropdown-link-list">
+                          <a href="https://docs.thereportinghub.com/?_gl=1*11en80c*_gcl_au*MjEyNTAwMzM0MC4xNzYwMDIyNzYzLjE5Nzk0NzY1MjguMTc2MjEwODgzNS4xNzYyMTA4ODM1*_ga*MzgyNDA3NDAxLjE3NjAwMjI3NjM." target="_blank" class="uui-navbar01_dropdown-link w-inline-block">
+                            <div class="uui-navbar01_icon-wrapper"><img src="../assets/images/Knowledge-Centre_icon.png" loading="lazy" alt="" class="nav-image"></div>
+                            <div class="uui-navbar01_item-right">
+                              <div class="uui-navbar01_item-heading">Knowledge Center<br></div>
+                              <div class="uui-text-size-small hide-mobile-landscape">All the information you need to master B.I. delivery</div>
+                            </div>
+                          </a>
+                          <a href="../community.html" class="uui-navbar01_dropdown-link is-auto w-inline-block">
+                            <div class="uui-navbar01_icon-wrapper"><img src="../assets/images/About-Us_icon-1.png" loading="lazy" alt="" class="nav-image"></div>
+                            <div class="uui-navbar01_item-right">
+                              <div class="uui-navbar01_item-heading">Community</div>
+                              <div class="uui-text-size-small hide-mobile-landscape">Connect and collaborate with active users</div>
+                            </div>
+                          </a>
+                        </div>
+                        <div class="uui-navbar01_dropdown-link-list">
+                          <h4 class="uui-navbar01_heading opacity-0">Company</h4>
+                          <a href="https://docs.thereportinghub.com/getting-started/deployment-step-by-step/self-serve-guided-install?_gl=1*1nvpg97*_gcl_au*MjEyNTAwMzM0MC4xNzYwMDIyNzYzLjE5Nzk0NzY1MjguMTc2MjEwODgzNS4xNzYyMTA4ODM1*_ga*MzgyNDA3NDAxLjE3NjAwMjI3NjM." target="_blank" class="uui-navbar01_dropdown-link w-inline-block">
+                            <div class="uui-navbar01_icon-wrapper"><img src="../assets/images/Getting-Started_icon.png" loading="lazy" alt="" class="nav-image"></div>
+                            <div class="uui-navbar01_item-right">
+                              <div class="uui-navbar01_item-heading">Getting Started</div>
+                              <div class="uui-text-size-small hide-mobile-landscape">Step-by-step guides to get started with the Reporting Hub<br></div>
+                            </div>
+                          </a>
+                          <a href="https://www.youtube.com/@thereportinghub" class="uui-navbar01_dropdown-link is-auto w-inline-block">
+                            <div class="uui-navbar01_icon-wrapper"><img src="../assets/images/Video-Demos_icon.png" loading="lazy" alt="" class="nav-image"></div>
+                            <div class="uui-navbar01_item-right">
+                              <div class="uui-navbar01_item-heading">Video Demos</div>
+                              <div class="uui-text-size-small hide-mobile-landscape">Our YouTube channel with helpful video demos</div>
+                            </div>
+                          </a>
+                        </div>
+                        <div id="w-node-a91421d3-b46b-1701-6a19-a49d5ae9c96d-17890035" class="uui-navbar01_dropdown-link-list flex">
+                          <h4 class="uui-navbar01_heading opacity-0 none">Company</h4>
+                          <a href="../resources.html" class="uui-navbar01_dropdown-link w-inline-block">
+                            <div class="uui-navbar01_icon-wrapper"><img src="../assets/images/Resources.png" loading="lazy" alt="" class="nav-image"></div>
+                            <div class="uui-navbar01_item-right">
+                              <div class="uui-navbar01_item-heading">Resources</div>
+                              <div class="uui-text-size-small hide-mobile-landscape">Videos, white papers, and assets about Reporting Hub</div>
+                            </div>
+                          </a>
+                          <a href="https://support.thereportinghub.com/support/home" target="_blank" class="uui-navbar01_dropdown-link is-auto w-inline-block">
+                            <div class="uui-navbar01_icon-wrapper"><img src="../assets/images/Get-Help_icon.png" loading="lazy" alt="" class="nav-image"></div>
+                            <div class="uui-navbar01_item-right">
+                              <div class="uui-navbar01_item-heading">Get Help</div>
+                              <div class="uui-text-size-small hide-mobile-landscape">Our Support team is here to help</div>
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+                      <div class="uui-navbar01_dropdown-content-left pt-0">
+                        <div class="uui-navbar01_dropdown-link-list one-item">
+                          <h4 class="uui-navbar01_heading large text-color-white">Services</h4>
+                          <a href="../partners.html" class="uui-navbar01_dropdown-link w-inline-block">
+                            <div class="uui-navbar01_icon-wrapper"><img src="../assets/images/Knowledge-Centre_icon.png" loading="lazy" alt="" class="nav-image"></div>
+                            <div class="uui-navbar01_item-right">
+                              <div class="uui-navbar01_item-heading">Partner Programs<br></div>
+                              <div class="uui-text-size-small hide-mobile-landscape">Find or become a Reporting Hub Partner</div>
+                            </div>
+                          </a>
+                        </div>
+                        <div class="uui-navbar01_dropdown-link-list is-bottom">
+                          <h4 class="uui-navbar01_heading opacity-0">Company</h4>
+                          <a href="../professionalservices.html" class="uui-navbar01_dropdown-link w-inline-block">
+                            <div class="uui-navbar01_icon-wrapper"><img src="../assets/images/Professional-Services_icon.png" loading="lazy" alt="" class="nav-image"></div>
+                            <div class="uui-navbar01_item-right">
+                              <div class="uui-navbar01_item-heading">Professional Services</div>
+                              <div class="uui-text-size-small hide-mobile-landscape">Get premium support from our team of experts</div>
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="uui-navbar01_dropdown-content-right">
+                      <div class="uui-navbar01_dropdown-content-wrapper">
+                        <div class="blog-items-wrapper">
+                          <h4 class="uui-navbar01_dropdown-content-heading text-color-white">Latest from our blog</h4>
+                          <a href="../blog.html" class="uui-button-link is-button-xsmall w-inline-block">
+                            <div class="color_primary">See all posts ➝</div>
+                          </a>
+                        </div>
+                        <div class="w-dyn-list">
+                          <div role="list" class="uui-navbar01_dropdown-blog-list w-dyn-items"><div role="listitem" class="w-dyn-item">
+                              <a href="../blog/embedded-analytics-meets-generative-ai-how-saas-teams-monetize-bi-in-2025.html" class="uui-navbar01_blog-item w-inline-block">
+                                <div class="uui-navbar01_blog-image-wrapper"><img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/69600be56fa30d9d91a5f337_Embedded%20Analytics%20Meets%20Generative%20AI%20How%20SaaS%20Teams%20Monetize%20BI%20in%202025.png" loading="eager" alt="" class="uui-navbar01_blog-image"></div>
+                                <div class="uui-navbar01_large-item-content">
+                                  <div class="uui-navbar01_item-heading">Embedded Analytics Meets Generative AI: How SaaS Teams Monetize BI in 2026</div>
+                                  <div class="uui-navbar01_item-button-wrapper">
+                                    <div class="uui-button-row">
+                                      <div class="uui-button-link is-button-xsmall">
+                                        <div class="color_primary">Learn More ➝</div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </a>
+                            </div><div role="listitem" class="w-dyn-item">
+                              <a href="../blog/fabric-vs-power-bi-premium.html" class="uui-navbar01_blog-item w-inline-block">
+                                <div class="uui-navbar01_blog-image-wrapper"><img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/6961652bcf02c04b7b0edbe3_Fabric%20vs.%20Power%20BI%20Premium%20-%20Reddit.avif" loading="eager" alt="" class="uui-navbar01_blog-image"></div>
+                                <div class="uui-navbar01_large-item-content">
+                                  <div class="uui-navbar01_item-heading">Fabric vs. Power BI Premium</div>
+                                  <div class="uui-navbar01_item-button-wrapper">
+                                    <div class="uui-button-row">
+                                      <div class="uui-button-link is-button-xsmall">
+                                        <div class="color_primary">Learn More ➝</div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </a>
+                            </div><div role="listitem" class="w-dyn-item">
+                              <a href="../blog/how-to-structure-a-multi-tenant-analytics-delivery-system-without-rebuilding-everything.html" class="uui-navbar01_blog-item w-inline-block">
+                                <div class="uui-navbar01_blog-image-wrapper"><img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/69b03e0ca76a82d19058f954_Structure%20a%20Multi-Tenant%20Analytics%20Delivery.jpg" loading="eager" alt="" class="uui-navbar01_blog-image"></div>
+                                <div class="uui-navbar01_large-item-content">
+                                  <div class="uui-navbar01_item-heading">How to Structure a Multi-Tenant Analytics Delivery System Without Rebuilding Everything</div>
+                                  <div class="uui-navbar01_item-button-wrapper">
+                                    <div class="uui-button-row">
+                                      <div class="uui-button-link is-button-xsmall">
+                                        <div class="color_primary">Learn More ➝</div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </a>
+                            </div></div>
+                          
+                        </div>
+                      </div>
+                      <div class="uui-navbar01_dropdown-right-overlay-absolute"></div>
+                    </div>
+                  </div>
+                </div>
+              </nav>
+            </div>
+            <a href="../demo.html" class="nav-link w-nav-link">Demo</a>
+            <a href="../install-today.html" class="nav-link w-nav-link">Install</a>
+            <a href="../about-us.html" class="nav-link w-nav-link">About Us</a>
+            <a href="../contact.html" class="nav-link w-nav-link">Contact Us</a>
+          </nav>
+          <div class="menu-button w-nav-button">
+            <div class="w-icon-nav-menu"></div>
+          </div>
+        </div>
+      </div>
+    </div></body></html></body></html>
+    <div class="main">
+      <div class="blog-posts-hero-section">
+        <div class="blog-post-container">
+          <div class="blog-hero-grid">
+            <div id="w-node-ea9574a9-6fa7-c8f8-72f3-7e2fa39230b4-c7c55cc5" class="hero-image-wrap"><img src="../assets/images/Power-BI-embedded-vvs-microsoft.webp" loading="lazy" sizes="(max-width: 1917px) 100vw, 1917px" srcset="../assets/images/Power-BI-embedded-vvs-microsoft-p-500.webp 500w, ../assets/images/Power-BI-embedded-vvs-microsoft-p-800.webp 800w, ../assets/images/Power-BI-embedded-vvs-microsoft-p-1080.webp 1080w, ../assets/images/Power-BI-embedded-vvs-microsoft.webp 1917w" alt=""></div>
+            <div id="w-node-_958bf05c-74dd-0b9d-7e21-30b6a7fd85f1-c7c55cc5" class="blog-post-hero-content text-color-white">
+              <div class="author-row gap-2rem">
+                <div class="blog-post-hero-author"><img src="../assets/images/Jessie-G-Profile-Picture.webp" loading="lazy" alt="Portrait of a smiling woman with shoulder-length brown hair wearing a black top against a gradient green background." class="blog-post-author-image">
+                  <div>Jessie G | Product Development Team</div>
+                </div>
+                <div class="read-time"><img src="../assets/images/Clock.svg" loading="lazy" alt="" class="hero-icon">
+                  <div>8 minutes</div>
+                </div>
+              </div>
+              <h1 class="blog-post-h1">Power BI Embedded vs. Microsoft Fabric: Which One Fits Your Analytics Strategy?</h1>
+              <div class="margin-bottom-16">
+                <p>Subscribe to our blog to stay up to date on all the latest information from theReporting Hub team! We’ll never share your email with anyone else.</p>
+                <div class="w-form">
+                  <form id="email-form" name="email-form" data-name="Email Form" method="get" class="blog-post-hero-form" data-wf-page-id="6977496a9168be29c7c55cc5" data-wf-element-id="df813662-61c5-7d0b-56e5-6c9dc3f9383e"><input class="blog-post-hero-input w-input" maxlength="256" name="email" data-name="Email" placeholder="name@example.com" type="email" id="email" required=""><input type="submit" data-wait="Please wait..." class="button-primmary w-button" value="Subscribe"></form>
+                  <div class="w-form-done">
+                    <div>Thank you! Your submission has been received!</div>
+                  </div>
+                  <div class="w-form-fail">
+                    <div>Oops! Something went wrong while submitting the form.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="blog-post-container font-size-18">
+        <div class="blog-post-page-content">
+          <div class="blog-post-sidebar-wrap">
+            <div class="blog-post-sidebar">
+              <div class="blog-post-sidebar-navigation">
+                <div class="font-size-24 font-weight-600">Table Of Contents</div>
+                <ul role="list" class="sidebar_navigation">
+                  <li>
+                    <a href="#h2-1" class="sidebar_link active">No Single Analytics Strategy Fits All</a>
+                  </li>
+                  <li>
+                    <a href="#h2-2" class="sidebar_link">Overview of Power BI Embedded</a>
+                  </li>
+                  <li>
+                    <a href="#h2-3" class="sidebar_link">Overview of Microsoft Fabric</a>
+                  </li>
+                  <li>
+                    <a href="#h2-4" class="sidebar_link">Cost Analysis: Power BI Embedded vs Fabric</a>
+                  </li>
+                  <li>
+                    <a href="#h2-5" class="sidebar_link">Power BI Embedded for Enterprises</a>
+                  </li>
+                  <li>
+                    <a href="#h2-6" class="sidebar_link">Comparing Power BI Embedded with Microsoft Fabric</a>
+                  </li>
+                  <li>
+                    <a href="#h2-7" class="sidebar_link">Choosing the Right Analytics Tool</a>
+                  </li>
+                  <li>
+                    <a href="#h2-8" class="sidebar_link">Additional Resources</a>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <div class="margin-bottom-18">
+                  <div class="font-size-24 font-weight-600">Recent Posts</div>
+                </div>
+                <div class="w-dyn-list">
+                  <div role="list" class="w-dyn-items">
+                    <div role="listitem" class="w-dyn-item">
+                      <a href="#" class="recent-post-wrap w-inline-block"><img src="https://d3e54v103j8qbb.cloudfront.net/plugins/Basic/assets/placeholder.60f9b1840c.svg" loading="lazy" alt="" class="border-radius-6 image-56 w-dyn-bind-empty">
+                        <div class="font-size-14 w-dyn-bind-empty"></div>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="w-dyn-empty">
+                    <div>No items found.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="blog-post-main">
+            <p class="font-size-18">Choosing the right business analytics tool can be a difficult task, particularly given the numerous options available. Today, we will compare two popular Microsoft solutions: Power BI Embedded and Microsoft Fabric. Both tools are designed to help businesses visualize and analyze data, but they have key differences that may make one a better fit for your company.</p>
+            <div class="blog-post-section">
+              <h2 id="h2-1" class="margin-bottom-18">No Single Analytics Strategy Fits All</h2>
+              <p class="margin-bottom-24 font-size-18">When it comes to analytics strategies, there&#x27;s no one-size-fits-all. Varying organizational needs demand different solutions. From assessing real-time data to aiding decision-making processes, the right data analytics tool can streamline your strategy tenfold. Power BI Embedded and Microsoft Fabric are two robust options that offer varied benefits.</p>
+              <div class="margin-bottom-24">
+                <div class="margin-bottom-16">
+                  <div class="text-highlight_wrap"><img src="../assets/images/pie-chart.svg" loading="lazy" alt="" class="image-56">
+                    <div>
+                      <h3>What is Power BI Embedded?</h3>
+                      <div class="w-richtext">
+                        <p>
+                          <a href="https://thereportinghub.com/power-bi/power-bi-embedded-analytics-reporting-overview">Power BI Embedded </a>is a Microsoft Azure PaaS offering that allows developers to embed fully interactive Power BI reports and dashboards directly into their own applications, portals, or websites. It enables organizations to provide analytics to internal users or customers without requiring them to have individual Power BI licenses. Here, the tools can be seamlessly embedded within apps, portals, or websites to empower organizational and customer decisions with well-analyzed, visual data.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="text-highlight_wrap"><img src="../assets/images/database.svg" loading="lazy" alt="" class="image-56">
+                  <div>
+                    <h3>What is Microsoft Fabric?</h3>
+                    <div class="w-richtext">
+                      <p>
+                        <a href="https://www.microsoft.com/en-us/microsoft-fabric/resources/data-101/what-is-fabric#:~:text=Microsoft%20Fabric%20is%20a%20unified,provide%20a%20unified%20user%20experience.">Microsoft Fabric</a> is Microsoft’s unified data and analytics platform that brings together data engineering, data science, real-time analytics, and business intelligence. It connects data across sources into a single environment, enabling organizations to manage the full data lifecycle and empower teams with faster, more connected insights.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <p class="margin-bottom-24 font-size-18">In this piece, we&#x27;ll be comparing these two Microsoft offerings in depth. The right analytics tools in your arsenal can make or break your decision-making processes, and we&#x27;re here to simplify that choice. By assessing their features, user experience, cost, and overall suitability, you should be able to identify which of these powerhouses suits your analytics strategy best.</p>
+            </div><img src="../assets/images/efddfe04-954e-4ab0-8d80-ed8f8a609626-1.webp" loading="lazy" sizes="(max-width: 1790px) 100vw, 1790px" srcset="../assets/images/efddfe04-954e-4ab0-8d80-ed8f8a609626-1-p-500.webp 500w, ../assets/images/efddfe04-954e-4ab0-8d80-ed8f8a609626-1-p-800.webp 800w, ../assets/images/efddfe04-954e-4ab0-8d80-ed8f8a609626-1-p-1080.webp 1080w, ../assets/images/efddfe04-954e-4ab0-8d80-ed8f8a609626-1-p-1600.webp 1600w, ../assets/images/efddfe04-954e-4ab0-8d80-ed8f8a609626-1.webp 1790w" alt="" class="border-radius-16">
+            <div class="blog-post-section">
+              <h2 id="h2-2" class="margin-bottom-18">Overview of Power BI Embedded</h2>
+              <p class="margin-bottom-24 font-size-18">Power BI Embedded by Microsoft is a dynamic analytics tool that&#x27;s gained traction for visualizing data in a compelling way for BI applications. Its purpose? To seamlessly integrate with applications, websites, and portals to display interactive visual data reports for ultimate end-user convenience. But Power BI Embedded isn&#x27;t tethered exclusively to Microsoft; it&#x27;s flexible enough to handle data originating from numerous services.<br><br>So, how does Power BI Embedded shine?</p>
+              <div>
+                <h3>Key Features and Benefits</h3>
+                <p class="margin-bottom-18 font-size-18 font-weight-600">Power BI Embedded touts a host of features attuned to delivering embedded analytics with clear advantages:</p>
+              </div>
+              <div class="margin-bottom-24">
+                <div class="margin-bottom-16">
+                  <div class="highlighted-text-border-left-wrap"><img src="../assets/images/grow-stroke.svg" loading="lazy" alt="" class="image-56">
+                    <div class="w-richtext">
+                      <p>It transforms raw data into comprehensive reports using interactive visual exploration</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="highlighted-text-border-left-wrap"><img src="../assets/images/secure-stroke.svg" loading="lazy" alt="" class="image-56">
+                  <div class="w-richtext">
+                    <p>It enables visualization of large datasets (processed in external services like Azure Synapse or Databricks) in an accessible format for users.</p>
+                  </div>
+                </div>
+              </div>
+              <p class="font-size-18">In essence, it helps generate significant insights from massive datasets in a few simple clicks.</p>
+              <div>
+                <h3><strong>Customization Capabilities</strong></h3>
+                <p class="font-size-18 font-weight-600">Additionally, Power BI Embedded enhances user experience by allowing for substantial customization:</p>
+              </div>
+              <div class="margin-bottom-24">
+                <div class="margin-bottom-16">
+                  <div class="highlighted-text-border-left-wrap"><img src="../assets/images/Enhanced-Data-Privacy.svg" loading="lazy" alt="" class="image-56">
+                    <div class="w-richtext">
+                      <p>Developers can adjust the appearance of Power BI visuals to align with their specific application, ensuring smooth integration for end-users.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <p class="font-size-18">Looking for a richer understanding of Power BI Embedded? Visit <a href="https://thereportinghub.com/resources" target="_blank"><strong>Reporting Hub&#x27;s resources</strong></a><strong>,</strong> which provide an in-depth look at the tool&#x27;s capabilities and customer use cases.</p>
+              <p class="font-size-18">Reading these real-life examples sheds light on how Power BI Embedded can address your organization&#x27;s bespoke needs.</p>
+              <p class="font-size-18">Power BI Embedded is an exceptional tool that elevates data-driven decision processes. By allowing analytical insights on demand, it transforms complex data analytics into part of the everyday decision-making routine.</p>
+            </div>
+            <div class="blog-post-section">
+              <h2 id="h2-3" class="margin-bottom-18">Overview of Microsoft Fabric</h2>
+              <p class="margin-bottom-24 font-size-18 font-weight-600">Without a doubt, Microsoft Fabric is a heavyweight in the business analytics arena, designed to bolster your data strategy.</p>
+              <div class="image-text-block"><img src="../assets/images/mic-fabric.webp" loading="lazy" sizes="(max-width: 1170px) 100vw, 1170px" srcset="../assets/images/mic-fabric-p-500.webp 500w, ../assets/images/mic-fabric-p-800.webp 800w, ../assets/images/mic-fabric-p-1080.webp 1080w, ../assets/images/mic-fabric.webp 1170w" alt="">
+                <div>
+                  <p class="font-size-18">According to Microsoft&#x27;s resource, Microsoft Fabric is a unified platform that equips both designers and developers with a standardized set of tools to create seamless and coherent experiences that are underpinned by solid analytics.</p>
+                  <p class="font-size-18">Centralization is one of the greatest strengths of Fabric. Rather than utilizing disconnected tools for all of these different functions, organizations will have an end-to-end solution for storage, processing, integration, and reporting functions. The unified experience not only reduces complexity but also facilitates collaboration across teams in different departments.</p>
+                  <p class="font-size-18">Another key strength of Fabric is its scale. Fabric has advanced workloads for real-time streaming, large-scale data pipelines, AI-driven analytics, and more, all in the Microsoft economy. Fabric integrates with Azure Data Lake, Synapse, and Power BI, ensuring data flows into everyday Microsoft tools for easier adoption.</p>
+                </div>
+              </div>
+              <div class="margin-bottom-24">
+                <p class="font-size-18 font-weight-600">In a nutshell, Microsoft Fabric does a stellar job of integrating data collection, processing, and visualization in a way that caters to both developers and end-users. We&#x27;ll examine the specifics in our cost analysis and comparison sections, but for now, just know that this platform is a formidable contender on the analytics stage.</p>
+              </div>
+            </div>
+            <div class="blog-post-section">
+              <h2 id="h2-4" class="margin-bottom-18">Cost Analysis: Power BI Embedded vs Fabric</h2>
+              <p class="margin-bottom-24 font-size-18">Investing in the right business analytics tool involves not only assessment based on features and usability, but also a keen understanding of the associated costs. For most businesses, cost-effectiveness is crucial.</p>
+              <p class="font-size-18 font-weight-600">Let&#x27;s closely examine the cost implications of Power BI Embedded and Microsoft Fabric.</p>
+              <p>With Power BI Embedded, the pricing model primarily hinges on the capacity needed. This is directly influenced by factors such as the number of reports you intend to publish, the frequency of their refreshment, and the concurrent users at a given peak time.</p>
+              <p>Power BI Embedded is billed per hour/second based on capacity. Pricing varies by region.</p>
+              <p>Conversely, Microsoft Fabric, although part of the larger Office 365 suite, doesn&#x27;t necessitate subscription to the entire suite. Companies can choose to invest solely in Fabric, but the cost will be determined by several variables. These include the size of the company, the degree of integration required, and predominantly, the breadth of usage.</p>
+              <h3 class="font-size-21">
+                <a href="https://learn.microsoft.com/en-us/fabric/enterprise/buy-subscription">Microsoft Fabric</a> pricing depends on the subscription type and capacity chosen. Fabric operates on two SKU types:
+              </h3>
+              <div class="_2-column-grid margin-bottom-24">
+                <div class="text-highlight_wrap w-variant-fc5e898f-3fd6-6538-433d-8cc84d1e3b27"><img src="../assets/images/icon_1.svg" loading="lazy" alt="" class="image-56">
+                  <div>
+                    <h3>Azure SKUs (F capacities):</h3>
+                    <div class="w-richtext">
+                      <p>Pay-as-you-go billing per second, with no time commitment. You can reserve capacity to save costs, scale up or down, and pause/resume as needed. Pricing varies by region.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="text-highlight_wrap w-variant-fc5e898f-3fd6-6538-433d-8cc84d1e3b27"><img src="../assets/images/sku-document.svg" loading="lazy" alt="" class="image-56">
+                  <div>
+                    <h3>Microsoft 365 SKUs (P capacities):</h3>
+                    <div class="w-richtext">
+                      <p>Available for customers with Power BI Premium under an active Enterprise Agreement. Billed monthly or yearly with a commitment.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <p class="font-size-18 font-weight-600">However, attention should also be paid to the potential for additional costs.</p>
+              <p class="font-size-18">Both solutions can demand further investments in terms of training for the users or special infrastructure requirements, where suitable hardware and licenses need to be procured. It&#x27;s essential to understand these potential costs and factor them into your budget planning.</p>
+              <p class="font-size-18">Ultimately, the exact costs of Power BI Embedded and Microsoft Fabric will depend on the specifics of your organization and its analytics needs. But by understanding the factors that influence these costs, you can better anticipate your budget and potentially save your business money in the long term.</p>
+            </div><img src="../assets/images/cost-analysis.webp" loading="lazy" sizes="(max-width: 2685px) 100vw, 2685px" srcset="../assets/images/cost-analysis-p-500.webp 500w, ../assets/images/cost-analysis-p-800.webp 800w, ../assets/images/cost-analysis-p-1080.webp 1080w, ../assets/images/cost-analysis-p-1600.webp 1600w, ../assets/images/cost-analysis-p-2000.webp 2000w, ../assets/images/cost-analysis-p-2600.webp 2600w, ../assets/images/cost-analysis.webp 2685w" alt="">
+            <div class="blog-post-section">
+              <h2 id="h2-5" class="margin-bottom-18">Power BI Embedded for Enterprises</h2>
+              <p class="font-size-18 font-weight-600">If you&#x27;re running a large organization, Power BI Embedded is a tool that should definitely catch your eye.</p>
+              <p class="font-size-18">This analytics service lets you promote data-driven decision making across the enterprise, thanks to its extensive capabilities in connecting to a wide range of data sources, from in-house databases to third-party applications.</p>
+              <div class="text-image-block">
+                <div>
+                  <p class="font-size-18">One of the main reasons Power BI Embedded is the go-to choice for big businesses lies in its scalability. Large organizations deal with mammoth datasets, so the ability to handle high data volumes effectively becomes a critical factor.</p>
+                  <p class="font-size-18">This is where Power BI Embedded thrives. The cloud-based nature of the tool means it offers scalability that is tied to purchased capacity; organizations can scale up by moving to higher SKUs. allowing enterprises to grow without worrying about outgrowing their data analytics tool.</p>
+                  <p class="font-size-18">Another perk that makes Power BI Embedded a boon for enterprises is the <span class="font-weight-600">customizability</span> it brings. Tailoring the analytic reports helps companies to gain specific insights that matter most to them. Power BI Embedded makes it easy to customize everything from <a href="https://thereportinghub.com/power-bi/power-bi-dashboards">dashboards</a> to individual data visualizations, ensuring that companies can truly make the tool their own.</p>
+                </div><img src="../assets/images/power-bi-emvedded-fo-enterprises.webp" loading="lazy" sizes="(max-width: 1170px) 100vw, 1170px" srcset="../assets/images/power-bi-emvedded-fo-enterprises-p-500.webp 500w, ../assets/images/power-bi-emvedded-fo-enterprises-p-800.webp 800w, ../assets/images/power-bi-emvedded-fo-enterprises-p-1080.webp 1080w, ../assets/images/power-bi-emvedded-fo-enterprises.webp 1170w" alt="">
+              </div>
+              <p class="font-size-18">Thirdly, <span class="font-weight-600">security</span> is top-notch with Power BI Embedded. The tool comes with robust security features, ensuring that sensitive corporate information is well-protected. You can control who sees what data, thanks to features like row-level security and Active Directory integration.</p>
+              <p class="font-size-18 font-weight-600">In a nutshell, for enterprises capable of leveraging its strengths, Power BI Embedded can prove to be a potent ally in the quest for unparalleled data analytics. It brings scalability, customizability, robust security, and comprehensive data integration options to the table , a combination hard to resist for any large organization.</p>
+            </div>
+            <div class="blog-post-section">
+              <h2 id="h2-6" class="margin-bottom-18">Comparing Power BI Embedded with Microsoft Fabric</h2>
+              <p class="font-size-18 font-weight-600">As you weigh your options between Power BI Embedded and Microsoft Fabric, you must consider several key facets that can make all the difference in your analytics strategy: ease of use, data visualization capabilities, scalability, integration capabilities, and, of course, cost.</p>
+              <p class="font-size-18">Firstly, both tools offer user-friendly interfaces designed for non-tech-savvy users. However, Power BI Embedded has a slight edge with its drag-and-drop capabilities and intuitive navigation. Microsoft Fabric, on the other hand, while offering a clean, streamlined interface, requires a steep learning curve before one can fully utilize its features.</p>
+              <div class="gap-16 margin-bottom-18">
+                <div class="highlighted-text-border-left-wrap"><img src="../assets/images/graph-stroke.svg" loading="lazy" alt="" class="image-56">
+                  <div class="w-richtext">
+                    <p>When it comes to data visualization, Power BI Embedded certainly shines with its comprehensive features and extensive selection of visualizations, charts, and maps. It also supports real-time updates and offers interactive reports. Microsoft Fabric relies on Power BI for visualization; therefore, its visualization capabilities are essentially the same as Power BI’s.</p>
+                  </div>
+                </div>
+                <div class="highlighted-text-border-left-wrap"><img src="../assets/images/secure-stroke.svg" loading="lazy" alt="" class="image-56">
+                  <div class="w-richtext">
+                    <p>In terms of scalability, both platforms are impressively reliable, although Microsoft Fabric is often favored for its robust infrastructure. It can handle massive data sets and perform tasks at lightning speeds, which makes it particularly suited for larger organizations.</p>
+                  </div>
+                </div>
+                <div class="highlighted-text-border-left-wrap"><img src="../assets/images/cloud-stroke.svg" loading="lazy" alt="" class="image-56">
+                  <div class="w-richtext">
+                    <p>The integration capabilities of both platforms are noteworthy. Power BI Embedded can easily integrate with existing systems and is compatible with a myriad of data sources. Microsoft Fabric, on the other hand, leverages the entire Microsoft ecosystem&#x27;s power, making it an optimal choice for companies that already use or plan to use other Microsoft products and services.</p>
+                  </div>
+                </div>
+                <div class="highlighted-text-border-left-wrap"><img src="../assets/images/cost-stroke.svg" loading="lazy" alt="" class="image-56">
+                  <div class="w-richtext">
+                    <p>Cost-wise, Power BI Embedded offers a more flexible pricing plan than Microsoft Fabric. It operates on a pay-as-you-go model, which makes it a cost-effective solution for SMEs. Microsoft Fabric, however, has a more structured pricing, making it an ideal choice for companies that prefer predictable costs.</p>
+                  </div>
+                </div>
+              </div>
+              <p class="font-size-24 font-weight-600">To further simplify your decision, here&#x27;s a comparison table that outlines these key areas:</p>
+              <div class="_3-column-grid">
+                <div class="padding-y-28">
+                  <ul role="list" class="list-3 w-list-unstyled">
+                    <li>
+                      <div class="font-size-24 font-weight-600">Feature</div>
+                    </li>
+                    <li>
+                      <div>Ease of Use</div>
+                    </li>
+                    <li>
+                      <div>Data Visualization</div>
+                    </li>
+                    <li>
+                      <div>Scalability</div>
+                    </li>
+                    <li>
+                      <div>Integration Capabilities</div>
+                    </li>
+                    <li>
+                      <div>Cost</div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="highlight-list_wrap">
+                  <div class="row"><img src="../assets/images/fa-chart-pie.svg" loading="lazy" alt="" class="image-32">
+                    <div class="padding-y-16 font-size-21 font-weight-600">Power BI Embedded</div>
+                  </div>
+                  <ul role="list" class="w-list-unstyled">
+                    <li class="padding-y-16">
+                      <div>User-friendly, with drag-and-drop functionality</div>
+                    </li>
+                    <li>
+                      <div class="padding-y-16">Extensive and varied visualizations and interactive reports</div>
+                    </li>
+                    <li>
+                      <div class="padding-y-16">Reliable, designed for growth</div>
+                    </li>
+                    <li>
+                      <div class="padding-y-16">Integrates well with varied data sources and systems</div>
+                    </li>
+                    <li>
+                      <div class="padding-y-16">Flexible, pay-as-you-go model</div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="highlight-list_wrap">
+                  <div class="row"><img src="../assets/images/fa-layer-group.svg" loading="lazy" alt="" class="image-32">
+                    <div class="padding-y-16 font-size-21 font-weight-600">Microsoft Fabric</div>
+                  </div>
+                  <ul role="list" class="w-list-unstyled">
+                    <li class="padding-y-16">
+                      <div>Clean design, but requires some learning</div>
+                    </li>
+                    <li>
+                      <div class="padding-y-16">Clean design, but requires some learning</div>
+                    </li>
+                    <li>
+                      <div class="padding-y-16">Exceptionally robust, manages vast data sets quickly</div>
+                    </li>
+                    <li>
+                      <div class="padding-y-16">Leverages the power of the Microsoft ecosystem</div>
+                    </li>
+                    <li>
+                      <div class="padding-y-16">Structured, predictable pricing</div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <p class="font-size-18">Remember, choosing between Power BI Embedded and Microsoft Fabric ultimately hinges on your company&#x27;s unique goals, priorities, and resources.</p>
+            </div><img src="../assets/images/2-boards.webp" loading="lazy" sizes="(max-width: 2685px) 100vw, 2685px" srcset="../assets/images/2-boards-p-500.webp 500w, ../assets/images/2-boards-p-800.webp 800w, ../assets/images/2-boards-p-1080.webp 1080w, ../assets/images/2-boards-p-1600.webp 1600w, ../assets/images/2-boards-p-2000.webp 2000w, ../assets/images/2-boards.webp 2685w" alt="">
+            <div class="blog-post-section">
+              <h2 id="h2-7" class="margin-bottom-18"><strong>Choosing the Right Analytics Tool</strong></h2>
+              <p class="font-size-18">Power BI Embedded and Microsoft Fabric, while both developed by Microsoft for data analytics, target different user needs and vary in terms of capabilities, functionalities, and associated costs.</p>
+              <div class="_2-column-grid">
+                <div class="highlighted-text-border-left-wrap"><img src="../assets/images/grow-stroke.svg" loading="lazy" alt="" class="image-56">
+                  <div class="w-richtext">
+                    <h4>Power BI Embedded</h4>
+                    <p>Power BI Embedded offers a comprehensive solution for:</p>
+                    <ul role="list">
+                      <li>Embedding stunning, fully-interactive reports,</li>
+                      <li>Dashboards and visuals into applications,</li>
+                      <li>Providing end-users with the ability to delve into the data without leaving the app.</li>
+                    </ul>
+                    <h2>‍</h2>
+                  </div>
+                </div>
+                <div class="highlighted-text-border-left-wrap"><img src="../assets/images/stacked-cubes-stroke.svg" loading="lazy" alt="" class="image-56">
+                  <div class="w-richtext">
+                    <h4>Microsoft Fabric</h4>
+                    <p>On the other hand, Microsoft Fabric shines with:</p>
+                    <p><strong>You’ll find a multitude of resources, including:</strong></p>
+                    <ul role="list">
+                      <li>Providing a unified user experience across many parts of the Microsoft suite of tools,</li>
+                      <li>Presenting a flexible and efficient data processing system.</li>
+                    </ul>
+                    <h2>‍</h2>
+                  </div>
+                </div>
+              </div>
+              <h3 class="font-size-21">Features and Suitable Scenarios</h3>
+              <p class="font-size-18">Power BI Embedded stands out in scenarios requiring advanced data visualization and analytical features to be incorporated into applications. It&#x27;s ideal for organizations with heavy reporting needs.</p>
+              <p class="font-size-18">Meanwhile, Microsoft Fabric thrives in scenarios requiring an efficient data processing system, making it preferable for organizations needing an end-to-end platform for data ingestion, transformation, storage, and analytics.</p>
+              <div>
+                <h3 class="font-size-21">Features and Suitable Scenarios</h3>
+                <p class="font-size-18 font-weight-600">In deciding between them, organizations will need to consider:</p>
+                <ul role="list">
+                  <li>
+                    <div>Specific needs,</div>
+                  </li>
+                  <li>
+                    <div>Usage context, and</div>
+                  </li>
+                  <li>
+                    <div>Available resources.</div>
+                  </li>
+                </ul>
+                <p class="font-size-18">Factors such as company size, data complexity, the level of customization required, and budgetary restrictions should guide the choice of tool.</p>
+                <p class="font-size-18">Both Power BI Embedded and Microsoft Fabric have different strengths. The decision should be made on a case-by-case basis. Choosing a business analytics tool can seem daunting, but an informed understanding of each platform simplifies the decision process. Ensure to align your choices with your analytics strategy and the specific demands of your business.</p>
+              </div>
+            </div><img src="../assets/images/white.webp" loading="lazy" sizes="(max-width: 2685px) 100vw, 2685px" srcset="../assets/images/white-p-500.webp 500w, ../assets/images/white-p-800.webp 800w, ../assets/images/white-p-1080.webp 1080w, ../assets/images/white-p-1600.webp 1600w, ../assets/images/white-p-2000.webp 2000w, ../assets/images/white-p-2600.webp 2600w, ../assets/images/white.webp 2685w" alt="">
+            <div class="blog-post-section">
+              <h2 id="h2-8" class="margin-bottom-18"><strong>Additional Resources</strong></h2>
+              <div class="_2-column-grid margin-bottom-24">
+                <div class="highlighted-text-border-left-wrap"><img src="../assets/images/chart-stroke.svg" loading="lazy" alt="" class="image-56">
+                  <div class="w-richtext">
+                    <h4>Business Analytics Tools</h4>
+                    <p>To gain a broader understanding of business analytics tools, consider visiting The Reporting Hub&#x27;s website at <a href="https://thereportinghub.com/">thereportinghub.com.</a>
+                    </p>
+                    <p><strong>You’ll find a multitude of resources, including:</strong></p>
+                    <ul role="list">
+                      <li>Comprehensive comparisons</li>
+                      <li>Step-by-step ‘how-to’ guides &amp;</li>
+                      <li>Detailed articles on various aspects of the analytics sector.<br></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="highlighted-text-border-left-wrap"><img src="../assets/images/tree-hierarchy-s-troke.svg" loading="lazy" alt="" class="image-56">
+                  <div class="w-richtext">
+                    <h4>Microsoft Fabric in Action</h4>
+                    <p>Those specifically interested in Microsoft Fabric may find value in visiting <a href="https://www.microsoft.com/en-us/microsoft-fabric">Microsoft Fabric&#x27;s homepage</a>.</p>
+                    <p><strong>Here, you will gain:</strong></p>
+                    <ul role="list">
+                      <li>Comprehensive insight into Fabric’s capabilities,</li>
+                      <li>Examples of practical use-cases, &amp;</li>
+                      <li>Access to a thriving community of learners and industry experts.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <p class="font-size-18">Good luck in your journey!</p>
+              <div>
+                <p class="font-size-18 font-weight-600">In deciding between them, organizations will need to consider:</p>
+              </div>
+              <p class="font-size-18">For those interested in continuing their research, these resources may be of use:</p>
+            </div>
+          </div>
+        </div>
+        <div class="space-15rem"></div>
+      </div>
+    </div>
+    <section class="footer-section v1 section-2">
+      <div class="container">
+        <div class="foooter-top v1">
+          <div class="footer-left-left">
+            <div class="footer-icon-wrap"><img src="../assets/images/Symbol-1_2.webp" loading="lazy" alt="White Icon" class="icon"></div>
+            <div class="space-1-5"></div>
+            <div class="footer-title-top">Setup your <span class="highlight-text pure-blue">free trial</span> today!</div>
+            <div class="space-1"></div>
+            <p class="paragraph-regular">Get started today with a no-obligation 30-day free trial. The<br>Reporting Hub can be fully deployed to your Azure environment<br>by following our self-serve guided installer. <a href="#" class="span-link">Learn more</a>
+            </p>
+            <div class="space-2"></div>
+            <div class="button-wrap left">
+              <a href="../install-today.html" class="button color-blue w-inline-block">
+                <div>Install Today</div>
+              </a>
+              <a href="../contact.html" class="button bg-transparent text-blue w-inline-block">
+                <div>Get in Touch</div><img src="../assets/images/Symbol-7.webp" loading="lazy" alt="Arrow" class="button-arrow">
+              </a>
+            </div>
+          </div>
+          <div class="footer-image-wrap"><img src="../assets/images/dashboard-trial-new-1_1.webp" loading="lazy" width="Auto" alt="Power Bi Dashboard" sizes="100vw" srcset="../assets/images/dashboard-trial-new-1_1-p-500.webp 500w, ../assets/images/dashboard-trial-new-1_1-p-800.webp 800w, ../assets/images/dashboard-trial-new-1_1-p-1080.webp 1080w, ../assets/images/dashboard-trial-new-1_1-p-1600.webp 1600w, ../assets/images/dashboard-trial-new-1_1-p-2000.webp 2000w, ../assets/images/dashboard-trial-new-1_1-p-2600.webp 2600w, ../assets/images/dashboard-trial-new-1_1-p-3200.webp 3200w, ../assets/images/dashboard-trial-new-1_1.webp 3936w" class="footer-image"></div>
+        </div>
+      </div>
+      <div class="space-5"></div>
+      <div class="w-layout-blockcontainer container w-container">
+        <div class="footer-component">
+          <div class="w-layout-grid footer-grid-wrap">
+            <div class="footer-left-call">
+              <div class="font-0-9">Contact US</div>
+              <div class="footer-menu-left">
+                <div class="footer-menu-group"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewbox="0 0 15 12" fill="none" class="social-icon">
+                    <g clip-path="url(#clip0_9006_2830)">
+                      <path d="M1.52344 2.61654C1.52344 2.26292 1.66392 1.92378 1.91396 1.67373C2.16401 1.42368 2.50315 1.2832 2.85677 1.2832H12.1901C12.5437 1.2832 12.8828 1.42368 13.1329 1.67373C13.3829 1.92378 13.5234 2.26292 13.5234 2.61654M1.52344 2.61654V9.2832C1.52344 9.63683 1.66392 9.97596 1.91396 10.226C2.16401 10.476 2.50315 10.6165 2.85677 10.6165H12.1901C12.5437 10.6165 12.8828 10.476 13.1329 10.226C13.3829 9.97596 13.5234 9.63683 13.5234 9.2832V2.61654M1.52344 2.61654L7.52344 6.61654L13.5234 2.61654" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </g>
+                  </svg>
+                  <a href="mailto:info@thereportinghub.com?subject=You&#x27;ve%20got%20an%20email" class="footer-link">info@thereportinghub.com</a>
+                </div>
+                <div class="footer-menu-group"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewbox="0 0 17 18" fill="none" class="social-icon">
+                    <path d="M3.85938 6.75618C3.85938 4.35756 5.94871 2.41309 8.52603 2.41309C11.1033 2.41309 13.1927 4.35756 13.1927 6.75618C13.1927 9.13601 11.7032 11.913 9.37942 12.9061C8.83769 13.1376 8.21439 13.1376 7.67267 12.9061C5.34882 11.913 3.85938 9.13601 3.85938 6.75618Z" stroke="currentColor" stroke-width="1.5"></path>
+                    <path d="M9.85417 7.0804C9.85417 7.81678 9.25722 8.41373 8.52084 8.41373C7.78446 8.41373 7.1875 7.81678 7.1875 7.0804C7.1875 6.34402 7.78446 5.74707 8.52084 5.74707C9.25722 5.74707 9.85417 6.34402 9.85417 7.0804Z" stroke="currentColor" stroke-width="1.5"></path>
+                    <path d="M14.4997 11.4131C14.9433 11.8147 15.1927 12.2675 15.1927 12.7464C15.1927 14.4033 12.2079 15.7464 8.52603 15.7464C4.84414 15.7464 1.85938 14.4033 1.85938 12.7464C1.85938 12.2675 2.10878 11.8147 2.55234 11.4131" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+                  </svg>
+                  <div class="max-width-11">
+                    <a href="#" class="footer-link">1150, 707 - 7th Avenue SW Calgary, ABCanada T2P 3H6</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="footer-call">
+              <div class="font-0-9">Website</div>
+              <div class="footer-menu-main">
+                <a href="../index.html" class="footer-link">Home</a>
+                <a href="../aaas.html" class="footer-link">AaaS Platform</a>
+                <a href="../pricing.html" class="footer-link">Pricing</a>
+                <a href="../learn-more.html" class="footer-link">What is Reporting Hub?</a>
+                <a href="../demo.html" class="footer-link">Demo</a>
+                <a href="../install-today.html" class="footer-link">Install Today</a>
+                <a href="../about-us.html" class="footer-link">About Us</a>
+                <a href="../contact.html" class="footer-link">Contact Us</a>
+              </div>
+            </div>
+            <div class="footer-call">
+              <div class="font-0-9">theHUB</div>
+              <div class="footer-menu-main">
+                <a href="https://docs.thereportinghub.com/" class="footer-link">Knowledge Center</a>
+                <a href="../blog.html" class="footer-link">Our Blog</a>
+                <a href="../power-bi.html" class="footer-link">About Power BI</a>
+                <a href="https://support.thereportinghub.com/support/home" class="footer-link">Get Support</a>
+                <a href="../support-plans.html" class="footer-link">Support Plans</a>
+                <a href="../policies.html" class="footer-link">Policies</a>
+                <a href="/policies#rh-terms" class="footer-link">Terms of Service</a>
+              </div>
+            </div>
+          </div>
+          <a href="#nav" class="direction-button w-inline-block"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewbox="0 0 52 53" fill="none" class="button-icon">
+              <g clip-path="url(#clip0_9006_2933)">
+                <path d="M0 26.1602C0 40.5196 11.6406 52.1602 26 52.1602C40.3594 52.1602 52 40.5196 52 26.1602C52 11.8008 40.3594 0.160156 26 0.160156C11.6406 0.160156 0 11.8008 0 26.1602Z" fill="white" fill-opacity="0.1"></path>
+                <path d="M32.704 28.6752C33.1627 29.1422 33.9152 29.1422 34.3739 28.6752C34.8212 28.2199 34.8212 27.4902 34.3739 27.0348L26.7165 19.2396C26.3246 18.8407 25.6817 18.8407 25.2898 19.2396L17.6323 27.0348C17.1851 27.4902 17.1851 28.2199 17.6323 28.6752C18.0911 29.1422 18.8436 29.1422 19.3023 28.6752L25.2898 22.58C25.6817 22.181 26.3246 22.181 26.7165 22.58L32.704 28.6752Z" fill="currentColor" class="white"></path>
+              </g>
+            </svg></a>
+        </div>
+      </div>
+      <div class="space-3"></div>
+      <div class="global-line"></div>
+      <div class="footer-bottom">
+        <div class="space-3"></div>
+        <div class="w-layout-blockcontainer container w-container">
+          <div class="footer-bottom-contents">
+            <a href="../index.html" class="footer-left w-inline-block"><img src="../assets/images/rh-horizontal-white.svg" loading="lazy" alt="" class="image-small">
+              <div class="text-color-white margin-top-10">Microsoft partner</div>
+            </a>
+            <div class="footer-right">
+              <div class="new-footer-wrap">
+                <div class="font-0-9 text-align-right left-mobile">
+                  <a href="mailto:info@thereportinghub.com?subject=You&#x27;ve%20got%20email" class="link-8"><span class="text-span-2">info@thereportinghub.com</span></a>
+                </div>
+                <div class="social-media-wrap">
+                  <a href="https://www.facebook.com/people/The-Reporting-Hub/100064582883104/" class="social-media-link w-inline-block"><img src="../assets/images/fb.svg" loading="lazy" alt="" class="social-media-icon"></a>
+                  <a href="https://www.linkedin.com/company/the-reporting-hub/" class="social-media-link w-inline-block"><img src="../assets/images/in.svg" loading="lazy" alt="" class="social-media-icon"></a>
+                  <a href="https://x.com/thereportinghub" class="social-media-link w-inline-block"><img src="../assets/images/tw.svg" loading="lazy" alt="" class="social-media-icon"></a>
+                  <a href="https://www.instagram.com/thereportinghub/" class="social-media-link w-inline-block"><img src="../assets/images/insta.svg" loading="lazy" alt="" class="social-media-icon"></a>
+                </div>
+              </div>
+              <div class="font-0-9 text-align-right margin-top-16">2025 All Rights Reserved | The Reporting Hub</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <!-- jQuery removed -->
+  
+  
+  
+  <!--  Google Tag Manager (noscript)  -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MM9W9FH" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!--  End Google Tag Manager (noscript)  -->
+  <script>
+(function () {
+  function cssEscapeSafe(s) {
+    try { return CSS.escape(s); } catch (e) { return s.replace(/["\\]/g, "\\$&"); }
+  }
+  function normalizeTarget(target) {
+    // ✅ Ako ti URL i dalje dolazi kao #bi-genius-terms, mapiraj ga na rh-terms
+    if (target === "bi-genius-terms") return "rh-terms";
+    return target;
+  }
+  function openTabFromHash() {
+    var hash = window.location.hash;
+    if (!hash) return;
+    var target = hash.slice(1);
+    if (!target) return;
+    target = normalizeTarget(target);
+    // 1) traži custom data-tab="..."
+    var sel = '[data-tab="' + cssEscapeSafe(target) + '"]';
+    var el = document.querySelector(sel);
+    // 2) fallback: traži direktno webflow tab link po data-w-tab
+    var tabLink = null;
+    if (el) {
+      tabLink = (el.classList && el.classList.contains('w-tab-link'))
+        ? el
+        : (el.querySelector ? el.querySelector('.w-tab-link') : null);
+    }
+    if (!tabLink) {
+      tabLink = document.querySelector('.w-tab-link[data-w-tab="' + cssEscapeSafe(target) + '"]');
+    }
+    // 3) extra fallback: ako target == rh-terms, probaj naći BILO KOJI element sa data-tab="rh-terms"
+    // (ovo ti je “hard fix” da 100% radi)
+    if (!tabLink && target === "rh-terms") {
+      tabLink = document.querySelector('[data-tab="rh-terms"].w-tab-link, .w-tab-link[data-tab="rh-terms"]');
+    }
+    if (!tabLink) return;
+    var tries = 0;
+    (function tryClick() {
+      tries++;
+      tabLink.click();
+      if (!tabLink.classList.contains('w--current') && tries < 20) {
+        setTimeout(tryClick, 100);
+      }
+    })();
+  }
+  document.addEventListener('DOMContentLoaded', openTabFromHash);
+  window.addEventListener('hashchange', openTabFromHash);
+})();
+</script>
+  <script >
+    document.addEventListener('DOMContentLoaded', function () {
+        var youtubeIframes = document.querySelectorAll('iframe.lazyiframe');
+        youtubeIframes.forEach(function (youtubeIframe) {
+            var dataSrcValue = youtubeIframe.getAttribute('data-src');
+            if (dataSrcValue) {
+                youtubeIframe.setAttribute('src', dataSrcValue);
+                youtubeIframe.removeAttribute('data-src');
+            }
+        });
+    });
+</script>
+  <!-- Removed: xls loader trigger -->
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const nav = document.getElementById("nav");
+    // initial check in case page loads scrolled
+    if (window.scrollY > 50) {
+      nav.style.backgroundColor = "rgb(33, 37, 41)";
+    } else {
+      nav.style.backgroundColor = "transparent";
+    }
+    // animate background color on scroll
+    ScrollTrigger.create({
+      trigger: document.body,
+      start: "top top",
+      end: 99999,
+      onUpdate: self => {
+        if (self.scroll() > 50) {
+          gsap.to(nav, { backgroundColor: "rgb(33, 37, 41)", duration: 0.5, ease: "power1.out" });
+        } else {
+          gsap.to(nav, { backgroundColor: "transparent", duration: 0.5, ease: "power1.out" });
+        }
+      }
+    });
+  });
+</script>
+  <script>
+const sections = document.querySelectorAll("h2[id]");
+const links = document.querySelectorAll(".sidebar_link");
+sections.forEach(section => {
+  ScrollTrigger.create({
+    trigger: section,
+    start: "top top+100",
+    end: "bottom top+100",
+    onEnter: () => setActive(section.id),
+    onEnterBack: () => setActive(section.id)
+  });
+});
+function setActive(id) {
+  links.forEach(link => link.classList.remove("active"));
+  const activeLink = document.querySelector(
+    `.sidebar_link[href="#${id}"]`
+  );
+  if (activeLink) {
+    activeLink.classList.add("active");
+  }
+}
+</script>
+  
+  
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>
