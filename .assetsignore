@@ -1,0 +1,17 @@
+# Keep uploads small: only static site files should be published.
+# See https://developers.cloudflare.com/workers/static-assets/binding/#ignoring-assets
+
+node_modules/
+.git/
+.wrangler/
+.dev.vars
+
+package.json
+package-lock.json
+migrate.js
+wrangler.toml
+wrangler.json
+wrangler.jsonc
+
+.gitignore
+.assetsignore

@@ -1,0 +1,7 @@
+# Static HTML site — no Worker script; assets are served at the edge.
+# Node is only needed locally / in CI to run Wrangler, not at runtime on Cloudflare.
+name = "reportinghub"
+compatibility_date = "2026-03-23"
+
+[assets]
+directory = "."
