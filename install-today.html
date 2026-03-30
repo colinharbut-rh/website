@@ -314,160 +314,127 @@
               </div>
             </div>
             <div id="w-node-_5879ae99-4301-28b8-c761-dfa3b1581e18-aa815602" class="custome-form-wrapper">
-              <div class="code-embed-8 w-embed w-script">
-                <div class="col-lg-6 col-12 order-2 my-xl-5 py-xl-5" style="background-color: #ebedf7;" data-aos="fade-up" data-aos-delay="100">
-                  <div class="modal-bg p-4 my-xl-5 mx-3" style="max-width: 580px;">
-                    <!--  TITLE (sakriven dok se forma ne ucita)  -->
-                    <div id="hsFormTitle" class="h5 fw-bold main-text-black mb-2" style="
-        font-size: 24px;
-        font-weight: 600;
-        color: black;
-        text-align: left;
-        padding-bottom: 16px;
-        display: none;
-      ">
-                      Install Now
-                    </div>
-                    <!--  PLACEHOLDER (vidljiv dok se forma ne ucita)  -->
-                    <div class="hs-form-placeholder" id="hsFormPlaceholder" aria-live="polite" aria-busy="true">
-                      <div class="hs-form-spinner" aria-hidden="true"></div>
-                      <div class="hs-form-placeholder-title">Loading form…</div>
-                      <div class="hs-form-placeholder-sub">Please wait a moment.</div>
-                    </div>
-                    <script charset="utf-8" type="text/javascript" src="https://js.hsforms.net/forms/embed/v2.js"></script>
-                    <div class="custom_hbs_form paidsearchpage">
-                      <!--  target za HS formu  -->
-                      <div id="hsFormTarget"></div>
-                      <script>
-        (function () {
-          function showFormAndHidePlaceholder() {
-            var ph = document.getElementById("hsFormPlaceholder");
-            var title = document.getElementById("hsFormTitle");
-            if (ph) {
-              ph.style.display = "none";
-              ph.setAttribute("aria-busy", "false");
-            }
-            if (title) title.style.display = "block";
-          }
-          function init() {
-            var target = document.getElementById("hsFormTarget");
-            if (!target || !window.hbspt || !hbspt.forms) return;
-            hbspt.forms.create({
-              portalId: "44531319",
-              formId: "ca7707d0-3c2a-4421-9693-c34605e73071",
-              region: "na1",
-              target: "#hsFormTarget",
-              onFormReady: function ($form) {
-                var $captcha = $form.find(".hs_recaptcha");
-                var $submit = $form.find(".hs_submit");
-                // pomjeranje recaptcha ispod dugmeta
-                if ($captcha.length && $submit.length) {
-                  $captcha.insertAfter($submit);
-                }
-                showFormAndHidePlaceholder();
-              },
-            });
-            // fallback: sakrij placeholder kad iframe ucita
-            var obs = new MutationObserver(function () {
-              var iframe = target.querySelector("iframe");
-              if (iframe) {
-                iframe.addEventListener("load", showFormAndHidePlaceholder, {
-                  once: true,
-                });
-                obs.disconnect();
-              }
-            });
-            obs.observe(target, { childList: true, subtree: true });
-            // zadnji fallback: nemoj da placeholder visi vjecno
-            setTimeout(showFormAndHidePlaceholder, 8000);
-          }
-          if (document.readyState === "loading") {
-            document.addEventListener("DOMContentLoaded", init);
-          } else {
-            init();
-          }
-        })();
-      </script>
-                    </div>
-                    <style>
-      .hs_recaptcha {
-        margin-top: 0.75rem;
-      }
-     .hs-form-placeholder {
-  			width: 100%;
-  			min-height: 220px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        gap: 16px;
-        padding: 40px 20px;
-        background: transparent;
-        border: none;
-        box-shadow: none;
-}
-      .hs-form-spinner {
-        width: 30px;
-        height: 30px;
-        border-radius: 999px;
-        border: 3px solid rgba(24, 142, 232, 0.25);
-        border-top-color: #188ee8;
-        animation: hsSpin 0.9s linear infinite;
-        flex: 0 0 auto;
-      }
-      @keyframes hsSpin {
-        to {
-          transform: rotate(360deg);
-        }
-      }
-      .hs-form-placeholder-title {
-        font-size: 16px;
-        font-weight: 700;
-        color: #111;
-        animation: hsPulse 1.4s ease-in-out infinite;
-      }
-      .hs-form-placeholder-sub {
-        font-size: 13px;
-        opacity: 0.75;
-        color: #111;
-        margin-top: -6px;
-      }
-      @keyframes hsPulse {
-        0%,
-        100% {
-          opacity: 0.55;
-        }
-        50% {
-          opacity: 1;
-        }
-      }
-    </style>
-                  </div>
+              <div class="rh-form-card">
+              <style>
+.rh-form-card{background:#fff;border-radius:20px;padding:40px 40px 36px;box-shadow:0 4px 6px -1px rgba(0,0,0,.07),0 24px 64px -12px rgba(24,142,232,.18);width:100%;max-width:560px;box-sizing:border-box}
+.rh-form-card-header{margin-bottom:26px}
+.rh-form-card-title{font-size:26px;font-weight:700;color:#09243f;margin:0 0 6px;line-height:1.2}
+.rh-form-card-sub{font-size:14px;color:#6b7280;margin:0;line-height:1.5}
+.rh-form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
+.rh-form-group{display:flex;flex-direction:column;gap:6px}
+.rh-form-group label{font-size:13px;font-weight:600;color:#374151;line-height:1}
+.rh-form-group label span{color:#188ee8;margin-left:1px}
+.rh-form-group input{height:48px;border:1.5px solid #e2e8f0;border-radius:10px;padding:0 14px;font-size:15px;color:#111827;background:#f9fafb;outline:none;transition:border-color .18s,box-shadow .18s,background .18s;width:100%;box-sizing:border-box;font-family:inherit}
+.rh-form-group input::placeholder{color:#9ca3af}
+.rh-form-group input:focus{border-color:#188ee8;background:#fff;box-shadow:0 0 0 3px rgba(24,142,232,.12)}
+.rh-form-group input.is-invalid{border-color:#ef4444;background:#fff5f5;box-shadow:0 0 0 3px rgba(239,68,68,.1)}
+.rh-form-submit{display:flex;align-items:center;justify-content:center;gap:9px;width:100%;height:52px;background:linear-gradient(135deg,#188ee8 0%,#1478c8 100%);color:#fff;border:none;border-radius:10px;font-size:16px;font-weight:700;cursor:pointer;margin-top:20px;transition:box-shadow .18s,transform .15s,opacity .18s;box-shadow:0 4px 14px rgba(24,142,232,.38);font-family:inherit;letter-spacing:.01em}
+.rh-form-submit:hover:not(:disabled){box-shadow:0 8px 24px rgba(24,142,232,.48);transform:translateY(-2px)}
+.rh-form-submit:active:not(:disabled){transform:translateY(0);box-shadow:0 2px 8px rgba(24,142,232,.3)}
+.rh-form-submit:disabled{opacity:.65;cursor:not-allowed;transform:none}
+.rh-form-trust{display:flex;align-items:center;justify-content:center;gap:6px;margin-top:14px;font-size:12px;color:#9ca3af;line-height:1}
+.rh-form-error-msg{background:#fef2f2;border:1px solid #fecaca;border-radius:8px;color:#dc2626;font-size:13px;padding:10px 14px;margin-bottom:14px;display:none}
+.rh-form-success-wrap{text-align:center;padding:40px 24px;display:none}
+.rh-form-success-icon{width:60px;height:60px;background:linear-gradient(135deg,#188ee8,#0dd4c8);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 18px;box-shadow:0 8px 24px rgba(24,142,232,.3)}
+.rh-form-success-title{font-size:22px;font-weight:700;color:#09243f;margin-bottom:8px}
+.rh-form-success-msg{font-size:15px;color:#6b7280;margin:0;line-height:1.6}
+@media(max-width:767px){.rh-form-card{padding:28px 22px 26px;border-radius:16px;max-width:100%}.rh-form-row{grid-template-columns:1fr}}
+              </style>
+
+              <div id="install-form-success" class="rh-form-success-wrap">
+                <div class="rh-form-success-icon">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                 </div>
+                <div class="rh-form-success-title">You&#x2019;re all set!</div>
+                <p class="rh-form-success-msg">We&#x2019;ve received your request.<br>Our team will be in touch shortly.</p>
               </div>
-            </div>
-            <div name="Form Block" class="hubspot_form_wrapper">
-              <form name="Form" action="https://hubspotonwebflow.com/api/forms/f3efc44b-eafb-408f-b380-2dbe13bcab8f" method="POST" enctype="multipart/form-data" data-name="Install form - testing purpose" data-wf-hs-form="webflowHubSpotForm" data-wf-page-id="68f3fe6193bf6ab9aa815602" data-wf-element-id="a0fce062-2358-7ee5-d2df-af13bb549bb6" class="hubspot_form">
-                <div class="hubspot_form_text">Install Now</div>
-                <div class="double_form_field_wrap">
-                  <div class="hubspot_form_field_wrapper">
-                    <div class="hubspot_icon"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFoAAABaCAYAAAA4qEECAAAACXBIWXMAAAsTAAALEwEAmpwYAAAC/UlEQVR4nO3cSatcRRQA4NKoGBcKalQQhxDdiguRiAZENOjCpbMLQSWgC/+CS4lgFDUE0ZXDHxDcuJKokTjiGJ4R3AVMNBHBKeonxa2FiFHe8/Wt6qrzwd10N3SfQ3V19alzK6UQQgghhBBCCKuHy/AwXsEH+Ba/lutIeSw/9xC2rOEtxoVTcA/etnpv4W5sqB1H03AzVvx/B7C9djzNwRl43vp7Dhtrx9cEnIf3Lc672JRGZkpy/pov2oFhk22aLhY5kv9pZJ+eRmMxc/J/2ZNGgu3quSUNtE5eqZjoL4ZYZ+Ne9d2Zeod9tbOMN9MAtYsW/IHNqVemAlErdqRemSptrXgp9Qofasd7qVemGnIrvkm9wi/a8XPqlcakXmlM6pXGpF6JOXoeYtUxD7GOngde1o4XU69MjS6t6LrWsaVUzmrLn+HS1DNr60Bab3tT70wtW7XdnnqHDTP1cpzIZ0PsGWa4qWKib0gjMfXFzW13Gg02lu6hubwzZKdSlvvhZpqvcy/HuWlkpmTvX/BIHrPB8QTTyJ4FJHn3sNPFv8GN5Wu+Hku4sVYXa1xn35W7iVb5dz2/di/uwMm141gq2JyLP7kHo/RSHymbB/k6nEud5bkd3dcuQgghhBBCCGEYOAvX4EE8iddKBS6XUw/hp3IdKnWRfeU1u/AAtuLM2nE0BxeUDdsX8JX1c7DcnZvrJuenEeFK7MSn5pELTh/jMVyReoaL8Ug5nqe2XEZ9FJenXuA6vNpIh9Lf5c/0Om7FSWnZ4DTcj08sj49wH05Ny6CMji8trxXc1uwIx9VlV6QXb+Cq1NixEPmH5Tf9+R1PVZ9O8vZROWuud/vzgQG1knw9jhnHUWybO8nbyt/g0fyIa+dK8jllB3pUh3H2HIl+onakDXh8jkTXPHiqFZ/Pkeg8T43uhzkS/XXtKBtwcI5EP107ygbsmiPRF+I74zqGixae6L/c7PO98RydvR24dHo+W1Yhx/XreInxGVwya5JDCCGEEEIIIYQQUpv+BAvyywawutiQAAAAAElFTkSuQmCC" alt="User" class="img"></div><input type="text" name="firstname" id="firstname" placeholder="First Name*" class="hubspot_form_field">
+
+              <form id="install-form" novalidate>
+                <div class="rh-form-card-header">
+                  <div class="rh-form-card-title">Install Now</div>
+                  <p class="rh-form-card-sub">Start your free 30-day trial &mdash; no credit card required.</p>
+                </div>
+                <div id="install-form-error" class="rh-form-error-msg"></div>
+                <div class="rh-form-row">
+                  <div class="rh-form-group">
+                    <label for="firstname">First Name <span>*</span></label>
+                    <input type="text" id="firstname" name="firstname" placeholder="Jane" required>
                   </div>
-                  <div class="hubspot_form_field_wrapper">
-                    <div class="hubspot_icon"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFoAAABaCAYAAAA4qEECAAAACXBIWXMAAAsTAAALEwEAmpwYAAABiUlEQVR4nO3cvUoEQRRE4YuBoE++pv6w+4JqpiaaHlk0EhQG7O66NfXF7Xr7sOwwHXRVRERERERE/A64BG6AJ/7PI3A4f/Yf/3pf+AoyymH1/mTwv9/kn55rD4Br4AF4Q88rcA9cVXfACX2n6gy4AD7Q936etbpK6Ima/HQcq7vzgwa4+37wqHkBbi0ehhERERH25xg+5yFNXkZ6n4c0er3u/Zqe0BPt7KfjOLNtp3MMz/MQTJUaTJUaTJWarYPSfP0yaiFIaI/1y6iFIKE91i+jFoK9he6u1GCq1GCq1GCq1GCq1GCq1GwdlObrl1ELQUJ7rF9GLQQJ7bF+GbUQ7C10d6UGU6UGU6UGU6UGU6UGU6Vm66A0X7+MWggS2mP9MmohSGiP9cuohcAp9KDbvdSsv21s8O1eatbdNmb+Tda5bYydqYSeI6EnkQ699W9r8Gwj9jJcQk+S0JMk9CQJPUlCT8IAtYPZrDaD8GxWm0F4NqvNIDyb1WYQns1qMwjPFhERERERUUo+ASqf/uQxUSpmAAAAAElFTkSuQmCC" alt="Organization" class="img"></div><input type="text" name="lastname" id="lastname" placeholder="Last Name*" class="hubspot_form_field">
+                  <div class="rh-form-group">
+                    <label for="lastname">Last Name <span>*</span></label>
+                    <input type="text" id="lastname" name="lastname" placeholder="Smith" required>
                   </div>
                 </div>
-                <div class="double_form_field_wrap">
-                  <div class="hubspot_form_field_wrapper">
-                    <div class="hubspot_icon"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFoAAABaCAYAAAA4qEECAAAACXBIWXMAAAsTAAALEwEAmpwYAAACyElEQVR4nO3avWsUURSG8ahBBBE0CgYstLCxEUQRrLTRKlZ2fjSW2tn4B2iRwsLCQkFQUCsrrbTRShBtbGxUjGAhKASUoFFiHrkwAQlJ7pnZe++cu/v+IBDYnZ3Mw+x8nMzYmIiIiIiIiIiIiIiIiCQEbAVeIDGvgR2Dxt4MPI2uanQ9B7ak2rM3Ag/73iKHHgObugRdt8ZrG4A7fW+ZI3eB8S4tw4v3YgsD1/reQgduAOsjO+XttUKbvg7AZUbXtPUwGwttOsADF4C/jI5F4FKbCwdLaNMlC3Aa+MPwWwDOR1psW34pbA0dvAV2RVYwBfxkeM0DpyINJoE3yxdsEzqYAfZGVnQU+M7wmQOOR7Z9D/B+pYXbhg6+APsjKzwIfGN4zAJHItu8D/i82gd0CZ1kxRWx7FiHYjtW19BLX6UThq/SO+o1YzhUHrMcKgcJHfw2nBx2rnRyqIDl5H8S+GX5sEFDWy93apv8vTJczp5pczmbInSbC/gn+Ge5QbvY9gYtVejWt6ROZRs5pA5tHrLgT9YhWo7Q2f/oDLLvHLlC1zT5my5xuMsZ2vvkb7HtBM5zaK+Tv4UuEzjvob1N/ua7TuBqCO1l8jc3yASultB9T/5m+xyElQ7d1wYnmcDVFto6+dudaPL3MdUErsbQpSZ/SSdwtYbOPflLPoGrOXSuyd+zHBO42kOnvhV+5PHW31Po4Lrhmb9brO5meE9kmBXWwaiHjj4w+N8JLMwgvjY/4fepyDLjzWf3wmPo7o/AOv6Hg9fQyR7q9vLwvOfQwUtgYoDIE81n9M576OATcLhD5APAB5yoITTNndsVy94NbAeulrjbG8bQS34A94GzYUjUzI0nm9/PAQ+a97hTW+hqKXQhCl2IQhei0IUodCEKXYhCF6LQhSh0IQpdiEIXotCFKHQhCt13aBERERERERERERERERmL+we+eiaBhMmpWgAAAABJRU5ErkJggg==" alt="Email" class="img"></div><input type="email" name="email" required="" id="email" placeholder="Email*" class="hubspot_form_field">
+                <div class="rh-form-row">
+                  <div class="rh-form-group">
+                    <label for="email">Work Email <span>*</span></label>
+                    <input type="email" id="email" name="email" placeholder="jane@company.com" required>
                   </div>
-                  <div class="hubspot_form_field_wrapper">
-                    <div class="hubspot_icon"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFoAAABaCAYAAAA4qEECAAAACXBIWXMAAAsTAAALEwEAmpwYAAAC/UlEQVR4nO3cSatcRRQA4NKoGBcKalQQhxDdiguRiAZENOjCpbMLQSWgC/+CS4lgFDUE0ZXDHxDcuJKokTjiGJ4R3AVMNBHBKeonxa2FiFHe8/Wt6qrzwd10N3SfQ3V19alzK6UQQgghhBBCCKuHy/AwXsEH+Ba/lutIeSw/9xC2rOEtxoVTcA/etnpv4W5sqB1H03AzVvx/B7C9djzNwRl43vp7Dhtrx9cEnIf3Lc672JRGZkpy/pov2oFhk22aLhY5kv9pZJ+eRmMxc/J/2ZNGgu3quSUNtE5eqZjoL4ZYZ+Ne9d2Zeod9tbOMN9MAtYsW/IHNqVemAlErdqRemSptrXgp9Qofasd7qVemGnIrvkm9wi/a8XPqlcakXmlM6pXGpF6JOXoeYtUxD7GOngde1o4XU69MjS6t6LrWsaVUzmrLn+HS1DNr60Bab3tT70wtW7XdnnqHDTP1cpzIZ0PsGWa4qWKib0gjMfXFzW13Gg02lu6hubwzZKdSlvvhZpqvcy/HuWlkpmTvX/BIHrPB8QTTyJ4FJHn3sNPFv8GN5Wu+Hku4sVYXa1xn35W7iVb5dz2/di/uwMm141gq2JyLP7kHo/RSHymbB/k6nEud5bkd3dcuQgghhBBCCGEYOAvX4EE8iddKBS6XUw/hp3IdKnWRfeU1u/AAtuLM2nE0BxeUDdsX8JX1c7DcnZvrJuenEeFK7MSn5pELTh/jMVyReoaL8Ug5nqe2XEZ9FJenXuA6vNpIh9Lf5c/0Om7FSWnZ4DTcj08sj49wH05Ny6CMji8trxXc1uwIx9VlV6QXb+Cq1NixEPmH5Tf9+R1PVZ9O8vZROWuud/vzgQG1knw9jhnHUWybO8nbyt/g0fyIa+dK8jllB3pUh3H2HIl+onakDXh8jkTXPHiqFZ/Pkeg8T43uhzkS/XXtKBtwcI5EP107ygbsmiPRF+I74zqGixae6L/c7PO98RydvR24dHo+W1Yhx/XreInxGVwya5JDCCGEEEIIIYQQUpv+BAvyywawutiQAAAAAElFTkSuQmCC" alt="User" class="img"></div><input type="text" name="company" id="company" placeholder="Company*" class="hubspot_form_field">
+                  <div class="rh-form-group">
+                    <label for="company">Company <span>*</span></label>
+                    <input type="text" id="company" name="company" placeholder="Acme Corp" required>
                   </div>
-                </div><label for="utm_campaign" hidden="" class="label">utm_campaign</label><input type="hidden" name="utm_campaign" hidden="" id="utm_campaign"><label for="utm_source" hidden="">utm_source</label><input type="hidden" name="utm_source" hidden="" id="utm_source"><label for="utm_medium" hidden="">utm_medium</label><input type="hidden" name="utm_medium" hidden="" id="utm_medium"><label for="utm_term" hidden="">utm_term</label><input type="hidden" name="utm_term" hidden="" id="utm_term"><label for="utm_content" hidden="">utm_content</label><input type="hidden" name="utm_content" hidden="" id="utm_content"><input type="hidden" name="hutk" value=""><input type="hidden" name="ipAddress" value=""><input type="hidden" name="pageUri" value=""><input type="hidden" name="pageId" value=""><input type="hidden" name="pageName" value=""><button type="submit" class="hubspot_form_button">Submit</button>
+                </div>
+                <button type="submit" class="rh-form-submit">
+                  Start Free Trial
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </button>
+                <div class="rh-form-trust">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                  No credit card &nbsp;&middot;&nbsp; 30-day free trial &nbsp;&middot;&nbsp; Cancel anytime
+                </div>
               </form>
-            </div>
+
+              <script>
+(function () {
+  var PORTAL_ID = '44531319';
+  var FORM_ID   = 'ca7707d0-3c2a-4421-9693-c34605e73071';
+  var ENDPOINT  = 'https://api.hsforms.com/submissions/v3/integration/submit/' + PORTAL_ID + '/' + FORM_ID;
+  function getCookie(n){var m=document.cookie.match('(?:^|; )'+n.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+'=([^;]*)');return m?decodeURIComponent(m[1]):'';}
+  function getParam(n){return new URLSearchParams(window.location.search).get(n)||'';}
+  var form=document.getElementById('install-form');
+  var successEl=document.getElementById('install-form-success');
+  var errorEl=document.getElementById('install-form-error');
+  if(!form)return;
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var btn=form.querySelector('.rh-form-submit');
+    var inputs=form.querySelectorAll('input[required]');
+    var valid=true;
+    inputs.forEach(function(i){i.classList.remove('is-invalid');if(!i.value.trim()){i.classList.add('is-invalid');valid=false;}});
+    if(!valid){if(errorEl){errorEl.textContent='Please fill in all required fields.';errorEl.style.display='block';}return;}
+    if(errorEl)errorEl.style.display='none';
+    if(btn){btn.innerHTML='Submitting\u2026';btn.disabled=true;}
+    var fields=[
+      {name:'firstname',value:form.querySelector('[name=firstname]').value.trim()},
+      {name:'lastname', value:form.querySelector('[name=lastname]').value.trim()},
+      {name:'email',    value:form.querySelector('[name=email]').value.trim()},
+      {name:'company',  value:form.querySelector('[name=company]').value.trim()}
+    ];
+    ['utm_campaign','utm_source','utm_medium','utm_term','utm_content'].forEach(function(p){var v=getParam(p);if(v)fields.push({name:p,value:v});});
+    var hutk=getCookie('hubspotutk');
+    var ctx={pageUri:window.location.href,pageName:document.title};
+    if(hutk)ctx.hutk=hutk;
+    var payload={fields:fields,context:ctx};
+    fetch(ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)})
+    .then(function(res){return res.json().then(function(data){return{ok:res.ok,data:data};});})
+    .then(function(result){
+      if(result.ok){form.style.display='none';if(successEl)successEl.style.display='block';}
+      else{
+        console.error('HubSpot submit error:', JSON.stringify(result.data));
+        var msg='Submission failed. Please try again.';
+        if(result.data&&result.data.message)msg=result.data.message;
+        else if(result.data&&result.data.errors&&result.data.errors[0])msg=result.data.errors[0].message||result.data.errors[0].errorType||msg;
+        if(errorEl){errorEl.textContent=msg;errorEl.style.display='block';}
+        if(btn){btn.innerHTML='Start Free Trial <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>';btn.disabled=false;}
+      }
+    })
+    .catch(function(){if(errorEl){errorEl.textContent='Network error. Please try again.';errorEl.style.display='block';}if(btn){btn.innerHTML='Start Free Trial <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>';btn.disabled=false;}});
+  });
+})();
+              </script>
+              </div>
+              
           </div>
         </div>
       </section>
@@ -478,7 +445,7 @@
         <div class="space-1-5"></div>
         <div class="footer-title-top">Setup your <span class="highlight-text pure-blue">free trial</span> today!</div>
         <div class="space-1"></div>
-        <p class="paragraph-regular">Get started today with a no-obligation 30-day free trial. The<br>Reporting Hub can be fully deployed to your Azure environment<br>by following our self-serve guided installer. <a href="#" class="span-link">Learn more</a>
+        <p class="paragraph-regular">Get started today with a no-obligation 30-day free trial. The<br>Reporting Hub can be fully deployed to your Azure environment<br>by following our self-serve guided installer. <a href="install-today.html" class="span-link">Learn more</a>
         </p>
         <div class="space-2"></div>
         <div class="button-wrap left">

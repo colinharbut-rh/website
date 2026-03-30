@@ -100,8 +100,69 @@ body {
   background-color: var(--f6f9fc);
   font-family: var(--inter);
   color: #000;
-  font-size: 16px;
-  line-height: 24px;
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+/* ============================================================
+   Video Lightbox Modal
+   ============================================================ */
+#rh-video-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+}
+#rh-video-modal.is-open {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.rh-video-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,.85);
+}
+.rh-video-inner {
+  position: relative;
+  width: 90vw;
+  max-width: 960px;
+  z-index: 1;
+}
+.rh-video-frame {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  background: #000;
+  border-radius: .5rem;
+  overflow: hidden;
+}
+.rh-video-close {
+  position: absolute;
+  top: -2.5rem;
+  right: 0;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 2rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: .25rem .5rem;
+}
+.rh-video-close:hover { opacity: .7; }
+
+/* ============================================================
+   Download Popup Modal
+   ============================================================ */
+.download-popup {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9998;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,.6);
+  padding: 1rem;
 }
 
 h1 {
@@ -2111,12 +2172,13 @@ strong {
   color: var(--fff);
   justify-content: center;
   align-items: center;
-  width: 1.25rem;
-  height: 1.25rem;
-  margin-right: 1rem;
+  width: 1rem;
+  height: 1rem;
   display: flex;
-  position: absolute;
-  inset: auto 0% auto auto;
+  position: static;
+  order: 1;
+  flex-shrink: 0;
+  margin-left: .25rem;
 }
 
 .uui-button-row {
@@ -6933,14 +6995,20 @@ strong {
   color: #00d4ffcc;
   text-align: center;
   text-transform: uppercase;
-  white-space: pre;
+  white-space: nowrap;
   background-color: #0000;
   border-radius: 3.75rem;
   flex: 1;
-  padding: .4rem .8rem;
-  font-size: .8rem;
+  padding: .35rem .75rem;
+  font-size: .75rem;
   font-weight: 600;
   transition: all .4s;
+  height: 2rem !important;
+  align-self: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
 }
 
 .dash-tab-box.dash-tab-box6.w--current {
