@@ -66,15 +66,21 @@
         clearTimeout(closeTimeout);
         // Close other dropdowns at the same level
         dropdown.parentElement.querySelectorAll('.w-dropdown-list.w--open').forEach(function (other) {
-          if (other !== list) other.classList.remove('w--open');
+          if (other !== list) {
+            other.classList.remove('w--open');
+            var otherToggle = other.parentElement.querySelector('.w-dropdown-toggle');
+            if (otherToggle) otherToggle.classList.remove('w--open');
+          }
         });
         list.classList.add('w--open');
+        toggle.classList.add('w--open');
         toggle.setAttribute('aria-expanded', 'true');
       }
 
       function close() {
         closeTimeout = setTimeout(function () {
           list.classList.remove('w--open');
+          toggle.classList.remove('w--open');
           toggle.setAttribute('aria-expanded', 'false');
         }, delay);
       }
@@ -85,6 +91,7 @@
         e.stopPropagation();
         if (list.classList.contains('w--open')) {
           list.classList.remove('w--open');
+          toggle.classList.remove('w--open');
           toggle.setAttribute('aria-expanded', 'false');
         } else {
           open();
@@ -129,6 +136,44 @@
         var schedulePopup = document.querySelector('.popup-wrapper');
         if (schedulePopup) { schedulePopup.style.display = 'none'; document.body.style.overflow = ''; }
       }
+    });
+  }
+
+  // ============================================================
+  // FAQ Accordion
+  // ============================================================
+
+  function initFaqAccordion() {
+    document.querySelectorAll('.faq-question-2').forEach(function (question) {
+      var wrap = question.closest('.faq-wrap-2');
+      if (!wrap) return;
+      question.addEventListener('click', function () {
+        wrap.classList.toggle('is-open');
+      });
+    });
+
+    // .faq-accordions pattern (power-bi/certification.html)
+    document.querySelectorAll('.faq-accordions').forEach(function (accordion) {
+      accordion.addEventListener('click', function () {
+        var wrapper = accordion.closest('.faq-wrapper');
+        if (!wrapper) return;
+        var answers = wrapper.querySelector('.faq-answers');
+        if (!answers) return;
+        var isOpen = wrapper.classList.toggle('is-open');
+        answers.style.height = isOpen ? answers.scrollHeight + 'px' : '0px';
+      });
+    });
+
+    // .faq-question pattern (install-guide.html)
+    document.querySelectorAll('.faq-question').forEach(function (question) {
+      question.addEventListener('click', function () {
+        var wrapper = question.closest('.faq-install-wrapp');
+        if (!wrapper) return;
+        var answers = wrapper.querySelector('.faq-ans.answer');
+        if (!answers) return;
+        var isOpen = wrapper.classList.toggle('is-open');
+        answers.style.height = isOpen ? answers.scrollHeight + 'px' : '0px';
+      });
     });
   }
 
@@ -465,6 +510,10 @@
   // ============================================================
 
   function initHubSpotMeetings() {
+    // HubSpot's MeetingsEmbedCode.js handles iframe creation when present.
+    // This fallback only runs if that script is absent (e.g. pages that use
+    // data-src without the embed script tag).
+    if (window.MeetingsEmbedCode) return;
     document.querySelectorAll('.meetings-iframe-container[data-src]').forEach(function (container) {
       var src = container.getAttribute('data-src');
       if (!src || container.querySelector('iframe')) return;
@@ -475,6 +524,163 @@
       iframe.style.cssText = 'min-width:312px;min-height:615px;height:715px;border:none;';
       container.appendChild(iframe);
     });
+  }
+
+  // ============================================================
+  // Scroll Animations (Intersection Observer)
+  // ============================================================
+
+  function initScrollAnimations() {
+    if (!('IntersectionObserver' in window)) return;
+
+    var singles = [
+      { sel: '.section-heading',    dir: 'up'    },
+      { sel: '.heading-style-h1',   dir: 'up'    },
+      { sel: '.heading-style-h2',   dir: 'up'    },
+      { sel: '.anothe-title',       dir: 'up'    },
+      { sel: '.subtitle',           dir: 'up'    },
+      { sel: '.hero-left',          dir: 'left'  },
+      { sel: '.hero-image',         dir: 'right' },
+      { sel: '.limit-top-content',  dir: 'up'    },
+      { sel: '.microsoft-top',      dir: 'up'    },
+      { sel: '.microsoft-overlay',  dir: 'up'    },
+      { sel: '.solution-component', dir: 'up'    },
+      { sel: '.foooter-top',        dir: 'up'    },
+      { sel: '.footer-component',   dir: 'up'    },
+      { sel: '.customiz-header',    dir: 'up'    },
+      { sel: '.customize-paragraph', dir: 'up'   },
+      { sel: '.uui-section-header', dir: 'up'    },
+      { sel: '.limit-section-header', dir: 'up'  },
+      { sel: '.cta-component',      dir: 'up'    },
+      { sel: '.rich-text-block',    dir: 'up'    },
+      { sel: '.pricing-header',     dir: 'up'    },
+      { sel: '.blog-post_content-left', dir: 'up' },
+    ];
+
+    var groups = [
+      { sel: '.bottom-limit-grid',               dir: 'up'    },
+      { sel: '.platform-grid',                   dir: 'up'    },
+      { sel: '.security-section .w-layout-grid', dir: 'up'    },
+      { sel: '.blog-section .w-dyn-list',        dir: 'up'    },
+      { sel: '.microsoft-right',                 dir: 'up'    },
+      { sel: '.experience-grid',                 dir: 'scale' },
+      { sel: '.customiz-grid',                   dir: 'scale' },
+      { sel: '.pricing-cards',                   dir: 'scale' },
+      { sel: '.testimony-wrapper',               dir: 'scale' },
+      { sel: '.core-values-cards',               dir: 'scale' },
+      { sel: '.future-bright-cards-wrapper',     dir: 'scale' },
+      { sel: '.why-bi-cards',                    dir: 'scale' },
+      { sel: '.bi-genius-cards',                 dir: 'scale' },
+      { sel: '.ai-cards-grid',                   dir: 'scale' },
+      { sel: '.ai-final-cards-embed',            dir: 'scale' },
+      { sel: '.pricing-question-cards',          dir: 'scale' },
+      { sel: '.insights-cards',                  dir: 'scale' },
+      { sel: '.partners-grid',                   dir: 'scale' },
+      { sel: '.blog-grid',                       dir: 'scale' },
+      { sel: '.lp-cards-grid',                   dir: 'scale' },
+    ];
+
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('anim-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: '0px 0px -80px 0px', threshold: 0.1 });
+
+    singles.forEach(function(item) {
+      document.querySelectorAll(item.sel).forEach(function(el) {
+        el.classList.add('anim-ready', 'anim-' + item.dir);
+        observer.observe(el);
+      });
+    });
+
+    groups.forEach(function(item) {
+      document.querySelectorAll(item.sel).forEach(function(parent) {
+        Array.from(parent.children).forEach(function(child, i) {
+          child.classList.add('anim-ready', 'anim-' + item.dir);
+          child.style.transitionDelay = Math.min(i * 100, 400) + 'ms';
+          observer.observe(child);
+        });
+      });
+    });
+
+    // Handle data-aos elements (17 pages use data-aos="fade-up")
+    document.querySelectorAll('[data-aos]').forEach(function(el) {
+      var aosVal = el.getAttribute('data-aos');
+      var dir = 'up';
+      if (aosVal === 'fade-left') dir = 'left';
+      else if (aosVal === 'fade-right') dir = 'right';
+      el.classList.add('anim-ready', 'anim-' + dir);
+      var delay = el.getAttribute('data-aos-delay');
+      if (delay) el.style.transitionDelay = delay + 'ms';
+      observer.observe(el);
+    });
+  }
+
+  // ============================================================
+  // Blog Pagination (6 items per page, 3×2 grid)
+  // ============================================================
+
+  function initBlogPagination() {
+    // Target only the main blog list, not the single featured post
+    var list = document.querySelector('.blog-list:not(.is-single)');
+    if (!list) return;
+
+    var paginationWrapper = document.querySelector('.w-pagination-wrapper.pagination');
+    if (!paginationWrapper) return;
+
+    var prevBtn = paginationWrapper.querySelector('.w-pagination-previous');
+    var nextBtn = paginationWrapper.querySelector('.w-pagination-next');
+    var pageCount = paginationWrapper.querySelector('.w-page-count');
+
+    var items = Array.from(list.querySelectorAll('.blog-item'));
+    if (!items.length) return;
+
+    var ITEMS_PER_PAGE = 6;
+    var totalPages = Math.ceil(items.length / ITEMS_PER_PAGE);
+    var currentPage = 1;
+
+    function showPage(page, scroll) {
+      var start = (page - 1) * ITEMS_PER_PAGE;
+      var end = start + ITEMS_PER_PAGE;
+
+      items.forEach(function(item, i) {
+        item.style.display = (i >= start && i < end) ? '' : 'none';
+      });
+
+      if (pageCount) {
+        pageCount.textContent = 'Page ' + page + ' of ' + totalPages;
+        pageCount.setAttribute('aria-label', 'Page ' + page + ' of ' + totalPages);
+      }
+
+      // Disable / enable nav buttons
+      var disabledStyle = 'opacity:.35;pointer-events:none;cursor:default;';
+      prevBtn.style.cssText = page <= 1 ? disabledStyle : '';
+      nextBtn.style.cssText = page >= totalPages ? disabledStyle : '';
+
+      currentPage = page;
+
+      // Scroll to top of the blog section (skip on initial load)
+      if (scroll) {
+        var scrollTarget = list.closest('.blog-list-wrapper') || list;
+        scrollTarget.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+
+    prevBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      if (currentPage > 1) showPage(currentPage - 1, true);
+    });
+
+    nextBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      if (currentPage < totalPages) showPage(currentPage + 1, true);
+    });
+
+    // Initialise first page (no scroll)
+    showPage(1, false);
   }
 
   // ============================================================
@@ -490,6 +696,7 @@
     clearStuckOpacity();
     initMobileNav();
     initDropdowns();
+    initFaqAccordion();
     initTabs();
     initSmoothScroll();
     initNavbarScroll();
@@ -499,6 +706,8 @@
     initSchedulePopup();
     initMicrosoftCard();
     initHubSpotMeetings();
+    initScrollAnimations();
+    initBlogPagination();
   }
 
   if (document.readyState === 'loading') {
