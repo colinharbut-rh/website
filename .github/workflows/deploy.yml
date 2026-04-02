@@ -1,32 +1,21 @@
-# # Static site (plain HTML/CSS/JS) — no build step. Site root is the repo root (index.html).
-# # If your default branch is `master`, add it under `push.branches` or rename the branch to `main`.
-# name: Deploy to Cloudflare Pages
+name: Deploy to Cloudflare Workers
 
-# on:
-#   push:
-#     branches:
-#       - master
-#   pull_request:
-#     types: [opened, synchronize]
+on:
+  push:
+    branches:
+      - master
 
-# permissions:
-#   contents: read
-#   deployments: write
-#   pull-requests: read
+permissions:
+  contents: read
 
-# jobs:
-#   deploy:
-#     runs-on: ubuntu-latest
-#     name: Deploy to Cloudflare Pages
-#     steps:
-#       - name: Checkout
-#         uses: actions/checkout@v4
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
 
-#       - name: Publish to Cloudflare Pages
-#         uses: cloudflare/pages-action@v1
-#         with:
-#           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-#           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-#           projectName: reportinghub-website
-#           directory: .
-#           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+      - name: Deploy
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
