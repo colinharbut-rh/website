@@ -423,6 +423,12 @@
           return;
         }
 
+        // Turnstile: require solved before proceeding
+        var turnstileInput = form.querySelector('[name="cf-turnstile-response"]');
+        if (turnstileInput && !turnstileInput.value) {
+          return;
+        }
+
         // Show brief loading state
         var submitBtn = form.querySelector('[type=submit]');
         if (submitBtn) {
@@ -439,6 +445,11 @@
             submitBtn.disabled = false;
           }
           form.reset();
+          // Reset Turnstile widget so it can be used again if popup reopens
+          if (window.turnstile) {
+            var widget = form.querySelector('.cf-turnstile');
+            if (widget) window.turnstile.reset(widget);
+          }
         }, 400);
       });
     }
@@ -687,6 +698,26 @@
   // Initialize Everything
   // ============================================================
 
+  // ============================================================
+  // Turnstile submit guard
+  // Blocks native form submission to Formspree until the widget
+  // has been solved (cf-turnstile-response input is populated).
+  // ============================================================
+
+  function initTurnstileGuard() {
+    document.addEventListener('submit', function (e) {
+      var form = e.target;
+      if (!form.querySelector('.cf-turnstile')) return;
+
+      var tokenInput = form.querySelector('[name="cf-turnstile-response"]');
+      if (!tokenInput || tokenInput.value) return;
+
+      // Widget not yet solved — block submission
+      e.preventDefault();
+      e.stopImmediatePropagation();
+    }, true);
+  }
+
   function init() {
     document.documentElement.classList.add('w-mod-js');
     if ('ontouchstart' in window || (window.DocumentTouch && document instanceof DocumentTouch)) {
@@ -708,6 +739,7 @@
     initHubSpotMeetings();
     initScrollAnimations();
     initBlogPagination();
+    initTurnstileGuard();
   }
 
   if (document.readyState === 'loading') {
