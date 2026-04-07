@@ -460,6 +460,14 @@
     if (!popup) return;
     popup.style.display = 'flex';
     document.body.style.overflow = 'hidden';
+    // Turnstile skips hidden elements on page load — render explicitly when popup opens
+    if (window.turnstile) {
+      popup.querySelectorAll('.cf-turnstile').forEach(function (widget) {
+        if (!widget.querySelector('iframe')) {
+          window.turnstile.render(widget);
+        }
+      });
+    }
   }
 
   function closeDownloadPopup() {
@@ -710,11 +718,24 @@
       if (!form.querySelector('.cf-turnstile')) return;
 
       var tokenInput = form.querySelector('[name="cf-turnstile-response"]');
-      if (!tokenInput || tokenInput.value) return;
+      // Allow only if the input exists and has a value (widget solved)
+      if (tokenInput && tokenInput.value) return;
 
-      // Widget not yet solved — block submission
+      // Widget not yet solved — block submission and show feedback
       e.preventDefault();
       e.stopImmediatePropagation();
+
+      var widget = form.querySelector('.cf-turnstile');
+      if (widget) {
+        var msg = widget.querySelector('.ts-error-msg');
+        if (!msg) {
+          msg = document.createElement('p');
+          msg.className = 'ts-error-msg';
+          msg.style.cssText = 'color:#c00;font-size:13px;margin:4px 0 0;';
+          widget.appendChild(msg);
+        }
+        msg.textContent = 'Please complete the verification above.';
+      }
     }, true);
   }
 

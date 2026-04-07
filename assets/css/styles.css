@@ -16017,3 +16017,13 @@ ul.hs-error-msgs li label.hs-error-msg {
   .custom_hbs_form .form-columns-2 .hs-fieldtype-text,
   .custom_hbs_form .form-columns-2 .hs-fieldtype-select { width: 100% !important; }
 }
+
+/* Cloudflare Turnstile widget */
+.cf-turnstile {
+  display: block;
+  margin: 12px 0 8px;
+  min-height: 65px;
+}
+.cf-turnstile iframe {
+  display: block !important;
+}
