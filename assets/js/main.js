@@ -425,7 +425,7 @@
 
         // Turnstile: require solved before proceeding
         var turnstileInput = form.querySelector('[name="cf-turnstile-response"]');
-        if (turnstileInput && !turnstileInput.value) {
+        if (!turnstileInput || !turnstileInput.value) {
           return;
         }
 
@@ -460,14 +460,19 @@
     if (!popup) return;
     popup.style.display = 'flex';
     document.body.style.overflow = 'hidden';
-    // Turnstile skips hidden elements on page load — render explicitly when popup opens
-    if (window.turnstile) {
-      popup.querySelectorAll('.cf-turnstile').forEach(function (widget) {
-        if (!widget.querySelector('iframe')) {
-          window.turnstile.render(widget);
-        }
-      });
-    }
+    // Turnstile skips hidden elements on page load — render explicitly when popup opens.
+    // Retry if the Turnstile script hasn't finished loading yet (race condition with async/defer).
+    (function tryRender(attempt) {
+      if (window.turnstile) {
+        popup.querySelectorAll('.cf-turnstile').forEach(function (widget) {
+          if (!widget.querySelector('iframe')) {
+            window.turnstile.render(widget);
+          }
+        });
+      } else if (attempt < 50) {
+        setTimeout(function () { tryRender(attempt + 1); }, 100);
+      }
+    }(0));
   }
 
   function closeDownloadPopup() {
@@ -727,14 +732,20 @@
 
       var widget = form.querySelector('.cf-turnstile');
       if (widget) {
-        var msg = widget.querySelector('.ts-error-msg');
+        // If the widget hasn't rendered yet (Turnstile was slow), trigger it now
+        if (!widget.querySelector('iframe') && window.turnstile) {
+          window.turnstile.render(widget);
+        }
+        // Place error message after the widget, not inside it, so it's visible
+        // even when the widget hasn't rendered
+        var msg = widget.parentNode.querySelector('.ts-error-msg');
         if (!msg) {
           msg = document.createElement('p');
           msg.className = 'ts-error-msg';
           msg.style.cssText = 'color:#c00;font-size:13px;margin:4px 0 0;';
-          widget.appendChild(msg);
+          widget.insertAdjacentElement('afterend', msg);
         }
-        msg.textContent = 'Please complete the verification above.';
+        msg.textContent = 'Please complete the security check above to continue.';
       }
     }, true);
   }
