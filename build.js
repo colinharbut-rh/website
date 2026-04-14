@@ -17,7 +17,7 @@ const path = require('path');
 const ROOT = __dirname;
 const PARTIALS_DIR = path.join(ROOT, 'assets', 'partials');
 const NAV_PARTIAL = path.join(PARTIALS_DIR, 'nav.html');
-const SUBFOLDERS = ['', 'ai-data-analysis', 'author', 'power-bi', 'lp', 'blog', 'partners', 'resources'];
+const SUBFOLDERS = ['', 'ai-data-analysis', 'author', 'power-bi', 'lp', 'blog', 'partners', 'resources', 'marketing-dashboards', 'reporting-tools'];
 
 // ===== HELPERS =====
 
