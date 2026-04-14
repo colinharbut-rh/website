@@ -66,6 +66,63 @@ scripts/           — Utility scripts
 - **Clean URLs** enabled — `/about-us` serves `about-us.html`
 - `.assetsignore` excludes node_modules, .git, config files from upload
 
+## Dashboard Card Imports (MCP Tool)
+
+When the user asks to **add dashboard cards** from a vendor (e.g. "Add Whatagraph Google Ads dashboards to the marketing dashboards page"), use the **Dashboard Importer MCP tools** — do not try to fetch images yourself.
+
+### Workflow
+
+1. **Call `scrape_gallery`** with the vendor ID and category:
+   ```
+   scrape_gallery({ vendor: "whatagraph", category: "google-ads" })
+   ```
+   Returns: `cards[]` (title, description, image_url, link) + `image_headers` for curl.
+
+2. **Download each image** via Bash curl using the returned headers:
+   ```bash
+   curl -L -s \
+     -H "Referer: https://whatagraph.com/" \
+     -H "User-Agent: Mozilla/5.0 ..." \
+     -o "assets/images/dashboards/whatagraph-google-ads-1.webp" \
+     "[image_url]"
+   ```
+   Save to `assets/images/dashboards/<vendor>-<slug>.webp`.
+
+3. **Write the HTML page** at `marketing-dashboards/<vendor>-<category>.html` using the card template below. Copy page skeleton (head, nav placeholder, footer) from an existing `partners/` page — use `../assets/` relative paths.
+
+4. **Card HTML template** (reuses existing CSS — no new styles needed):
+   ```html
+   <div role="list" class="resourcesb-cards w-dyn-items">
+     <!-- repeat per card -->
+     <div role="listitem" class="collection-item w-dyn-item">
+       <div class="resources-card">
+         <div class="div-block-94">
+           <img loading="lazy" src="../assets/images/dashboards/<filename>.webp"
+                alt="<title> dashboard template" class="resources-images">
+         </div>
+         <div class="space-1-5"></div>
+         <div class="resources-cards-contents">
+           <div class="heading-style-h4"><title></div>
+           <div class="space-1"></div>
+           <div><description></div>
+           <div class="space-1"></div>
+           <a href="<link>" class="text-color-primary access-button w-inline-block"
+              target="_blank" rel="noopener"><div>Use Template ➞</div></a>
+         </div>
+       </div>
+     </div>
+   </div>
+   ```
+
+5. **Run** `node build.js inject-nav` to inject the shared nav.
+
+6. **Report done** and wait for the user to say "push" before committing.
+
+### Supported Vendors
+Use `list_vendors` to see all vendor IDs and available category filters. Current vendors: `whatagraph`, `databox`, `supermetrics`, `windsor`, `looker`, `catchr`, `portermetrics`, `agencyanalytics`, `bymarketers`.
+
+---
+
 ## Important Notes
 
 - No runtime framework — avoid introducing npm dependencies or bundlers
