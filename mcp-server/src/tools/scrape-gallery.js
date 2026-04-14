@@ -90,6 +90,7 @@ export async function scrapeGallery({ vendor: vendorId, category, url: overrideU
         warning = `Vendor page returned HTTP ${res.status} for ${targetUrl}`;
       } else {
         const html = await res.text();
+        const htmlSnippet = html.slice(0, 500).replace(/\s+/g, ' ');
 
         // Try __NEXT_DATA__ (Next.js SSR)
         const nextDataMatch = html.match(/<script id="__NEXT_DATA__"[^>]*>([^<]+)<\/script>/);
@@ -113,6 +114,11 @@ export async function scrapeGallery({ vendor: vendorId, category, url: overrideU
             cards = parsed;
             scrapeMethod = 'html_regex';
           }
+        }
+
+        // Store snippet for debug warning
+        if (cards.length === 0) {
+          warning = `No cards parsed from ${targetUrl} (HTTP ${res.status}). HTML preview: "${htmlSnippet}"`;
         }
       }
     } catch (err) {
