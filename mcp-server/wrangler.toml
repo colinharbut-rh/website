@@ -1,0 +1,8 @@
+name = "reportinghub-mcp"
+main = "src/index.js"
+compatibility_date = "2026-03-23"
+workers_dev = true
+
+# MCP_API_KEY is set as a Worker Secret — never stored here.
+# Set it once with:
+#   npx wrangler secret put MCP_API_KEY --config mcp-server/wrangler.toml

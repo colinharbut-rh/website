@@ -1,0 +1,933 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="utf-8">
+  <title>Building Scalable Multi-Tenant Analytics with Power BI Embedded</title>
+  <meta content="Modern businesses rely on data analytics as the foundation for better decision-making, and many are turning to multi-tenant solutions for enhanced security, sca" name="description">
+  <meta content="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/6941a04437aef8da66bebf9b_blogimg7.webp" property="og:image">
+  <meta content="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/6941a04437aef8da66bebf9b_blogimg7.webp" property="twitter:image">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&amp;display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link href="../assets/css/base.css" rel="stylesheet" type="text/css">
+  <link href="../assets/css/styles.css" rel="stylesheet" type="text/css">
+
+  <!-- Favicon -->
+  <link href="../assets/images/favicon.ico" rel="shortcut icon" type="image/x-icon">
+  <link href="../assets/images/webclip.png" rel="apple-touch-icon">
+
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async="" defer=""></script></head>
+<body>
+  <div id="trtb" class="page-wrapper">
+    <div data-animation="default" class="navbar w-variant-5639baf4-9975-3636-61ef-0b730048b257 w-nav" data-easing2="ease" data-easing="ease" data-collapse="medium" role="banner" data-duration="400" id="nav">
+      <div class="navbar-continer w-container">
+        <div class="nav-item-wrap">
+          <a href="../index.html" class="brand w-nav-brand"><img src="../assets/images/rh-horizontal-white.svg" loading="eager" alt="" class="nav-brand-logo one"><img src="../assets/images/logo_white.svg" loading="lazy" alt="" class="nav-brand-logo two"></a>
+          <nav role="navigation" class="navigation w-nav-menu">
+            <a href="../index.html" class="nav-link w-nav-link">Home</a>
+            <div data-hover="false" data-delay="300" class="uui-navbar01_menu-dropdown w-dropdown">
+              <div class="uui-navbar01_dropdown-toggle w-dropdown-toggle">
+                <div class="uui-dropdown-icon w-embed"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg></div>
+                <div class="nav-link padding-right-0-25">Platform</div>
+              </div>
+              <nav class="uui-navbar01_dropdown-list w-dropdown-list">
+                <div class="uui-navbar01_container">
+                  <div class="uui-navbar01_dropdown-content">
+                    <div class="uui-navbar01_dropdown-content-left is-platform">
+                      <div class="uui-navbar01_dropdown-link-list">
+                        <h4 class="uui-navbar01_heading text-color-white">Platform</h4>
+                        <a href="../learn-more.html" class="uui-navbar01_dropdown-link w-inline-block">
+                          <div class="uui-navbar01_icon-wrapper"><img src="../assets/images/logo-white.svg" loading="lazy" alt="Bi White logo" class="icon-xsmall"></div>
+                          <div class="uui-navbar01_item-right">
+                            <div class="uui-navbar01_item-heading">Reporting Hub</div>
+                            <div class="uui-text-size-small hide-mobile-landscape">Custom-branded Power BI reporting delivery for teams and analytics clients</div>
+                          </div>
+                        </a>
+                      </div>
+                      <div class="uui-navbar01_dropdown-link-list is-bottom">
+                        <h4 class="uui-navbar01_heading opacity-0">Company</h4>
+                        <a href="../bi-genius.html" class="uui-navbar01_dropdown-link w-inline-block">
+                          <div class="uui-navbar01_icon-wrapper"><img src="../assets/images/new-bi-megamenu-logo-white.svg" loading="lazy" alt="Power Bi Megamenu white logo" class="icon-xsmall small"></div>
+                          <div class="uui-navbar01_item-right">
+                            <div class="uui-navbar01_item-heading">BI Genius</div>
+                            <div class="uui-text-size-small hide-mobile-landscape">Add-on fully customizable AI agents that drive insights with full transparency and control</div>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                    <div class="uui-navbar01_dropdown-content-right">
+                      <div class="uui-navbar01_dropdown-content-wrapper">
+                        <div class="blog-items-wrapper">
+                          <h4 class="uui-navbar01_dropdown-content-heading text-color-white">Latest from our blog</h4>
+                          <a href="../blog.html" class="uui-button-link is-button-xsmall w-inline-block">
+                            <div class="color_primary">See all posts ➝</div>
+                          </a>
+                        </div>
+                        <div class="w-dyn-list">
+                          <div role="list" class="uui-navbar01_dropdown-blog-list w-dyn-items"><div role="listitem" class="w-dyn-item">
+                              <a href="../blog/embedded-analytics-meets-generative-ai-how-saas-teams-monetize-bi-in-2025.html" class="uui-navbar01_blog-item w-inline-block">
+                                <div class="uui-navbar01_blog-image-wrapper"><img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/69600be56fa30d9d91a5f337_Embedded%20Analytics%20Meets%20Generative%20AI%20How%20SaaS%20Teams%20Monetize%20BI%20in%202025.png" loading="eager" alt="" class="uui-navbar01_blog-image"></div>
+                                <div class="uui-navbar01_large-item-content">
+                                  <div class="uui-navbar01_item-heading">Embedded Analytics Meets Generative AI: How SaaS Teams Monetize BI in 2026</div>
+                                  <div class="uui-navbar01_item-button-wrapper">
+                                    <div class="uui-button-row">
+                                      <div class="uui-button-link is-button-xsmall">
+                                        <div class="color_primary">Learn More ➝</div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </a>
+                            </div><div role="listitem" class="w-dyn-item">
+                              <a href="../blog/fabric-vs-power-bi-premium.html" class="uui-navbar01_blog-item w-inline-block">
+                                <div class="uui-navbar01_blog-image-wrapper"><img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/6961652bcf02c04b7b0edbe3_Fabric%20vs.%20Power%20BI%20Premium%20-%20Reddit.avif" loading="eager" alt="" class="uui-navbar01_blog-image"></div>
+                                <div class="uui-navbar01_large-item-content">
+                                  <div class="uui-navbar01_item-heading">Fabric vs. Power BI Premium</div>
+                                  <div class="uui-navbar01_item-button-wrapper">
+                                    <div class="uui-button-row">
+                                      <div class="uui-button-link is-button-xsmall">
+                                        <div class="color_primary">Learn More ➝</div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </a>
+                            </div><div role="listitem" class="w-dyn-item">
+                              <a href="../blog/how-to-structure-a-multi-tenant-analytics-delivery-system-without-rebuilding-everything.html" class="uui-navbar01_blog-item w-inline-block">
+                                <div class="uui-navbar01_blog-image-wrapper"><img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/69b03e0ca76a82d19058f954_Structure%20a%20Multi-Tenant%20Analytics%20Delivery.jpg" loading="eager" alt="" class="uui-navbar01_blog-image"></div>
+                                <div class="uui-navbar01_large-item-content">
+                                  <div class="uui-navbar01_item-heading">How to Structure a Multi-Tenant Analytics Delivery System Without Rebuilding Everything</div>
+                                  <div class="uui-navbar01_item-button-wrapper">
+                                    <div class="uui-button-row">
+                                      <div class="uui-button-link is-button-xsmall">
+                                        <div class="color_primary">Learn More ➝</div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </a>
+                            </div></div>
+                          
+                        </div>
+                      </div>
+                      <div class="uui-navbar01_dropdown-right-overlay-absolute"></div>
+                    </div>
+                  </div>
+                </div>
+              </nav>
+            </div>
+            <a href="../pricing.html" class="nav-link w-nav-link">Pricing</a>
+            <a href="../aaas.html" class="nav-link w-nav-link">AaaS Platform</a>
+            <div data-hover="false" data-delay="300" class="uui-navbar01_menu-dropdown w-dropdown">
+              <div class="uui-navbar01_dropdown-toggle w-dropdown-toggle">
+                <div class="uui-dropdown-icon w-embed"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg></div>
+                <div class="nav-link padding-right-0-25">Learn</div>
+              </div>
+              <nav class="uui-navbar01_dropdown-list w-dropdown-list">
+                <div class="uui-navbar01_container">
+                  <div class="uui-navbar01_dropdown-content">
+                    <div class="nav-items">
+                      <h4 class="uui-navbar01_heading large text-color-white">Learn</h4>
+                      <div class="uui-navbar01_dropdown-content-left">
+                        <div class="uui-navbar01_dropdown-link-list">
+                          <a href="https://docs.thereportinghub.com/?_gl=1*11en80c*_gcl_au*MjEyNTAwMzM0MC4xNzYwMDIyNzYzLjE5Nzk0NzY1MjguMTc2MjEwODgzNS4xNzYyMTA4ODM1*_ga*MzgyNDA3NDAxLjE3NjAwMjI3NjM." target="_blank" class="uui-navbar01_dropdown-link w-inline-block">
+                            <div class="uui-navbar01_icon-wrapper"><img src="../assets/images/Knowledge-Centre_icon.webp" loading="lazy" alt="" class="nav-image"></div>
+                            <div class="uui-navbar01_item-right">
+                              <div class="uui-navbar01_item-heading">Knowledge Center<br></div>
+                              <div class="uui-text-size-small hide-mobile-landscape">All the information you need to master B.I. delivery</div>
+                            </div>
+                          </a>
+                          <a href="../community.html" class="uui-navbar01_dropdown-link is-auto w-inline-block">
+                            <div class="uui-navbar01_icon-wrapper"><img src="../assets/images/About-Us_icon-1.webp" loading="lazy" alt="" class="nav-image"></div>
+                            <div class="uui-navbar01_item-right">
+                              <div class="uui-navbar01_item-heading">Community</div>
+                              <div class="uui-text-size-small hide-mobile-landscape">Connect and collaborate with active users</div>
+                            </div>
+                          </a>
+                        </div>
+                        <div class="uui-navbar01_dropdown-link-list">
+                          <h4 class="uui-navbar01_heading opacity-0">Company</h4>
+                          <a href="https://docs.thereportinghub.com/getting-started/deployment-step-by-step/self-serve-guided-install?_gl=1*1nvpg97*_gcl_au*MjEyNTAwMzM0MC4xNzYwMDIyNzYzLjE5Nzk0NzY1MjguMTc2MjEwODgzNS4xNzYyMTA4ODM1*_ga*MzgyNDA3NDAxLjE3NjAwMjI3NjM." target="_blank" class="uui-navbar01_dropdown-link w-inline-block">
+                            <div class="uui-navbar01_icon-wrapper"><img src="../assets/images/Getting-Started_icon.webp" loading="lazy" alt="" class="nav-image"></div>
+                            <div class="uui-navbar01_item-right">
+                              <div class="uui-navbar01_item-heading">Getting Started</div>
+                              <div class="uui-text-size-small hide-mobile-landscape">Step-by-step guides to get started with the Reporting Hub<br></div>
+                            </div>
+                          </a>
+                          <a href="https://www.youtube.com/@thereportinghub" class="uui-navbar01_dropdown-link is-auto w-inline-block">
+                            <div class="uui-navbar01_icon-wrapper"><img src="../assets/images/Video-Demos_icon.webp" loading="lazy" alt="" class="nav-image"></div>
+                            <div class="uui-navbar01_item-right">
+                              <div class="uui-navbar01_item-heading">Video Demos</div>
+                              <div class="uui-text-size-small hide-mobile-landscape">Our YouTube channel with helpful video demos</div>
+                            </div>
+                          </a>
+                        </div>
+                        <div id="w-node-a91421d3-b46b-1701-6a19-a49d5ae9c96d-17890035" class="uui-navbar01_dropdown-link-list flex">
+                          <h4 class="uui-navbar01_heading opacity-0 none">Company</h4>
+                          <a href="../resources.html" class="uui-navbar01_dropdown-link w-inline-block">
+                            <div class="uui-navbar01_icon-wrapper"><img src="../assets/images/Resources.webp" loading="lazy" alt="" class="nav-image"></div>
+                            <div class="uui-navbar01_item-right">
+                              <div class="uui-navbar01_item-heading">Resources</div>
+                              <div class="uui-text-size-small hide-mobile-landscape">Videos, white papers, and assets about Reporting Hub</div>
+                            </div>
+                          </a>
+                          <a href="https://support.thereportinghub.com/support/home" target="_blank" class="uui-navbar01_dropdown-link is-auto w-inline-block">
+                            <div class="uui-navbar01_icon-wrapper"><img src="../assets/images/Get-Help_icon.webp" loading="lazy" alt="" class="nav-image"></div>
+                            <div class="uui-navbar01_item-right">
+                              <div class="uui-navbar01_item-heading">Get Help</div>
+                              <div class="uui-text-size-small hide-mobile-landscape">Our Support team is here to help</div>
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+                      <div class="uui-navbar01_dropdown-content-left pt-0">
+                        <div class="uui-navbar01_dropdown-link-list one-item">
+                          <h4 class="uui-navbar01_heading large text-color-white">Services</h4>
+                          <a href="../partners.html" class="uui-navbar01_dropdown-link w-inline-block">
+                            <div class="uui-navbar01_icon-wrapper"><img src="../assets/images/Knowledge-Centre_icon.webp" loading="lazy" alt="" class="nav-image"></div>
+                            <div class="uui-navbar01_item-right">
+                              <div class="uui-navbar01_item-heading">Partner Programs<br></div>
+                              <div class="uui-text-size-small hide-mobile-landscape">Find or become a Reporting Hub Partner</div>
+                            </div>
+                          </a>
+                        </div>
+                        <div class="uui-navbar01_dropdown-link-list is-bottom">
+                          <h4 class="uui-navbar01_heading opacity-0">Company</h4>
+                          <a href="../professionalservices.html" class="uui-navbar01_dropdown-link w-inline-block">
+                            <div class="uui-navbar01_icon-wrapper"><img src="../assets/images/Professional-Services_icon.webp" loading="lazy" alt="" class="nav-image"></div>
+                            <div class="uui-navbar01_item-right">
+                              <div class="uui-navbar01_item-heading">Professional Services</div>
+                              <div class="uui-text-size-small hide-mobile-landscape">Get premium support from our team of experts</div>
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="uui-navbar01_dropdown-content-right">
+                      <div class="uui-navbar01_dropdown-content-wrapper">
+                        <div class="blog-items-wrapper">
+                          <h4 class="uui-navbar01_dropdown-content-heading text-color-white">Latest from our blog</h4>
+                          <a href="../blog.html" class="uui-button-link is-button-xsmall w-inline-block">
+                            <div class="color_primary">See all posts ➝</div>
+                          </a>
+                        </div>
+                        <div class="w-dyn-list">
+                          <div role="list" class="uui-navbar01_dropdown-blog-list w-dyn-items"><div role="listitem" class="w-dyn-item">
+                              <a href="../blog/embedded-analytics-meets-generative-ai-how-saas-teams-monetize-bi-in-2025.html" class="uui-navbar01_blog-item w-inline-block">
+                                <div class="uui-navbar01_blog-image-wrapper"><img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/69600be56fa30d9d91a5f337_Embedded%20Analytics%20Meets%20Generative%20AI%20How%20SaaS%20Teams%20Monetize%20BI%20in%202025.png" loading="eager" alt="" class="uui-navbar01_blog-image"></div>
+                                <div class="uui-navbar01_large-item-content">
+                                  <div class="uui-navbar01_item-heading">Embedded Analytics Meets Generative AI: How SaaS Teams Monetize BI in 2026</div>
+                                  <div class="uui-navbar01_item-button-wrapper">
+                                    <div class="uui-button-row">
+                                      <div class="uui-button-link is-button-xsmall">
+                                        <div class="color_primary">Learn More ➝</div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </a>
+                            </div><div role="listitem" class="w-dyn-item">
+                              <a href="../blog/fabric-vs-power-bi-premium.html" class="uui-navbar01_blog-item w-inline-block">
+                                <div class="uui-navbar01_blog-image-wrapper"><img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/6961652bcf02c04b7b0edbe3_Fabric%20vs.%20Power%20BI%20Premium%20-%20Reddit.avif" loading="eager" alt="" class="uui-navbar01_blog-image"></div>
+                                <div class="uui-navbar01_large-item-content">
+                                  <div class="uui-navbar01_item-heading">Fabric vs. Power BI Premium</div>
+                                  <div class="uui-navbar01_item-button-wrapper">
+                                    <div class="uui-button-row">
+                                      <div class="uui-button-link is-button-xsmall">
+                                        <div class="color_primary">Learn More ➝</div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </a>
+                            </div><div role="listitem" class="w-dyn-item">
+                              <a href="../blog/how-to-structure-a-multi-tenant-analytics-delivery-system-without-rebuilding-everything.html" class="uui-navbar01_blog-item w-inline-block">
+                                <div class="uui-navbar01_blog-image-wrapper"><img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/69b03e0ca76a82d19058f954_Structure%20a%20Multi-Tenant%20Analytics%20Delivery.jpg" loading="eager" alt="" class="uui-navbar01_blog-image"></div>
+                                <div class="uui-navbar01_large-item-content">
+                                  <div class="uui-navbar01_item-heading">How to Structure a Multi-Tenant Analytics Delivery System Without Rebuilding Everything</div>
+                                  <div class="uui-navbar01_item-button-wrapper">
+                                    <div class="uui-button-row">
+                                      <div class="uui-button-link is-button-xsmall">
+                                        <div class="color_primary">Learn More ➝</div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </a>
+                            </div></div>
+                          
+                        </div>
+                      </div>
+                      <div class="uui-navbar01_dropdown-right-overlay-absolute"></div>
+                    </div>
+                  </div>
+                </div>
+              </nav>
+            </div>
+            <a href="../demo.html" class="nav-link w-nav-link">Demo</a>
+            <a href="../install-today.html" class="nav-link w-nav-link">Install</a>
+            <a href="../about-us.html" class="nav-link w-nav-link">About Us</a>
+            <a href="../contact.html" class="nav-link w-nav-link">Contact Us</a>
+          </nav>
+          <div class="menu-button w-nav-button">
+            <div class="w-icon-nav-menu"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="main">
+      <section class="section blog-hero">
+        <div class="w-layout-blockcontainer container w-container">
+          <div class="blog-hero-contents">
+            <div class="blog-hero-left"><img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/6941a04437aef8da66bebf9b_blogimg7.webp" loading="lazy" alt="" class="human-centered-image"></div>
+            <div>
+              <h1 class="heading-2">Building Scalable Multi-Tenant Analytics with Power BI Embedded</h1>
+              <a href="../https://thereportinghub.com/author/brian-d" class="writer-image-wrap w-inline-block"><img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/69402fd5bced9202fb52a58e_Author%20BrianDeLuca.webp" loading="lazy" alt="" class="writer-image">
+                <div class="text-color-gray">Brian DeLuca</div>
+              </a>
+              <div>
+                <div class="space-1"></div>
+                <div class="text-color-gray">January 30, 2026</div>
+                <div class="space-1"></div>
+                <div class="time-icon"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFoAAABaCAYAAAA4qEECAAAACXBIWXMAAAsTAAALEwEAmpwYAAAD8klEQVR4nO2dSWsVQRDHC4wbil7VCCLiF4h6UjGIelUPKrhhNHpJIG7BqzeXUwj4NeJ2UPQDCBKNmosX9eKCZvVkBONPirTwxPdetl5qZvoH7zLMTHf9mdfTVV1dI5LJZDKZTCaTyWQymbkBLAF2AOeA28A94A3wDhgHfrrfuDv2xp1zy12zXe8xx+aqBbARuAg8BL6zeCaBB0AP0CpVBlgJnAKeAtOE4xfwBDgJrJCqAKx2T9on4vMNuA6slbICLAV6gTHSo324on2SMgHsBoaxx1tgnxQdHROBO8BvD6JMuadwnftddccWi/atH1guRQTYCrzEH1fqtKFDkS8GgS1SJPTv6GmaVsu6Ou2sxy86LdwrRQA4DPzwLABN2vONOkPHxDLAhVBzYmncZgjUhvNiEeCQcw6CII3bJaDYR8USOq55mgE0pEnbIdFh5IAYml34fvH9R5P2QzOZfDaic0/gRQRjadKHGAwmnWc7ZyQK0rgPseiPq+6/brUPj29ONOlHLNTWPbFFbgFeRzQSA0Lj4jXxAlGeXd8iCa1cihlPHq2w0KOqQQyhryUwDkNC1w1whQh7fk5hmdgS+osuxYUU+nQiwzAmtHI8pNC6kJoEsSf0o1Ait4YMGhVQ6OkgqQwu7yIZYk9opTuE0JrckgyxKfRAiDStiZQWiU2hJ7ymn7lcuKSITaGVbT6F7kxtjdgVusOn0JrVmRSxK/QNn0LfT22N2BXa3wsxdki0YEIP+RT6w0LTt7x1ogGk5734YgFh0bDRrRpIz4j4wi27z4fgT/JfSM+UJBR6vbfGZ4GSCT3foaPXW+OzQMmGjoW8DHtjPNmU7GWYfHpnmKFSOSyGGSiVC24Yry647kjN1OdMqcKkhmkrVeDfKH4D/05s3VudCbmU5YTWbcWZf+kKIfSGlOkGBvkVLKbjqgRkQibQOKG17EMmQkrYikTlH6wRNskxVRK6QS4HFdkJvUpDg1SX0SiJ6E5sXQ+sKj1RRK7ZLPSK6jEcvWoNsCvm9jcDxN/+ViO2Vm6pCn1JRK7Zoqzbd8vOc2BZMqGd2FvcxvQyR+g2iwWA9hBVZwygaRb7xRLAwZIFnaaBI2IRLY8TuPxlLPSB6RTLuJI/RR5GpsyV+Jml9M9kQV987VIkgE3AM4rDYPKSPoucZ/cb9yC1b33J58ke3fXX2EP7tFPKBDOBqEtGQqwjbrG5RcoKM/FsNfJjAoG/ukLda6QqMLMsdgJ4HNjR0Xs/0jW+SpWer4ermtsN3HVfo1gs4+5eXTG3eRQKZtLP2oCzwE3NBtIcZPcpkLGaz4OMuWND7hw9t8Ndmz8PkslkMplMJpPJZDIyR/4AHP79tg/mkAIAAAAASUVORK5CYII=" alt="Clock" class="icon-gray">
+                  <div class="text-color-gray">8 minutes</div>
+                </div>
+                <div class="space-1-5"></div>
+                <div class="text-color-gray">Subscribe to our blog to stay up to date on all the latest information from the Reporting Hub team! We’ll never share your email with anyone else.</div>
+                <div class="code-embed-9 w-embed w-script">
+                  <div class="custom_hbs_form paidsearchpage blog-email-only">
+                    <form action="https://formspree.io/f/xaqlkgry" method="POST" class="hs-form stacked">
+                      <fieldset class="form-columns-1">
+                        <div class="hs_email hs-email hs-fieldtype-text field hs-form-field">
+                          <div class="input"><input name="email" type="email" class="hs-input" required="" autocomplete="off" placeholder="Your email address"></div>
+                        </div>
+                      </fieldset>
+                      <div class="hs_submit hs-submit">
+                        <div class="actions"><div class="cf-turnstile" data-sitekey="0x4AAAAAAC1kqPKVfSHwCjeC" data-theme="light"></div><input type="submit" class="hs-button primary large" value="Subscribe"></div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section blog-elements">
+        <div class="w-layout-blockcontainer container w-container">
+          <div class="single-blog-contents-wrapper">
+            <div fc-toc="wrapper" class="post-content-wrapper"><button class="blog-post_open-toc-button">
+                <div class="circle"></div>
+              </button>
+              <div fc-toc="content" class="w-richtext"><p>Modern businesses rely on data analytics as the foundation for better decision-making, and many are turning to multi-tenant solutions for enhanced security, scalability, and cost efficiency. This article dives into how Power BI Embedded facilitates scalable multi-tenant analytics, providing a new dimension of business intelligence for organizations.</p><p>‍</p><h3>The Role of Power BI Embedded in Multi-Tenant BI</h3><p>Scaling in the sphere of business intelligence is a crucial factor that can give an organization a significant edge. <a href="https://thereportinghub.webflow.io/power-bi/power-bi-embedded">Power BI Embedded</a> stands as a pivotal tool geared towards achieving this feat in a highly efficient and secure manner, particularly in a multi-tenant environment.</p><p>“Power BI Embedded” basically refers to the integration of fully interactive reports, dashboards, or visuals into an application, helping organizations deliver their data analytics in a more digestible and visually intuitive format to their users. The term “multi-tenant” in this context refers to a scenario where a single instance of a software application serves multiple customers or “tenants”. This can give businesses the power to manage their data in a shared environment, leading to improved cost efficiency, robust security, and streamlined operations.</p><p>As companies adapt to the digital wave, empowering their clients with interactive visual analytics brings a significant competitive advantage. This strategic data democratization not only enables enhanced decision-making based on data-backed insights but also fosters an environment of inclusivity and transparency for all users, irrespective of their technical prowess.</p><p>In summary, Power BI Embedded, combined with a multi-tenant architecture, holds immense potential in the current business landscape. These systems provide vital tools for businesses to strategically leverage their data, enabling a broader audience to reap the benefits of dynamic visual analytics in a secure, scalable, and cost-effective manner.</p><p>‍</p><h3>The Anatomy of Multi-tenant Power BI Architecture</h3><p>The core of Power BI Embedded multi-tenancy lies in its specialized architectural design. It’s about establishing an environment where different business tenants share the same resources but are securely segregated and processed independently. The architecture is made up of several key components, each contributing significantly to the scalability in analytics.</p><p>Arguably, the most critical elements of the structure are the <strong>application, workspace collections, and data sources.</strong></p><div data-rt-embed-type="true"><section class="blog_custom_998">
+  <div class="blog_custom_998__grid">
+
+    <!-- Item 1 -->
+    <div class="blog_custom_998__item">
+      <div class="blog_custom_998__icon">
+        <img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/6944003be34468c484c88213_ICONS-for-Building-Scalable-Multi-Tenant-Analytics-with-Power-BI-Embedded-9.webp" alt="Icon">
+      </div>
+      <div class="blog_custom_998__text">
+        The <strong>application</strong> serves as the interface connecting users to the Power BI service and is typically a web or mobile app configured to generate Power BI client APIs.
+      </div>
+    </div>
+
+    <!-- Item 2 -->
+    <div class="blog_custom_998__item">
+      <div class="blog_custom_998__icon">
+        <img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/6944014dc8b771f90a1a0366_ICONS-for-Building-Scalable-Multi-Tenant-Analytics-with-Power-BI-Embedded-8.webp" alt="Icon">
+      </div>
+      <div class="blog_custom_998__text">
+        Power BI workspaces provide containers for reports and datasets, enabling per-tenant segregation and secure access management through service principals and Row-Level Security (RLS).
+      </div>
+    </div>
+
+    <!-- Item 3 -->
+    <div class="blog_custom_998__item">
+      <div class="blog_custom_998__icon">
+        <img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/69440214a27f3d0be196e270_ICONS-for-Building-Scalable-Multi-Tenant-Analytics-with-Power-BI-Embedded-7.webp" alt="Icon">
+      </div>
+      <div class="blog_custom_998__text">
+        Data sources, on the other hand, serve as the actual reservoir of data collected from multiple sources like SQL, Excel workbooks, SharePoint lists, and others.
+      </div>
+    </div>
+
+  </div>
+</section>
+<style>
+/* Wrapper */
+.blog_custom_998 {
+  background: #ffffff;
+  padding: 40px 20px;
+}
+
+/* Grid */
+.blog_custom_998__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+/* Card */
+.blog_custom_998__item {
+  position: relative;
+  padding-left: 30px;
+}
+
+/* Left vertical line */
+.blog_custom_998__item:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 3px;
+  height: 100%;
+  background: #7B61FF;
+}
+
+/* Icon */
+.blog_custom_998__icon {
+  margin-bottom: 15px;
+}
+
+.blog_custom_998__icon img {
+  width: 40px;
+  height: auto;
+}
+
+/* Text */
+.blog_custom_998__text {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #000000;
+}
+
+.blog_custom_998__text strong {
+  font-weight: 700;
+}
+
+.human-centered-image {
+    height: auto;
+}
+
+
+
+
+
+/* Mobile */
+@media (max-width: 768px) {
+  .blog_custom_998__grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style></div><p>As part of this architecture, <a href="https://thereportinghub.webflow.io/power-bi" target="_blank">Power BI</a> supports both DirectQuery and Import data connectivity modes, reinforcing its scalability aspect by letting organizations pick the best-suited option according to their data volume and need for real-time insights.</p><p>While dashboards correlate analytics reports and visualizations, the real foundation of multi-tenant architecture lies in workspaces, datasets, and Row-Level Security (RLS). Serving as a unified platform, it helps users track significant metrics, pinpoint trends, and seamlessly compare data. In doing so, it not only bolsters the architecture but also complements it by presenting an integrated view of business data, thus facilitating quick, data-driven decision making.</p><p>The unique blending of these structural elements creates an architecture capable of supporting multiple tenants without compromising on response times, performance, or scalability.</p><p>‍</p><figure class="w-richtext-figure-type-image w-richtext-align-floatright" style="max-width:40%" data-rt-type="image" data-rt-align="floatright" data-rt-max-width="40%"><div><img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/694402bf90345aba718cb7a1_Scalable-Analytics-with-Power-BI-Why-it-Matters.webp" loading="lazy" alt="__wf_reserved_inherit" width="auto" height="auto"></div></figure><h3>Scalable Analytics with Power BI: Why it Matters</h3><p>Scalability is the lifeline of any organization in today’s digital age. It materially influences the agility, performance, and resilience, especially when it comes to handling prodigious amounts of data. The increase in data volumes can be daunting, and here’s where the significance of scalable analytics comes to the fore.</p><p>‍</p><p>‍</p><p>‍</p><p>One industry where the capacity to scale analytics has proven indispensable is retail. This sector continually grapples with massive influxes of sales data during peak seasons. Take the Black Friday sale scenario, for instance. To accurately understand consumer behavior, spending patterns, and inventory status in real-time, robust scalability in analytics is paramount. Without this, businesses struggle to convert data insights into responsive action, a potentially catastrophic loss of revenue at scale.</p><p>In handling such scenarios, Power BI proves to be an invaluable tool. Power BI can handle large datasets (1 GB Pro, up to 400 GB Premium, higher in Fabric), but performance depends on optimization techniques like aggregations, composite models, and incremental refresh.. With Power BI’s scalable analytics, companies gain the ability to drill down to detailed insights at a granular level. This means organizations won’t just be swimming in data; they’ll powerfully drive decision-making with precision.</p><p>When viewed through the lens of cost-efficiency, a scalable solution like Power BI Embedded is equally compelling. It allows businesses to pay only for the capacity they use, making it a practical and sustainable choice compared to traditional analytics systems.</p><p>Through its potent combination of versatility and economy, Power BI Embedded effectively addresses the mounting needs for scalable analytics, placing it as a vanguard in the realm of business intelligence.</p><p>‍</p><figure class="w-richtext-figure-type-image w-richtext-align-fullwidth" style="max-width:895px" data-rt-type="image" data-rt-align="fullwidth" data-rt-max-width="895px"><div><img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/694403687583dfda986a8bda_Secure-Multi-tenant-Power-BI-Upping-the-Ante-in-Business-Analytics.webp" loading="lazy" alt="__wf_reserved_inherit" width="auto" height="auto"></div></figure><p>‍</p><h3>Secure Multi-tenant Power BI: Upping the Ante in Business Analytics</h3><p>In a world increasingly reliant on shared systems for data analysis and business intelligence, the question of security is paramount. Multi-tenant systems are not immune to this need; while their design inherently provides some isolation between individual customer instances, there remain certain inherent risks associated with this setup. Data leakage, unauthorized access, and malicious attacks are a few significant threats to these systems.</p><p>Power BI Embedded, when combined with Azure AD authentication, RLS, and tenant-aware design, provides a secure framework for multi-tenant environments. One of its strongest pillars of defense is Row-Level Security (RLS). In simple terms, RLS restricts data access at the row level based on user roles, effectively ensuring that users can only view data pertinent to them. With this ingenious feature, Power BI significantly minimizes the risks of data spillage between tenants.</p><p>Additionally, Power BI employs Azure AD’s robust security mechanisms, which act as a bulwark against unauthorized access. These include multi-factor authentication (MFA) and conditional access policies. MFA hinges on more than one form of user identity verification – like something you know (a password), something you have (a device), or something you are (biometrics). Conditional access policies, on the other hand, provide controls that enforce user actions based on predefined conditions, further fortifying access security.</p><p>Furthermore, Power BI leverages Azure’s advanced threat detection capabilities. This AI-based system identifies unusual behavior and potential threats in real-time – providing enhanced protection against sophisticated attacks. Overall, these layered security provisions make Power BI Embedded a formidable ally in safeguarding multi-tenant environments.</p><p>To sum up, while the multi-tenant landscape opens up new terrains of risks, Power BI Embedded is instrumental in mitigating such vulnerabilities. Its robust security features are designed to protect individual tenants, ensuring their data remains impervious to threats in the shared ecosystem. Effectively, it provides a secure scaffolding that underpins your analytics, allowing you to focus more on insights and less on potential security pitfalls.</p><p>‍</p><figure class="w-richtext-figure-type-image w-richtext-align-floatleft" style="max-width:45%" data-rt-type="image" data-rt-align="floatleft" data-rt-max-width="45%"><div><img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/694404b0bb313b0afc10cdc1_The-Rising-Wave-of-Embedded-Analytics-for-External-Users-1024x935.webp" loading="lazy" alt="__wf_reserved_inherit" width="auto" height="auto"></div></figure><p>‍</p><h3>The Rising Wave of Embedded Analytics for External Users</h3><p>We’re living through a fascinating phase of digital transformation where capturing, interpreting, and utilizing data is paramount. External users are becoming increasingly crucial in this process. But why is there such a buzz around delivering analytics to external users? Here’s the deal.</p><p>Providing analytics to external users, like customers, suppliers, or partners, has a slew of benefits.</p><p>‍</p><p>‍</p><p>‍</p><p>Another edge to branded dashboards is their potential to enhance the analytics experience for external users through custom themes, JSON templates, and tenant-level branding options in Power BI.</p><p>‍</p><div data-rt-embed-type="true"><div style="display: block; width: 100%;border-left: 3px solid #844ae6; padding-left: 12px; ">
+For example, a well-designed, branded dashboard can take your raw data and transform it into actionable insights that external users can easily understand and interact with. Furthermore, they can present the data in a visually appealing format that aligns with the brand’s image, promoting higher interaction and engagement from the users.
+
+
+</div></div><p>‍</p><p><strong>However, it’s important to strike the right balance during personalization. Over-customization can lead to complex interfaces and slower performance, while too little might not effectively communicate the intended message.</strong></p><p>‍</p><h3>Discussing Power BI Licensing for External Users</h3><p>Power BI’s licensing model for external users is built to accommodate flexibility, user growth, and optimize cost-efficiency. Essentially, Microsoft’s Power BI service is offered through multiple licensing models: user-based (Pro, Premium per User) and capacity-based (Premium capacity, Embedded SKUs).</p><p>‍</p><div data-rt-embed-type="true"><div style="display: block; width: 100%;border-left: 3px solid #f15599; padding-left: 12px; ">
+is intended for content creators and professionals who need to build and share reports with others. Each user needs a license, making this model perfect for a company with a small and defined number of external users to serve. However, for an expanding enterprise or when large-scale deployments to numerous external users are involved, this model may not offer the best financial sense.
+
+</div></div><p>‍</p><p><strong>So, how does Power BI Embedded fit into this landscape? This is where things get interesting.<br>Power BI Embedded is a game-changer when it comes to delivering analytics to external users.</strong></p><p>It allows you to integrate insightful and interactive visuals into your apps, websites, and portals. This is a fantastic tool to democratize data access across your business ecosystem.</p><p>Consider this scenario: you’re a retailer supplying widgets. With Power BI Embedded, you can create an <a href="https://thereportinghub.webflow.io/power-bi/financial-dashboard-analytics" target="_blank">analytics dashboard</a> with data on sales trends, popular products, and inventory levels. This dashboard can be shared with your suppliers, who can then optimize their operations based on these insights. It’s a win-win situation.</p><p>Moreover, Power BI Embedded supports near real-time analytics through DirectQuery and streaming datasets, along with mobile access, RLS, and custom branding, improving the user experience. For example, suppliers in our scenario can view the analytics in their preferred form, interact with the data, and extract personalized insights.</p><p>Indeed, the rising wave of delivering embedded analytics to external users is changing the face of business interactions, with Power BI Embedded at the helm, steering towards more comprehensive, data-driven decision-making processes in the business ecosystem. And that, folks, is the kind of smart analytics that can lend a competitive advantage in today’s cutthroat business environment.</p><p>‍</p><figure class="w-richtext-figure-type-image w-richtext-align-fullwidth" style="max-width:895px" data-rt-type="image" data-rt-align="fullwidth" data-rt-max-width="895px"><div><img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/6944074c0ecaab6967a137e8_White-Label-Power-BI-Embedded-The-Next-Big-Thing-in-Scalable-Analytics.webp" loading="lazy" alt="__wf_reserved_inherit" width="auto" height="auto"></div></figure><p>‍</p><h3>White Label Power BI Embedded: The Next Big Thing in Scalable Analytics</h3><p>‍</p><p>A white label product is a type of good or service produced by one company that the purchasing company can rebrand and sell as its own. In the context of Power BI, it refers to the ability to integrate Power BI Embedded into your offerings, customizing it to fit your brand’s identity and delivering a top-notch analytics solution without revealing the fact that it’s powered by Microsoft’s Power BI.</p><p>One of the immediate benefits of white labeling Power BI Embedded is that it enables companies to benefit from the robust functionality of Power BI without the need to build a similar system from scratch. Through this, they can scale quickly, offer richer analytics to their users, and maintain a consistent brand image across all services.</p><p>The approach also adds value to the company’s product lineup, creating an all-in-one offering where customers can access and interact with data without the need to use another external system or tool. This seamless integration simplifies the user experience, promotes greater user adoption, and makes data-driven decision-making far more accessible and intuitive.</p><p><a href="https://thereportinghub.webflow.io/">White labeling in Power BI Embedded</a> is achieved by embedding reports into custom applications with branding (logos, colors, domains) so users see your brand, not Microsoft’s.” Tailor-made to businesses’ needs, Reporting Hub simplifies the process of data preparation, reporting, and analysis, while maintaining the highest level of data security. Given its flexibility and scalability, it proves itself as an excellent tool for businesses keen on enhancing their analytics capabilities while maintaining brand continuity.</p><p>There is no doubt that White Label Power BI Embedded is shaping up to be the next big thing in scalable analytics. It allows businesses to leverage the power of Power BI, provides a seamless user experience, and creates an opportunity for businesses to differentiate themselves.</p><p>‍</p><figure class="w-richtext-figure-type-image w-richtext-align-floatright" data-rt-type="image" data-rt-align="floatright"><div><img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/69440909749ad0e1baffe2cc_The-Genius-Behind-Power-BI-How-AI-Enhances-Multi-Tenant-Analytics.webp" loading="lazy" alt="__wf_reserved_inherit" width="auto" height="auto"></div></figure><h3>The Genius Behind Power BI: How AI Enhances Multi-Tenant Analytics</h3><p>The challenge for modern organizations isn’t collecting data; it’s making it understandable and actionable. AI bridges that gap by refining analytics and extracting intelligence from overwhelming datasets.</p><p>Power BI leverages AI features such as AutoML, Cognitive Services integration, Smart Narratives, AI visuals, and Copilot to bolster multi-tenant analytics. AI plays a pivotal role in cleaning, interpreting, learning from, and making predictions using the accumulated data. It essentially helps in decoding this data into actionable insights, simplifying the decision-making process.</p><p>‍</p><p>‍</p><p>The beauty of AI is its ability to learn and improve over time. In the context of Power BI, AI algorithms can continuously adapt and fine-tune their insights based on the data they encounter. Additionally, their predictive powers allow organizations to foresee changes, trends, or patterns that may affect business outcomes, thus arming them with the advantage of anticipation.</p><p>One can’t delve into artificial intelligence in Power BI without mentioning <a href="https://thereportinghub.webflow.io/bi-genius" target="_blank">BI Genius</a>. It stands as an advanced AI companion that supercharges your Power BI architecture. BI Genius takes the already powerful suite of Power BI tools and pushes it further. By leveraging AI algorithms, it’s capable of providing comprehensive insights and drawing intelligent correlations within your analytics, giving you a more granular perspective of your business.</p><p>BI Genius not only delves deep into your data for insights but also presents those insights in easily digestible formats. The result is a comprehensive yet manageable data solution that allows organizations to focus more on their core tasks, while still being able to make informed decisions backed by solid data.</p><p>As Power BI continues to meld with AI, organizations can expect an even more streamlined, intuitive, and efficient handling of their analytics needs. Without a doubt, it puts the “Genius” in Power BI.</p><p>‍</p><figure class="w-richtext-figure-type-image w-richtext-align-floatleft" data-rt-type="image" data-rt-align="floatleft"><div><img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/69440a2aeeccbac774ac4b11_Power-BI-Embedded-A-Businesss-Best-Bet.webp" loading="lazy" alt="__wf_reserved_inherit" width="auto" height="auto"></div></figure><h3>Power BI Embedded: A Business’s Best Bet</h3><p>‍</p><p>The value of Power BI Embedded in building scalable, secure, and intelligent multi-tenant analytics is clear. From strengthening data access for external users to enabling white-label solutions, it provides the foundation modern businesses need to compete in a data-driven world.</p><p>With <a href="https://thereportinghub.webflow.io/" target="_blank">Reporting Hub’s white-label Power BI platform</a>, you can deliver branded analytics experiences that scale effortlessly. And with <a href="https://thereportinghub.webflow.io/bi-genius" target="_blank">BI Genius</a> as your AI companion, you gain instant insights, predictive intelligence, and automation that elevate your reporting far beyond traditional dashboards.</p><p>‍</p><p>‍</p><p>‍</p><p><strong>Now is the time to harness your data, empower your users, and future-proof your analytics. With Reporting Hub and BI Genius, you’re not just adopting Power BI Embedded; you’re unlocking its full potential.</strong></p><p>‍</p></div>
+              <nav aria-label="Table of contents" class="blog-post_toc">
+                <div>Table of Contents</div>
+                <div fc-toc="close" class="blog-post_close-toc-overlay"></div>
+                <ol fc-toc-collapse="true" fc-toc="component" role="list" class="blog-post_toc-list"><li class="blog-post_toc-list-item"><a href="#the-role-of-power-bi-embedded-in-multi-tenant-bi" fc-toc="h2" class="toc_h2">The Role of Power BI Embedded in Multi-Tenant BI</a></li>
+<li class="blog-post_toc-list-item"><a href="#the-anatomy-of-multi-tenant-power-bi-architecture" fc-toc="h2" class="toc_h2">The Anatomy of Multi-tenant Power BI Architecture</a></li>
+<li class="blog-post_toc-list-item"><a href="#scalable-analytics-with-power-bi-why-it-matters" fc-toc="h2" class="toc_h2">Scalable Analytics with Power BI: Why it Matters</a></li>
+<li class="blog-post_toc-list-item"><a href="#secure-multi-tenant-power-bi-upping-the-ante-in-business-analytics" fc-toc="h2" class="toc_h2">Secure Multi-tenant Power BI: Upping the Ante in Business Analytics</a></li>
+<li class="blog-post_toc-list-item"><a href="#the-rising-wave-of-embedded-analytics-for-external-users" fc-toc="h2" class="toc_h2">The Rising Wave of Embedded Analytics for External Users</a></li>
+<li class="blog-post_toc-list-item"><a href="#discussing-power-bi-licensing-for-external-users" fc-toc="h2" class="toc_h2">Discussing Power BI Licensing for External Users</a></li>
+<li class="blog-post_toc-list-item"><a href="#white-label-power-bi-embedded-the-next-big-thing-in-scalable-analytics" fc-toc="h2" class="toc_h2">White Label Power BI Embedded: The Next Big Thing in Scalable Analytics</a></li>
+<li class="blog-post_toc-list-item"><a href="#the-genius-behind-power-bi-how-ai-enhances-multi-tenant-analytics" fc-toc="h2" class="toc_h2">The Genius Behind Power BI: How AI Enhances Multi-Tenant Analytics</a></li>
+<li class="blog-post_toc-list-item"><a href="#power-bi-embedded-a-business-s-best-bet" fc-toc="h2" class="toc_h2">Power BI Embedded: A Business’s Best Bet</a></li>
+</ol>
+                <div class="related-blogs w-dyn-list">
+                  <div role="list" class="related-blogs-list w-dyn-items"><div role="listitem" class="related-blog-item w-dyn-item">
+                      <a href="embedded-analytics-meets-generative-ai-how-saas-teams-monetize-bi-in-2025.html" class="related-blog-link w-inline-block">
+                        <div class="related-blog-wrap"><img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/69600be56fa30d9d91a5f337_Embedded%20Analytics%20Meets%20Generative%20AI%20How%20SaaS%20Teams%20Monetize%20BI%20in%202025.png" loading="lazy" alt="" class="related-blog-img">
+                          <h3 class="related-blogs-h3">Embedded Analytics Meets Generative AI: How SaaS Teams Monetize BI in 2026</h3>
+                        </div>
+                      </a>
+                    </div><div role="listitem" class="related-blog-item w-dyn-item">
+                      <a href="fabric-vs-power-bi-premium.html" class="related-blog-link w-inline-block">
+                        <div class="related-blog-wrap"><img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/6961652bcf02c04b7b0edbe3_Fabric%20vs.%20Power%20BI%20Premium%20-%20Reddit.avif" loading="lazy" alt="" class="related-blog-img">
+                          <h3 class="related-blogs-h3">Fabric vs. Power BI Premium</h3>
+                        </div>
+                      </a>
+                    </div><div role="listitem" class="related-blog-item w-dyn-item">
+                      <a href="how-to-structure-a-multi-tenant-analytics-delivery-system-without-rebuilding-everything.html" class="related-blog-link w-inline-block">
+                        <div class="related-blog-wrap"><img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/69b03e0ca76a82d19058f954_Structure%20a%20Multi-Tenant%20Analytics%20Delivery.jpg" loading="lazy" alt="" class="related-blog-img">
+                          <h3 class="related-blogs-h3">How to Structure a Multi-Tenant Analytics Delivery System Without Rebuilding Everything</h3>
+                        </div>
+                      </a>
+                    </div></div>
+                  
+                </div>
+              </nav>
+              <div fc-toc="active-style" class="u-toc-current-link"></div>
+              <div class="toc-subitems"></div>
+              <div class="toc_script w-embed w-script">
+                <script>
+document.addEventListener('DOMContentLoaded', () => {
+  let preventAutoOpen = false;
+  let suppressNextScrollUpdate = false;
+  const tocWrappers = document.querySelectorAll('[fc-toc="wrapper"]');
+  if (!tocWrappers) return;
+  for (const wrapper of tocWrappers) {
+    // Grab key elements and settings
+    const tocComponent = wrapper.querySelector('[fc-toc="component"]');
+    const tocContent = wrapper.querySelector('[fc-toc="content"]');
+    const activeStyleElement = wrapper.querySelector('[fc-toc="active-style"]');
+    const activeClass = activeStyleElement?.className || '';
+    const debounceMs = 0;
+    const isCollapsible = tocComponent.getAttribute('fc-toc-collapse') === 'true';
+    if (!tocComponent || !tocContent) return;
+    // Map of heading levels to placeholder class names
+    const placeholderLinks = tocComponent.querySelectorAll('[fc-toc]');
+    const headingLevels = new Map();
+    placeholderLinks.forEach(link => {
+      const level = link.getAttribute('fc-toc');
+      const className = link.getAttribute('class') || '';
+      if (/^h[1-6]$/.test(level)) {
+        headingLevels.set(level.toLowerCase(), className);
+      }
+    });
+    // Find all target headings in the content
+    const selector = [...headingLevels.keys()].join(', ');
+    const headings = tocContent.querySelectorAll(selector);
+    // Generate unique IDs for headings
+    const usedIds = new Set();
+    const generateSlug = (text, index) => {
+      let slug = text.toLowerCase()
+        .normalize("NFD").replace(/[̀-ͯ]/g, "")
+        .replace(/[^a-z0-9\s-]/g, '')
+        .replace(/\s+/g, '-')
+        .replace(/-+/g, '-')
+        .replace(/^-|-$/g, '');
+      if (!slug) slug = `heading-${index}`;
+      let uniqueSlug = slug;
+      let count = 1;
+      while (usedIds.has(uniqueSlug)) {
+        uniqueSlug = `${slug}-${count++}`;
+      }
+      usedIds.add(uniqueSlug);
+      return uniqueSlug;
+    };
+    // Assign IDs to headings
+    headings.forEach((heading, index) => {
+      const id = generateSlug(heading.textContent.trim(), index);
+      heading.id = id;
+    });
+    // Build the TOC from placeholder links and real headings
+    let currentParentLi = null;
+    let subList = null;
+    headings.forEach((heading, index) => {
+      const level = heading.tagName.toLowerCase();
+      const className = headingLevels.get(level) || '';
+      const placeholderLink = tocComponent.querySelector(`[fc-toc="${level}"]`);
+      if (!placeholderLink) return;
+      const listItem = placeholderLink.closest('li');
+      if (!listItem) return;
+      const clonedItem = listItem.cloneNode(true);
+      const link = clonedItem.querySelector(`[fc-toc="${level}"]`);
+      if (link) {
+        link.href = `#${heading.id}`;
+        link.textContent = heading.textContent.trim();
+        link.setAttribute('fc-toc-link', level);
+      }
+      if (isCollapsible && level === 'h2') {
+        tocComponent.appendChild(clonedItem);
+        currentParentLi = clonedItem;
+        subList = document.createElement('ul');
+        subList.classList.add('toc-subitems');
+        currentParentLi.appendChild(subList);
+      } else if (isCollapsible && currentParentLi && subList) {
+        subList.appendChild(clonedItem);
+      } else {
+        tocComponent.appendChild(clonedItem);
+      }
+    });
+    // Initially collapse all groups if collapsible
+    if (isCollapsible) {
+      tocComponent.querySelectorAll('.toc-subitems').forEach(group => {
+        group.style.maxHeight = '0';
+      });
+    }
+    // Remove placeholder links
+    placeholderLinks.forEach(link => {
+      const parentLi = link.closest('li');
+      if (parentLi) parentLi.remove();
+    });
+    let debounceTimer;
+    let lastActiveLink = null;
+    let lastActiveGroupWrapper = null;
+    // Scroll TOC and manage group expansion on active link update
+    const scrollToActiveLink = () => {
+      if (suppressNextScrollUpdate) {
+        suppressNextScrollUpdate = false;
+        return;
+      }
+      if (preventAutoOpen) return;
+      const activeLink = tocComponent.querySelector('.w--current');
+      if (!activeLink || activeLink === lastActiveLink) return;
+      tocComponent.querySelectorAll('[fc-toc-link]').forEach(link => {
+        if (activeClass) link.classList.remove(activeClass);
+      });
+      if (activeClass) activeLink.classList.add(activeClass);
+      lastActiveLink = activeLink;
+      tocComponent.scrollBy({
+        top: activeLink.getBoundingClientRect().top - tocComponent.getBoundingClientRect().top - (tocComponent.getBoundingClientRect().height / 2) + (activeLink.getBoundingClientRect().height / 2),
+        behavior: 'smooth'
+      });
+      if (isCollapsible) {
+        const currentLi = activeLink.closest('li');
+        let groupWrapperLi = currentLi;
+        if (currentLi?.parentElement?.classList.contains('toc-subitems')) {
+          groupWrapperLi = currentLi.parentElement.closest('li');
+        }
+        tocComponent.querySelectorAll('li').forEach(li => {
+          const sub = li.querySelector('.toc-subitems');
+          if (
+            sub &&
+            li !== groupWrapperLi &&
+            sub.style.maxHeight !== '0px' &&
+            (!preventAutoOpen || li !== lastActiveGroupWrapper)
+          ) {
+            collapseElement(sub);
+          }
+        });
+        expandElement(groupWrapperLi.querySelector('.toc-subitems'));
+        lastActiveGroupWrapper = groupWrapperLi;
+      }
+    };
+    const debouncedScroll = () => {
+      clearTimeout(debounceTimer);
+      debounceTimer = setTimeout(scrollToActiveLink, debounceMs);
+    };
+    // Observe class changes to trigger scroll update
+    const observer = new MutationObserver(() => {
+      if (!isAutoScrolling) debouncedScroll();
+    });
+    observer.observe(tocComponent, {
+      subtree: true,
+      attributes: true,
+      attributeFilter: ['class']
+    });
+    // Expand group for active link on page load
+    const expandActiveGroupOnLoad = () => {
+      if (!isCollapsible) return;
+      let attempts = 0;
+      const tryExpand = () => {
+        const activeLink = tocComponent.querySelector('.w--current');
+        if (activeLink) {
+          scrollToActiveLink();
+        } else if (++attempts < 20) {
+          setTimeout(tryExpand, 50);
+        }
+      };
+      tryExpand();
+    };
+    // Set up toggle buttons for manual group expansion
+    const setupManualToggles = () => {
+      if (!isCollapsible) return;
+      tocComponent.querySelectorAll('[fc-toc="open-group"]').forEach(toggleBtn => {
+        const subList = toggleBtn.closest('li')?.querySelector('.toc-subitems');
+        if (!subList || subList.children.length === 0) {
+          toggleBtn.style.display = 'none';
+          return;
+        }
+        for (const item of tocComponent.querySelectorAll('li')) {
+        	item.style.display = 'grid';
+          item.style.gridTemplateColumns = '1fr auto';
+        }
+        subList.style.gridColumn = '1 / 3';
+        toggleBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          preventAutoOpen = true;
+          const listItem = toggleBtn.closest('li');
+          if (!listItem) return;
+          const subList = listItem.querySelector('.toc-subitems');
+          if (!subList) return;
+          const isOpen = subList.style.maxHeight !== '0px';
+          const hasActive = listItem.querySelector(`.${activeClass}`);
+          if (isOpen && !hasActive) {
+            collapseElement(subList);
+            if (lastActiveGroupWrapper === listItem) {
+              lastActiveGroupWrapper = null;
+            }
+          } else if (!isOpen) {
+            expandElement(subList);
+            if (
+              lastActiveGroupWrapper &&
+              lastActiveGroupWrapper !== listItem &&
+              !lastActiveGroupWrapper.querySelector(`.${activeClass}`)
+            ) {
+              const previousGroup = lastActiveGroupWrapper.querySelector('.toc-subitems');
+              if (previousGroup) collapseElement(previousGroup);
+            }
+            lastActiveGroupWrapper = listItem;
+          }
+          setTimeout(() => {
+            preventAutoOpen = false;
+          }, 100);
+        });
+      });
+    };
+    expandActiveGroupOnLoad();
+    setupManualToggles();
+    let isAutoScrolling = false;
+    let scrollTimeout;
+    const handleScrollStop = () => {
+      clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(() => {
+        isAutoScrolling = false;
+        debouncedScroll();
+      }, 150);
+    };
+    // Handle anchor clicks and scroll positioning
+    tocComponent.querySelectorAll('a[fc-toc-link]').forEach(link => {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href')?.substring(1);
+        const target = document.getElementById(targetId);
+        if (!target) return;
+        const originalHref = this.getAttribute('href');
+        this.removeAttribute('href');
+        isAutoScrolling = true;
+        window.addEventListener('scroll', handleScrollStop);
+        const rect = target.getBoundingClientRect();
+        const scrollTo = window.scrollY + rect.top - (window.innerHeight / 2) + (rect.height / 2);
+        window.scrollTo({ top: scrollTo, behavior: 'smooth' });
+        const closeToc = document.querySelector('[fc-toc = close]')
+        if(closeToc) closeToc.click()
+        setTimeout(() => {
+          this.setAttribute('href', originalHref);
+        }, 100);
+      });
+    });
+  }
+  // Expand/collapse utility with icon rotation
+  function expandElement(el) {
+    const clone = el.cloneNode(true);
+    clone.style.visibility = 'hidden';
+    clone.style.position = 'absolute';
+    clone.style.height = 'auto';
+    clone.style.maxHeight = 'none';
+    clone.style.pointerEvents = 'none';
+    clone.style.opacity = '0';
+    el.parentElement.appendChild(clone);
+    const fullHeight = clone.scrollHeight;
+    el.parentElement.removeChild(clone);
+    el.style.maxHeight = fullHeight + 'px';
+    const icon = el.closest('li')?.querySelector('[fc-toc="open-group"]');
+    if (icon) {
+      const rotation = icon.getAttribute('fc-toc-rotate') || '180deg';
+      icon.style.transform = `rotate(${rotation}deg)`;
+    }
+  }
+  function collapseElement(el) {
+    el.style.maxHeight = '0px';
+    const icon = el.closest('li')?.querySelector('[fc-toc="open-group"]');
+    if (icon) {
+      icon.style.transform = 'rotate(0deg)';
+    }
+  }
+});
+</script>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="space-7"></div>
+    </div>
+            <section class="footer-section v1 section-2">
+      <div class="container">
+        <div class="foooter-top v1">
+          <div class="footer-left-left">
+            <div class="footer-icon-wrap"><img src="../assets/images/Symbol-1_2.webp" loading="lazy" alt="White Icon" class="icon"></div>
+            <div class="space-1-5"></div>
+            <div class="footer-title-top">Setup your <span class="highlight-text pure-blue">free trial</span> today!</div>
+            <div class="space-1"></div>
+            <p class="paragraph-regular">Get started today with a no-obligation 30-day free trial. The<br>Reporting Hub can be fully deployed to your Azure environment<br>by following our self-serve guided installer. <a href="../install-today.html" class="span-link">Learn more</a>
+            </p>
+            <div class="space-2"></div>
+            <div class="button-wrap left">
+              <a href="../install-today.html" class="button color-blue w-inline-block">
+                <div>Install Today</div>
+              </a>
+              <a href="../contact.html" class="button bg-transparent text-blue w-inline-block">
+                <div>Get in Touch</div><img src="../assets/images/Symbol-7.webp" loading="lazy" alt="Arrow" class="button-arrow">
+              </a>
+            </div>
+          </div>
+          <div class="footer-image-wrap"><img src="../assets/images/dashboard-trial-new-1_1.webp" loading="lazy" width="Auto" alt="Power Bi Dashboard" sizes="100vw" srcset="../assets/images/dashboard-trial-new-1_1-p-500.webp 500w, ../assets/images/dashboard-trial-new-1_1-p-800.webp 800w, ../assets/images/dashboard-trial-new-1_1-p-1080.webp 1080w, ../assets/images/dashboard-trial-new-1_1-p-1600.webp 1600w, ../assets/images/dashboard-trial-new-1_1-p-2000.webp 2000w, ../assets/images/dashboard-trial-new-1_1-p-2600.webp 2600w, ../assets/images/dashboard-trial-new-1_1-p-3200.webp 3200w, ../assets/images/dashboard-trial-new-1_1.webp 3936w" class="footer-image"></div>
+        </div>
+      </div>
+      <div class="space-5"></div>
+      <div class="w-layout-blockcontainer container w-container">
+        <div class="footer-component">
+          <div class="w-layout-grid footer-grid-wrap">
+            <div class="footer-left-call">
+              <div class="font-0-9">Contact US</div>
+              <div class="footer-menu-left">
+                <div class="footer-menu-group"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 15 12" fill="none" class="social-icon">
+                    <g clip-path="url(#clip0_9006_2830)">
+                      <path d="M1.52344 2.61654C1.52344 2.26292 1.66392 1.92378 1.91396 1.67373C2.16401 1.42368 2.50315 1.2832 2.85677 1.2832H12.1901C12.5437 1.2832 12.8828 1.42368 13.1329 1.67373C13.3829 1.92378 13.5234 2.26292 13.5234 2.61654M1.52344 2.61654V9.2832C1.52344 9.63683 1.66392 9.97596 1.91396 10.226C2.16401 10.476 2.50315 10.6165 2.85677 10.6165H12.1901C12.5437 10.6165 12.8828 10.476 13.1329 10.226C13.3829 9.97596 13.5234 9.63683 13.5234 9.2832V2.61654M1.52344 2.61654L7.52344 6.61654L13.5234 2.61654" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </g>
+                  </svg>
+                  <a href="mailto:info@thereportinghub.com?subject=You've%20got%20an%20email" class="footer-link">info@thereportinghub.com</a>
+                </div>
+                <div class="footer-menu-group"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 17 18" fill="none" class="social-icon">
+                    <path d="M3.85938 6.75618C3.85938 4.35756 5.94871 2.41309 8.52603 2.41309C11.1033 2.41309 13.1927 4.35756 13.1927 6.75618C13.1927 9.13601 11.7032 11.913 9.37942 12.9061C8.83769 13.1376 8.21439 13.1376 7.67267 12.9061C5.34882 11.913 3.85938 9.13601 3.85938 6.75618Z" stroke="currentColor" stroke-width="1.5"></path>
+                    <path d="M9.85417 7.0804C9.85417 7.81678 9.25722 8.41373 8.52084 8.41373C7.78446 8.41373 7.1875 7.81678 7.1875 7.0804C7.1875 6.34402 7.78446 5.74707 8.52084 5.74707C9.25722 5.74707 9.85417 6.34402 9.85417 7.0804Z" stroke="currentColor" stroke-width="1.5"></path>
+                    <path d="M14.4997 11.4131C14.9433 11.8147 15.1927 12.2675 15.1927 12.7464C15.1927 14.4033 12.2079 15.7464 8.52603 15.7464C4.84414 15.7464 1.85938 14.4033 1.85938 12.7464C1.85938 12.2675 2.10878 11.8147 2.55234 11.4131" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+                  </svg>
+                  <div class="max-width-11">
+                    <a href="https://maps.google.com/?q=707+7th+Avenue+SW+Calgary+AB+Canada+T2P+3H6" target="_blank" rel="noopener" class="footer-link">1150, 707 - 7th Avenue SW Calgary, AB Canada T2P 3H6</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="footer-call">
+              <div class="font-0-9">Website</div>
+              <div class="footer-menu-main">
+                <a href="../index.html" class="footer-link">Home</a>
+                <a href="../aaas.html" class="footer-link">AaaS Platform</a>
+                <a href="../pricing.html" class="footer-link">Pricing</a>
+                <a href="../learn-more.html" class="footer-link">What is Reporting Hub?</a>
+                <a href="../demo.html" class="footer-link">Demo</a>
+                <a href="../install-today.html" class="footer-link">Install Today</a>
+                <a href="../about-us.html" class="footer-link">About Us</a>
+                <a href="../contact.html" class="footer-link">Contact Us</a>
+              </div>
+            </div>
+            <div class="footer-call">
+              <div class="font-0-9">theHUB</div>
+              <div class="footer-menu-main">
+                <a href="https://docs.thereportinghub.com/" class="footer-link">Knowledge Center</a>
+                <a href="../blog.html" class="footer-link">Our Blog</a>
+                <a href="../power-bi.html" class="footer-link">About Power BI</a>
+                <a href="https://support.thereportinghub.com/support/home" class="footer-link">Get Support</a>
+                <a href="../support-plans.html" class="footer-link">Support Plans</a>
+                <a href="../policies.html" class="footer-link">Policies</a>
+                <a href="/policies#rh-terms" class="footer-link">Terms of Service</a>
+              </div>
+            </div>
+          </div>
+          <a href="#btt" class="direction-button w-inline-block"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 52 53" fill="none" class="button-icon">
+              <g clip-path="url(#clip0_9006_2933)">
+                <path d="M0 26.1602C0 40.5196 11.6406 52.1602 26 52.1602C40.3594 52.1602 52 40.5196 52 26.1602C52 11.8008 40.3594 0.160156 26 0.160156C11.6406 0.160156 0 11.8008 0 26.1602Z" fill="white" fill-opacity="0.1"></path>
+                <path d="M32.704 28.6752C33.1627 29.1422 33.9152 29.1422 34.3739 28.6752C34.8212 28.2199 34.8212 27.4902 34.3739 27.0348L26.7165 19.2396C26.3246 18.8407 25.6817 18.8407 25.2898 19.2396L17.6323 27.0348C17.1851 27.4902 17.1851 28.2199 17.6323 28.6752C18.0911 29.1422 18.8436 29.1422 19.3023 28.6752L25.2898 22.58C25.6817 22.181 26.3246 22.181 26.7165 22.58L32.704 28.6752Z" fill="currentColor" class="white"></path>
+              </g>
+            </svg></a>
+        </div>
+      </div>
+      <div class="space-3"></div>
+      <div class="global-line"></div>
+      <div class="footer-bottom">
+        <div class="space-3"></div>
+        <div class="w-layout-blockcontainer container w-container">
+          <div class="footer-bottom-contents">
+            <a href="../index.html" class="footer-left w-inline-block"><img src="../assets/images/rh-horizontal-white.svg" loading="lazy" alt="" class="image-small">
+              <div class="text-color-white margin-top-10">Microsoft partner</div>
+            </a>
+            <div class="footer-right">
+              <div class="new-footer-wrap">
+                <div class="font-0-9 text-align-right left-mobile">
+                  <a href="mailto:info@thereportinghub.com?subject=You've%20got%20email" class="link-8"><span class="text-span-2">info@thereportinghub.com</span></a>
+                </div>
+                <div class="social-media-wrap">
+                  <a href="https://www.facebook.com/people/The-Reporting-Hub/100064582883104/" class="social-media-link w-inline-block"><img src="../assets/images/fb.svg" loading="lazy" alt="" class="social-media-icon"></a>
+                  <a href="https://www.linkedin.com/company/the-reporting-hub/" class="social-media-link w-inline-block"><img src="../assets/images/in.svg" loading="lazy" alt="" class="social-media-icon"></a>
+                  <a href="https://x.com/thereportinghub" class="social-media-link w-inline-block"><img src="../assets/images/tw.svg" loading="lazy" alt="" class="social-media-icon"></a>
+                  <a href="https://www.instagram.com/thereportinghub/" class="social-media-link w-inline-block"><img src="../assets/images/insta.svg" loading="lazy" alt="" class="social-media-icon"></a>
+                </div>
+              </div>
+              <div class="font-0-9 text-align-right margin-top-16">2025 All Rights Reserved | The Reporting Hub</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  
+  
+  
+  
+  <!--  Google Tag Manager (noscript)  -->
+  <noscript><iframe src="https://ss.thereportinghub.com/ns.html?id=GTM-MM9W9FH" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!--  End Google Tag Manager (noscript)  -->
+  <script>
+(function () {
+  function cssEscapeSafe(s) {
+    try { return CSS.escape(s); } catch (e) { return s.replace(/["\\]/g, "\\$&"); }
+  }
+  function normalizeTarget(target) {
+    // ✅ Ako ti URL i dalje dolazi kao #bi-genius-terms, mapiraj ga na rh-terms
+    if (target === "bi-genius-terms") return "rh-terms";
+    return target;
+  }
+  function openTabFromHash() {
+    var hash = window.location.hash;
+    if (!hash) return;
+    var target = hash.slice(1);
+    if (!target) return;
+    target = normalizeTarget(target);
+    // 1) traži custom data-tab="..."
+    var sel = '[data-tab="' + cssEscapeSafe(target) + '"]';
+    var el = document.querySelector(sel);
+    // 2) fallback: traži direktno webflow tab link po data-w-tab
+    var tabLink = null;
+    if (el) {
+      tabLink = (el.classList && el.classList.contains('w-tab-link'))
+        ? el
+        : (el.querySelector ? el.querySelector('.w-tab-link') : null);
+    }
+    if (!tabLink) {
+      tabLink = document.querySelector('.w-tab-link[data-w-tab="' + cssEscapeSafe(target) + '"]');
+    }
+    // 3) extra fallback: ako target == rh-terms, probaj naći BILO KOJI element sa data-tab="rh-terms"
+    // (ovo ti je “hard fix” da 100% radi)
+    if (!tabLink && target === "rh-terms") {
+      tabLink = document.querySelector('[data-tab="rh-terms"].w-tab-link, .w-tab-link[data-tab="rh-terms"]');
+    }
+    if (!tabLink) return;
+    var tries = 0;
+    (function tryClick() {
+      tries++;
+      tabLink.click();
+      if (!tabLink.classList.contains('w--current') && tries < 20) {
+        setTimeout(tryClick, 100);
+      }
+    })();
+  }
+  document.addEventListener('DOMContentLoaded', openTabFromHash);
+  window.addEventListener('hashchange', openTabFromHash);
+})();
+</script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var youtubeIframes = document.querySelectorAll('iframe.lazyiframe');
+        youtubeIframes.forEach(function (youtubeIframe) {
+            var dataSrcValue = youtubeIframe.getAttribute('data-src');
+            if (dataSrcValue) {
+                youtubeIframe.setAttribute('src', dataSrcValue);
+                youtubeIframe.removeAttribute('data-src');
+            }
+        });
+    });
+</script>
+  
+  
+  
+
+<script src="../assets/js/main.js"></script>
+</body></html>

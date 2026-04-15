@@ -1,0 +1,1553 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="utf-8">
+  <title>Fabric vs. Power BI Premium</title>
+  <meta content="Across Reddit’s Power BI and Microsoft Fabric communities, one debate keeps resurfacing:“Do I really need Fabric if I already have Power BI Premium?”It’s a fair" name="description">
+  <meta content="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/6961652bcf02c04b7b0edbe3_Fabric%20vs.%20Power%20BI%20Premium%20-%20Reddit.avif" property="og:image">
+  <meta content="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/6961652bcf02c04b7b0edbe3_Fabric%20vs.%20Power%20BI%20Premium%20-%20Reddit.avif" property="twitter:image">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&amp;display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link href="../assets/css/base.css" rel="stylesheet" type="text/css">
+  <link href="../assets/css/styles.css" rel="stylesheet" type="text/css">
+
+  <!-- Favicon -->
+  <link href="../assets/images/favicon.ico" rel="shortcut icon" type="image/x-icon">
+  <link href="../assets/images/webclip.png" rel="apple-touch-icon">
+
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async="" defer=""></script></head>
+<body>
+  <div id="trtb" class="page-wrapper">
+    <div data-animation="default" class="navbar w-variant-5639baf4-9975-3636-61ef-0b730048b257 w-nav" data-easing2="ease" data-easing="ease" data-collapse="medium" role="banner" data-duration="400" id="nav">
+      <div class="navbar-continer w-container">
+        <div class="nav-item-wrap">
+          <a href="../index.html" class="brand w-nav-brand"><img src="../assets/images/rh-horizontal-white.svg" loading="eager" alt="" class="nav-brand-logo one"><img src="../assets/images/logo_white.svg" loading="lazy" alt="" class="nav-brand-logo two"></a>
+          <nav role="navigation" class="navigation w-nav-menu">
+            <a href="../index.html" class="nav-link w-nav-link">Home</a>
+            <div data-hover="false" data-delay="300" class="uui-navbar01_menu-dropdown w-dropdown">
+              <div class="uui-navbar01_dropdown-toggle w-dropdown-toggle">
+                <div class="uui-dropdown-icon w-embed"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg></div>
+                <div class="nav-link padding-right-0-25">Platform</div>
+              </div>
+              <nav class="uui-navbar01_dropdown-list w-dropdown-list">
+                <div class="uui-navbar01_container">
+                  <div class="uui-navbar01_dropdown-content">
+                    <div class="uui-navbar01_dropdown-content-left is-platform">
+                      <div class="uui-navbar01_dropdown-link-list">
+                        <h4 class="uui-navbar01_heading text-color-white">Platform</h4>
+                        <a href="../learn-more.html" class="uui-navbar01_dropdown-link w-inline-block">
+                          <div class="uui-navbar01_icon-wrapper"><img src="../assets/images/logo-white.svg" loading="lazy" alt="Bi White logo" class="icon-xsmall"></div>
+                          <div class="uui-navbar01_item-right">
+                            <div class="uui-navbar01_item-heading">Reporting Hub</div>
+                            <div class="uui-text-size-small hide-mobile-landscape">Custom-branded Power BI reporting delivery for teams and analytics clients</div>
+                          </div>
+                        </a>
+                      </div>
+                      <div class="uui-navbar01_dropdown-link-list is-bottom">
+                        <h4 class="uui-navbar01_heading opacity-0">Company</h4>
+                        <a href="../bi-genius.html" class="uui-navbar01_dropdown-link w-inline-block">
+                          <div class="uui-navbar01_icon-wrapper"><img src="../assets/images/new-bi-megamenu-logo-white.svg" loading="lazy" alt="Power Bi Megamenu white logo" class="icon-xsmall small"></div>
+                          <div class="uui-navbar01_item-right">
+                            <div class="uui-navbar01_item-heading">BI Genius</div>
+                            <div class="uui-text-size-small hide-mobile-landscape">Add-on fully customizable AI agents that drive insights with full transparency and control</div>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                    <div class="uui-navbar01_dropdown-content-right">
+                      <div class="uui-navbar01_dropdown-content-wrapper">
+                        <div class="blog-items-wrapper">
+                          <h4 class="uui-navbar01_dropdown-content-heading text-color-white">Latest from our blog</h4>
+                          <a href="../blog.html" class="uui-button-link is-button-xsmall w-inline-block">
+                            <div class="color_primary">See all posts ➝</div>
+                          </a>
+                        </div>
+                        <div class="w-dyn-list">
+                          <div role="list" class="uui-navbar01_dropdown-blog-list w-dyn-items"><div role="listitem" class="w-dyn-item">
+                              <a href="../blog/embedded-analytics-meets-generative-ai-how-saas-teams-monetize-bi-in-2025.html" class="uui-navbar01_blog-item w-inline-block">
+                                <div class="uui-navbar01_blog-image-wrapper"><img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/69600be56fa30d9d91a5f337_Embedded%20Analytics%20Meets%20Generative%20AI%20How%20SaaS%20Teams%20Monetize%20BI%20in%202025.png" loading="eager" alt="" class="uui-navbar01_blog-image"></div>
+                                <div class="uui-navbar01_large-item-content">
+                                  <div class="uui-navbar01_item-heading">Embedded Analytics Meets Generative AI: How SaaS Teams Monetize BI in 2026</div>
+                                  <div class="uui-navbar01_item-button-wrapper">
+                                    <div class="uui-button-row">
+                                      <div class="uui-button-link is-button-xsmall">
+                                        <div class="color_primary">Learn More ➝</div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </a>
+                            </div><div role="listitem" class="w-dyn-item">
+                              <a href="../blog/fabric-vs-power-bi-premium.html" class="uui-navbar01_blog-item w-inline-block">
+                                <div class="uui-navbar01_blog-image-wrapper"><img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/6961652bcf02c04b7b0edbe3_Fabric%20vs.%20Power%20BI%20Premium%20-%20Reddit.avif" loading="eager" alt="" class="uui-navbar01_blog-image"></div>
+                                <div class="uui-navbar01_large-item-content">
+                                  <div class="uui-navbar01_item-heading">Fabric vs. Power BI Premium</div>
+                                  <div class="uui-navbar01_item-button-wrapper">
+                                    <div class="uui-button-row">
+                                      <div class="uui-button-link is-button-xsmall">
+                                        <div class="color_primary">Learn More ➝</div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </a>
+                            </div><div role="listitem" class="w-dyn-item">
+                              <a href="../blog/how-to-structure-a-multi-tenant-analytics-delivery-system-without-rebuilding-everything.html" class="uui-navbar01_blog-item w-inline-block">
+                                <div class="uui-navbar01_blog-image-wrapper"><img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/69b03e0ca76a82d19058f954_Structure%20a%20Multi-Tenant%20Analytics%20Delivery.jpg" loading="eager" alt="" class="uui-navbar01_blog-image"></div>
+                                <div class="uui-navbar01_large-item-content">
+                                  <div class="uui-navbar01_item-heading">How to Structure a Multi-Tenant Analytics Delivery System Without Rebuilding Everything</div>
+                                  <div class="uui-navbar01_item-button-wrapper">
+                                    <div class="uui-button-row">
+                                      <div class="uui-button-link is-button-xsmall">
+                                        <div class="color_primary">Learn More ➝</div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </a>
+                            </div></div>
+                          
+                        </div>
+                      </div>
+                      <div class="uui-navbar01_dropdown-right-overlay-absolute"></div>
+                    </div>
+                  </div>
+                </div>
+              </nav>
+            </div>
+            <a href="../pricing.html" class="nav-link w-nav-link">Pricing</a>
+            <a href="../aaas.html" class="nav-link w-nav-link">AaaS Platform</a>
+            <div data-hover="false" data-delay="300" class="uui-navbar01_menu-dropdown w-dropdown">
+              <div class="uui-navbar01_dropdown-toggle w-dropdown-toggle">
+                <div class="uui-dropdown-icon w-embed"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg></div>
+                <div class="nav-link padding-right-0-25">Learn</div>
+              </div>
+              <nav class="uui-navbar01_dropdown-list w-dropdown-list">
+                <div class="uui-navbar01_container">
+                  <div class="uui-navbar01_dropdown-content">
+                    <div class="nav-items">
+                      <h4 class="uui-navbar01_heading large text-color-white">Learn</h4>
+                      <div class="uui-navbar01_dropdown-content-left">
+                        <div class="uui-navbar01_dropdown-link-list">
+                          <a href="https://docs.thereportinghub.com/?_gl=1*11en80c*_gcl_au*MjEyNTAwMzM0MC4xNzYwMDIyNzYzLjE5Nzk0NzY1MjguMTc2MjEwODgzNS4xNzYyMTA4ODM1*_ga*MzgyNDA3NDAxLjE3NjAwMjI3NjM." target="_blank" class="uui-navbar01_dropdown-link w-inline-block">
+                            <div class="uui-navbar01_icon-wrapper"><img src="../assets/images/Knowledge-Centre_icon.webp" loading="lazy" alt="" class="nav-image"></div>
+                            <div class="uui-navbar01_item-right">
+                              <div class="uui-navbar01_item-heading">Knowledge Center<br></div>
+                              <div class="uui-text-size-small hide-mobile-landscape">All the information you need to master B.I. delivery</div>
+                            </div>
+                          </a>
+                          <a href="../community.html" class="uui-navbar01_dropdown-link is-auto w-inline-block">
+                            <div class="uui-navbar01_icon-wrapper"><img src="../assets/images/About-Us_icon-1.webp" loading="lazy" alt="" class="nav-image"></div>
+                            <div class="uui-navbar01_item-right">
+                              <div class="uui-navbar01_item-heading">Community</div>
+                              <div class="uui-text-size-small hide-mobile-landscape">Connect and collaborate with active users</div>
+                            </div>
+                          </a>
+                        </div>
+                        <div class="uui-navbar01_dropdown-link-list">
+                          <h4 class="uui-navbar01_heading opacity-0">Company</h4>
+                          <a href="https://docs.thereportinghub.com/getting-started/deployment-step-by-step/self-serve-guided-install?_gl=1*1nvpg97*_gcl_au*MjEyNTAwMzM0MC4xNzYwMDIyNzYzLjE5Nzk0NzY1MjguMTc2MjEwODgzNS4xNzYyMTA4ODM1*_ga*MzgyNDA3NDAxLjE3NjAwMjI3NjM." target="_blank" class="uui-navbar01_dropdown-link w-inline-block">
+                            <div class="uui-navbar01_icon-wrapper"><img src="../assets/images/Getting-Started_icon.webp" loading="lazy" alt="" class="nav-image"></div>
+                            <div class="uui-navbar01_item-right">
+                              <div class="uui-navbar01_item-heading">Getting Started</div>
+                              <div class="uui-text-size-small hide-mobile-landscape">Step-by-step guides to get started with the Reporting Hub<br></div>
+                            </div>
+                          </a>
+                          <a href="https://www.youtube.com/@thereportinghub" class="uui-navbar01_dropdown-link is-auto w-inline-block">
+                            <div class="uui-navbar01_icon-wrapper"><img src="../assets/images/Video-Demos_icon.webp" loading="lazy" alt="" class="nav-image"></div>
+                            <div class="uui-navbar01_item-right">
+                              <div class="uui-navbar01_item-heading">Video Demos</div>
+                              <div class="uui-text-size-small hide-mobile-landscape">Our YouTube channel with helpful video demos</div>
+                            </div>
+                          </a>
+                        </div>
+                        <div id="w-node-a91421d3-b46b-1701-6a19-a49d5ae9c96d-17890035" class="uui-navbar01_dropdown-link-list flex">
+                          <h4 class="uui-navbar01_heading opacity-0 none">Company</h4>
+                          <a href="../resources.html" class="uui-navbar01_dropdown-link w-inline-block">
+                            <div class="uui-navbar01_icon-wrapper"><img src="../assets/images/Resources.webp" loading="lazy" alt="" class="nav-image"></div>
+                            <div class="uui-navbar01_item-right">
+                              <div class="uui-navbar01_item-heading">Resources</div>
+                              <div class="uui-text-size-small hide-mobile-landscape">Videos, white papers, and assets about Reporting Hub</div>
+                            </div>
+                          </a>
+                          <a href="https://support.thereportinghub.com/support/home" target="_blank" class="uui-navbar01_dropdown-link is-auto w-inline-block">
+                            <div class="uui-navbar01_icon-wrapper"><img src="../assets/images/Get-Help_icon.webp" loading="lazy" alt="" class="nav-image"></div>
+                            <div class="uui-navbar01_item-right">
+                              <div class="uui-navbar01_item-heading">Get Help</div>
+                              <div class="uui-text-size-small hide-mobile-landscape">Our Support team is here to help</div>
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+                      <div class="uui-navbar01_dropdown-content-left pt-0">
+                        <div class="uui-navbar01_dropdown-link-list one-item">
+                          <h4 class="uui-navbar01_heading large text-color-white">Services</h4>
+                          <a href="../partners.html" class="uui-navbar01_dropdown-link w-inline-block">
+                            <div class="uui-navbar01_icon-wrapper"><img src="../assets/images/Knowledge-Centre_icon.webp" loading="lazy" alt="" class="nav-image"></div>
+                            <div class="uui-navbar01_item-right">
+                              <div class="uui-navbar01_item-heading">Partner Programs<br></div>
+                              <div class="uui-text-size-small hide-mobile-landscape">Find or become a Reporting Hub Partner</div>
+                            </div>
+                          </a>
+                        </div>
+                        <div class="uui-navbar01_dropdown-link-list is-bottom">
+                          <h4 class="uui-navbar01_heading opacity-0">Company</h4>
+                          <a href="../professionalservices.html" class="uui-navbar01_dropdown-link w-inline-block">
+                            <div class="uui-navbar01_icon-wrapper"><img src="../assets/images/Professional-Services_icon.webp" loading="lazy" alt="" class="nav-image"></div>
+                            <div class="uui-navbar01_item-right">
+                              <div class="uui-navbar01_item-heading">Professional Services</div>
+                              <div class="uui-text-size-small hide-mobile-landscape">Get premium support from our team of experts</div>
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="uui-navbar01_dropdown-content-right">
+                      <div class="uui-navbar01_dropdown-content-wrapper">
+                        <div class="blog-items-wrapper">
+                          <h4 class="uui-navbar01_dropdown-content-heading text-color-white">Latest from our blog</h4>
+                          <a href="../blog.html" class="uui-button-link is-button-xsmall w-inline-block">
+                            <div class="color_primary">See all posts ➝</div>
+                          </a>
+                        </div>
+                        <div class="w-dyn-list">
+                          <div role="list" class="uui-navbar01_dropdown-blog-list w-dyn-items"><div role="listitem" class="w-dyn-item">
+                              <a href="../blog/embedded-analytics-meets-generative-ai-how-saas-teams-monetize-bi-in-2025.html" class="uui-navbar01_blog-item w-inline-block">
+                                <div class="uui-navbar01_blog-image-wrapper"><img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/69600be56fa30d9d91a5f337_Embedded%20Analytics%20Meets%20Generative%20AI%20How%20SaaS%20Teams%20Monetize%20BI%20in%202025.png" loading="eager" alt="" class="uui-navbar01_blog-image"></div>
+                                <div class="uui-navbar01_large-item-content">
+                                  <div class="uui-navbar01_item-heading">Embedded Analytics Meets Generative AI: How SaaS Teams Monetize BI in 2026</div>
+                                  <div class="uui-navbar01_item-button-wrapper">
+                                    <div class="uui-button-row">
+                                      <div class="uui-button-link is-button-xsmall">
+                                        <div class="color_primary">Learn More ➝</div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </a>
+                            </div><div role="listitem" class="w-dyn-item">
+                              <a href="../blog/fabric-vs-power-bi-premium.html" class="uui-navbar01_blog-item w-inline-block">
+                                <div class="uui-navbar01_blog-image-wrapper"><img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/6961652bcf02c04b7b0edbe3_Fabric%20vs.%20Power%20BI%20Premium%20-%20Reddit.avif" loading="eager" alt="" class="uui-navbar01_blog-image"></div>
+                                <div class="uui-navbar01_large-item-content">
+                                  <div class="uui-navbar01_item-heading">Fabric vs. Power BI Premium</div>
+                                  <div class="uui-navbar01_item-button-wrapper">
+                                    <div class="uui-button-row">
+                                      <div class="uui-button-link is-button-xsmall">
+                                        <div class="color_primary">Learn More ➝</div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </a>
+                            </div><div role="listitem" class="w-dyn-item">
+                              <a href="../blog/how-to-structure-a-multi-tenant-analytics-delivery-system-without-rebuilding-everything.html" class="uui-navbar01_blog-item w-inline-block">
+                                <div class="uui-navbar01_blog-image-wrapper"><img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/69b03e0ca76a82d19058f954_Structure%20a%20Multi-Tenant%20Analytics%20Delivery.jpg" loading="eager" alt="" class="uui-navbar01_blog-image"></div>
+                                <div class="uui-navbar01_large-item-content">
+                                  <div class="uui-navbar01_item-heading">How to Structure a Multi-Tenant Analytics Delivery System Without Rebuilding Everything</div>
+                                  <div class="uui-navbar01_item-button-wrapper">
+                                    <div class="uui-button-row">
+                                      <div class="uui-button-link is-button-xsmall">
+                                        <div class="color_primary">Learn More ➝</div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </a>
+                            </div></div>
+                          
+                        </div>
+                      </div>
+                      <div class="uui-navbar01_dropdown-right-overlay-absolute"></div>
+                    </div>
+                  </div>
+                </div>
+              </nav>
+            </div>
+            <a href="../demo.html" class="nav-link w-nav-link">Demo</a>
+            <a href="../install-today.html" class="nav-link w-nav-link">Install</a>
+            <a href="../about-us.html" class="nav-link w-nav-link">About Us</a>
+            <a href="../contact.html" class="nav-link w-nav-link">Contact Us</a>
+          </nav>
+          <div class="menu-button w-nav-button">
+            <div class="w-icon-nav-menu"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="main">
+      <section class="section blog-hero">
+        <div class="w-layout-blockcontainer container w-container">
+          <div class="blog-hero-contents">
+            <div class="blog-hero-left"><img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/6961652bcf02c04b7b0edbe3_Fabric%20vs.%20Power%20BI%20Premium%20-%20Reddit.avif" loading="lazy" alt="" class="human-centered-image"></div>
+            <div>
+              <h1 class="heading-2">Fabric vs. Power BI Premium</h1>
+              <a href="../https://thereportinghub.com/author/brian-d" class="writer-image-wrap w-inline-block"><img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/69616347d7c780ef41d927ec_6941a3f30361927cb1cee617_Brian%20DL-p-130x130q80.avif" loading="lazy" alt="" class="writer-image">
+                <div class="text-color-gray">Brian DeLuca</div>
+              </a>
+              <div>
+                <div class="space-1"></div>
+                <div class="text-color-gray">March 18, 2026</div>
+                <div class="space-1"></div>
+                <div class="time-icon"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFoAAABaCAYAAAA4qEECAAAACXBIWXMAAAsTAAALEwEAmpwYAAAD8klEQVR4nO2dSWsVQRDHC4wbil7VCCLiF4h6UjGIelUPKrhhNHpJIG7BqzeXUwj4NeJ2UPQDCBKNmosX9eKCZvVkBONPirTwxPdetl5qZvoH7zLMTHf9mdfTVV1dI5LJZDKZTCaTyWQymbkBLAF2AOeA28A94A3wDhgHfrrfuDv2xp1zy12zXe8xx+aqBbARuAg8BL6zeCaBB0AP0CpVBlgJnAKeAtOE4xfwBDgJrJCqAKx2T9on4vMNuA6slbICLAV6gTHSo324on2SMgHsBoaxx1tgnxQdHROBO8BvD6JMuadwnftddccWi/atH1guRQTYCrzEH1fqtKFDkS8GgS1SJPTv6GmaVsu6Ou2sxy86LdwrRQA4DPzwLABN2vONOkPHxDLAhVBzYmncZgjUhvNiEeCQcw6CII3bJaDYR8USOq55mgE0pEnbIdFh5IAYml34fvH9R5P2QzOZfDaic0/gRQRjadKHGAwmnWc7ZyQK0rgPseiPq+6/brUPj29ONOlHLNTWPbFFbgFeRzQSA0Lj4jXxAlGeXd8iCa1cihlPHq2w0KOqQQyhryUwDkNC1w1whQh7fk5hmdgS+osuxYUU+nQiwzAmtHI8pNC6kJoEsSf0o1Ait4YMGhVQ6OkgqQwu7yIZYk9opTuE0JrckgyxKfRAiDStiZQWiU2hJ7ymn7lcuKSITaGVbT6F7kxtjdgVusOn0JrVmRSxK/QNn0LfT22N2BXa3wsxdki0YEIP+RT6w0LTt7x1ogGk5734YgFh0bDRrRpIz4j4wi27z4fgT/JfSM+UJBR6vbfGZ4GSCT3foaPXW+OzQMmGjoW8DHtjPNmU7GWYfHpnmKFSOSyGGSiVC24Yry647kjN1OdMqcKkhmkrVeDfKH4D/05s3VudCbmU5YTWbcWZf+kKIfSGlOkGBvkVLKbjqgRkQibQOKG17EMmQkrYikTlH6wRNskxVRK6QS4HFdkJvUpDg1SX0SiJ6E5sXQ+sKj1RRK7ZLPSK6jEcvWoNsCvm9jcDxN/+ViO2Vm6pCn1JRK7Zoqzbd8vOc2BZMqGd2FvcxvQyR+g2iwWA9hBVZwygaRb7xRLAwZIFnaaBI2IRLY8TuPxlLPSB6RTLuJI/RR5GpsyV+Jml9M9kQV987VIkgE3AM4rDYPKSPoucZ/cb9yC1b33J58ke3fXX2EP7tFPKBDOBqEtGQqwjbrG5RcoKM/FsNfJjAoG/ukLda6QqMLMsdgJ4HNjR0Xs/0jW+SpWer4ermtsN3HVfo1gs4+5eXTG3eRQKZtLP2oCzwE3NBtIcZPcpkLGaz4OMuWND7hw9t8Ndmz8PkslkMplMJpPJZDIyR/4AHP79tg/mkAIAAAAASUVORK5CYII=" alt="Clock" class="icon-gray">
+                  <div class="text-color-gray">8 Minutes</div>
+                </div>
+                <div class="space-1-5"></div>
+                <div class="text-color-gray">Subscribe to our blog to stay up to date on all the latest information from the Reporting Hub team! We’ll never share your email with anyone else.</div>
+                <div class="code-embed-9 w-embed w-script">
+                  <div class="custom_hbs_form paidsearchpage blog-email-only">
+                    <form action="https://formspree.io/f/xaqlkgry" method="POST" class="hs-form stacked">
+                      <fieldset class="form-columns-1">
+                        <div class="hs_email hs-email hs-fieldtype-text field hs-form-field">
+                          <div class="input"><input name="email" type="email" class="hs-input" required="" autocomplete="off" placeholder="Your email address"></div>
+                        </div>
+                      </fieldset>
+                      <div class="hs_submit hs-submit">
+                        <div class="actions"><div class="cf-turnstile" data-sitekey="0x4AAAAAAC1kqPKVfSHwCjeC" data-theme="light"></div><input type="submit" class="hs-button primary large" value="Subscribe"></div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section blog-elements">
+        <div class="w-layout-blockcontainer container w-container">
+          <div class="single-blog-contents-wrapper">
+            <div fc-toc="wrapper" class="post-content-wrapper"><button class="blog-post_open-toc-button">
+                <div class="circle"></div>
+              </button>
+              <div fc-toc="content" class="w-richtext"><p>Across Reddit’s Power BI and Microsoft Fabric communities, one debate keeps resurfacing:</p><p><strong><em>“Do I really need Fabric if I already have Power BI Premium?”</em></strong></p><p>It’s a fair question. Both are flagship Microsoft data products, both promise scale, and both fall under the same subscription umbrella. Yet, their purposes and resource management models are fundamentally different. Fabric uses Capacity Units (CUs) for compute. Premium uses dedicated capacity SKUs.That distinction is what confuses thousands of BI developers, data architects, and consulting teams trying to choose the right platform mix.</p><p>This post looks beyond Microsoft’s marketing pages and explores what actual users on Reddit have learned through experience – the benefits, trade-offs, and pitfalls of each. And we’ll end by showing where <strong>Reporting Hub</strong> fits in, helping organizations simplify governance and sharing whether they’re building on <strong>Fabric, Power BI Premium</strong>, or both.</p><p>‍</p><h3>What Microsoft Fabric Really Is</h3><p>Launched in 2023, <a href="https://www.microsoft.com/en-us/microsoft-fabric/resources/data-101/what-is-fabric" target="_blank">Microsoft Fabric</a> represents a unification of the entire data analytics stack under one SaaS platform. It’s designed to bring together features from Azure Data Factory, Synapse, and Power BI into one SaaS environment. It will not fully replace them, as some standalone Azure services still work independently.</p><p>‍</p><figure class="w-richtext-figure-type-image w-richtext-align-floatright" data-rt-type="image" data-rt-align="floatright"><div><img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/6961661cc2b2123642f4c583_What-Microsoft-Fabric-Really-Is.png" loading="lazy" alt="__wf_reserved_inherit" width="auto" height="auto"></div></figure><p>Fabric’s core strength lies in <strong>data integration and engineering.</strong> It brings together data movement, storage, and preparation in a single, governed place. Its key components include:</p><ul><li><strong>OneLake </strong>– a universal data lake built on open-format storage (Parquet/Delta)</li><li><strong>Data Pipelines and Dataflows</strong> – for orchestrating ingestion and transformation</li><li><strong>Lakehouse and Data Warehouse </strong>– for modeling and querying large datasets</li><li><strong>Notebooks and Spark </strong>– for data science and AI workflows</li><li><strong>Integration with Copilot</strong> – for conversational data preparation and modeling</li></ul><p>‍</p><p>‍</p><p>‍</p><p>Essentially, Fabric is your <strong>data backbone</strong> – the infrastructure where information lives and transforms before it ever reaches dashboards.</p><p>As one Redditor put it, <strong><em>“Fabric is where the data happens before Power BI tells the story.”</em></strong></p><p>While its promise of consolidation is exciting, Reddit threads often mention that<strong> Fabric is still evolving. </strong>Early adopters mention that compute usage is unpredictable because of changing Capacity Unit consumption, a lack of workload management tools, and unclear pricing. For many organizations, it’s not yet the “plug-and-play” solution that Power BI Premium has become.</p><p>‍</p><h3><strong>Power BI Premium: The Proven Analytics Engine</strong></h3><p>Power BI Premium, in contrast, sits closer to the end of the analytics lifecycle. It’s the environment for <strong>reporting, visualization, and governed distribution.</strong></p><p>‍</p><figure class="w-richtext-figure-type-image w-richtext-align-floatleft" data-rt-type="image" data-rt-align="floatleft"><div><img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/6961671f146c161c230b2e9b_Power-BI-Premium-The-Proven-Analytics-Engine.png" loading="lazy" alt="Power BI Premium: The Proven Analytics Engine" width="auto" height="auto"></div></figure><p>Reddit users repeatedly praise Premium for its reliability and scale:</p><ul><li><strong>Dedicated capacity:</strong> predictable performance within set SKU limits. However, using too many resources can still lead to throttling if memory or refresh thresholds are surpassed.</li><li><strong>Larger dataset limits</strong> (up to 400 GB per model)</li><li><strong>Paginated reports</strong> for operational and financial reporting</li><li><strong>Row-level security (RLS)</strong> for granular access control</li><li><strong>No per-viewer</strong> <strong>licensing </strong>when used with Power BI Embedded. However, embedding requires an A or EM capacity and a service principal with correct workspace access.</li></ul><p>‍</p><p>‍</p><p>Premium excels when the goal is clear: <strong>deliver insights quickly and securely to many users.</strong></p><p>In Reddit’s words:</p><p>“Fabric might be the future, but Premium is how we deliver analytics today.”</p><p>‍</p><h3><strong>The Reddit Verdict: Complementary, Not Competing</strong></h3><p>After reading through dozens of Reddit discussions, a pattern emerges:</p><div data-rt-embed-type="true"><style>
+.human-centered-image {
+    height: auto;
+}
+
+
+
+/* Section */
+.blog_compare {
+  padding:10px 0px;
+}
+
+/* Layout */
+.blog_compare_wrap {
+  display: flex;
+  gap: 24px;
+}
+
+/* Card base */
+.blog_compare_card {
+  flex: 1;
+  border-radius: 20px;
+  padding: 28px;
+}
+
+/* Left card */
+.blog_compare_card.fabric {
+  background: #f1ecff;
+}
+
+/* Right card */
+.blog_compare_card.powerbi {
+ background: #d7ecf7;
+}
+
+/* Header */
+.blog_compare_header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.blog_compare_header img {
+  width: 40px;
+  height: 40px;
+}
+
+.blog_compare_header h3 {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+/* List */
+.blog_compare_list {
+  list-style: none;
+}
+
+.blog_compare_list li {
+  padding: 14px 0;
+  font-size: 15px;
+  line-height: 1.4;
+  border-top: 1px solid rgba(0,0,0,0.08);
+}
+
+/* First divider spacing */
+.blog_compare_list li:first-child {
+  border-top: 1px solid rgba(0,0,0,0.08);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .blog_compare_wrap {
+    flex-direction: column;
+  }
+}
+</style>	
+	
+<section class="blog_compare">
+  <div class="blog_compare_wrap">
+
+    <!-- Fabric -->
+    <div class="blog_compare_card fabric">
+      <div class="blog_compare_header">
+        <img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/69625d7e328e943ce2a37c24_Fabric-vs.-Power-BI-Premium-Reddit-27.png" alt="">
+        <h3>Fabric</h3>
+      </div>
+      <ul class="blog_compare_list">
+        <li>Focuses on data engineering and storage</li>
+        <li>Best for large, complex data ecosystems</li>
+        <li>Requires developer and engineering skills</li>
+        <li>Pricing tied to compute units (Capacity Units)</li>
+      </ul>
+    </div>
+
+    <!-- Power BI Premium -->
+    <div class="blog_compare_card powerbi">
+      <div class="blog_compare_header">
+        <img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/69625d8613feb8022b2635f5_Fabric-vs.-Power-BI-Premium-Reddit-26.png" alt="">
+        <h3>Power BI Premium</h3>
+      </div>
+      <ul class="blog_compare_list">
+        <li>Focuses on data visualization and distribution</li>
+        <li>Best for executive dashboards and reports</li>
+        <li>Accessible to business analysts</li>
+        <li>Pricing based on dedicated capacity (A/P SKUs)</li>
+      </ul>
+    </div>
+
+  </div>
+</section></div><p>‍</p><p>Most users agree they’re <strong>not direct alternatives.</strong> They serve different layers of the analytics architecture. Fabric is for data preparation and engineering. Premium is for semantic modeling and visualization. But because Microsoft bundles them under the same marketing roof, it’s easy to misunderstand which one you truly need.</p><p>One Reddit user summarized it well:</p><p><strong>“Fabric is for building the kitchen. Power BI Premium is for serving the meal.”</strong></p><p>‍</p><h3><strong>Where Pricing Creates Confusion</strong></h3><p>Microsoft Fabric uses a<strong> consumption-based model</strong> built around Capacity Units (CUs). You pay for active compute time using Capacity Units (CUs). Storage and inactive resources have separate costs. This is different from Premium’s fixed monthly capacity pricing.While that offers flexibility, many Reddit threads warn that it’s difficult to predict monthly costs, especially during heavy data refreshes or experimentation.</p><p><strong>Power BI Premium, on the other hand, operates on capacity tiers (P-SKUs for enterprises and A-SKUs for embedded scenarios). That means:</strong></p><p>‍</p><div data-rt-embed-type="true"><style>
+
+
+/* Section */
+.blog_scenarios {
+  padding: 10px 0px;
+}
+
+/* Layout */
+.blog_scenarios_wrap {
+  display: flex;
+  gap: 40px;
+  text-align: center;
+}
+
+/* Item */
+.blog_scenarios_item {
+  flex: 1;
+}
+
+/* Icon */
+.blog_scenarios_item img {
+  width: 180px;
+  max-width: 100%;
+  margin-bottom: 20px;
+}
+
+/* Main text */
+.blog_scenarios_item p {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+/* Extra note (only third column) */
+.blog_scenarios_note {
+  margin-top: 14px;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.5;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .blog_scenarios_wrap {
+    flex-direction: column;
+    gap: 32px;
+  }
+}
+</style>
+<section class="blog_scenarios">
+  <div class="blog_scenarios_wrap">
+
+    <div class="blog_scenarios_item">
+      <img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/69626345d1209c601b1a4aae_Fabric-vs.-Power-BI-Premium-Reddit-25-1.png" alt="">
+      <p>You know your monthly cost upfront.</p>
+    </div>
+
+    <div class="blog_scenarios_item">
+      <img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/696263370f0bbc0947f866d9_Fabric-vs.-Power-BI-Premium-Reddit-24.png" alt="">
+      <p>You can share dashboards with unlimited viewers via Embedded.</p>
+    </div>
+
+    <div class="blog_scenarios_item">
+      <img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/6962632ffc4ce4972aff6363_Fabric-vs.-Power-BI-Premium-Reddit-23.png" alt="">
+      <p>You keep workspace-level governance in Premium.</p>
+      <div class="blog_scenarios_note">
+        However, tenant-wide governance still needs Power BI Admin or Fabric Admin Center controls.
+      </div>
+    </div>
+
+  </div>
+</section></div><p>‍</p><p>For most small-to mid-sized teams, this transparency makes Premium more practical. As one Reddit commenter noted:</p><p><strong>“Fabric billing feels like Azure all over again – great flexibility, but you need a finance degree to forecast it.”</strong></p><p>‍</p><figure class="w-richtext-figure-type-image w-richtext-align-fullwidth" style="max-width:895px" data-rt-type="image" data-rt-align="fullwidth" data-rt-max-width="895px"><div><img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/69625fbea4b21786dd93beaf_Where-Pricing-Creates-Confusion.png" loading="lazy" alt="Where Pricing Creates Confusion" width="auto" height="auto"></div></figure><p>‍</p><h3><strong>Power BI Service vs. Fabric Workspace: What Users Actually Experience</strong></h3><p>Reddit users often describe the day-to-day difference between the two environments:</p><p>‍</p><div data-rt-embed-type="true"><style>
+
+/* Section (NO padding here by rule) */
+.blog_compare_workspace {
+}
+
+/* Grid */
+.blog_compare_workspace_wrap {
+  display: flex;
+  gap: 24px;
+}
+
+/* Card base */
+.blog_compare_workspace_card {
+  flex: 1;
+  border-radius: 20px;
+  padding: 28px;
+}
+
+/* Power BI card */
+.blog_compare_workspace_card.powerbi {
+  background: #d7ecf7;
+}
+
+/* Fabric card */
+.blog_compare_workspace_card.fabric {
+  background: #f1ecff;
+}
+
+/* Header */
+.blog_compare_workspace_header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.blog_compare_workspace_header img {
+  width: 40px;
+  height: 40px;
+}
+
+.blog_compare_workspace_header h3 {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+/* List */
+.blog_compare_workspace_list {
+  list-style: none;
+}
+
+.blog_compare_workspace_list li {
+  padding: 14px 0;
+  font-size: 15px;
+  line-height: 1.5;
+  border-top: 1px solid rgba(0,0,0,0.08);
+}
+
+/* Below text */
+.blog_compare_workspace_note {
+  margin-top: 16px;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.blog_compare_workspace_note em {
+  font-style: italic;
+  font-weight: 600;
+}
+	.blog_compare_workspace_card_outer{width: 50%;}
+/* Mobile */
+@media (max-width: 768px) {
+  .blog_compare_workspace_wrap {
+    flex-direction: column;
+  }
+	.blog_compare_workspace_card_outer{width:100%;}
+	
+}
+</style>
+<section class="blog_compare_workspace">
+  <div class="blog_compare_workspace_wrap">
+
+    <!-- Power BI Service -->
+    <div class="blog_compare_workspace_card_outer">
+      <div class="blog_compare_workspace_card powerbi">
+        <div class="blog_compare_workspace_header">
+          <img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/69625d8613feb8022b2635f5_Fabric-vs.-Power-BI-Premium-Reddit-26.png" alt="">
+          <h3>Power BI Service – built for creators and analysts</h3>
+        </div>
+
+        <ul class="blog_compare_workspace_list">
+          <li>Simple drag-and-drop visuals</li>
+          <li>Real-time data exploration</li>
+          <li>Dashboard sharing and collaboration</li>
+          <li>Quick onboarding for non-technical users</li>
+        </ul>
+      </div>
+
+      <div class="blog_compare_workspace_note">
+        One user compared it to <em>“exploring data with Google Maps — fluid, intuitive, and visual.”</em>
+      </div>
+    </div>
+
+    <!-- Fabric Workspace -->
+    <div class="blog_compare_workspace_card_outer">
+      <div class="blog_compare_workspace_card fabric">
+        <div class="blog_compare_workspace_header">
+          <img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/69625d7e328e943ce2a37c24_Fabric-vs.-Power-BI-Premium-Reddit-27.png" alt="">
+          <h3>Fabric Workspace – built for developers and engineers</h3>
+        </div>
+
+        <ul class="blog_compare_workspace_list">
+          <li>
+            Fabric Workspace manages connections, data pipelines, and Lakehouse or Warehouse objects.
+            Dataset creation and visualization usually take place in Power BI Service.
+          </li>
+          <li>Allows advanced control over storage and refreshes</li>
+          <li>Great for automation and multi-environment management</li>
+        </ul>
+      </div>
+
+      <div class="blog_compare_workspace_note">
+        It’s often called a <em>“developer’s playground.”</em> But that power comes with complexity.
+        For teams without engineering expertise, the Fabric Workspace requires additional setup,
+        including permissions, compute control, and environment configuration.
+      </div>
+    </div>
+
+  </div>
+</section></div><p>‍</p><p>‍</p><h3><strong>Integrating Fabric and Power BI Premium</strong></h3><p>Despite their differences, combining both can be transformative.</p><p>Reddit users who have successfully connected Fabric data to Power BI Premium describe major benefits:</p><p>‍</p><div data-rt-embed-type="true"><style>
+
+/* Section */
+.blog_pros_cons {
+  padding: 10px 0px;
+}
+
+/* Layout */
+.blog_pros_cons_wrap {
+  display: flex;
+  gap: 24px;
+}
+
+/* Card base */
+.blog_pros_cons_card {
+  flex: 1;
+  border-radius: 20px;
+  padding: 28px;
+}
+
+/* Advantages */
+.blog_pros_cons_card.advantages {
+  background: #E5F3F4;
+}
+
+/* Challenges */
+.blog_pros_cons_card.challenges {
+  background: #f8eeee;
+}
+
+/* Header */
+.blog_pros_cons_header {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 16px;
+    flex-direction: column;
+}
+
+.blog_pros_cons_header img {
+  width: 40px;
+  height: 40px;
+}
+
+.blog_pros_cons_header h3 {
+  font-size: 20px;
+  font-weight: 700;
+	   
+}
+
+/* List */
+.blog_pros_cons_list {
+  margin-left: 18px;
+  margin-bottom: 16px;
+}
+
+.blog_pros_cons_list li {
+  margin-bottom: 10px;
+  line-height: 1.5;
+  font-size: 15px;
+}
+
+/* Extra text */
+.blog_pros_cons_extra {
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.blog_pros_cons_extra strong {
+  font-weight: 700;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .blog_pros_cons_wrap {
+    flex-direction: column;
+  }
+}
+</style>	
+	
+	
+<section class="blog_pros_cons">
+  <div class="blog_pros_cons_wrap">
+
+    <!-- Advantages -->
+    <div class="blog_pros_cons_card advantages">
+      <div class="blog_pros_cons_header">
+        <img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/69627387ac9edf495c8da9f9_Fabric-vs.-Power-BI-Premium-Reddit-21-96x96.png" alt="">
+        <h3 style="color: #00a587;">Advantages</h3>
+      </div>
+
+      <ul class="blog_pros_cons_list">
+        <li>Real-time access to data pipelines and Lakehouse assets</li>
+        <li>Centralized governance through Fabric’s unified data model</li>
+        <li>Improved collaboration between data engineers and analysts</li>
+      </ul>
+
+      <div class="blog_pros_cons_extra">
+        As one post explained:
+        <br><br>
+        <strong>
+          “We use Power BI to visualize Fabric Lakehouse data. It’s a game changer – no more silos between data prep and reporting.”
+        </strong>
+      </div>
+    </div>
+
+    <!-- Challenges -->
+    <div class="blog_pros_cons_card challenges">
+      <div class="blog_pros_cons_header">
+        <img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/69627393eec7e8d28a9610e9_Fabric-vs.-Power-BI-Premium-Reddit-20-96x96.png" alt="">
+        <h3 style=" color: #f0263c;">Challenges</h3>
+      </div>
+
+      <ul class="blog_pros_cons_list">
+        <li>Steep learning curve in Fabric’s new UX</li>
+        <li>
+          Occasional syncing and refresh delays may happen if the Fabric dataset refresh
+          and the Power BI scheduled refresh overlap. Use staggered scheduling or
+          DirectLake to avoid this issue.
+        </li>
+        <li>Cost spikes for smaller tenants</li>
+      </ul>
+
+      <div class="blog_pros_cons_extra">
+        Overall, Reddit’s consensus is that the integration is powerful,
+        <strong>but not yet seamless.</strong> It’s most effective for large enterprises
+        that can dedicate teams to both environments.
+      </div>
+    </div>
+
+  </div>
+</section></div><p>‍</p><h3><strong>Power BI Embedded: The Real Bridge to Scale</strong></h3><p>Are you feeling lost in the tangled mess of Power BI Pro? You shouldn’t. There’s a promising solution: <strong>‘SaaSify’ your Power BI.</strong></p><figure class="w-richtext-figure-type-image w-richtext-align-floatright" data-rt-type="image" data-rt-align="floatright"><div><img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/69627438608741b4a2fbea23_Power-BI-Embedded-The-Real-Bridge-to-Scale.png" loading="lazy" alt="Power BI Embedded: The Real Bridge to Scale" width="auto" height="auto"></div></figure><p>If Power BI Premium is the engine, <a href="https://thereportinghub.com/power-bi/power-bi-embedded" target="_blank">Power BI Embedded</a><strong> </strong>is the delivery system. It allows developers to add fully interactive Power BI reports into custom apps or portals using service principals and embedded capacity. Viewers don’t need licences, but embedding requires proper API authentication. </p><p>On Reddit, this feature often gets the loudest praise:</p><p><strong>“Embedded let us roll out dashboards to 300 clients overnight without a single Pro license. Total game changer.”</strong></p><p>Embedded uses Azure A-SKUs, starting at about $750 per month for A1. However, pricing varies by region and compute hours. You can also pause capacity to manage costs. It’s predictable, cost-efficient, and developer-friendly.</p><p>‍</p><p>‍</p><h3><strong>Reporting Hub: Power BI Embedded, Simplified</strong></h3><p>For organizations navigating the Fabric vs Premium maze, <strong>Reporting Hub</strong> acts as the clarity layer on top.</p><p>Built on<strong> Power BI Embedded</strong>, Reporting Hub is a <strong>white-label portal </strong>that lets you deliver analytics under your own brand, with zero code and full governance.</p><p>‍<strong>What It Solves</strong></p><div data-rt-embed-type="true"><style>
+
+.blog_feature_list {
+  padding: 10px 0px;
+}
+
+/* Item */
+.blog_feature_item {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  background: #d7ecf7;
+  padding: 22px 24px;
+  border-radius: 18px;
+  margin-bottom: 20px;
+}
+
+/* Icon */
+.blog_feature_item img {
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+}
+
+/* Text */
+.blog_feature_text {
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.blog_feature_text strong {
+  font-weight: 700;
+}
+
+/* Mobile (no structural change, just spacing safety) */
+@media (max-width: 768px) {
+  .blog_feature_item {
+    padding: 20px;
+  }
+}
+</style>	
+	
+<section class="blog_feature_list">
+
+  <div class="blog_feature_item">
+    <img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/6962758cb0d803527bda21ec_Fabric-vs.-Power-BI-Premium-Reddit-18-96x96.png" alt="">
+    <div class="blog_feature_text">
+      <strong>License confusion:</strong> viewers access dashboards without needing a Pro license
+    </div>
+  </div>
+
+  <div class="blog_feature_item">
+    <img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/69627583c1582d367cc1808c_Fabric-vs.-Power-BI-Premium-Reddit-17-96x96.png" alt="">
+    <div class="blog_feature_text">
+      <strong>Governance:</strong> automated role and row-level security built in
+    </div>
+  </div>
+
+  <div class="blog_feature_item">
+    <img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/6962757286f3adc4b3e2dd99_Fabric-vs.-Power-BI-Premium-Reddit-16-96x96.png" alt="">
+    <div class="blog_feature_text">
+      <strong>Branding:</strong> your colors, your logo, your URL
+    </div>
+  </div>
+
+  <div class="blog_feature_item">
+    <img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/6962756b2bc073def4a318ec_Fabric-vs.-Power-BI-Premium-Reddit-15-96x96%20(1).png" alt="">
+    <div class="blog_feature_text">
+      <strong>Deployment:</strong> fully hosted on Azure, in your tenant
+    </div>
+  </div>
+
+  <div class="blog_feature_item">
+    <img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/696276153a6a678c0125b982_Fabric-vs.-Power-BI-Premium-Reddit-14-96x96.png" alt="">
+    <div class="blog_feature_text">
+      <strong>Scalability:</strong> unlimited users, predictable pricing
+    </div>
+  </div>
+
+</section></div><p>‍</p><p>Instead of juggling multiple Power BI workspaces, permissions, and manual sharing, Reporting Hub gives you one secure, branded front-end where all dashboards live.</p><p><strong>“We built a branded analytics portal for clients in days, not months,”</strong></p><p>shared one Reddit user referencing their experience with a white-label Power BI deployment.</p><p>For consulting firms, agencies, and product teams, Reporting Hub turns Power BI into a <strong>SaaS-ready product.</strong></p><p>‍</p><figure class="w-richtext-figure-type-image w-richtext-align-floatleft" data-rt-type="image" data-rt-align="floatleft"><div><img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/6962770e7297f52daca218e3_A-Closer-Look-at-Security-RLS-and-Governance.png" loading="lazy" alt="A Closer Look at Security: RLS and Governance" width="auto" height="auto"></div></figure><h3><strong>A Closer Look at Security: RLS and Governance</strong></h3><p>Reddit discussions frequently highlight <strong>Row-Level Security (RLS)</strong> as one of Power BI Premium’s most valuable enterprise features. It ensures users only see the data relevant to them.</p><p>In contrast, Microsoft Fabric takes a more generalized, dataset-level approach to access control. Fabric supports workspace and item-level permissions, but dataset-level Row-Level Security (RLS) is not fully integrated. Roles must be set up in Power BI or enforced through Azure AD.</p><p>Reporting Hub takes the RLS model even further. Its portal governance layer automatically enforces RLS across every embedded dashboard, so admins don’t need to replicate roles across multiple workspaces. It’s a level of automation the community has long asked Microsoft for.</p><p>‍</p><p>‍</p><h3><strong>Fabric OneLake vs Power BI Datasets: Which Fits Your Use Case</strong></h3><div data-rt-embed-type="true"><style>
+
+/* Section */
+.blog_data_compare {
+  padding: 10px 0px;
+}
+
+/* Layout */
+.blog_data_compare_wrap {
+  display: flex;
+  gap: 24px;
+}
+
+/* Card */
+.blog_data_compare_card {
+  flex: 1;
+  background: #d7ecf7;
+  border-radius: 20px;
+  padding: 28px;
+}
+
+/* Icon */
+.blog_data_compare_card img {
+  width: 44px;
+  height: 44px;
+  margin-bottom: 14px;
+}
+
+/* Title */
+.blog_data_compare_card h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1f8cff;
+  margin-bottom: 10px;
+}
+
+/* Text */
+.blog_data_compare_card p {
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .blog_data_compare_wrap {
+    flex-direction: column;
+  }
+}
+</style>
+<section class="blog_data_compare">
+  <div class="blog_data_compare_wrap">
+
+    <!-- Fabric OneLake -->
+    <div class="blog_data_compare_card">
+      <img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/696277bbe95d5e16d5107648_Fabric-vs.-Power-BI-Premium-Reddit-12-96x96.png" alt="">
+      <h3>Fabric OneLake</h3>
+      <p>
+        A unified data lake built on Delta/Parquet formats that supports both
+        structured and semi-structured data. It’s optimized for petabyte-scale
+        analytics and cross-domain collaboration.
+      </p>
+    </div>
+
+    <!-- Power BI Datasets -->
+    <div class="blog_data_compare_card">
+      <img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/696277c20ebf0de497634478_Fabric-vs.-Power-BI-Premium-Reddit-11-96x96.png" alt="">
+      <h3>Power BI Datasets</h3>
+      <p>
+        Curated semantic models optimized for analysis and visualization. They
+        store relationships, measures, and calculated columns – the logic
+        behind reports.
+      </p>
+    </div>
+
+  </div>
+</section></div><p>‍</p><p><strong>Redditors generally recommend:</strong></p><ul><li>Choose <strong>OneLake</strong> when dealing with large-scale, raw, or semi-structured data that needs to be transformed or shared across domains.</li><li>Choose <strong>Power BI Datasets</strong> when you need semantic models for reporting.</li></ul><p>Many hybrid architectures now combine both ingest and store data in OneLake, build semantic models in Power BI, and share securely via Reporting Hub using Embedded capacity.</p><figure class="w-richtext-figure-type-image w-richtext-align-fullwidth" style="max-width:895px" data-rt-type="image" data-rt-align="fullwidth" data-rt-max-width="895px"><div><img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/6962789ca6e66b24ac4c6db7_Fabric-OneLake-vs-Power-BI-Datasets-Which-Fits-Your-Use-Case.png" loading="lazy" alt="Fabric OneLake vs Power BI Datasets: Which Fits Your Use Case" width="auto" height="auto"></div></figure><p>‍</p><h3><strong>When Consulting Firms Prefer Power BI Premium</strong></h3><p>Reddit’s consulting-focused threads show a clear pattern: Power BI Premium dominates in client-facing reporting because of its simplicity, scalability, and control.</p><p>A few standout user remarks:</p><p><strong>“Premium’s shared datasets saved us from maintaining 40 separate Excel models.”</strong></p><p><strong>“Fabric’s collaboration tools are great, but Power BI is still where the client value lives.”</strong></p><p>Consultants love Premium for its stability. Fabric is still maturing powerful for data engineering workflows, but not yet optimized for external reporting or multi-tenant delivery.</p><p>‍</p><h3><strong>Where Reporting Hub Adds Real-World Value</strong></h3><p><strong>Let’s connect the dots. Across Reddit, three recurring frustrations emerge:</strong></p><p>‍</p><div data-rt-embed-type="true"><style>
+
+/* Item */
+.blog_number_item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+/* Icon */
+.blog_number_item img {
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+}
+
+/* Text */
+.blog_number_text {
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.blog_number_text strong {
+  font-weight: 700;
+}
+</style>
+<section class="blog_number_list">
+
+  <div class="blog_number_item">
+    <img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/69627b0ea0dc00425c98c4cd_Fabric-vs.-Power-BI-Premium-Reddit-8-96x96.png" alt="">
+    <div class="blog_number_text">
+      <strong>Complex licensing</strong> – confusion between Pro, PPU, and Fabric CUs.
+    </div>
+  </div>
+
+  <div class="blog_number_item">
+    <img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/69627b17508dce6a0a426566_Fabric-vs.-Power-BI-Premium-Reddit-7-96x96.png" alt="">
+    <div class="blog_number_text">
+      <strong>Cumbersome sharing</strong> – each external viewer needs setup and permissions.
+    </div>
+  </div>
+
+  <div class="blog_number_item">
+    <img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/69627b1e63129feaade3f297_Fabric-vs.-Power-BI-Premium-Reddit-6-96x96.png" alt="">
+    <div class="blog_number_text">
+      <strong>Governance gaps</strong> – difficulty controlling access across clients and departments.
+    </div>
+  </div>
+
+</section></div><p>‍</p><p><strong>Reporting Hub resolves all three:</strong>‍</p><div data-rt-embed-type="true"><style>
+/* Section */
+.blog_embed_govern {
+  padding: 10px 0px;
+}
+
+/* Grid */
+.blog_embed_govern_wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* Card */
+.blog_embed_govern_item {
+  width: calc(50% - 10px);
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  background: #d7ecf7;
+  border: 2px solid #6fb1ff;
+  border-radius: 16px;
+  padding: 20px 22px;
+}
+
+/* Icon */
+.blog_embed_govern_item img {
+  width: 56px;
+  height: 56px;
+  flex-shrink: 0;
+}
+
+/* Text */
+.blog_embed_govern_text {
+  font-size: 15px;
+  line-height: 1.45;
+  font-weight: 600;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .blog_embed_govern_item {
+    width: 100%;
+  }
+}
+</style>
+	
+<section class="blog_embed_govern">
+  <div class="blog_embed_govern_wrap">
+
+    <div class="blog_embed_govern_item">
+      <img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/69627c3da49fbdc2c65be932_Fabric-vs.-Power-BI-Premium-Reddit-5-48x48.png" alt="">
+      <div class="blog_embed_govern_text">
+        Govern once, share everywhere.
+      </div>
+    </div>
+
+    <div class="blog_embed_govern_item">
+      <img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/69627c347e331b216d02218a_Fabric-vs.-Power-BI-Premium-Reddit-4-48x48.png" alt="">
+      <div class="blog_embed_govern_text">
+        Unlimited external users with Embedded capacity.
+      </div>
+    </div>
+
+    <div class="blog_embed_govern_item">
+      <img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/69627c2e7297f52daca2d834_Fabric-vs.-Power-BI-Premium-Reddit-3-48x48.png" alt="">
+      <div class="blog_embed_govern_text">
+        Automated governance with centralized role-based access control (RBAC)
+        and dynamic Row-Level Security (RLS) propagation across embedded reports.
+      </div>
+    </div>
+
+    <div class="blog_embed_govern_item">
+      <img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/69627c265cf641c203756549_Fabric-vs.-Power-BI-Premium-Reddit-2-48x48.png" alt="">
+      <div class="blog_embed_govern_text">
+        Deploy in your Azure tenant — full compliance and control.
+      </div>
+    </div>
+
+  </div>
+</section></div><p>It’s how Power BI Premium truly becomes a scalable SaaS-ready analytics platform.</p><p>‍</p><h3><strong>When to Use Fabric, Power BI Premium, and Reporting Hub</strong></h3><p>‍</p><figure class="w-richtext-figure-type-image w-richtext-align-fullwidth" style="max-width:1024px" data-rt-type="image" data-rt-align="fullwidth" data-rt-max-width="1024px"><div><img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/69627d05a0dc00425c98f8e2_table_Fabric-vs.-Power-BI-Premium-Reddit-1024x444.png" loading="lazy" alt="__wf_reserved_inherit" width="auto" height="auto"></div></figure><p>The sweet spot for most organizations in 2026 lies in the <strong>Premium + Reporting Hub </strong>combination – Fabric optional.</p><p>‍</p><h3><strong>Conclusion: Clear Strategy Beats More Tools</strong></h3><p>Microsoft Fabric is an ambitious unified SaaS platform designed to streamline data engineering, storage, and analytics workflows.</p><p>‍</p><figure class="w-richtext-figure-type-image w-richtext-align-floatright" style="max-width:50%" data-rt-type="image" data-rt-align="floatright" data-rt-max-width="50%"><div><img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/69627dea741018116eedfe61_Conclusion-Clear-Strategy-Beats-More-Tools.png" loading="lazy" alt="Conclusion: Clear Strategy Beats More Tools" width="auto" height="auto"></div></figure><p>Power BI Premium remains the enterprise engine for creating, modeling, and securely distributing insights at scale. Together they form a strong analytics stack, but only if you have the scale and resources to manage both.</p><p>For most teams today, the immediate win lies in mastering <strong>Power BI Premium</strong> and leveraging <strong>Reporting Hub</strong> to simplify governance, automate sharing, and deliver analytics under your own brand.</p><p>Reddit’s collective advice echoes this:</p><p><strong><em>“Start with what brings value now. Fabric can come later – Power BI Premium plus Embedded already does 90% of what you need.”</em></strong></p><p>‍</p><p>‍</p><p>‍</p><p>If you’re ready to turn that 90% into 100 % – with automated governance, secure sharing, and no license chaos – <strong>Reporting Hub is built for you.</strong></p><p>‍</p><p>‍</p><p>‍</p></div>
+              <nav aria-label="Table of contents" class="blog-post_toc">
+                <div>Table of Contents</div>
+                <div fc-toc="close" class="blog-post_close-toc-overlay"></div>
+                <ol fc-toc-collapse="true" fc-toc="component" role="list" class="blog-post_toc-list"><li class="blog-post_toc-list-item"><a href="#power-bi-premium-the-proven-analytics-engine" fc-toc="h2" class="toc_h2">Power BI Premium: The Proven Analytics Engine</a></li>
+<li class="blog-post_toc-list-item"><a href="#the-reddit-verdict-complementary-not-competing" fc-toc="h2" class="toc_h2">The Reddit Verdict: Complementary, Not Competing</a></li>
+<li class="blog-post_toc-list-item"><a href="#where-pricing-creates-confusion" fc-toc="h2" class="toc_h2">Where Pricing Creates Confusion</a></li>
+<li class="blog-post_toc-list-item"><a href="#power-bi-service-vs-fabric-workspace-what-users-actually-experience" fc-toc="h2" class="toc_h2">Power BI Service vs. Fabric Workspace: What Users Actually Experience</a></li>
+<li class="blog-post_toc-list-item"><a href="#integrating-fabric-and-power-bi-premium" fc-toc="h2" class="toc_h2">Integrating Fabric and Power BI Premium</a></li>
+<li class="blog-post_toc-list-item"><a href="#power-bi-embedded-the-real-bridge-to-scale" fc-toc="h2" class="toc_h2">Power BI Embedded: The Real Bridge to Scale</a></li>
+<li class="blog-post_toc-list-item"><a href="#reporting-hub-power-bi-embedded-simplified" fc-toc="h2" class="toc_h2">Reporting Hub: Power BI Embedded, Simplified</a></li>
+<li class="blog-post_toc-list-item"><a href="#a-closer-look-at-security-rls-and-governance" fc-toc="h2" class="toc_h2">A Closer Look at Security: RLS and Governance</a></li>
+<li class="blog-post_toc-list-item"><a href="#fabric-onelake-vs-power-bi-datasets-which-fits-your-use-case" fc-toc="h2" class="toc_h2">Fabric OneLake vs Power BI Datasets: Which Fits Your Use Case</a></li>
+<li class="blog-post_toc-list-item"><a href="#when-consulting-firms-prefer-power-bi-premium" fc-toc="h2" class="toc_h2">When Consulting Firms Prefer Power BI Premium</a></li>
+</ol>
+                <div class="related-blogs w-dyn-list">
+                  <div role="list" class="related-blogs-list w-dyn-items"><div role="listitem" class="related-blog-item w-dyn-item">
+                      <a href="embedded-analytics-meets-generative-ai-how-saas-teams-monetize-bi-in-2025.html" class="related-blog-link w-inline-block">
+                        <div class="related-blog-wrap"><img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/69600be56fa30d9d91a5f337_Embedded%20Analytics%20Meets%20Generative%20AI%20How%20SaaS%20Teams%20Monetize%20BI%20in%202025.png" loading="lazy" alt="" class="related-blog-img">
+                          <h3 class="related-blogs-h3">Embedded Analytics Meets Generative AI: How SaaS Teams Monetize BI in 2026</h3>
+                        </div>
+                      </a>
+                    </div><div role="listitem" class="related-blog-item w-dyn-item">
+                      <a href="how-to-structure-a-multi-tenant-analytics-delivery-system-without-rebuilding-everything.html" class="related-blog-link w-inline-block">
+                        <div class="related-blog-wrap"><img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/69b03e0ca76a82d19058f954_Structure%20a%20Multi-Tenant%20Analytics%20Delivery.jpg" loading="lazy" alt="" class="related-blog-img">
+                          <h3 class="related-blogs-h3">How to Structure a Multi-Tenant Analytics Delivery System Without Rebuilding Everything</h3>
+                        </div>
+                      </a>
+                    </div><div role="listitem" class="related-blog-item w-dyn-item">
+                      <a href="the-consistency-problem-why-200-customers-shouldnt-get-200-versions-of-the-truth.html" class="related-blog-link w-inline-block">
+                        <div class="related-blog-wrap"><img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/69b3e737a95743b5eab87e49_Picture1.jpg" loading="lazy" alt="" class="related-blog-img">
+                          <h3 class="related-blogs-h3">The Consistency Problem: Why 200 Customers Shouldn't Get 200 Versions of the Truth</h3>
+                        </div>
+                      </a>
+                    </div></div>
+                  
+                </div>
+              </nav>
+              <div fc-toc="active-style" class="u-toc-current-link"></div>
+              <div class="toc-subitems"></div>
+              <div class="toc_script w-embed w-script">
+                <script>
+document.addEventListener('DOMContentLoaded', () => {
+  let preventAutoOpen = false;
+  let suppressNextScrollUpdate = false;
+  const tocWrappers = document.querySelectorAll('[fc-toc="wrapper"]');
+  if (!tocWrappers) return;
+  for (const wrapper of tocWrappers) {
+    // Grab key elements and settings
+    const tocComponent = wrapper.querySelector('[fc-toc="component"]');
+    const tocContent = wrapper.querySelector('[fc-toc="content"]');
+    const activeStyleElement = wrapper.querySelector('[fc-toc="active-style"]');
+    const activeClass = activeStyleElement?.className || '';
+    const debounceMs = 0;
+    const isCollapsible = tocComponent.getAttribute('fc-toc-collapse') === 'true';
+    if (!tocComponent || !tocContent) return;
+    // Map of heading levels to placeholder class names
+    const placeholderLinks = tocComponent.querySelectorAll('[fc-toc]');
+    const headingLevels = new Map();
+    placeholderLinks.forEach(link => {
+      const level = link.getAttribute('fc-toc');
+      const className = link.getAttribute('class') || '';
+      if (/^h[1-6]$/.test(level)) {
+        headingLevels.set(level.toLowerCase(), className);
+      }
+    });
+    // Find all target headings in the content
+    const selector = [...headingLevels.keys()].join(', ');
+    const headings = tocContent.querySelectorAll(selector);
+    // Generate unique IDs for headings
+    const usedIds = new Set();
+    const generateSlug = (text, index) => {
+      let slug = text.toLowerCase()
+        .normalize("NFD").replace(/[̀-ͯ]/g, "")
+        .replace(/[^a-z0-9\s-]/g, '')
+        .replace(/\s+/g, '-')
+        .replace(/-+/g, '-')
+        .replace(/^-|-$/g, '');
+      if (!slug) slug = `heading-${index}`;
+      let uniqueSlug = slug;
+      let count = 1;
+      while (usedIds.has(uniqueSlug)) {
+        uniqueSlug = `${slug}-${count++}`;
+      }
+      usedIds.add(uniqueSlug);
+      return uniqueSlug;
+    };
+    // Assign IDs to headings
+    headings.forEach((heading, index) => {
+      const id = generateSlug(heading.textContent.trim(), index);
+      heading.id = id;
+    });
+    // Build the TOC from placeholder links and real headings
+    let currentParentLi = null;
+    let subList = null;
+    headings.forEach((heading, index) => {
+      const level = heading.tagName.toLowerCase();
+      const className = headingLevels.get(level) || '';
+      const placeholderLink = tocComponent.querySelector(`[fc-toc="${level}"]`);
+      if (!placeholderLink) return;
+      const listItem = placeholderLink.closest('li');
+      if (!listItem) return;
+      const clonedItem = listItem.cloneNode(true);
+      const link = clonedItem.querySelector(`[fc-toc="${level}"]`);
+      if (link) {
+        link.href = `#${heading.id}`;
+        link.textContent = heading.textContent.trim();
+        link.setAttribute('fc-toc-link', level);
+      }
+      if (isCollapsible && level === 'h2') {
+        tocComponent.appendChild(clonedItem);
+        currentParentLi = clonedItem;
+        subList = document.createElement('ul');
+        subList.classList.add('toc-subitems');
+        currentParentLi.appendChild(subList);
+      } else if (isCollapsible && currentParentLi && subList) {
+        subList.appendChild(clonedItem);
+      } else {
+        tocComponent.appendChild(clonedItem);
+      }
+    });
+    // Initially collapse all groups if collapsible
+    if (isCollapsible) {
+      tocComponent.querySelectorAll('.toc-subitems').forEach(group => {
+        group.style.maxHeight = '0';
+      });
+    }
+    // Remove placeholder links
+    placeholderLinks.forEach(link => {
+      const parentLi = link.closest('li');
+      if (parentLi) parentLi.remove();
+    });
+    let debounceTimer;
+    let lastActiveLink = null;
+    let lastActiveGroupWrapper = null;
+    // Scroll TOC and manage group expansion on active link update
+    const scrollToActiveLink = () => {
+      if (suppressNextScrollUpdate) {
+        suppressNextScrollUpdate = false;
+        return;
+      }
+      if (preventAutoOpen) return;
+      const activeLink = tocComponent.querySelector('.w--current');
+      if (!activeLink || activeLink === lastActiveLink) return;
+      tocComponent.querySelectorAll('[fc-toc-link]').forEach(link => {
+        if (activeClass) link.classList.remove(activeClass);
+      });
+      if (activeClass) activeLink.classList.add(activeClass);
+      lastActiveLink = activeLink;
+      tocComponent.scrollBy({
+        top: activeLink.getBoundingClientRect().top - tocComponent.getBoundingClientRect().top - (tocComponent.getBoundingClientRect().height / 2) + (activeLink.getBoundingClientRect().height / 2),
+        behavior: 'smooth'
+      });
+      if (isCollapsible) {
+        const currentLi = activeLink.closest('li');
+        let groupWrapperLi = currentLi;
+        if (currentLi?.parentElement?.classList.contains('toc-subitems')) {
+          groupWrapperLi = currentLi.parentElement.closest('li');
+        }
+        tocComponent.querySelectorAll('li').forEach(li => {
+          const sub = li.querySelector('.toc-subitems');
+          if (
+            sub &&
+            li !== groupWrapperLi &&
+            sub.style.maxHeight !== '0px' &&
+            (!preventAutoOpen || li !== lastActiveGroupWrapper)
+          ) {
+            collapseElement(sub);
+          }
+        });
+        expandElement(groupWrapperLi.querySelector('.toc-subitems'));
+        lastActiveGroupWrapper = groupWrapperLi;
+      }
+    };
+    const debouncedScroll = () => {
+      clearTimeout(debounceTimer);
+      debounceTimer = setTimeout(scrollToActiveLink, debounceMs);
+    };
+    // Observe class changes to trigger scroll update
+    const observer = new MutationObserver(() => {
+      if (!isAutoScrolling) debouncedScroll();
+    });
+    observer.observe(tocComponent, {
+      subtree: true,
+      attributes: true,
+      attributeFilter: ['class']
+    });
+    // Expand group for active link on page load
+    const expandActiveGroupOnLoad = () => {
+      if (!isCollapsible) return;
+      let attempts = 0;
+      const tryExpand = () => {
+        const activeLink = tocComponent.querySelector('.w--current');
+        if (activeLink) {
+          scrollToActiveLink();
+        } else if (++attempts < 20) {
+          setTimeout(tryExpand, 50);
+        }
+      };
+      tryExpand();
+    };
+    // Set up toggle buttons for manual group expansion
+    const setupManualToggles = () => {
+      if (!isCollapsible) return;
+      tocComponent.querySelectorAll('[fc-toc="open-group"]').forEach(toggleBtn => {
+        const subList = toggleBtn.closest('li')?.querySelector('.toc-subitems');
+        if (!subList || subList.children.length === 0) {
+          toggleBtn.style.display = 'none';
+          return;
+        }
+        for (const item of tocComponent.querySelectorAll('li')) {
+        	item.style.display = 'grid';
+          item.style.gridTemplateColumns = '1fr auto';
+        }
+        subList.style.gridColumn = '1 / 3';
+        toggleBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          preventAutoOpen = true;
+          const listItem = toggleBtn.closest('li');
+          if (!listItem) return;
+          const subList = listItem.querySelector('.toc-subitems');
+          if (!subList) return;
+          const isOpen = subList.style.maxHeight !== '0px';
+          const hasActive = listItem.querySelector(`.${activeClass}`);
+          if (isOpen && !hasActive) {
+            collapseElement(subList);
+            if (lastActiveGroupWrapper === listItem) {
+              lastActiveGroupWrapper = null;
+            }
+          } else if (!isOpen) {
+            expandElement(subList);
+            if (
+              lastActiveGroupWrapper &&
+              lastActiveGroupWrapper !== listItem &&
+              !lastActiveGroupWrapper.querySelector(`.${activeClass}`)
+            ) {
+              const previousGroup = lastActiveGroupWrapper.querySelector('.toc-subitems');
+              if (previousGroup) collapseElement(previousGroup);
+            }
+            lastActiveGroupWrapper = listItem;
+          }
+          setTimeout(() => {
+            preventAutoOpen = false;
+          }, 100);
+        });
+      });
+    };
+    expandActiveGroupOnLoad();
+    setupManualToggles();
+    let isAutoScrolling = false;
+    let scrollTimeout;
+    const handleScrollStop = () => {
+      clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(() => {
+        isAutoScrolling = false;
+        debouncedScroll();
+      }, 150);
+    };
+    // Handle anchor clicks and scroll positioning
+    tocComponent.querySelectorAll('a[fc-toc-link]').forEach(link => {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href')?.substring(1);
+        const target = document.getElementById(targetId);
+        if (!target) return;
+        const originalHref = this.getAttribute('href');
+        this.removeAttribute('href');
+        isAutoScrolling = true;
+        window.addEventListener('scroll', handleScrollStop);
+        const rect = target.getBoundingClientRect();
+        const scrollTo = window.scrollY + rect.top - (window.innerHeight / 2) + (rect.height / 2);
+        window.scrollTo({ top: scrollTo, behavior: 'smooth' });
+        const closeToc = document.querySelector('[fc-toc = close]')
+        if(closeToc) closeToc.click()
+        setTimeout(() => {
+          this.setAttribute('href', originalHref);
+        }, 100);
+      });
+    });
+  }
+  // Expand/collapse utility with icon rotation
+  function expandElement(el) {
+    const clone = el.cloneNode(true);
+    clone.style.visibility = 'hidden';
+    clone.style.position = 'absolute';
+    clone.style.height = 'auto';
+    clone.style.maxHeight = 'none';
+    clone.style.pointerEvents = 'none';
+    clone.style.opacity = '0';
+    el.parentElement.appendChild(clone);
+    const fullHeight = clone.scrollHeight;
+    el.parentElement.removeChild(clone);
+    el.style.maxHeight = fullHeight + 'px';
+    const icon = el.closest('li')?.querySelector('[fc-toc="open-group"]');
+    if (icon) {
+      const rotation = icon.getAttribute('fc-toc-rotate') || '180deg';
+      icon.style.transform = `rotate(${rotation}deg)`;
+    }
+  }
+  function collapseElement(el) {
+    el.style.maxHeight = '0px';
+    const icon = el.closest('li')?.querySelector('[fc-toc="open-group"]');
+    if (icon) {
+      icon.style.transform = 'rotate(0deg)';
+    }
+  }
+});
+</script>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="space-7"></div>
+    </div>
+            <section class="footer-section v1 section-2">
+      <div class="container">
+        <div class="foooter-top v1">
+          <div class="footer-left-left">
+            <div class="footer-icon-wrap"><img src="../assets/images/Symbol-1_2.webp" loading="lazy" alt="White Icon" class="icon"></div>
+            <div class="space-1-5"></div>
+            <div class="footer-title-top">Setup your <span class="highlight-text pure-blue">free trial</span> today!</div>
+            <div class="space-1"></div>
+            <p class="paragraph-regular">Get started today with a no-obligation 30-day free trial. The<br>Reporting Hub can be fully deployed to your Azure environment<br>by following our self-serve guided installer. <a href="../install-today.html" class="span-link">Learn more</a>
+            </p>
+            <div class="space-2"></div>
+            <div class="button-wrap left">
+              <a href="../install-today.html" class="button color-blue w-inline-block">
+                <div>Install Today</div>
+              </a>
+              <a href="../contact.html" class="button bg-transparent text-blue w-inline-block">
+                <div>Get in Touch</div><img src="../assets/images/Symbol-7.webp" loading="lazy" alt="Arrow" class="button-arrow">
+              </a>
+            </div>
+          </div>
+          <div class="footer-image-wrap"><img src="../assets/images/dashboard-trial-new-1_1.webp" loading="lazy" width="Auto" alt="Power Bi Dashboard" sizes="100vw" srcset="../assets/images/dashboard-trial-new-1_1-p-500.webp 500w, ../assets/images/dashboard-trial-new-1_1-p-800.webp 800w, ../assets/images/dashboard-trial-new-1_1-p-1080.webp 1080w, ../assets/images/dashboard-trial-new-1_1-p-1600.webp 1600w, ../assets/images/dashboard-trial-new-1_1-p-2000.webp 2000w, ../assets/images/dashboard-trial-new-1_1-p-2600.webp 2600w, ../assets/images/dashboard-trial-new-1_1-p-3200.webp 3200w, ../assets/images/dashboard-trial-new-1_1.webp 3936w" class="footer-image"></div>
+        </div>
+      </div>
+      <div class="space-5"></div>
+      <div class="w-layout-blockcontainer container w-container">
+        <div class="footer-component">
+          <div class="w-layout-grid footer-grid-wrap">
+            <div class="footer-left-call">
+              <div class="font-0-9">Contact US</div>
+              <div class="footer-menu-left">
+                <div class="footer-menu-group"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 15 12" fill="none" class="social-icon">
+                    <g clip-path="url(#clip0_9006_2830)">
+                      <path d="M1.52344 2.61654C1.52344 2.26292 1.66392 1.92378 1.91396 1.67373C2.16401 1.42368 2.50315 1.2832 2.85677 1.2832H12.1901C12.5437 1.2832 12.8828 1.42368 13.1329 1.67373C13.3829 1.92378 13.5234 2.26292 13.5234 2.61654M1.52344 2.61654V9.2832C1.52344 9.63683 1.66392 9.97596 1.91396 10.226C2.16401 10.476 2.50315 10.6165 2.85677 10.6165H12.1901C12.5437 10.6165 12.8828 10.476 13.1329 10.226C13.3829 9.97596 13.5234 9.63683 13.5234 9.2832V2.61654M1.52344 2.61654L7.52344 6.61654L13.5234 2.61654" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </g>
+                  </svg>
+                  <a href="mailto:info@thereportinghub.com?subject=You've%20got%20an%20email" class="footer-link">info@thereportinghub.com</a>
+                </div>
+                <div class="footer-menu-group"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 17 18" fill="none" class="social-icon">
+                    <path d="M3.85938 6.75618C3.85938 4.35756 5.94871 2.41309 8.52603 2.41309C11.1033 2.41309 13.1927 4.35756 13.1927 6.75618C13.1927 9.13601 11.7032 11.913 9.37942 12.9061C8.83769 13.1376 8.21439 13.1376 7.67267 12.9061C5.34882 11.913 3.85938 9.13601 3.85938 6.75618Z" stroke="currentColor" stroke-width="1.5"></path>
+                    <path d="M9.85417 7.0804C9.85417 7.81678 9.25722 8.41373 8.52084 8.41373C7.78446 8.41373 7.1875 7.81678 7.1875 7.0804C7.1875 6.34402 7.78446 5.74707 8.52084 5.74707C9.25722 5.74707 9.85417 6.34402 9.85417 7.0804Z" stroke="currentColor" stroke-width="1.5"></path>
+                    <path d="M14.4997 11.4131C14.9433 11.8147 15.1927 12.2675 15.1927 12.7464C15.1927 14.4033 12.2079 15.7464 8.52603 15.7464C4.84414 15.7464 1.85938 14.4033 1.85938 12.7464C1.85938 12.2675 2.10878 11.8147 2.55234 11.4131" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+                  </svg>
+                  <div class="max-width-11">
+                    <a href="https://maps.google.com/?q=707+7th+Avenue+SW+Calgary+AB+Canada+T2P+3H6" target="_blank" rel="noopener" class="footer-link">1150, 707 - 7th Avenue SW Calgary, AB Canada T2P 3H6</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="footer-call">
+              <div class="font-0-9">Website</div>
+              <div class="footer-menu-main">
+                <a href="../index.html" class="footer-link">Home</a>
+                <a href="../aaas.html" class="footer-link">AaaS Platform</a>
+                <a href="../pricing.html" class="footer-link">Pricing</a>
+                <a href="../learn-more.html" class="footer-link">What is Reporting Hub?</a>
+                <a href="../demo.html" class="footer-link">Demo</a>
+                <a href="../install-today.html" class="footer-link">Install Today</a>
+                <a href="../about-us.html" class="footer-link">About Us</a>
+                <a href="../contact.html" class="footer-link">Contact Us</a>
+              </div>
+            </div>
+            <div class="footer-call">
+              <div class="font-0-9">theHUB</div>
+              <div class="footer-menu-main">
+                <a href="https://docs.thereportinghub.com/" class="footer-link">Knowledge Center</a>
+                <a href="../blog.html" class="footer-link">Our Blog</a>
+                <a href="../power-bi.html" class="footer-link">About Power BI</a>
+                <a href="https://support.thereportinghub.com/support/home" class="footer-link">Get Support</a>
+                <a href="../support-plans.html" class="footer-link">Support Plans</a>
+                <a href="../policies.html" class="footer-link">Policies</a>
+                <a href="/policies#rh-terms" class="footer-link">Terms of Service</a>
+              </div>
+            </div>
+          </div>
+          <a href="#btt" class="direction-button w-inline-block"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 52 53" fill="none" class="button-icon">
+              <g clip-path="url(#clip0_9006_2933)">
+                <path d="M0 26.1602C0 40.5196 11.6406 52.1602 26 52.1602C40.3594 52.1602 52 40.5196 52 26.1602C52 11.8008 40.3594 0.160156 26 0.160156C11.6406 0.160156 0 11.8008 0 26.1602Z" fill="white" fill-opacity="0.1"></path>
+                <path d="M32.704 28.6752C33.1627 29.1422 33.9152 29.1422 34.3739 28.6752C34.8212 28.2199 34.8212 27.4902 34.3739 27.0348L26.7165 19.2396C26.3246 18.8407 25.6817 18.8407 25.2898 19.2396L17.6323 27.0348C17.1851 27.4902 17.1851 28.2199 17.6323 28.6752C18.0911 29.1422 18.8436 29.1422 19.3023 28.6752L25.2898 22.58C25.6817 22.181 26.3246 22.181 26.7165 22.58L32.704 28.6752Z" fill="currentColor" class="white"></path>
+              </g>
+            </svg></a>
+        </div>
+      </div>
+      <div class="space-3"></div>
+      <div class="global-line"></div>
+      <div class="footer-bottom">
+        <div class="space-3"></div>
+        <div class="w-layout-blockcontainer container w-container">
+          <div class="footer-bottom-contents">
+            <a href="../index.html" class="footer-left w-inline-block"><img src="../assets/images/rh-horizontal-white.svg" loading="lazy" alt="" class="image-small">
+              <div class="text-color-white margin-top-10">Microsoft partner</div>
+            </a>
+            <div class="footer-right">
+              <div class="new-footer-wrap">
+                <div class="font-0-9 text-align-right left-mobile">
+                  <a href="mailto:info@thereportinghub.com?subject=You've%20got%20email" class="link-8"><span class="text-span-2">info@thereportinghub.com</span></a>
+                </div>
+                <div class="social-media-wrap">
+                  <a href="https://www.facebook.com/people/The-Reporting-Hub/100064582883104/" class="social-media-link w-inline-block"><img src="../assets/images/fb.svg" loading="lazy" alt="" class="social-media-icon"></a>
+                  <a href="https://www.linkedin.com/company/the-reporting-hub/" class="social-media-link w-inline-block"><img src="../assets/images/in.svg" loading="lazy" alt="" class="social-media-icon"></a>
+                  <a href="https://x.com/thereportinghub" class="social-media-link w-inline-block"><img src="../assets/images/tw.svg" loading="lazy" alt="" class="social-media-icon"></a>
+                  <a href="https://www.instagram.com/thereportinghub/" class="social-media-link w-inline-block"><img src="../assets/images/insta.svg" loading="lazy" alt="" class="social-media-icon"></a>
+                </div>
+              </div>
+              <div class="font-0-9 text-align-right margin-top-16">2025 All Rights Reserved | The Reporting Hub</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  
+  
+  
+  
+  <!--  Google Tag Manager (noscript)  -->
+  <noscript><iframe src="https://ss.thereportinghub.com/ns.html?id=GTM-MM9W9FH" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!--  End Google Tag Manager (noscript)  -->
+  <script>
+(function () {
+  function cssEscapeSafe(s) {
+    try { return CSS.escape(s); } catch (e) { return s.replace(/["\\]/g, "\\$&"); }
+  }
+  function normalizeTarget(target) {
+    // ✅ Ako ti URL i dalje dolazi kao #bi-genius-terms, mapiraj ga na rh-terms
+    if (target === "bi-genius-terms") return "rh-terms";
+    return target;
+  }
+  function openTabFromHash() {
+    var hash = window.location.hash;
+    if (!hash) return;
+    var target = hash.slice(1);
+    if (!target) return;
+    target = normalizeTarget(target);
+    // 1) traži custom data-tab="..."
+    var sel = '[data-tab="' + cssEscapeSafe(target) + '"]';
+    var el = document.querySelector(sel);
+    // 2) fallback: traži direktno webflow tab link po data-w-tab
+    var tabLink = null;
+    if (el) {
+      tabLink = (el.classList && el.classList.contains('w-tab-link'))
+        ? el
+        : (el.querySelector ? el.querySelector('.w-tab-link') : null);
+    }
+    if (!tabLink) {
+      tabLink = document.querySelector('.w-tab-link[data-w-tab="' + cssEscapeSafe(target) + '"]');
+    }
+    // 3) extra fallback: ako target == rh-terms, probaj naći BILO KOJI element sa data-tab="rh-terms"
+    // (ovo ti je “hard fix” da 100% radi)
+    if (!tabLink && target === "rh-terms") {
+      tabLink = document.querySelector('[data-tab="rh-terms"].w-tab-link, .w-tab-link[data-tab="rh-terms"]');
+    }
+    if (!tabLink) return;
+    var tries = 0;
+    (function tryClick() {
+      tries++;
+      tabLink.click();
+      if (!tabLink.classList.contains('w--current') && tries < 20) {
+        setTimeout(tryClick, 100);
+      }
+    })();
+  }
+  document.addEventListener('DOMContentLoaded', openTabFromHash);
+  window.addEventListener('hashchange', openTabFromHash);
+})();
+</script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var youtubeIframes = document.querySelectorAll('iframe.lazyiframe');
+        youtubeIframes.forEach(function (youtubeIframe) {
+            var dataSrcValue = youtubeIframe.getAttribute('data-src');
+            if (dataSrcValue) {
+                youtubeIframe.setAttribute('src', dataSrcValue);
+                youtubeIframe.removeAttribute('data-src');
+            }
+        });
+    });
+</script>
+  
+  
+  
+
+<script src="../assets/js/main.js"></script>
+</body></html>

@@ -1,0 +1,1396 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="utf-8">
+  <title>How to Audit Your External Analytics Delivery for Scale Readiness</title>
+  <meta content="Learn how to evaluate your analytics delivery infrastructure against growth benchmarks to ensure it can scale without breaking." name="description">
+  <meta content="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/69cd73430b9cefbe82f556cb_How%20to%20Audit%20Your%20External%20Analytics%20Delivery%20for%20Scale%20Readiness.jpg" property="og:image">
+  <meta content="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/69cd73430b9cefbe82f556cb_How%20to%20Audit%20Your%20External%20Analytics%20Delivery%20for%20Scale%20Readiness.jpg" property="twitter:image">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&amp;display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link href="../assets/css/base.css" rel="stylesheet" type="text/css">
+  <link href="../assets/css/styles.css" rel="stylesheet" type="text/css">
+
+  <!-- Favicon -->
+  <link href="../assets/images/favicon.ico" rel="shortcut icon" type="image/x-icon">
+  <link href="../assets/images/webclip.png" rel="apple-touch-icon">
+
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async="" defer=""></script></head>
+<body>
+  <div id="trtb" class="page-wrapper">
+    <html><head></head><body><html><head></head><body><html><head></head><body><div data-animation="default" class="navbar w-nav" data-easing2="ease" data-easing="ease" data-collapse="medium" role="banner" data-duration="400" id="nav">
+      <div class="navbar-continer w-container">
+        <div class="nav-item-wrap">
+          <a href="../index.html" class="brand w-nav-brand"><img src="../assets/images/rh-horizontal-white.svg" loading="eager" alt="" class="nav-brand-logo one"><img src="../assets/images/logo_white.svg" loading="lazy" alt="" class="nav-brand-logo two"></a>
+          <nav role="navigation" class="navigation w-nav-menu">
+            <a href="../index.html" class="nav-link w-nav-link">Home</a>
+            <div data-hover="false" data-delay="300" class="uui-navbar01_menu-dropdown w-dropdown">
+              <div class="uui-navbar01_dropdown-toggle w-dropdown-toggle">
+                <div class="uui-dropdown-icon w-embed"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg></div>
+                <div class="nav-link padding-right-0-25">Platform</div>
+              </div>
+              <nav class="uui-navbar01_dropdown-list w-dropdown-list">
+                <div class="uui-navbar01_container">
+                  <div class="uui-navbar01_dropdown-content">
+                    <div class="uui-navbar01_dropdown-content-left is-platform">
+                      <div class="uui-navbar01_dropdown-link-list">
+                        <h4 class="uui-navbar01_heading text-color-white">Platform</h4>
+                        <a href="../learn-more.html" class="uui-navbar01_dropdown-link w-inline-block">
+                          <div class="uui-navbar01_icon-wrapper"><img src="../assets/images/logo-white.svg" loading="lazy" alt="Bi White logo" class="icon-xsmall"></div>
+                          <div class="uui-navbar01_item-right">
+                            <div class="uui-navbar01_item-heading">Reporting Hub</div>
+                            <div class="uui-text-size-small hide-mobile-landscape">Custom-branded Power BI reporting delivery for teams and analytics clients</div>
+                          </div>
+                        </a>
+                      </div>
+                      <div class="uui-navbar01_dropdown-link-list is-bottom">
+                        <h4 class="uui-navbar01_heading opacity-0">Company</h4>
+                        <a href="../bi-genius.html" class="uui-navbar01_dropdown-link w-inline-block">
+                          <div class="uui-navbar01_icon-wrapper"><img src="../assets/images/new-bi-megamenu-logo-white.svg" loading="lazy" alt="Power Bi Megamenu white logo" class="icon-xsmall small"></div>
+                          <div class="uui-navbar01_item-right">
+                            <div class="uui-navbar01_item-heading">BI Genius</div>
+                            <div class="uui-text-size-small hide-mobile-landscape">Add-on fully customizable AI agents that drive insights with full transparency and control</div>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                    <div class="uui-navbar01_dropdown-content-right">
+                      <div class="uui-navbar01_dropdown-content-wrapper">
+                        <div class="blog-items-wrapper">
+                          <h4 class="uui-navbar01_dropdown-content-heading text-color-white">Latest from our blog</h4>
+                          <a href="../blog.html" class="uui-button-link is-button-xsmall w-inline-block">
+                            <div class="color_primary">See all posts ➝</div>
+                          </a>
+                        </div>
+                        <div class="w-dyn-list">
+                          <div role="list" class="uui-navbar01_dropdown-blog-list w-dyn-items"><div role="listitem" class="w-dyn-item">
+                              <a href="../blog/how-to-audit-your-external-analytics-delivery-for-scale-readiness.html" class="uui-navbar01_blog-item w-inline-block">
+                                <div class="uui-navbar01_blog-image-wrapper"><img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/69cd73430b9cefbe82f556cb_How%20to%20Audit%20Your%20External%20Analytics%20Delivery%20for%20Scale%20Readiness.jpg" loading="eager" alt="" class="uui-navbar01_blog-image"></div>
+                                <div class="uui-navbar01_large-item-content">
+                                  <div class="uui-navbar01_item-heading">How to Audit Your External Analytics Delivery for Scale Readiness</div>
+                                  <div class="uui-navbar01_item-button-wrapper">
+                                    <div class="uui-button-row">
+                                      <div class="uui-button-link is-button-xsmall">
+                                        <div class="color_primary">Learn More ➝</div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </a>
+                            </div><div role="listitem" class="w-dyn-item">
+                              <a href="../blog/the-real-cost-of-manual-report-distribution-a-framework-for-analytics-leaders.html" class="uui-navbar01_blog-item w-inline-block">
+                                <div class="uui-navbar01_blog-image-wrapper"><img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/69cd68937a2e494d59815dfa_The%20Real%20Cost%20of%20Manual%20Report%20Distribution%20A%20Framework%20for%20Analytics%20Leaders.jpg" loading="eager" alt="" class="uui-navbar01_blog-image"></div>
+                                <div class="uui-navbar01_large-item-content">
+                                  <div class="uui-navbar01_item-heading">The Real Cost of Manual Report Distribution: A Framework for Analytics Leaders</div>
+                                  <div class="uui-navbar01_item-button-wrapper">
+                                    <div class="uui-button-row">
+                                      <div class="uui-button-link is-button-xsmall">
+                                        <div class="color_primary">Learn More ➝</div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </a>
+                            </div><div role="listitem" class="w-dyn-item">
+                              <a href="../blog/7-best-ways-to-share-power-bi-reports-with-external-users.html" class="uui-navbar01_blog-item w-inline-block">
+                                <div class="uui-navbar01_blog-image-wrapper"><img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/69c6b68337f93532ba00256c_7%20Best%20Ways%20To%20Share%20Power%20BI%20Reports%20With%20External%20Users.jpg" loading="eager" alt="" class="uui-navbar01_blog-image"></div>
+                                <div class="uui-navbar01_large-item-content">
+                                  <div class="uui-navbar01_item-heading">7 Best Ways To Share Power BI Reports With External Users</div>
+                                  <div class="uui-navbar01_item-button-wrapper">
+                                    <div class="uui-button-row">
+                                      <div class="uui-button-link is-button-xsmall">
+                                        <div class="color_primary">Learn More ➝</div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </a>
+                            </div></div>
+                          
+                        </div>
+                      </div>
+                      <div class="uui-navbar01_dropdown-right-overlay-absolute"></div>
+                    </div>
+                  </div>
+                </div>
+              </nav>
+            </div>
+            <a href="../pricing.html" class="nav-link w-nav-link">Pricing</a>
+            <a href="../aaas.html" class="nav-link w-nav-link">AaaS Platform</a>
+            <div data-hover="false" data-delay="300" class="uui-navbar01_menu-dropdown w-dropdown">
+              <div class="uui-navbar01_dropdown-toggle w-dropdown-toggle">
+                <div class="uui-dropdown-icon w-embed"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg></div>
+                <div class="nav-link padding-right-0-25">Learn</div>
+              </div>
+              <nav class="uui-navbar01_dropdown-list w-dropdown-list">
+                <div class="uui-navbar01_container">
+                  <div class="uui-navbar01_dropdown-content">
+                    <div class="nav-items">
+                      <h4 class="uui-navbar01_heading large text-color-white">Learn</h4>
+                      <div class="uui-navbar01_dropdown-content-left">
+                        <div class="uui-navbar01_dropdown-link-list">
+                          <a href="https://docs.thereportinghub.com/?_gl=1*11en80c*_gcl_au*MjEyNTAwMzM0MC4xNzYwMDIyNzYzLjE5Nzk0NzY1MjguMTc2MjEwODgzNS4xNzYyMTA4ODM1*_ga*MzgyNDA3NDAxLjE3NjAwMjI3NjM." target="_blank" class="uui-navbar01_dropdown-link w-inline-block">
+                            <div class="uui-navbar01_icon-wrapper"><img src="../assets/images/Knowledge-Centre_icon.webp" loading="lazy" alt="" class="nav-image"></div>
+                            <div class="uui-navbar01_item-right">
+                              <div class="uui-navbar01_item-heading">Knowledge Center<br></div>
+                              <div class="uui-text-size-small hide-mobile-landscape">All the information you need to master B.I. delivery</div>
+                            </div>
+                          </a>
+                          <a href="../community.html" class="uui-navbar01_dropdown-link is-auto w-inline-block">
+                            <div class="uui-navbar01_icon-wrapper"><img src="../assets/images/About-Us_icon-1.webp" loading="lazy" alt="" class="nav-image"></div>
+                            <div class="uui-navbar01_item-right">
+                              <div class="uui-navbar01_item-heading">Community</div>
+                              <div class="uui-text-size-small hide-mobile-landscape">Connect and collaborate with active users</div>
+                            </div>
+                          </a>
+                        </div>
+                        <div class="uui-navbar01_dropdown-link-list">
+                          <h4 class="uui-navbar01_heading opacity-0">Company</h4>
+                          <a href="https://docs.thereportinghub.com/getting-started/deployment-step-by-step/self-serve-guided-install?_gl=1*1nvpg97*_gcl_au*MjEyNTAwMzM0MC4xNzYwMDIyNzYzLjE5Nzk0NzY1MjguMTc2MjEwODgzNS4xNzYyMTA4ODM1*_ga*MzgyNDA3NDAxLjE3NjAwMjI3NjM." target="_blank" class="uui-navbar01_dropdown-link w-inline-block">
+                            <div class="uui-navbar01_icon-wrapper"><img src="../assets/images/Getting-Started_icon.webp" loading="lazy" alt="" class="nav-image"></div>
+                            <div class="uui-navbar01_item-right">
+                              <div class="uui-navbar01_item-heading">Getting Started</div>
+                              <div class="uui-text-size-small hide-mobile-landscape">Step-by-step guides to get started with the Reporting Hub<br></div>
+                            </div>
+                          </a>
+                          <a href="https://www.youtube.com/@thereportinghub" class="uui-navbar01_dropdown-link is-auto w-inline-block">
+                            <div class="uui-navbar01_icon-wrapper"><img src="../assets/images/Video-Demos_icon.webp" loading="lazy" alt="" class="nav-image"></div>
+                            <div class="uui-navbar01_item-right">
+                              <div class="uui-navbar01_item-heading">Video Demos</div>
+                              <div class="uui-text-size-small hide-mobile-landscape">Our YouTube channel with helpful video demos</div>
+                            </div>
+                          </a>
+                        </div>
+                        <div id="w-node-a91421d3-b46b-1701-6a19-a49d5ae9c96d-17890035" class="uui-navbar01_dropdown-link-list flex">
+                          <h4 class="uui-navbar01_heading opacity-0 none">Company</h4>
+                          <a href="../resources.html" class="uui-navbar01_dropdown-link w-inline-block">
+                            <div class="uui-navbar01_icon-wrapper"><img src="../assets/images/Resources.webp" loading="lazy" alt="" class="nav-image"></div>
+                            <div class="uui-navbar01_item-right">
+                              <div class="uui-navbar01_item-heading">Resources</div>
+                              <div class="uui-text-size-small hide-mobile-landscape">Videos, white papers, and assets about Reporting Hub</div>
+                            </div>
+                          </a>
+                          <a href="https://support.thereportinghub.com/support/home" target="_blank" class="uui-navbar01_dropdown-link is-auto w-inline-block">
+                            <div class="uui-navbar01_icon-wrapper"><img src="../assets/images/Get-Help_icon.webp" loading="lazy" alt="" class="nav-image"></div>
+                            <div class="uui-navbar01_item-right">
+                              <div class="uui-navbar01_item-heading">Get Help</div>
+                              <div class="uui-text-size-small hide-mobile-landscape">Our Support team is here to help</div>
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+                      <div class="uui-navbar01_dropdown-content-left pt-0">
+                        <div class="uui-navbar01_dropdown-link-list one-item">
+                          <h4 class="uui-navbar01_heading large text-color-white">Services</h4>
+                          <a href="../partners.html" class="uui-navbar01_dropdown-link w-inline-block">
+                            <div class="uui-navbar01_icon-wrapper"><img src="../assets/images/Knowledge-Centre_icon.webp" loading="lazy" alt="" class="nav-image"></div>
+                            <div class="uui-navbar01_item-right">
+                              <div class="uui-navbar01_item-heading">Partner Programs<br></div>
+                              <div class="uui-text-size-small hide-mobile-landscape">Find or become a Reporting Hub Partner</div>
+                            </div>
+                          </a>
+                        </div>
+                        <div class="uui-navbar01_dropdown-link-list is-bottom">
+                          <h4 class="uui-navbar01_heading opacity-0">Company</h4>
+                          <a href="../professionalservices.html" class="uui-navbar01_dropdown-link w-inline-block">
+                            <div class="uui-navbar01_icon-wrapper"><img src="../assets/images/Professional-Services_icon.webp" loading="lazy" alt="" class="nav-image"></div>
+                            <div class="uui-navbar01_item-right">
+                              <div class="uui-navbar01_item-heading">Professional Services</div>
+                              <div class="uui-text-size-small hide-mobile-landscape">Get premium support from our team of experts</div>
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="uui-navbar01_dropdown-content-right">
+                      <div class="uui-navbar01_dropdown-content-wrapper">
+                        <div class="blog-items-wrapper">
+                          <h4 class="uui-navbar01_dropdown-content-heading text-color-white">Latest from our blog</h4>
+                          <a href="../blog.html" class="uui-button-link is-button-xsmall w-inline-block">
+                            <div class="color_primary">See all posts ➝</div>
+                          </a>
+                        </div>
+                        <div class="w-dyn-list">
+                          <div role="list" class="uui-navbar01_dropdown-blog-list w-dyn-items"><div role="listitem" class="w-dyn-item">
+                              <a href="../blog/how-to-audit-your-external-analytics-delivery-for-scale-readiness.html" class="uui-navbar01_blog-item w-inline-block">
+                                <div class="uui-navbar01_blog-image-wrapper"><img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/69cd73430b9cefbe82f556cb_How%20to%20Audit%20Your%20External%20Analytics%20Delivery%20for%20Scale%20Readiness.jpg" loading="eager" alt="" class="uui-navbar01_blog-image"></div>
+                                <div class="uui-navbar01_large-item-content">
+                                  <div class="uui-navbar01_item-heading">How to Audit Your External Analytics Delivery for Scale Readiness</div>
+                                  <div class="uui-navbar01_item-button-wrapper">
+                                    <div class="uui-button-row">
+                                      <div class="uui-button-link is-button-xsmall">
+                                        <div class="color_primary">Learn More ➝</div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </a>
+                            </div><div role="listitem" class="w-dyn-item">
+                              <a href="../blog/the-real-cost-of-manual-report-distribution-a-framework-for-analytics-leaders.html" class="uui-navbar01_blog-item w-inline-block">
+                                <div class="uui-navbar01_blog-image-wrapper"><img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/69cd68937a2e494d59815dfa_The%20Real%20Cost%20of%20Manual%20Report%20Distribution%20A%20Framework%20for%20Analytics%20Leaders.jpg" loading="eager" alt="" class="uui-navbar01_blog-image"></div>
+                                <div class="uui-navbar01_large-item-content">
+                                  <div class="uui-navbar01_item-heading">The Real Cost of Manual Report Distribution: A Framework for Analytics Leaders</div>
+                                  <div class="uui-navbar01_item-button-wrapper">
+                                    <div class="uui-button-row">
+                                      <div class="uui-button-link is-button-xsmall">
+                                        <div class="color_primary">Learn More ➝</div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </a>
+                            </div><div role="listitem" class="w-dyn-item">
+                              <a href="../blog/7-best-ways-to-share-power-bi-reports-with-external-users.html" class="uui-navbar01_blog-item w-inline-block">
+                                <div class="uui-navbar01_blog-image-wrapper"><img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/69c6b68337f93532ba00256c_7%20Best%20Ways%20To%20Share%20Power%20BI%20Reports%20With%20External%20Users.jpg" loading="eager" alt="" class="uui-navbar01_blog-image"></div>
+                                <div class="uui-navbar01_large-item-content">
+                                  <div class="uui-navbar01_item-heading">7 Best Ways To Share Power BI Reports With External Users</div>
+                                  <div class="uui-navbar01_item-button-wrapper">
+                                    <div class="uui-button-row">
+                                      <div class="uui-button-link is-button-xsmall">
+                                        <div class="color_primary">Learn More ➝</div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </a>
+                            </div></div>
+                          
+                        </div>
+                      </div>
+                      <div class="uui-navbar01_dropdown-right-overlay-absolute"></div>
+                    </div>
+                  </div>
+                </div>
+              </nav>
+            </div>
+            <a href="../demo.html" class="nav-link w-nav-link">Demo</a>
+            <a href="../install-today.html" class="nav-link w-nav-link">Install</a>
+            <a href="../about-us.html" class="nav-link w-nav-link">About Us</a>
+            <a href="../contact.html" class="nav-link w-nav-link">Contact Us</a>
+          </nav>
+          <div class="menu-button w-nav-button">
+            <div class="w-icon-nav-menu"></div>
+          </div>
+        </div>
+      </div>
+    </div></body></html></body></html></body></html>
+    <div class="main">
+      <section class="section blog-hero">
+        <div class="w-layout-blockcontainer container w-container">
+          <div class="blog-hero-contents">
+            <div class="blog-hero-left"><img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/69cd73430b9cefbe82f556cb_How%20to%20Audit%20Your%20External%20Analytics%20Delivery%20for%20Scale%20Readiness.jpg" loading="lazy" alt="" class="human-centered-image"></div>
+            <div>
+              <h1 class="heading-2">How to Audit Your External Analytics Delivery for Scale Readiness</h1>
+              <a href="../https://thereportinghub.com/author/brian-d" class="writer-image-wrap w-inline-block"><img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/69a99a578c71f856bd49e336_691d5c42a10399b97686cc51_DSC00077-768x768.webp" loading="lazy" alt="" class="writer-image">
+                <div class="text-color-gray">Brian DeLuca</div>
+              </a>
+              <div>
+                <div class="space-1"></div>
+                <div class="text-color-gray">January 30, 2026</div>
+                <div class="space-1"></div>
+                <div class="time-icon"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFoAAABaCAYAAAA4qEECAAAACXBIWXMAAAsTAAALEwEAmpwYAAAD8klEQVR4nO2dSWsVQRDHC4wbil7VCCLiF4h6UjGIelUPKrhhNHpJIG7BqzeXUwj4NeJ2UPQDCBKNmosX9eKCZvVkBONPirTwxPdetl5qZvoH7zLMTHf9mdfTVV1dI5LJZDKZTCaTyWQymbkBLAF2AOeA28A94A3wDhgHfrrfuDv2xp1zy12zXe8xx+aqBbARuAg8BL6zeCaBB0AP0CpVBlgJnAKeAtOE4xfwBDgJrJCqAKx2T9on4vMNuA6slbICLAV6gTHSo324on2SMgHsBoaxx1tgnxQdHROBO8BvD6JMuadwnftddccWi/atH1guRQTYCrzEH1fqtKFDkS8GgS1SJPTv6GmaVsu6Ou2sxy86LdwrRQA4DPzwLABN2vONOkPHxDLAhVBzYmncZgjUhvNiEeCQcw6CII3bJaDYR8USOq55mgE0pEnbIdFh5IAYml34fvH9R5P2QzOZfDaic0/gRQRjadKHGAwmnWc7ZyQK0rgPseiPq+6/brUPj29ONOlHLNTWPbFFbgFeRzQSA0Lj4jXxAlGeXd8iCa1cihlPHq2w0KOqQQyhryUwDkNC1w1whQh7fk5hmdgS+osuxYUU+nQiwzAmtHI8pNC6kJoEsSf0o1Ait4YMGhVQ6OkgqQwu7yIZYk9opTuE0JrckgyxKfRAiDStiZQWiU2hJ7ymn7lcuKSITaGVbT6F7kxtjdgVusOn0JrVmRSxK/QNn0LfT22N2BXa3wsxdki0YEIP+RT6w0LTt7x1ogGk5734YgFh0bDRrRpIz4j4wi27z4fgT/JfSM+UJBR6vbfGZ4GSCT3foaPXW+OzQMmGjoW8DHtjPNmU7GWYfHpnmKFSOSyGGSiVC24Yry647kjN1OdMqcKkhmkrVeDfKH4D/05s3VudCbmU5YTWbcWZf+kKIfSGlOkGBvkVLKbjqgRkQibQOKG17EMmQkrYikTlH6wRNskxVRK6QS4HFdkJvUpDg1SX0SiJ6E5sXQ+sKj1RRK7ZLPSK6jEcvWoNsCvm9jcDxN/+ViO2Vm6pCn1JRK7Zoqzbd8vOc2BZMqGd2FvcxvQyR+g2iwWA9hBVZwygaRb7xRLAwZIFnaaBI2IRLY8TuPxlLPSB6RTLuJI/RR5GpsyV+Jml9M9kQV987VIkgE3AM4rDYPKSPoucZ/cb9yC1b33J58ke3fXX2EP7tFPKBDOBqEtGQqwjbrG5RcoKM/FsNfJjAoG/ukLda6QqMLMsdgJ4HNjR0Xs/0jW+SpWer4ermtsN3HVfo1gs4+5eXTG3eRQKZtLP2oCzwE3NBtIcZPcpkLGaz4OMuWND7hw9t8Ndmz8PkslkMplMJpPJZDIyR/4AHP79tg/mkAIAAAAASUVORK5CYII=" alt="Clock" class="icon-gray">
+                  <div class="text-color-gray">6 Minutes</div>
+                </div>
+                <div class="space-1-5"></div>
+                <div class="text-color-gray">Subscribe to our blog to stay up to date on all the latest information from the Reporting Hub team! We’ll never share your email with anyone else.</div>
+                <div class="code-embed-9 w-embed w-script">
+                  <div class="custom_hbs_form paidsearchpage blog-email-only">
+                    <form action="https://formspree.io/f/xaqlkgry" method="POST" class="hs-form stacked">
+                      <fieldset class="form-columns-1">
+                        <div class="hs_email hs-email hs-fieldtype-text field hs-form-field">
+                          <div class="input"><input name="email" type="email" class="hs-input" required="" autocomplete="off" placeholder="Your email address"></div>
+                        </div>
+                      </fieldset>
+                      <div class="hs_submit hs-submit">
+                        <div class="actions"><div class="cf-turnstile" data-sitekey="0x4AAAAAAC1kqPKVfSHwCjeC" data-theme="light"></div><input type="submit" class="hs-button primary large" value="Subscribe"></div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section blog-elements">
+        <div class="w-layout-blockcontainer container w-container">
+          <div class="single-blog-contents-wrapper">
+            <div fc-toc="wrapper" class="post-content-wrapper"><button class="blog-post_open-toc-button">
+                <div class="circle"></div>
+              </button>
+              <div fc-toc="content" class="w-richtext"><div class="w-embed"><style>
+/* ── BRAND TOKENS ─────────────────────────────────────────── */
+:root {
+  --rh-bg:           #ffffff;
+  --rh-surface:      #eaf6fd;
+  --rh-surface-2:    #d4eef9;
+  --rh-border:       #dde3e7;
+  --rh-teal:         #5BC6F7;
+  --rh-teal-light:   #82d5fa;
+  --rh-teal-muted:   rgba(91,198,247,0.12);
+  --rh-blue-muted:   rgba(91,198,247,0.08);
+  --rh-blue-accent:  #2aa8e0;
+  --rh-white:        #ffffff;
+  --rh-text-primary: #0d1b2a;
+  --rh-text-body:    #2e4a5e;
+  --rh-text-muted:   #5a7a90;
+  --rh-font:         'Segoe UI', 'Inter', Arial, sans-serif;
+  --rh-radius:       8px;
+  --rh-radius-lg:    14px;
+
+  /* ── TABLE COLOURS ── */
+  --tbl-header-bg:  #1A2B4A;
+  --tbl-header-txt: #FFFFFF;
+  --tbl-row-odd:    #FFFFFF;
+  --tbl-row-even:   #F9FAFB;
+  --tbl-text:       #1F2937;
+  --tbl-border:     #E5E7EB;
+}
+
+/* ── RESET ────────────────────────────────────────────────── */
+.bloglist-wrap-sr83 *,
+.bloglist-wrap-sr83 *::before,
+.bloglist-wrap-sr83 *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+.bloglist-wrap-sr83 {
+  font-family: var(--rh-font);
+  color: var(--rh-text-body);
+  font-size: 16px;
+  line-height: 1.8;
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0 20px 60px;
+}
+
+/* ── INTRO ────────────────────────────────────────────────── */
+.bloglist-intro-sr83__lead {
+  font-size: 18px;
+  line-height: 1.85;
+  color: var(--rh-text-primary);
+  border-left: 3px solid var(--rh-teal);
+  padding-left: 20px;
+  margin-bottom: 24px;
+}
+
+/* ── BODY PARAGRAPH ───────────────────────────────────────── */
+.bloglist-para-sr83 {
+  font-size: 16px;
+  color: var(--rh-text-body);
+  line-height: 1.8;
+  margin-bottom: 16px;
+}
+
+/* ── BLOCKQUOTE / PULL QUOTE ──────────────────────────────── */
+.bloglist-quote-sr83 {
+  background: var(--rh-teal-muted);
+  border-left: 4px solid var(--rh-teal);
+  border-radius: 0 var(--rh-radius) var(--rh-radius) 0;
+  padding: 18px 22px;
+  margin: 24px 0 28px;
+  font-size: 15.5px;
+  color: var(--rh-text-body);
+  line-height: 1.8;
+  font-style: italic;
+}
+
+/* ── H2 HEADING ───────────────────────────────────────────── */
+.bloglist-h2-sr83 {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  margin: 52px 0 18px;
+}
+.bloglist-h2-sr83__icon {
+  width: 34px; height: 34px;
+  color: var(--rh-teal);
+  flex-shrink: 0;
+}
+.bloglist-h2-sr83__text {
+  font-size: 23px;
+  font-weight: 700;
+  color: var(--rh-text-primary);
+  line-height: 1.3;
+}
+
+/* ── H3 SUB-HEADING ───────────────────────────────────────── */
+.bloglist-h3-sr83 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 36px 0 14px;
+}
+.bloglist-h3-sr83__icon {
+  width: 26px; height: 26px;
+  color: var(--rh-teal);
+  flex-shrink: 0;
+}
+.bloglist-h3-sr83__text {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--rh-text-primary);
+}
+
+/* ── AUDIT QUESTIONS LABEL ────────────────────────────────── */
+.bloglist-audit-label-sr83 {
+  font-size: 13px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  color: var(--rh-blue-accent);
+  margin: 20px 0 10px;
+}
+
+/* ── BULLET LIST ──────────────────────────────────────────── */
+.bloglist-bullets-sr83 {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 10px 0 20px 4px;
+}
+.bloglist-bullets-sr83__item {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+  font-size: 15.5px;
+  color: var(--rh-text-body);
+  line-height: 1.7;
+}
+.bloglist-bullets-sr83__icon {
+  width: 18px; height: 18px;
+  color: var(--rh-teal);
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+
+/* ── AUDIT QUESTION LIST (question mark style) ────────────── */
+.bloglist-audit-sr83 {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 10px 0 24px 4px;
+  background: var(--rh-surface);
+  border: 1px solid var(--rh-border);
+  border-radius: var(--rh-radius);
+  padding: 18px 20px;
+}
+.bloglist-audit-sr83__item {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+  font-size: 15px;
+  color: var(--rh-text-body);
+  line-height: 1.7;
+}
+.bloglist-audit-sr83__icon {
+  width: 18px; height: 18px;
+  color: var(--rh-blue-accent);
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+/* ── SCORING RAG BOX ──────────────────────────────────────── */
+.bloglist-rag-sr83 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 14px;
+  margin: 20px 0 28px;
+}
+@media (max-width: 600px) {
+  .bloglist-rag-sr83 { grid-template-columns: 1fr; }
+}
+.bloglist-rag-sr83__card {
+  border-radius: var(--rh-radius);
+  padding: 16px 18px;
+  border: 1px solid var(--rh-border);
+}
+.bloglist-rag-sr83__card--red   { background: #fff5f5; border-color: #fca5a5; }
+.bloglist-rag-sr83__card--amber { background: #fffbeb; border-color: #fcd34d; }
+.bloglist-rag-sr83__card--green { background: #f0fdf4; border-color: #86efac; }
+.bloglist-rag-sr83__dot {
+  width: 12px; height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 7px;
+  vertical-align: middle;
+}
+.bloglist-rag-sr83__dot--red   { background: #ef4444; }
+.bloglist-rag-sr83__dot--amber { background: #f59e0b; }
+.bloglist-rag-sr83__dot--green { background: #22c55e; }
+.bloglist-rag-sr83__label {
+  font-size: 13px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  margin-bottom: 6px;
+}
+.bloglist-rag-sr83__label--red   { color: #b91c1c; }
+.bloglist-rag-sr83__label--amber { color: #b45309; }
+.bloglist-rag-sr83__label--green { color: #15803d; }
+.bloglist-rag-sr83__text {
+  font-size: 14px;
+  color: var(--rh-text-body);
+  line-height: 1.65;
+}
+
+/* ── FINAL VERDICT / CTA BOX ──────────────────────────────── */
+.bloglist-verdict-sr83 {
+  background: linear-gradient(135deg, var(--rh-surface) 0%, rgba(91,198,247,.08) 100%);
+  border: 1px solid rgba(91,198,247,.35);
+  border-radius: var(--rh-radius-lg);
+  padding: 30px 28px;
+  margin-top: 50px;
+}
+.bloglist-verdict-sr83__header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+.bloglist-verdict-sr83__icon {
+  width: 30px; height: 30px;
+  color: var(--rh-teal);
+  flex-shrink: 0;
+}
+.bloglist-verdict-sr83__title {
+  font-size: 19px;
+  font-weight: 700;
+  color: var(--rh-text-primary);
+}
+.bloglist-verdict-sr83__text {
+  font-size: 15.5px;
+  color: var(--rh-text-body);
+  line-height: 1.75;
+  margin-bottom: 10px;
+}
+.bloglist-verdict-sr83__text strong {
+  color: var(--rh-text-primary);
+}
+
+/* ── SOURCES ──────────────────────────────────────────────── */
+.bloglist-sources-sr83 {
+  margin-top: 40px;
+  padding-top: 24px;
+  border-top: 1px solid var(--rh-border);
+}
+.bloglist-sources-sr83__title {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--rh-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 12px;
+}
+.bloglist-sources-sr83__list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.bloglist-sources-sr83__item {
+  font-size: 13.5px;
+  color: var(--rh-text-muted);
+  line-height: 1.6;
+}
+.bloglist-sources-sr83__item a {
+  color: var(--rh-blue-accent);
+  text-decoration: underline;
+}
+
+/* ── SECTION DIVIDER ──────────────────────────────────────── */
+.bloglist-divider-sr83 {
+  border: none;
+  border-top: 1px solid var(--rh-border);
+  margin: 48px 0;
+}
+
+/* ── RESPONSIVE ───────────────────────────────────────────── */
+@media (max-width: 640px) {
+  .bloglist-wrap-sr83     { padding: 0 14px 40px; }
+  .bloglist-h2-sr83__text { font-size: 19px; }
+}
+</style></div><div class="w-embed"><!-- ── INTRO ──────────────────────────────────────────────── -->
+  <p class="bloglist-intro-sr83__lead">Most BI teams don't realize they're not ready to scale until issues show up. A new client, a white-label request, or a large deal can quickly push a setup built for internal use beyond its limits. What once worked fine for a small team starts to break under pressure.</p>
+
+  <p class="bloglist-para-sr83">External analytics is a different challenge. Expectations are higher, and problems are visible. A slow dashboard doesn't just frustrate - it damages trust. This guide helps you find gaps early, before scale exposes them.</p>
+
+  <hr class="bloglist-divider-sr83"></div><div class="w-embed"><!-- ── H2: WHY THIS MATTERS NOW ───────────────────────────── -->
+  <div class="bloglist-h2-sr83">
+    <svg class="bloglist-h2-sr83__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line>
+    </svg>
+    <h2 class="bloglist-h2-sr83__text" id="why-this-matters-now">Why This Matters Now</h2>
+  </div>
+
+  <p class="bloglist-para-sr83">Analytics is moving outside the firewall faster than most teams expected. According to TDWI's 2026 predictions, the real limit now is data readiness - not tools or models. The question is simple: can your delivery setup keep up with growing demand?</p>
+  <p class="bloglist-para-sr83">The shift is also economic. Capacity-based pricing is replacing per-user models, lowering the cost of scaling. As B EYE's 2026 research shows, analytics is no longer just dashboards - it lives in spreadsheets, apps, and workflows.</p>
+
+  <ul class="bloglist-bullets-sr83">
+    <li class="bloglist-bullets-sr83__item">
+      <svg class="bloglist-bullets-sr83__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+      Analytics demand is growing faster than delivery systems
+    </li>
+    <li class="bloglist-bullets-sr83__item">
+      <svg class="bloglist-bullets-sr83__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+      Data readiness limits value more than tools today
+    </li>
+    <li class="bloglist-bullets-sr83__item">
+      <svg class="bloglist-bullets-sr83__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+      Capacity pricing lowers cost but needs a scalable architecture
+    </li>
+    <li class="bloglist-bullets-sr83__item">
+      <svg class="bloglist-bullets-sr83__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+      Analytics now appears beyond dashboards into daily workflows
+    </li>
+    <li class="bloglist-bullets-sr83__item">
+      <svg class="bloglist-bullets-sr83__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+      Bottlenecks come from access, governance, and system design
+    </li>
+  </ul>
+
+  <hr class="bloglist-divider-sr83"></div><div class="w-embed"><!-- ── H2: THE CORE AUDIT DIMENSIONS ──────────────────────── -->
+  <div class="bloglist-h2-sr83">
+    <svg class="bloglist-h2-sr83__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline>
+    </svg>
+    <h2 class="bloglist-h2-sr83__text" id="the-core-audit-dimensions">The Core Audit Dimensions</h2>
+  </div>
+
+  <p class="bloglist-para-sr83">A useful scale-readiness audit covers five interdependent areas. You can't optimise one in isolation - they interact, and weaknesses in one dimension tend to surface as symptoms in another.</p>
+
+  <!-- H3: 1. Access Architecture -->
+  <div class="bloglist-h3-sr83">
+    <svg class="bloglist-h3-sr83__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+    </svg>
+    <h3 class="bloglist-h3-sr83__text" id="1-access-architecture">1. Access Architecture</h3>
+  </div>
+
+  <p class="bloglist-para-sr83">Start with a simple question your setup should answer clearly: how does the right user see only the right data, every time? If you can't explain that in one clean flow, there's a gap somewhere. And under scale, small gaps turn into real risks.</p>
+  <p class="bloglist-para-sr83">Role-based access control is expected, but it's not enough on its own. The real test is where your row-level security lives - inside the model or spread across reports. When it sits at the report level, it becomes hard to manage, easy to break, and risky over time.</p>
+
+  <p class="bloglist-audit-label-sr83">Audit questions to ask:</p>
+  <ul class="bloglist-audit-sr83">
+    <li class="bloglist-audit-sr83__item">
+      <svg class="bloglist-audit-sr83__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+      Is RLS defined once in the semantic model, or replicated across individual reports?
+    </li>
+    <li class="bloglist-audit-sr83__item">
+      <svg class="bloglist-audit-sr83__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+      Can a new client tenant be provisioned without engineering involvement?
+    </li>
+    <li class="bloglist-audit-sr83__item">
+      <svg class="bloglist-audit-sr83__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+      Do external users authenticate via SSO, or are they managing separate credentials?
+    </li>
+    <li class="bloglist-audit-sr83__item">
+      <svg class="bloglist-audit-sr83__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+      Is there an audit log of data access that meets your compliance obligations?
+    </li>
+  </ul>
+
+  <!-- H3: 2. Multi-Tenancy Design -->
+  <div class="bloglist-h3-sr83">
+    <svg class="bloglist-h3-sr83__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle>
+      <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+    </svg>
+    <h3 class="bloglist-h3-sr83__text" id="2-multi-tenancy-design">2. Multi-Tenancy Design</h3>
+  </div>
+
+  <p class="bloglist-para-sr83">Multi-tenancy is where external analytics either stays stable or starts to break. The key question is simple: Is tenant separation built into your system, or handled by process? When it depends on people doing things right every time, it doesn't scale well.</p>
+  <p class="bloglist-para-sr83">This is where platforms like Reporting Hub come in. They are built for external delivery, with tenant control, branding, and access handled as core features. The difference becomes clear as you grow, especially when managing many clients, which starts slowing everything down.</p>
+
+  <p class="bloglist-audit-label-sr83">Audit questions to ask:</p>
+  <ul class="bloglist-audit-sr83">
+    <li class="bloglist-audit-sr83__item">
+      <svg class="bloglist-audit-sr83__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+      How long does it take to onboard a new external client in the reporting environment?
+    </li>
+    <li class="bloglist-audit-sr83__item">
+      <svg class="bloglist-audit-sr83__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+      Is tenant separation enforced by the platform or by your team's discipline?
+    </li>
+    <li class="bloglist-audit-sr83__item">
+      <svg class="bloglist-audit-sr83__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+      Could a tenant's report accidentally expose another tenant's data? When did you last test this?
+    </li>
+    <li class="bloglist-audit-sr83__item">
+      <svg class="bloglist-audit-sr83__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+      Does your current design support 10x your current client count without a rebuild?
+    </li>
+  </ul>
+
+  <!-- H3: 3. Semantic Model Health -->
+  <div class="bloglist-h3-sr83">
+    <svg class="bloglist-h3-sr83__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+      <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+    </svg>
+    <h3 class="bloglist-h3-sr83__text" id="3-semantic-model-health">3. Semantic Model Health</h3>
+  </div>
+
+  <p class="bloglist-para-sr83">The semantic model is the backbone of your analytics setup. It centralizes your business logic, keeping data consistent across users and use cases. When it's done right, it supports clean external delivery, works well with AI tools, and keeps governance simple.</p>
+  <p class="bloglist-para-sr83">When it's not, things get messy fast. Different reports start showing different answers to the same question, and trust begins to drop. With AI now querying these models directly, any gaps or inconsistencies can scale quickly and create even bigger problems.</p>
+
+  <p class="bloglist-audit-label-sr83">Audit questions to ask:</p>
+  <ul class="bloglist-audit-sr83">
+    <li class="bloglist-audit-sr83__item">
+      <svg class="bloglist-audit-sr83__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+      Are your key business metrics - revenue, retention, churn - defined once in a certified semantic model?
+    </li>
+    <li class="bloglist-audit-sr83__item">
+      <svg class="bloglist-audit-sr83__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+      Is there version control and change documentation on the semantic layer?
+    </li>
+    <li class="bloglist-audit-sr83__item">
+      <svg class="bloglist-audit-sr83__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+      Can external clients trust that the number they see in their portal matches what your team sees internally?
+    </li>
+    <li class="bloglist-audit-sr83__item">
+      <svg class="bloglist-audit-sr83__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+      Is the model documented enough that a new team member - or an AI agent - could correctly interpret it?
+    </li>
+  </ul>
+
+  <!-- H3: 4. Licensing and Cost Architecture -->
+  <div class="bloglist-h3-sr83">
+    <svg class="bloglist-h3-sr83__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+    </svg>
+    <h3 class="bloglist-h3-sr83__text" id="4-licensing-and-cost-architecture">4. Licensing and Cost Architecture</h3>
+  </div>
+
+  <p class="bloglist-para-sr83">Here's something many BI teams miss: per-user licences for external reporting often cost more over time. What looks cheaper at first ends up costing extra in terms of access, compliance, and licence tracking. As you grow, this model starts to slow you down and eat into margins.</p>
+  <p class="bloglist-para-sr83">The market is shifting away from this approach. Usage-based and capacity pricing are becoming the standard for external analytics. Platforms like Reporting Hub follow this model, so costs stay predictable and don't rise with every new user.</p>
+
+  <p class="bloglist-audit-label-sr83">Audit questions to ask:</p>
+  <ul class="bloglist-audit-sr83">
+    <li class="bloglist-audit-sr83__item">
+      <svg class="bloglist-audit-sr83__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+      What does your current licensing cost per external viewer? What does it cost at 10x scale?
+    </li>
+    <li class="bloglist-audit-sr83__item">
+      <svg class="bloglist-audit-sr83__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+      Is there a cliff in your pricing model where adding a client cohort triggers a tier change?
+    </li>
+    <li class="bloglist-audit-sr83__item">
+      <svg class="bloglist-audit-sr83__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+      How much engineering and admin time is spent managing user licences and access requests each month?
+    </li>
+    <li class="bloglist-audit-sr83__item">
+      <svg class="bloglist-audit-sr83__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+      Does your pricing model create an incentive to restrict analytics access that should be expanded?
+    </li>
+  </ul>
+
+  <!-- H3: 5. Governance and Consistency at Client Level -->
+  <div class="bloglist-h3-sr83">
+    <svg class="bloglist-h3-sr83__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+    </svg>
+    <h3 class="bloglist-h3-sr83__text" id="5-governance-and-consistency-at-client-level">5. Governance and Consistency at Client Level</h3>
+  </div>
+
+  <p class="bloglist-para-sr83">This last part is often ignored because it's uncomfortable: are your clients getting consistent, governed reports, or just whatever was built that week? When delivery isn't controlled, quality starts to vary without anyone noticing.</p>
+  <p class="bloglist-para-sr83">And that inconsistency shows up quickly. Clients may see different numbers, branding can drift, and refresh schedules become uneven. As highlighted in Atlan's 2025 Forrester Wave Leader positioning, modern governance is about setting clear rules to keep delivery fast, consistent, and reliable at scale.</p>
+
+  <p class="bloglist-audit-label-sr83">Audit questions to ask:</p>
+  <ul class="bloglist-audit-sr83">
+    <li class="bloglist-audit-sr83__item">
+      <svg class="bloglist-audit-sr83__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+      Is report delivery to external clients automated, or does it require manual steps each cycle?
+    </li>
+    <li class="bloglist-audit-sr83__item">
+      <svg class="bloglist-audit-sr83__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+      Are there documented SLAs for data freshness and report availability that clients can hold you to?
+    </li>
+    <li class="bloglist-audit-sr83__item">
+      <svg class="bloglist-audit-sr83__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+      How is your brand applied consistently across client portals - and does it survive report updates?
+    </li>
+    <li class="bloglist-audit-sr83__item">
+      <svg class="bloglist-audit-sr83__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+      If a metric definition changes, how do you update it across all clients simultaneously?
+    </li>
+  </ul>
+
+  <hr class="bloglist-divider-sr83"></div><div class="w-embed"><!-- ── H2: SCORING YOUR READINESS ─────────────────────────── -->
+  <div class="bloglist-h2-sr83">
+    <svg class="bloglist-h2-sr83__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+    </svg>
+    <h2 class="bloglist-h2-sr83__text" id="scoring-your-readiness">Scoring Your Readiness</h2>
+  </div>
+
+  <p class="bloglist-para-sr83">Run through the five dimensions above and give each an honest red / amber/green. Red means a known structural weakness that would break under load. Amber means it works now, but with effort you wouldn't want to sustain. Green means it's designed to scale without heroics.</p>
+
+  <div class="bloglist-rag-sr83">
+    <div class="bloglist-rag-sr83__card bloglist-rag-sr83__card--red">
+      <div class="bloglist-rag-sr83__label bloglist-rag-sr83__label--red">
+        <span class="bloglist-rag-sr83__dot bloglist-rag-sr83__dot--red"></span>Red
+      </div>
+      <p class="bloglist-rag-sr83__text">A known structural weakness that would break under load.</p>
+    </div>
+    <div class="bloglist-rag-sr83__card bloglist-rag-sr83__card--amber">
+      <div class="bloglist-rag-sr83__label bloglist-rag-sr83__label--amber">
+        <span class="bloglist-rag-sr83__dot bloglist-rag-sr83__dot--amber"></span>Amber
+      </div>
+      <p class="bloglist-rag-sr83__text">Works now, but with effort you wouldn't want to sustain.</p>
+    </div>
+    <div class="bloglist-rag-sr83__card bloglist-rag-sr83__card--green">
+      <div class="bloglist-rag-sr83__label bloglist-rag-sr83__label--green">
+        <span class="bloglist-rag-sr83__dot bloglist-rag-sr83__dot--green"></span>Green
+      </div>
+      <p class="bloglist-rag-sr83__text">Designed to scale without heroics.</p>
+    </div>
+  </div>
+
+  <p class="bloglist-para-sr83">One or two ambers are normal; it tells you where to invest next. Three or more reds in the same area usually mean the architecture needs rethinking before you can scale, not just optimising. Two or more reds in access architecture or multi-tenancy warrant treating them as urgent: those are the dimensions where failure is visible to clients and carries the highest reputational cost.</p>
+  <p class="bloglist-para-sr83">Try to push back on the instinct to treat this as a one-time exercise. Scale-readiness isn't a state you achieve and then maintain passively. Client growth, new data sources, product changes, and AI integrations all shift your delivery requirements continuously. The teams that handle scale well tend to treat this audit as a quarterly check-in, not an annual box-tick.</p>
+
+  <hr class="bloglist-divider-sr83">
+
+  <!-- ── H2: WHERE REPORTING HUB FITS ───────────────────────── -->
+  <div class="bloglist-h2-sr83">
+    <svg class="bloglist-h2-sr83__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <rect x="2" y="3" width="20" height="14" rx="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line>
+    </svg>
+    <h2 class="bloglist-h2-sr83__text" id="where-reporting-hub-fits">Where Reporting Hub Fits</h2>
+  </div>
+
+  <p class="bloglist-para-sr83">Reporting Hub was designed for exactly this problem space. It's a white-label analytics delivery platform built on top of Power BI. It's purpose-built for organisations that need to distribute analytics to external clients, partners, or customers at scale, without rebuilding infrastructure from scratch or managing the chaos of per-user licensing.</p>
+  <p class="bloglist-para-sr83">The platform handles branded portal delivery, multi-tenant access management, automated report distribution, and client onboarding as native capabilities - not bolt-ons. For teams scoring amber or red on multi-tenancy design, access architecture, or governance consistency, it directly addresses the structural gaps that prevent scale.</p>
+  <p class="bloglist-para-sr83">And with BI Genius - Reporting Hub's AI agent layer - those governed semantic models can now power conversational analytics for external clients too. It offers the transparency and auditability that client-facing AI requires.</p>
+
+  <hr class="bloglist-divider-sr83"></div><div class="w-embed"><!-- ── H2: START THE AUDIT BEFORE SCALE STARTS IT FOR YOU ─── -->
+  <div class="bloglist-h2-sr83">
+    <svg class="bloglist-h2-sr83__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+    </svg>
+    <h2 class="bloglist-h2-sr83__text" id="start-the-audit-before-scale-starts-it-for-you">Start the Audit Before Scale Starts It for You</h2>
+  </div>
+
+  <p class="bloglist-para-sr83">The organisations that scale external analytics delivery without drama are rarely the ones with the most sophisticated tooling. They're the ones that caught their architectural weaknesses early, before a major client onboarding revealed them in the worst possible way.</p>
+  <p class="bloglist-para-sr83">Run the five-dimensional audit. Score honestly. Then tackle the reds in order of client-facing impact. The earlier you do this work, the cheaper it is to fix, and the faster you can say yes to the growth opportunities that are coming.</p>
+
+  <!-- ── FINAL VERDICT / CTA BOX ─────────────────────────────── -->
+  <div class="bloglist-verdict-sr83">
+    <div class="bloglist-verdict-sr83__header">
+      <svg class="bloglist-verdict-sr83__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+      </svg>
+      <span class="bloglist-verdict-sr83__title">Ready to see how Reporting Hub handles the scale-readiness challenge in practice?</span>
+    </div>
+    <p class="bloglist-verdict-sr83__text"><strong>Book a demo, and we'll walk through your current setup.</strong></p>
+  </div>
+
+  <!-- ── SOURCES ─────────────────────────────────────────────── -->
+  <div class="bloglist-sources-sr83">
+    <p class="bloglist-sources-sr83__title">Sources Referenced</p>
+    <ul class="bloglist-sources-sr83__list">
+      <li class="bloglist-sources-sr83__item">TDWI — <a href="https://tdwi.org/articles/2026/01/14/adv-all-tdwi-2026-ai-data-fellow-predictions.aspx" target="_blank" rel="noopener">2026 Trends: TDWI's Top 12 AI, Analytics &amp; Data Predictions</a></li>
+      <li class="bloglist-sources-sr83__item">B EYE — <a href="https://b-eye.com/blog/business-intelligence-data-analytics-trends/" target="_blank" rel="noopener">Business Intelligence and Data Analytics Trends 2026: 7 Shifts That Make Dashboards Optional</a></li>
+      <li class="bloglist-sources-sr83__item">Atlan / Forrester — <a href="https://atlan.com/forrester-wave/" target="_blank" rel="noopener">The Forrester Wave™: Data Governance Solutions, Q3 2025</a></li>
+    </ul>
+  </div></div>
+              <nav aria-label="Table of contents" class="blog-post_toc">
+                <div>Table of Contents</div>
+                <div fc-toc="close" class="blog-post_close-toc-overlay"></div>
+                <ol fc-toc-collapse="true" fc-toc="component" role="list" class="blog-post_toc-list"><li class="blog-post_toc-list-item"><a href="#what-role-based-access-control-gets-right" fc-toc="h2" class="toc_h2">What Role-Based Access Control Gets Right</a></li>
+<li class="blog-post_toc-list-item"><a href="#where-role-based-access-control-starts-to-show-its-limits" fc-toc="h2" class="toc_h2">Where Role-Based Access Control Starts to Show Its Limits</a></li>
+<li class="blog-post_toc-list-item"><a href="#secure-multi-tenant-bi-with-row-level-security-and-attribute-based-access-in-power-bi" fc-toc="h2" class="toc_h2">Secure Multi-Tenant BI with Row-Level Security and Attribute-Based Access in Power BI</a></li>
+<li class="blog-post_toc-list-item"><a href="#how-reporting-hub-simplifies-multi-tenant-security" fc-toc="h2" class="toc_h2">How Reporting Hub Simplifies Multi-Tenant Security?</a></li>
+</ol>
+                <div class="related-blogs w-dyn-list">
+                  <div role="list" class="related-blogs-list w-dyn-items"><div role="listitem" class="related-blog-item w-dyn-item">
+                      <a href="embedded-analytics-meets-generative-ai-how-saas-teams-monetize-bi-in-2025.html" class="related-blog-link w-inline-block">
+                        <div class="related-blog-wrap"><img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/69600be56fa30d9d91a5f337_Embedded%20Analytics%20Meets%20Generative%20AI%20How%20SaaS%20Teams%20Monetize%20BI%20in%202025.png" loading="lazy" alt="" class="related-blog-img">
+                          <h3 class="related-blogs-h3">Embedded Analytics Meets Generative AI: How SaaS Teams Monetize BI in 2026</h3>
+                        </div>
+                      </a>
+                    </div><div role="listitem" class="related-blog-item w-dyn-item">
+                      <a href="fabric-vs-power-bi-premium.html" class="related-blog-link w-inline-block">
+                        <div class="related-blog-wrap"><img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/6961652bcf02c04b7b0edbe3_Fabric%20vs.%20Power%20BI%20Premium%20-%20Reddit.avif" loading="lazy" alt="" class="related-blog-img">
+                          <h3 class="related-blogs-h3">Fabric vs. Power BI Premium</h3>
+                        </div>
+                      </a>
+                    </div><div role="listitem" class="related-blog-item w-dyn-item">
+                      <a href="how-to-structure-a-multi-tenant-analytics-delivery-system-without-rebuilding-everything.html" class="related-blog-link w-inline-block">
+                        <div class="related-blog-wrap"><img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/69b03e0ca76a82d19058f954_Structure%20a%20Multi-Tenant%20Analytics%20Delivery.jpg" loading="lazy" alt="" class="related-blog-img">
+                          <h3 class="related-blogs-h3">How to Structure a Multi-Tenant Analytics Delivery System Without Rebuilding Everything</h3>
+                        </div>
+                      </a>
+                    </div></div>
+                  
+                </div>
+              </nav>
+              <div fc-toc="active-style" class="u-toc-current-link"></div>
+              <div class="toc-subitems"></div>
+              <div class="toc_script w-embed w-script">
+                <script>
+document.addEventListener('DOMContentLoaded', () => {
+  let preventAutoOpen = false;
+  let suppressNextScrollUpdate = false;
+  const tocWrappers = document.querySelectorAll('[fc-toc="wrapper"]');
+  if (!tocWrappers) return;
+  for (const wrapper of tocWrappers) {
+    // Grab key elements and settings
+    const tocComponent = wrapper.querySelector('[fc-toc="component"]');
+    const tocContent = wrapper.querySelector('[fc-toc="content"]');
+    const activeStyleElement = wrapper.querySelector('[fc-toc="active-style"]');
+    const activeClass = activeStyleElement?.className || '';
+    const debounceMs = 0;
+    const isCollapsible = tocComponent.getAttribute('fc-toc-collapse') === 'true';
+    if (!tocComponent || !tocContent) return;
+    // Map of heading levels to placeholder class names
+    const placeholderLinks = tocComponent.querySelectorAll('[fc-toc]');
+    const headingLevels = new Map();
+    placeholderLinks.forEach(link => {
+      const level = link.getAttribute('fc-toc');
+      const className = link.getAttribute('class') || '';
+      if (/^h[1-6]$/.test(level)) {
+        headingLevels.set(level.toLowerCase(), className);
+      }
+    });
+    // Find all target headings in the content
+    const selector = [...headingLevels.keys()].join(', ');
+    const headings = tocContent.querySelectorAll(selector);
+    // Generate unique IDs for headings
+    const usedIds = new Set();
+    const generateSlug = (text, index) => {
+      let slug = text.toLowerCase()
+        .normalize("NFD").replace(/[̀-ͯ]/g, "")
+        .replace(/[^a-z0-9\s-]/g, '')
+        .replace(/\s+/g, '-')
+        .replace(/-+/g, '-')
+        .replace(/^-|-$/g, '');
+      if (!slug) slug = `heading-${index}`;
+      let uniqueSlug = slug;
+      let count = 1;
+      while (usedIds.has(uniqueSlug)) {
+        uniqueSlug = `${slug}-${count++}`;
+      }
+      usedIds.add(uniqueSlug);
+      return uniqueSlug;
+    };
+    // Assign IDs to headings
+    headings.forEach((heading, index) => {
+      const id = generateSlug(heading.textContent.trim(), index);
+      heading.id = id;
+    });
+    // Build the TOC from placeholder links and real headings
+    let currentParentLi = null;
+    let subList = null;
+    headings.forEach((heading, index) => {
+      const level = heading.tagName.toLowerCase();
+      const className = headingLevels.get(level) || '';
+      const placeholderLink = tocComponent.querySelector(`[fc-toc="${level}"]`);
+      if (!placeholderLink) return;
+      const listItem = placeholderLink.closest('li');
+      if (!listItem) return;
+      const clonedItem = listItem.cloneNode(true);
+      const link = clonedItem.querySelector(`[fc-toc="${level}"]`);
+      if (link) {
+        link.href = `#${heading.id}`;
+        link.textContent = heading.textContent.trim();
+        link.setAttribute('fc-toc-link', level);
+      }
+      if (isCollapsible && level === 'h2') {
+        tocComponent.appendChild(clonedItem);
+        currentParentLi = clonedItem;
+        subList = document.createElement('ul');
+        subList.classList.add('toc-subitems');
+        currentParentLi.appendChild(subList);
+      } else if (isCollapsible && currentParentLi && subList) {
+        subList.appendChild(clonedItem);
+      } else {
+        tocComponent.appendChild(clonedItem);
+      }
+    });
+    // Initially collapse all groups if collapsible
+    if (isCollapsible) {
+      tocComponent.querySelectorAll('.toc-subitems').forEach(group => {
+        group.style.maxHeight = '0';
+      });
+    }
+    // Remove placeholder links
+    placeholderLinks.forEach(link => {
+      const parentLi = link.closest('li');
+      if (parentLi) parentLi.remove();
+    });
+    let debounceTimer;
+    let lastActiveLink = null;
+    let lastActiveGroupWrapper = null;
+    // Scroll TOC and manage group expansion on active link update
+    const scrollToActiveLink = () => {
+      if (suppressNextScrollUpdate) {
+        suppressNextScrollUpdate = false;
+        return;
+      }
+      if (preventAutoOpen) return;
+      const activeLink = tocComponent.querySelector('.w--current');
+      if (!activeLink || activeLink === lastActiveLink) return;
+      tocComponent.querySelectorAll('[fc-toc-link]').forEach(link => {
+        if (activeClass) link.classList.remove(activeClass);
+      });
+      if (activeClass) activeLink.classList.add(activeClass);
+      lastActiveLink = activeLink;
+      tocComponent.scrollBy({
+        top: activeLink.getBoundingClientRect().top - tocComponent.getBoundingClientRect().top - (tocComponent.getBoundingClientRect().height / 2) + (activeLink.getBoundingClientRect().height / 2),
+        behavior: 'smooth'
+      });
+      if (isCollapsible) {
+        const currentLi = activeLink.closest('li');
+        let groupWrapperLi = currentLi;
+        if (currentLi?.parentElement?.classList.contains('toc-subitems')) {
+          groupWrapperLi = currentLi.parentElement.closest('li');
+        }
+        tocComponent.querySelectorAll('li').forEach(li => {
+          const sub = li.querySelector('.toc-subitems');
+          if (
+            sub &&
+            li !== groupWrapperLi &&
+            sub.style.maxHeight !== '0px' &&
+            (!preventAutoOpen || li !== lastActiveGroupWrapper)
+          ) {
+            collapseElement(sub);
+          }
+        });
+        expandElement(groupWrapperLi.querySelector('.toc-subitems'));
+        lastActiveGroupWrapper = groupWrapperLi;
+      }
+    };
+    const debouncedScroll = () => {
+      clearTimeout(debounceTimer);
+      debounceTimer = setTimeout(scrollToActiveLink, debounceMs);
+    };
+    // Observe class changes to trigger scroll update
+    const observer = new MutationObserver(() => {
+      if (!isAutoScrolling) debouncedScroll();
+    });
+    observer.observe(tocComponent, {
+      subtree: true,
+      attributes: true,
+      attributeFilter: ['class']
+    });
+    // Expand group for active link on page load
+    const expandActiveGroupOnLoad = () => {
+      if (!isCollapsible) return;
+      let attempts = 0;
+      const tryExpand = () => {
+        const activeLink = tocComponent.querySelector('.w--current');
+        if (activeLink) {
+          scrollToActiveLink();
+        } else if (++attempts < 20) {
+          setTimeout(tryExpand, 50);
+        }
+      };
+      tryExpand();
+    };
+    // Set up toggle buttons for manual group expansion
+    const setupManualToggles = () => {
+      if (!isCollapsible) return;
+      tocComponent.querySelectorAll('[fc-toc="open-group"]').forEach(toggleBtn => {
+        const subList = toggleBtn.closest('li')?.querySelector('.toc-subitems');
+        if (!subList || subList.children.length === 0) {
+          toggleBtn.style.display = 'none';
+          return;
+        }
+        for (const item of tocComponent.querySelectorAll('li')) {
+        	item.style.display = 'grid';
+          item.style.gridTemplateColumns = '1fr auto';
+        }
+        subList.style.gridColumn = '1 / 3';
+        toggleBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          preventAutoOpen = true;
+          const listItem = toggleBtn.closest('li');
+          if (!listItem) return;
+          const subList = listItem.querySelector('.toc-subitems');
+          if (!subList) return;
+          const isOpen = subList.style.maxHeight !== '0px';
+          const hasActive = listItem.querySelector(`.${activeClass}`);
+          if (isOpen && !hasActive) {
+            collapseElement(subList);
+            if (lastActiveGroupWrapper === listItem) {
+              lastActiveGroupWrapper = null;
+            }
+          } else if (!isOpen) {
+            expandElement(subList);
+            if (
+              lastActiveGroupWrapper &&
+              lastActiveGroupWrapper !== listItem &&
+              !lastActiveGroupWrapper.querySelector(`.${activeClass}`)
+            ) {
+              const previousGroup = lastActiveGroupWrapper.querySelector('.toc-subitems');
+              if (previousGroup) collapseElement(previousGroup);
+            }
+            lastActiveGroupWrapper = listItem;
+          }
+          setTimeout(() => {
+            preventAutoOpen = false;
+          }, 100);
+        });
+      });
+    };
+    expandActiveGroupOnLoad();
+    setupManualToggles();
+    let isAutoScrolling = false;
+    let scrollTimeout;
+    const handleScrollStop = () => {
+      clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(() => {
+        isAutoScrolling = false;
+        debouncedScroll();
+      }, 150);
+    };
+    // Handle anchor clicks and scroll positioning
+    tocComponent.querySelectorAll('a[fc-toc-link]').forEach(link => {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href')?.substring(1);
+        const target = document.getElementById(targetId);
+        if (!target) return;
+        const originalHref = this.getAttribute('href');
+        this.removeAttribute('href');
+        isAutoScrolling = true;
+        window.addEventListener('scroll', handleScrollStop);
+        const rect = target.getBoundingClientRect();
+        const scrollTo = window.scrollY + rect.top - (window.innerHeight / 2) + (rect.height / 2);
+        window.scrollTo({ top: scrollTo, behavior: 'smooth' });
+        const closeToc = document.querySelector('[fc-toc = close]')
+        if(closeToc) closeToc.click()
+        setTimeout(() => {
+          this.setAttribute('href', originalHref);
+        }, 100);
+      });
+    });
+  }
+  // Expand/collapse utility with icon rotation
+  function expandElement(el) {
+    const clone = el.cloneNode(true);
+    clone.style.visibility = 'hidden';
+    clone.style.position = 'absolute';
+    clone.style.height = 'auto';
+    clone.style.maxHeight = 'none';
+    clone.style.pointerEvents = 'none';
+    clone.style.opacity = '0';
+    el.parentElement.appendChild(clone);
+    const fullHeight = clone.scrollHeight;
+    el.parentElement.removeChild(clone);
+    el.style.maxHeight = fullHeight + 'px';
+    const icon = el.closest('li')?.querySelector('[fc-toc="open-group"]');
+    if (icon) {
+      const rotation = icon.getAttribute('fc-toc-rotate') || '180deg';
+      icon.style.transform = `rotate(${rotation}deg)`;
+    }
+  }
+  function collapseElement(el) {
+    el.style.maxHeight = '0px';
+    const icon = el.closest('li')?.querySelector('[fc-toc="open-group"]');
+    if (icon) {
+      icon.style.transform = 'rotate(0deg)';
+    }
+  }
+});
+</script>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div></section>
+      <div class="space-7"></div>
+    </div>
+            <section class="footer-section v1 section-2">
+      <div class="container">
+        <div class="foooter-top v1">
+          <div class="footer-left-left">
+            <div class="footer-icon-wrap"><img src="../assets/images/Symbol-1_2.webp" loading="lazy" alt="White Icon" class="icon"></div>
+            <div class="space-1-5"></div>
+            <div class="footer-title-top">Setup your <span class="highlight-text pure-blue">free trial</span> today!</div>
+            <div class="space-1"></div>
+            <p class="paragraph-regular">Get started today with a no-obligation 30-day free trial. The<br>Reporting Hub can be fully deployed to your Azure environment<br>by following our self-serve guided installer. <a href="../install-today.html" class="span-link">Learn more</a>
+            </p>
+            <div class="space-2"></div>
+            <div class="button-wrap left">
+              <a href="../install-today.html" class="button color-blue w-inline-block">
+                <div>Install Today</div>
+              </a>
+              <a href="../contact.html" class="button bg-transparent text-blue w-inline-block">
+                <div>Get in Touch</div><img src="../assets/images/Symbol-7.webp" loading="lazy" alt="Arrow" class="button-arrow">
+              </a>
+            </div>
+          </div>
+          <div class="footer-image-wrap"><img src="../assets/images/dashboard-trial-new-1_1.webp" loading="lazy" width="Auto" alt="Power Bi Dashboard" sizes="100vw" srcset="../assets/images/dashboard-trial-new-1_1-p-500.webp 500w, ../assets/images/dashboard-trial-new-1_1-p-800.webp 800w, ../assets/images/dashboard-trial-new-1_1-p-1080.webp 1080w, ../assets/images/dashboard-trial-new-1_1-p-1600.webp 1600w, ../assets/images/dashboard-trial-new-1_1-p-2000.webp 2000w, ../assets/images/dashboard-trial-new-1_1-p-2600.webp 2600w, ../assets/images/dashboard-trial-new-1_1-p-3200.webp 3200w, ../assets/images/dashboard-trial-new-1_1.webp 3936w" class="footer-image"></div>
+        </div>
+      </div>
+      <div class="space-5"></div>
+      <div class="w-layout-blockcontainer container w-container">
+        <div class="footer-component">
+          <div class="w-layout-grid footer-grid-wrap">
+            <div class="footer-left-call">
+              <div class="font-0-9">Contact US</div>
+              <div class="footer-menu-left">
+                <div class="footer-menu-group"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 15 12" fill="none" class="social-icon">
+                    <g clip-path="url(#clip0_9006_2830)">
+                      <path d="M1.52344 2.61654C1.52344 2.26292 1.66392 1.92378 1.91396 1.67373C2.16401 1.42368 2.50315 1.2832 2.85677 1.2832H12.1901C12.5437 1.2832 12.8828 1.42368 13.1329 1.67373C13.3829 1.92378 13.5234 2.26292 13.5234 2.61654M1.52344 2.61654V9.2832C1.52344 9.63683 1.66392 9.97596 1.91396 10.226C2.16401 10.476 2.50315 10.6165 2.85677 10.6165H12.1901C12.5437 10.6165 12.8828 10.476 13.1329 10.226C13.3829 9.97596 13.5234 9.63683 13.5234 9.2832V2.61654M1.52344 2.61654L7.52344 6.61654L13.5234 2.61654" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </g>
+                  </svg>
+                  <a href="mailto:info@thereportinghub.com?subject=You've%20got%20an%20email" class="footer-link">info@thereportinghub.com</a>
+                </div>
+                <div class="footer-menu-group"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 17 18" fill="none" class="social-icon">
+                    <path d="M3.85938 6.75618C3.85938 4.35756 5.94871 2.41309 8.52603 2.41309C11.1033 2.41309 13.1927 4.35756 13.1927 6.75618C13.1927 9.13601 11.7032 11.913 9.37942 12.9061C8.83769 13.1376 8.21439 13.1376 7.67267 12.9061C5.34882 11.913 3.85938 9.13601 3.85938 6.75618Z" stroke="currentColor" stroke-width="1.5"></path>
+                    <path d="M9.85417 7.0804C9.85417 7.81678 9.25722 8.41373 8.52084 8.41373C7.78446 8.41373 7.1875 7.81678 7.1875 7.0804C7.1875 6.34402 7.78446 5.74707 8.52084 5.74707C9.25722 5.74707 9.85417 6.34402 9.85417 7.0804Z" stroke="currentColor" stroke-width="1.5"></path>
+                    <path d="M14.4997 11.4131C14.9433 11.8147 15.1927 12.2675 15.1927 12.7464C15.1927 14.4033 12.2079 15.7464 8.52603 15.7464C4.84414 15.7464 1.85938 14.4033 1.85938 12.7464C1.85938 12.2675 2.10878 11.8147 2.55234 11.4131" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+                  </svg>
+                  <div class="max-width-11">
+                    <a href="https://maps.google.com/?q=707+7th+Avenue+SW+Calgary+AB+Canada+T2P+3H6" target="_blank" rel="noopener" class="footer-link">1150, 707 - 7th Avenue SW Calgary, AB Canada T2P 3H6</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="footer-call">
+              <div class="font-0-9">Website</div>
+              <div class="footer-menu-main">
+                <a href="../index.html" class="footer-link">Home</a>
+                <a href="../aaas.html" class="footer-link">AaaS Platform</a>
+                <a href="../pricing.html" class="footer-link">Pricing</a>
+                <a href="../learn-more.html" class="footer-link">What is Reporting Hub?</a>
+                <a href="../demo.html" class="footer-link">Demo</a>
+                <a href="../install-today.html" class="footer-link">Install Today</a>
+                <a href="../about-us.html" class="footer-link">About Us</a>
+                <a href="../contact.html" class="footer-link">Contact Us</a>
+              </div>
+            </div>
+            <div class="footer-call">
+              <div class="font-0-9">theHUB</div>
+              <div class="footer-menu-main">
+                <a href="https://docs.thereportinghub.com/" class="footer-link">Knowledge Center</a>
+                <a href="../blog.html" class="footer-link">Our Blog</a>
+                <a href="../power-bi.html" class="footer-link">About Power BI</a>
+                <a href="https://support.thereportinghub.com/support/home" class="footer-link">Get Support</a>
+                <a href="../support-plans.html" class="footer-link">Support Plans</a>
+                <a href="../policies.html" class="footer-link">Policies</a>
+                <a href="/policies#rh-terms" class="footer-link">Terms of Service</a>
+              </div>
+            </div>
+          </div>
+          <a href="#btt" class="direction-button w-inline-block"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 52 53" fill="none" class="button-icon">
+              <g clip-path="url(#clip0_9006_2933)">
+                <path d="M0 26.1602C0 40.5196 11.6406 52.1602 26 52.1602C40.3594 52.1602 52 40.5196 52 26.1602C52 11.8008 40.3594 0.160156 26 0.160156C11.6406 0.160156 0 11.8008 0 26.1602Z" fill="white" fill-opacity="0.1"></path>
+                <path d="M32.704 28.6752C33.1627 29.1422 33.9152 29.1422 34.3739 28.6752C34.8212 28.2199 34.8212 27.4902 34.3739 27.0348L26.7165 19.2396C26.3246 18.8407 25.6817 18.8407 25.2898 19.2396L17.6323 27.0348C17.1851 27.4902 17.1851 28.2199 17.6323 28.6752C18.0911 29.1422 18.8436 29.1422 19.3023 28.6752L25.2898 22.58C25.6817 22.181 26.3246 22.181 26.7165 22.58L32.704 28.6752Z" fill="currentColor" class="white"></path>
+              </g>
+            </svg></a>
+        </div>
+      </div>
+      <div class="space-3"></div>
+      <div class="global-line"></div>
+      <div class="footer-bottom">
+        <div class="space-3"></div>
+        <div class="w-layout-blockcontainer container w-container">
+          <div class="footer-bottom-contents">
+            <a href="../index.html" class="footer-left w-inline-block"><img src="../assets/images/rh-horizontal-white.svg" loading="lazy" alt="" class="image-small">
+              <div class="text-color-white margin-top-10">Microsoft partner</div>
+            </a>
+            <div class="footer-right">
+              <div class="new-footer-wrap">
+                <div class="font-0-9 text-align-right left-mobile">
+                  <a href="mailto:info@thereportinghub.com?subject=You've%20got%20email" class="link-8"><span class="text-span-2">info@thereportinghub.com</span></a>
+                </div>
+                <div class="social-media-wrap">
+                  <a href="https://www.facebook.com/people/The-Reporting-Hub/100064582883104/" class="social-media-link w-inline-block"><img src="../assets/images/fb.svg" loading="lazy" alt="" class="social-media-icon"></a>
+                  <a href="https://www.linkedin.com/company/the-reporting-hub/" class="social-media-link w-inline-block"><img src="../assets/images/in.svg" loading="lazy" alt="" class="social-media-icon"></a>
+                  <a href="https://x.com/thereportinghub" class="social-media-link w-inline-block"><img src="../assets/images/tw.svg" loading="lazy" alt="" class="social-media-icon"></a>
+                  <a href="https://www.instagram.com/thereportinghub/" class="social-media-link w-inline-block"><img src="../assets/images/insta.svg" loading="lazy" alt="" class="social-media-icon"></a>
+                </div>
+              </div>
+              <div class="font-0-9 text-align-right margin-top-16">2025 All Rights Reserved | The Reporting Hub</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  
+  
+  
+  
+  <!--  Google Tag Manager (noscript)  -->
+  <noscript><iframe src="https://ss.thereportinghub.com/ns.html?id=GTM-MM9W9FH" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!--  End Google Tag Manager (noscript)  -->
+  <script>
+(function () {
+  function cssEscapeSafe(s) {
+    try { return CSS.escape(s); } catch (e) { return s.replace(/["\\]/g, "\\$&"); }
+  }
+  function normalizeTarget(target) {
+    // ✅ Ako ti URL i dalje dolazi kao #bi-genius-terms, mapiraj ga na rh-terms
+    if (target === "bi-genius-terms") return "rh-terms";
+    return target;
+  }
+  function openTabFromHash() {
+    var hash = window.location.hash;
+    if (!hash) return;
+    var target = hash.slice(1);
+    if (!target) return;
+    target = normalizeTarget(target);
+    // 1) traži custom data-tab="..."
+    var sel = '[data-tab="' + cssEscapeSafe(target) + '"]';
+    var el = document.querySelector(sel);
+    // 2) fallback: traži direktno webflow tab link po data-w-tab
+    var tabLink = null;
+    if (el) {
+      tabLink = (el.classList && el.classList.contains('w-tab-link'))
+        ? el
+        : (el.querySelector ? el.querySelector('.w-tab-link') : null);
+    }
+    if (!tabLink) {
+      tabLink = document.querySelector('.w-tab-link[data-w-tab="' + cssEscapeSafe(target) + '"]');
+    }
+    // 3) extra fallback: ako target == rh-terms, probaj naći BILO KOJI element sa data-tab="rh-terms"
+    // (ovo ti je “hard fix” da 100% radi)
+    if (!tabLink && target === "rh-terms") {
+      tabLink = document.querySelector('[data-tab="rh-terms"].w-tab-link, .w-tab-link[data-tab="rh-terms"]');
+    }
+    if (!tabLink) return;
+    var tries = 0;
+    (function tryClick() {
+      tries++;
+      tabLink.click();
+      if (!tabLink.classList.contains('w--current') && tries < 20) {
+        setTimeout(tryClick, 100);
+      }
+    })();
+  }
+  document.addEventListener('DOMContentLoaded', openTabFromHash);
+  window.addEventListener('hashchange', openTabFromHash);
+})();
+</script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var youtubeIframes = document.querySelectorAll('iframe.lazyiframe');
+        youtubeIframes.forEach(function (youtubeIframe) {
+            var dataSrcValue = youtubeIframe.getAttribute('data-src');
+            if (dataSrcValue) {
+                youtubeIframe.setAttribute('src', dataSrcValue);
+                youtubeIframe.removeAttribute('data-src');
+            }
+        });
+    });
+</script>
+  
+  
+  
+
+<script src="../assets/js/main.js"></script>
+</body></html>

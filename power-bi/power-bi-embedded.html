@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Power BI Embedded - Overview, Use Cases and Advantages</title>
+  <meta content="Learn about Power BI Embedded, a Microsoft Azure service that enables developers to integrate interactive analytics and dashboards directly into custom applications, offering scalable and secure business intelligence data visualizations without the need for individual Power BI licenses." name="description">
+  <meta content="" property="og:image">
+  <meta content="" property="twitter:image">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link href="../assets/css/base.css" rel="stylesheet" type="text/css">
+  <link href="../assets/css/styles.css" rel="stylesheet" type="text/css">
+
+  <!-- Favicon -->
+  <link href="../assets/images/favicon.ico" rel="shortcut icon" type="image/x-icon">
+  <link href="../assets/images/webclip.png" rel="apple-touch-icon">
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s);j.async=true;j.src="https://ss.thereportinghub.com/eszeqvibt.js?"+i;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','5mssr8=HQZUMSUoVz45Wz5PNy1cBUlQR0dXARROAAoMBBQVFQEACwcRGRAYXRcNBA%3D%3D');</script>
+  <!-- End Google Tag Manager -->
+</head>
+<body>
+  <div class="page-wrapper">
+    <html><head></head><body><html><head></head><body><html><head></head><body><html><head></head><body><html><head></head><body><html><head></head><body><html><head></head><body><html><head></head><body><html><head></head><body><div data-animation="default" class="navbar w-nav" data-easing2="ease" data-easing="ease" data-collapse="medium" role="banner" data-duration="400" id="nav">
+      <div class="navbar-continer w-container">
+        <div class="nav-item-wrap">
+          <a href="../index.html" class="brand w-nav-brand"><img src="../assets/images/rh-horizontal-white.svg" loading="eager" alt="" class="nav-brand-logo one"><img src="../assets/images/logo_white.svg" loading="lazy" alt="" class="nav-brand-logo two"></a>
+          <nav role="navigation" class="navigation w-nav-menu">
+            <a href="../index.html" class="nav-link w-nav-link">Home</a>
+            <div data-hover="false" data-delay="300" class="uui-navbar01_menu-dropdown w-dropdown">
+              <div class="uui-navbar01_dropdown-toggle w-dropdown-toggle">
+                <div class="uui-dropdown-icon w-embed"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg></div>
+                <div class="nav-link padding-right-0-25">Platform</div>
+              </div>
+              <nav class="uui-navbar01_dropdown-list w-dropdown-list">
+                <div class="uui-navbar01_container">
+                  <div class="uui-navbar01_dropdown-content">
+                    <div class="uui-navbar01_dropdown-content-left is-platform">
+                      <div class="uui-navbar01_dropdown-link-list">
+                        <h4 class="uui-navbar01_heading text-color-white">Platform</h4>
+                        <a href="../learn-more.html" class="uui-navbar01_dropdown-link w-inline-block">
+                          <div class="uui-navbar01_icon-wrapper"><img src="../assets/images/logo-white.svg" loading="lazy" alt="Bi White logo" class="icon-xsmall"></div>
+                          <div class="uui-navbar01_item-right">
+                            <div class="uui-navbar01_item-heading">Reporting Hub</div>
+                            <div class="uui-text-size-small hide-mobile-landscape">Custom-branded Power BI reporting delivery for teams and analytics clients</div>
+                          </div>
+                        </a>
+                      </div>
+                      <div class="uui-navbar01_dropdown-link-list is-bottom">
+                        <h4 class="uui-navbar01_heading opacity-0">Company</h4>
+                        <a href="../bi-genius.html" class="uui-navbar01_dropdown-link w-inline-block">
+                          <div class="uui-navbar01_icon-wrapper"><img src="../assets/images/new-bi-megamenu-logo-white.svg" loading="lazy" alt="Power Bi Megamenu white logo" class="icon-xsmall small"></div>
+                          <div class="uui-navbar01_item-right">
+                            <div class="uui-navbar01_item-heading">BI Genius</div>
+                            <div class="uui-text-size-small hide-mobile-landscape">Add-on fully customizable AI agents that drive insights with full transparency and control</div>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                    <div class="uui-navbar01_dropdown-content-right">
+                      <div class="uui-navbar01_dropdown-content-wrapper">
+                        <div class="blog-items-wrapper">
+                          <h4 class="uui-navbar01_dropdown-content-heading text-color-white">Latest from our blog</h4>
+                          <a href="../blog.html" class="uui-button-link is-button-xsmall w-inline-block">
+                            <div class="color_primary">See all posts ➝</div>
+                          </a>
+                        </div>
+                        <div class="w-dyn-list">
+                          <div role="list" class="uui-navbar01_dropdown-blog-list w-dyn-items"><div role="listitem" class="w-dyn-item">
+                              <a href="../blog/how-to-audit-your-external-analytics-delivery-for-scale-readiness.html" class="uui-navbar01_blog-item w-inline-block">
+                                <div class="uui-navbar01_blog-image-wrapper"><img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/69cd73430b9cefbe82f556cb_How%20to%20Audit%20Your%20External%20Analytics%20Delivery%20for%20Scale%20Readiness.jpg" loading="eager" alt="" class="uui-navbar01_blog-image"></div>
+                                <div class="uui-navbar01_large-item-content">
+                                  <div class="uui-navbar01_item-heading">How to Audit Your External Analytics Delivery for Scale Readiness</div>
+                                  <div class="uui-navbar01_item-button-wrapper">
+                                    <div class="uui-button-row">
+                                      <div class="uui-button-link is-button-xsmall">
+                                        <div class="color_primary">Learn More ➝</div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </a>
+                            </div><div role="listitem" class="w-dyn-item">
+                              <a href="../blog/the-real-cost-of-manual-report-distribution-a-framework-for-analytics-leaders.html" class="uui-navbar01_blog-item w-inline-block">
+                                <div class="uui-navbar01_blog-image-wrapper"><img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/69cd68937a2e494d59815dfa_The%20Real%20Cost%20of%20Manual%20Report%20Distribution%20A%20Framework%20for%20Analytics%20Leaders.jpg" loading="eager" alt="" class="uui-navbar01_blog-image"></div>
+                                <div class="uui-navbar01_large-item-content">
+                                  <div class="uui-navbar01_item-heading">The Real Cost of Manual Report Distribution: A Framework for Analytics Leaders</div>
+                                  <div class="uui-navbar01_item-button-wrapper">
+                                    <div class="uui-button-row">
+                                      <div class="uui-button-link is-button-xsmall">
+                                        <div class="color_primary">Learn More ➝</div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </a>
+                            </div><div role="listitem" class="w-dyn-item">
+                              <a href="../blog/7-best-ways-to-share-power-bi-reports-with-external-users.html" class="uui-navbar01_blog-item w-inline-block">
+                                <div class="uui-navbar01_blog-image-wrapper"><img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/69c6b68337f93532ba00256c_7%20Best%20Ways%20To%20Share%20Power%20BI%20Reports%20With%20External%20Users.jpg" loading="eager" alt="" class="uui-navbar01_blog-image"></div>
+                                <div class="uui-navbar01_large-item-content">
+                                  <div class="uui-navbar01_item-heading">7 Best Ways To Share Power BI Reports With External Users</div>
+                                  <div class="uui-navbar01_item-button-wrapper">
+                                    <div class="uui-button-row">
+                                      <div class="uui-button-link is-button-xsmall">
+                                        <div class="color_primary">Learn More ➝</div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </a>
+                            </div></div>
+                          
+                        </div>
+                      </div>
+                      <div class="uui-navbar01_dropdown-right-overlay-absolute"></div>
+                    </div>
+                  </div>
+                </div>
+              </nav>
+            </div>
+            <a href="../pricing.html" class="nav-link w-nav-link">Pricing</a>
+            <a href="../aaas.html" class="nav-link w-nav-link">AaaS Platform</a>
+            <div data-hover="false" data-delay="300" class="uui-navbar01_menu-dropdown w-dropdown">
+              <div class="uui-navbar01_dropdown-toggle w-dropdown-toggle">
+                <div class="uui-dropdown-icon w-embed"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg></div>
+                <div class="nav-link padding-right-0-25">Learn</div>
+              </div>
+              <nav class="uui-navbar01_dropdown-list w-dropdown-list">
+                <div class="uui-navbar01_container">
+                  <div class="uui-navbar01_dropdown-content">
+                    <div class="nav-items">
+                      <h4 class="uui-navbar01_heading large text-color-white">Learn</h4>
+                      <div class="uui-navbar01_dropdown-content-left">
+                        <div class="uui-navbar01_dropdown-link-list">
+                          <a href="https://docs.thereportinghub.com/?_gl=1*11en80c*_gcl_au*MjEyNTAwMzM0MC4xNzYwMDIyNzYzLjE5Nzk0NzY1MjguMTc2MjEwODgzNS4xNzYyMTA4ODM1*_ga*MzgyNDA3NDAxLjE3NjAwMjI3NjM." target="_blank" class="uui-navbar01_dropdown-link w-inline-block">
+                            <div class="uui-navbar01_icon-wrapper"><img src="../assets/images/Knowledge-Centre_icon.webp" loading="lazy" alt="" class="nav-image"></div>
+                            <div class="uui-navbar01_item-right">
+                              <div class="uui-navbar01_item-heading">Knowledge Center<br></div>
+                              <div class="uui-text-size-small hide-mobile-landscape">All the information you need to master B.I. delivery</div>
+                            </div>
+                          </a>
+                          <a href="../community.html" class="uui-navbar01_dropdown-link is-auto w-inline-block">
+                            <div class="uui-navbar01_icon-wrapper"><img src="../assets/images/About-Us_icon-1.webp" loading="lazy" alt="" class="nav-image"></div>
+                            <div class="uui-navbar01_item-right">
+                              <div class="uui-navbar01_item-heading">Community</div>
+                              <div class="uui-text-size-small hide-mobile-landscape">Connect and collaborate with active users</div>
+                            </div>
+                          </a>
+                        </div>
+                        <div class="uui-navbar01_dropdown-link-list">
+                          <h4 class="uui-navbar01_heading opacity-0">Company</h4>
+                          <a href="https://docs.thereportinghub.com/getting-started/deployment-step-by-step/self-serve-guided-install?_gl=1*1nvpg97*_gcl_au*MjEyNTAwMzM0MC4xNzYwMDIyNzYzLjE5Nzk0NzY1MjguMTc2MjEwODgzNS4xNzYyMTA4ODM1*_ga*MzgyNDA3NDAxLjE3NjAwMjI3NjM." target="_blank" class="uui-navbar01_dropdown-link w-inline-block">
+                            <div class="uui-navbar01_icon-wrapper"><img src="../assets/images/Getting-Started_icon.webp" loading="lazy" alt="" class="nav-image"></div>
+                            <div class="uui-navbar01_item-right">
+                              <div class="uui-navbar01_item-heading">Getting Started</div>
+                              <div class="uui-text-size-small hide-mobile-landscape">Step-by-step guides to get started with the Reporting Hub<br></div>
+                            </div>
+                          </a>
+                          <a href="https://www.youtube.com/@thereportinghub" class="uui-navbar01_dropdown-link is-auto w-inline-block">
+                            <div class="uui-navbar01_icon-wrapper"><img src="../assets/images/Video-Demos_icon.webp" loading="lazy" alt="" class="nav-image"></div>
+                            <div class="uui-navbar01_item-right">
+                              <div class="uui-navbar01_item-heading">Video Demos</div>
+                              <div class="uui-text-size-small hide-mobile-landscape">Our YouTube channel with helpful video demos</div>
+                            </div>
+                          </a>
+                        </div>
+                        <div id="w-node-a91421d3-b46b-1701-6a19-a49d5ae9c96d-17890035" class="uui-navbar01_dropdown-link-list flex">
+                          <h4 class="uui-navbar01_heading opacity-0 none">Company</h4>
+                          <a href="../resources.html" class="uui-navbar01_dropdown-link w-inline-block">
+                            <div class="uui-navbar01_icon-wrapper"><img src="../assets/images/Resources.webp" loading="lazy" alt="" class="nav-image"></div>
+                            <div class="uui-navbar01_item-right">
+                              <div class="uui-navbar01_item-heading">Resources</div>
+                              <div class="uui-text-size-small hide-mobile-landscape">Videos, white papers, and assets about Reporting Hub</div>
+                            </div>
+                          </a>
+                          <a href="https://support.thereportinghub.com/support/home" target="_blank" class="uui-navbar01_dropdown-link is-auto w-inline-block">
+                            <div class="uui-navbar01_icon-wrapper"><img src="../assets/images/Get-Help_icon.webp" loading="lazy" alt="" class="nav-image"></div>
+                            <div class="uui-navbar01_item-right">
+                              <div class="uui-navbar01_item-heading">Get Help</div>
+                              <div class="uui-text-size-small hide-mobile-landscape">Our Support team is here to help</div>
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+                      <div class="uui-navbar01_dropdown-content-left pt-0">
+                        <div class="uui-navbar01_dropdown-link-list one-item">
+                          <h4 class="uui-navbar01_heading large text-color-white">Services</h4>
+                          <a href="../partners.html" class="uui-navbar01_dropdown-link w-inline-block">
+                            <div class="uui-navbar01_icon-wrapper"><img src="../assets/images/Knowledge-Centre_icon.webp" loading="lazy" alt="" class="nav-image"></div>
+                            <div class="uui-navbar01_item-right">
+                              <div class="uui-navbar01_item-heading">Partner Programs<br></div>
+                              <div class="uui-text-size-small hide-mobile-landscape">Find or become a Reporting Hub Partner</div>
+                            </div>
+                          </a>
+                        </div>
+                        <div class="uui-navbar01_dropdown-link-list is-bottom">
+                          <h4 class="uui-navbar01_heading opacity-0">Company</h4>
+                          <a href="../professionalservices.html" class="uui-navbar01_dropdown-link w-inline-block">
+                            <div class="uui-navbar01_icon-wrapper"><img src="../assets/images/Professional-Services_icon.webp" loading="lazy" alt="" class="nav-image"></div>
+                            <div class="uui-navbar01_item-right">
+                              <div class="uui-navbar01_item-heading">Professional Services</div>
+                              <div class="uui-text-size-small hide-mobile-landscape">Get premium support from our team of experts</div>
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="uui-navbar01_dropdown-content-right">
+                      <div class="uui-navbar01_dropdown-content-wrapper">
+                        <div class="blog-items-wrapper">
+                          <h4 class="uui-navbar01_dropdown-content-heading text-color-white">Latest from our blog</h4>
+                          <a href="../blog.html" class="uui-button-link is-button-xsmall w-inline-block">
+                            <div class="color_primary">See all posts ➝</div>
+                          </a>
+                        </div>
+                        <div class="w-dyn-list">
+                          <div role="list" class="uui-navbar01_dropdown-blog-list w-dyn-items"><div role="listitem" class="w-dyn-item">
+                              <a href="../blog/how-to-audit-your-external-analytics-delivery-for-scale-readiness.html" class="uui-navbar01_blog-item w-inline-block">
+                                <div class="uui-navbar01_blog-image-wrapper"><img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/69cd73430b9cefbe82f556cb_How%20to%20Audit%20Your%20External%20Analytics%20Delivery%20for%20Scale%20Readiness.jpg" loading="eager" alt="" class="uui-navbar01_blog-image"></div>
+                                <div class="uui-navbar01_large-item-content">
+                                  <div class="uui-navbar01_item-heading">How to Audit Your External Analytics Delivery for Scale Readiness</div>
+                                  <div class="uui-navbar01_item-button-wrapper">
+                                    <div class="uui-button-row">
+                                      <div class="uui-button-link is-button-xsmall">
+                                        <div class="color_primary">Learn More ➝</div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </a>
+                            </div><div role="listitem" class="w-dyn-item">
+                              <a href="../blog/the-real-cost-of-manual-report-distribution-a-framework-for-analytics-leaders.html" class="uui-navbar01_blog-item w-inline-block">
+                                <div class="uui-navbar01_blog-image-wrapper"><img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/69cd68937a2e494d59815dfa_The%20Real%20Cost%20of%20Manual%20Report%20Distribution%20A%20Framework%20for%20Analytics%20Leaders.jpg" loading="eager" alt="" class="uui-navbar01_blog-image"></div>
+                                <div class="uui-navbar01_large-item-content">
+                                  <div class="uui-navbar01_item-heading">The Real Cost of Manual Report Distribution: A Framework for Analytics Leaders</div>
+                                  <div class="uui-navbar01_item-button-wrapper">
+                                    <div class="uui-button-row">
+                                      <div class="uui-button-link is-button-xsmall">
+                                        <div class="color_primary">Learn More ➝</div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </a>
+                            </div><div role="listitem" class="w-dyn-item">
+                              <a href="../blog/7-best-ways-to-share-power-bi-reports-with-external-users.html" class="uui-navbar01_blog-item w-inline-block">
+                                <div class="uui-navbar01_blog-image-wrapper"><img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/69c6b68337f93532ba00256c_7%20Best%20Ways%20To%20Share%20Power%20BI%20Reports%20With%20External%20Users.jpg" loading="eager" alt="" class="uui-navbar01_blog-image"></div>
+                                <div class="uui-navbar01_large-item-content">
+                                  <div class="uui-navbar01_item-heading">7 Best Ways To Share Power BI Reports With External Users</div>
+                                  <div class="uui-navbar01_item-button-wrapper">
+                                    <div class="uui-button-row">
+                                      <div class="uui-button-link is-button-xsmall">
+                                        <div class="color_primary">Learn More ➝</div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </a>
+                            </div></div>
+                          
+                        </div>
+                      </div>
+                      <div class="uui-navbar01_dropdown-right-overlay-absolute"></div>
+                    </div>
+                  </div>
+                </div>
+              </nav>
+            </div>
+            <a href="../demo.html" class="nav-link w-nav-link">Demo</a>
+            <a href="../install-today.html" class="nav-link w-nav-link">Install</a>
+            <a href="../about-us.html" class="nav-link w-nav-link">About Us</a>
+            <a href="../contact.html" class="nav-link w-nav-link">Contact Us</a>
+          </nav>
+          <div class="menu-button w-nav-button">
+            <div class="w-icon-nav-menu"></div>
+          </div>
+        </div>
+      </div>
+    </div></body></html></body></html></body></html></body></html></body></html></body></html></body></html></body></html></body></html>
+    <div class="main">
+      <section class="hero-section power-bi-embedded">
+        <div class="w-layout-blockcontainer container w-container">
+          <div class="hero-contents">
+            <div class="max-width-969">
+              <div class="power-bi-subtitle"><img src="../assets/images/bi_stars.webp" loading="lazy" alt="Five golden stars arranged in a horizontal row.">
+                <div> Educational BI Content from Reporting Hub</div>
+              </div>
+              <div class="space-1"></div>
+              <h1 class="heading-style-h1 text-align-center">What is Power BI Embedded? Features, Benefits and Scalability</h1>
+              <div class="space-1"></div>
+              <div class="text-align-center">Power BI Embedded is an innovative Microsoft Azure service designed to integrate Power BI&#x27;s powerful analytics directly into custom applications or websites. This service enables developers and independent software vendors (ISVs) to embed interactive Power BI content such as dashboards, charts, and reports into their own software environments, enhancing application functionality with advanced data visualization.<br>In this article, we’ll cover everything you need to know about Power BI Embedded and how<br>you can use it effectively.</div>
+              <div class="space-4-5"></div>
+              <div class="text-align-center">
+                <a href="https://thereportinghub.com/power-bi"><strong>Power BI </strong></a><strong>is a platform useful for data visualization and reporting. It is designed and used by both business analysts</strong>‍<strong>and newer users, making it accessible to a wide range of people.</strong>
+              </div>
+              <div class="space-1-5"></div>
+              <div class="power-bi-buttons">
+                <a href="../power-bi/power-bi-dashboards.html" class="power-bi-links w-button">Power BI Dashbards</a>
+                <a href="../power-bi/power-bi-embedded.html" aria-current="page" class="power-bi-links w-button w--current">Power BI Embedded</a>
+                <a href="../power-bi/financial-dashboard-analytics.html" class="power-bi-links w-button">Financial Analytics</a>
+              </div>
+              <div class="space-1-5"></div>
+              <div class="power-bi-authors-wrap">
+                <div class="authors-left"><img src="../assets/images/brian.webp" loading="lazy" alt="Smiling man with short dark hair wearing a dark shirt against a blue gradient background."></div>
+                <div class="authors-wrapper">
+                  <div class="authors-right">
+                    <div class="text-size-large">Brian DeLuca</div>
+                    <div class="space-1"></div>
+                    <div>15 min read . March 1, 2025</div>
+                  </div>
+                  <div class="varticle-line"></div>
+                  <a href="../power-bi/share-microsoft-power-bi.html" class="share-icon-wrap w-inline-block"><img src="../assets/images/ion_share-outline.webp" loading="lazy" alt="Share icon with an upward arrow coming out of a box."></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section power-bi-embedded">
+        <div class="w-layout-blockcontainer container w-container">
+          <h2 class="text-align-center">How does Power BI Embedded work?</h2>
+          <div class="space-1-5"></div>
+          <div class="embed-work-contents">
+            <div class="embed-work-card"><img src="../assets/images/sep-icon-01.webp" loading="lazy" alt="Blue square icon with a white RSS feed symbol inside.">
+              <div class="text-color-gray">Start by diving into a few tutorials and poring over the detailed developer documentation. Brace yourself for a steep learning curve that might take weeks just to master the basics. Thanks to the intricate weave of Microsoft’s ecosystem, even creating your first dashboard can feel like a daunting puzzle.</div>
+            </div>
+            <div class="embed-work-card"><img src="../assets/images/sep-icon-02.webp" loading="lazy" alt="White split arrows pointing outward inside a blue square with rounded corners.">
+              <div class="text-color-gray">Start by diving into a few tutorials and poring over the detailed developer documentation. Brace yourself for a steep learning curve that might take weeks just to master the basics. Thanks to the intricate weave of Microsoft’s ecosystem, even creating your first dashboard can feel like a daunting puzzle.</div>
+            </div>
+            <div class="embed-work-card"><img src="../assets/images/sep-icon-03.webp" loading="lazy" alt="Blue icon with two white interlocking gears representing settings or configuration.">
+              <div class="text-color-gray">Start by diving into a few tutorials and poring over the detailed developer documentation. Brace yourself for a steep learning curve that might take weeks just to master the basics. Thanks to the intricate weave of Microsoft’s ecosystem, even creating your first dashboard can feel like a daunting puzzle.</div>
+            </div>
+            <div class="embed-work-card"><img src="../assets/images/sep-icon-04.webp" loading="lazy" alt="Blue square icon with a white cloud symbol in the center.">
+              <div class="text-color-gray">Start by diving into a few tutorials and poring over the detailed developer documentation. Brace yourself for a steep learning curve that might take weeks just to master the basics. Thanks to the intricate weave of Microsoft’s ecosystem, even creating your first dashboard can feel like a daunting puzzle.</div>
+            </div>
+          </div>
+          <div class="embed-work-contents _2nd">
+            <div class="embed-work-card"><img src="../assets/images/sep-icon-04.webp" loading="lazy" alt="Blue square icon with a white cloud symbol in the center.">
+              <div class="text-color-gray">The adaptable structure of workspaces lets you organize your content in a way that best fits your application&#x27;s design. Whether you prefer a streamlined setup or a more segmented approach, the choice is yours.</div>
+            </div>
+            <div class="embed-work-card"><img src="../assets/images/sep-icon-04.webp" loading="lazy" alt="Blue square icon with a white cloud symbol in the center.">
+              <div class="text-color-gray">A workspace is a container for Power BI content, such as datasets and reports. Initially, these workspaces are empty. Content creation is possible through Power BI Desktop or programmatically. You can create a dataset programmatically and then build reports within your application, bypassing Power BI Desktop altogether. This flexibility allows you to modify existing reports or create new ones directly within your app, provided you have a dataset in the workspace.</div>
+            </div>
+            <div class="embed-work-card"><img src="../assets/images/sep-icon-04.webp" loading="lazy" alt="Blue square icon with a white cloud symbol in the center.">
+              <div class="text-color-gray">A workspace collection is the top-tier Azure container for resources, housing zero or more workspaces. It comes with the standard Azure features:<br><strong class="text-color-gray">· Access keys: </strong>Secure keys for calling Power BI APIs.<br><span class="text-color-gray"><strong class="text-color-gray">· Users:</strong></span> Azure Active Directory (AAD) users with administrative rights to manage the workspace collection via the Azure portal or the Azure Resource Manager API.<br><strong class="text-color-gray">· Region:</strong> Choose from 34 worldwide regions to provision your workspace collection, which supports better performance and meets data localization preferences.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section power-bi-softwar">
+        <div class="w-layout-blockcontainer container w-container">
+          <div class="power-bi-sftr-contents">
+            <div class="power-bi-right">
+              <h2>What features does Power BI Embedded offer?</h2>
+              <div class="space-1-5"></div>
+              <div class="text-size-medium text-color-gary">While it lacks a dedicated report visualization environment, one standout feature of Power BI Embedded is its cost-effectiveness compared to Power BI Pro. Power BI Embedded operates on an hourly rate with no user limits, making it accessible to all company members within its space constraints. The cost of a Power BI Embedded license depends on usage hours and required capacity.<br><br>For companies with at least 24 users, opting for a Power BI Embedded license proves more economical than buying individual Power BI Pro licenses. Of course, it&#x27;s important to remember that Power BI Embedded and Power BI Pro serve different functions and offer unique capabilities. Although Power BI Embedded is more affordable, it lacks a dedicated environment for viewing, accessing, or managing reports, functioning purely as an Azure service.</div>
+            </div><img src="../assets/images/Power-BI-Embedded-Uses-1.webp" loading="lazy" sizes="(max-width: 659px) 100vw, 659px" srcset="../assets/images/Power-BI-Embedded-Uses-1-p-500.webp 500w, ../assets/images/Power-BI-Embedded-Uses-1.webp 659w" alt="Abstract digital circuit board with glowing neon blue and purple lines and geometric shapes on dark background.">
+          </div>
+        </div>
+      </section>
+      <div>
+        <div class="section security"><img src="../assets/images/new_top_sec_bg.webp" loading="lazy" sizes="(max-width: 1919px) 100vw, 1920px" srcset="../assets/images/86ac51ed481bac52d22ed1b1d42dca39_new_top_sec_bg-p-500.webp 500w, ../assets/images/new_top_sec_bg.webp 1920w" alt="Abstract background with a diagonal split between light blue and dark navy blue colors.">
+          <div class="w-layout-blockcontainer container w-container">
+            <div class="security-title-wrap">
+              <h2 class="text-color-white text-align-center">Why Use Power BI Embedded?</h2>
+            </div>
+            <div class="space-2"></div>
+            <div class="use-bi-embedded">
+              <div class="why-bi-card border-color-change v1"><img src="../assets/images/icon-17.svg" loading="lazy" alt="Icon" class="bi-card-icon-use-icon">
+                <h4 class="text-color-secondary heading-style-h3 samll">Benefits of using Power BI Embedded</h4>
+                <div class="space-1"></div>
+                <p class="card-fonts">Power BI Viewer is a real game-changer for sharing Power BI content both internally and externally. It eliminates the need for your customers to get extra Power BI Pro licenses, making it a budget-friendly option for businesses.<br><br>Plus, you can tailor and manage the user experience for different audiences, whether they&#x27;re different companies or individual users, ensuring everyone gets the specific data they need.<br><br>One powerful feature is the ability to enable row level security (RLS), which allows filtering of relevant data based on user identity. This means each user only sees the data they need to see, increasing security and privacy.<br><br>Additionally, Power BI Viewer provides a stable, consistent experience for end-users, sparing them from the monthly changes and retraining sessions typically required due to Power BI&#x27;s frequent updates.<br><br>It&#x27;s also worth noting that Power BI Embedded Gen2 is currently in preview. This new version promises significant improvements, including better scaling tools, enhanced performance, and easier access to paginated reports and AI features. This means you can look forward to even more powerful and efficient tools in the near future.</p>
+              </div>
+              <div class="why-bi-card border-color-change v1"><img src="../assets/images/icon-17.svg" loading="lazy" alt="Icon" class="bi-card-icon-use-icon">
+                <h4 class="text-color-secondary heading-style-h3 samll">Use Cases and applications</h4>
+                <div class="space-1"></div>
+                <p class="card-fonts">Power BI Embedded is making waves in industries by turning data into actionable insights. In retail, companies are harnessing its power to dissect sales data, better analyze consumer behavior and identify buying patterns, all of which are critical to optimizing inventory and creating flying marketing strategies effectiveness<br><br>Organizations in financial services rely on Power BI Embedded to manage financial performance. This data-driven approach empowers them to make informed decisions, maximizing risk management and profitability.<br><br>Healthcare organizations are using this tool to analyze key performance indicators related to service quality, productivity and patient satisfaction. By doing so, areas for patient experience improvement can be identified, ultimately leading to better healthcare outcomes.<br><br>The engineering department is no exception. Companies here use Power BI Embedded to monitor production efficiency and manage supply chains. By identifying bottlenecks and optimizing processes, productivity can be increased and costs reduced, which can drive overall operational efficiency.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="curve-bg-wrap"><img src="../assets/images/dark-section-bg-bottom-1.svg" loading="lazy" alt="Background Image of dark-section-bg-bottom" class="carve-image"></div>
+      </div>
+      <section class="section how-to">
+        <div class="w-layout-blockcontainer container w-container">
+          <div>
+            <div>
+              <h2 class="text-align-center">How to Embed Power BI in a Website?</h2>
+              <div class="space-4-5"></div>
+            </div>
+            <div class="embed-power-bi-steps">
+              <div id="w-node-_97170eff-3ac6-9ff7-03bf-27c81b19f88f-2fcae5ae" class="embed-power-left">
+                <div class="space-7"></div>
+                <div class="embed-power-card"><img src="../assets/images/how_to_use_website_01.webp" loading="lazy" alt="White monitor icon centered on a bright pink rounded square background." class="embed-power-image">
+                  <div>To embed a report using the Power BI service, start by opening the desired report. Navigate to the File menu and choose Embed report &gt; Website or portal. You&#x27;ll see an option to generate a secure embed code. If you&#x27;re embedding into a blog or website, select the HTML code provided.</div>
+                </div>
+                <div class="space-7"></div>
+                <div class="embed-power-card"><img src="../assets/images/how_to_use_website_01.webp" loading="lazy" alt="White monitor icon centered on a bright pink rounded square background." class="embed-power-image">
+                  <div>To embed a report using the Power BI service, start by opening the desired report. Navigate to the File menu and choose Embed report &gt; Website or portal. You&#x27;ll see an option to generate a secure embed code. If you&#x27;re embedding into a blog or website, select the HTML code provided.</div>
+                </div>
+                <div class="space-7"></div>
+                <div class="embed-power-card"><img src="../assets/images/how_to_use_website_01.webp" loading="lazy" alt="White monitor icon centered on a bright pink rounded square background." class="embed-power-image">
+                  <div>To embed a report using the Power BI service, start by opening the desired report. Navigate to the File menu and choose Embed report &gt; Website or portal. You&#x27;ll see an option to generate a secure embed code. If you&#x27;re embedding into a blog or website, select the HTML code provided.</div>
+                </div>
+                <div class="space-7"></div>
+              </div>
+              <div id="w-node-b418c06b-1bec-9ad4-c610-3f44d814a445-2fcae5ae" class="embed-power-middle">
+                <div class="div-block-3"></div>
+                <div class="dot-wrapper"><img src="../assets/images/pink_bullet.webp" loading="lazy" alt="Pink donut with pink icing and colorful sprinkles."></div>
+                <div class="dot-wrapper"><img src="../assets/images/pink_bullet.webp" loading="lazy" alt="Pink donut with pink icing and colorful sprinkles."></div>
+                <div class="dot-wrapper"><img src="../assets/images/pink_bullet.webp" loading="lazy" alt="Pink donut with pink icing and colorful sprinkles."></div>
+                <div class="dot-wrapper"><img src="../assets/images/pink_bullet.webp" loading="lazy" alt="Pink donut with pink icing and colorful sprinkles."></div>
+                <div class="dot-wrapper"><img src="../assets/images/pink_bullet.webp" loading="lazy" alt="Pink donut with pink icing and colorful sprinkles."></div>
+                <div class="dot-wrapper"><img src="../assets/images/pink_bullet.webp" loading="lazy" alt="Pink donut with pink icing and colorful sprinkles."></div>
+                <div class="dot-wrapper"><img src="../assets/images/pink_bullet.webp" loading="lazy" alt="Pink donut with pink icing and colorful sprinkles."></div>
+              </div>
+              <div id="w-node-_140d3c26-c424-50fb-e974-9b3bffaf974f-2fcae5ae" class="embed-power-right">
+                <div class="embed-power-card"><img src="../assets/images/how_to_use_website_01.webp" loading="lazy" alt="White monitor icon centered on a bright pink rounded square background." class="embed-power-image">
+                  <div>To embed a report using the Power BI service, start by opening the desired report. Navigate to the File menu and choose Embed report &gt; Website or portal. You&#x27;ll see an option to generate a secure embed code. If you&#x27;re embedding into a blog or website, select the HTML code provided.</div>
+                </div>
+                <div class="space-7"></div>
+                <div class="embed-power-card"><img src="../assets/images/how_to_use_website_01.webp" loading="lazy" alt="White monitor icon centered on a bright pink rounded square background." class="embed-power-image">
+                  <div>To embed a report using the Power BI service, start by opening the desired report. Navigate to the File menu and choose Embed report &gt; Website or portal. You&#x27;ll see an option to generate a secure embed code. If you&#x27;re embedding into a blog or website, select the HTML code provided.</div>
+                </div>
+                <div class="space-7"></div>
+                <div class="embed-power-card"><img src="../assets/images/how_to_use_website_01.webp" loading="lazy" alt="White monitor icon centered on a bright pink rounded square background." class="embed-power-image">
+                  <div>To embed a report using the Power BI service, start by opening the desired report. Navigate to the File menu and choose Embed report &gt; Website or portal. You&#x27;ll see an option to generate a secure embed code. If you&#x27;re embedding into a blog or website, select the HTML code provided.</div>
+                </div>
+                <div class="space-7"></div>
+                <div class="embed-power-card"><img src="../assets/images/how_to_use_website_01.webp" loading="lazy" alt="White monitor icon centered on a bright pink rounded square background." class="embed-power-image">
+                  <div>To embed a report using the Power BI service, start by opening the desired report. Navigate to the File menu and choose Embed report &gt; Website or portal. You&#x27;ll see an option to generate a secure embed code. If you&#x27;re embedding into a blog or website, select the HTML code provided.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section scalability">
+        <div class="w-layout-blockcontainer container w-container">
+          <div>
+            <h2 class="text-align-center">How Does <span class="text-color-primary">Scalability</span> Work with Power BI Embedded?</h2>
+            <div class="space-1"></div>
+            <div class="text-align-center text-color-gray text-size-medium">Power BI Embedded offers powerful solutions for vertical scalability (SKU A), leveraging the Azure REST API to create, retrieve, upgrade, and delete dedicated Power BI capacities. While Embedded Premium capabilities don&#x27;t come with built-in automatic vertical scalability, you can implement custom automatic scaling techniques to adjust capacity elastically.<br></div>
+            <div class="space-5"></div>
+            <div class="scalability-card"><img src="../assets/images/scalability_icon.webp" loading="lazy" alt="Blue square icon with a globe and a sparkle indicating scalability or global growth." class="scalability-card-image">
+              <div class="text-size-medium">This ensures your memory and CPU needs are met, maintaining top-notch performance even during high-traffic periods. To maximize the benefits of Power BI Embedded, it’s important to analyze each company’s unique needs and choose the strategies that best suit their operational and efficiency needs<br><br><strong class="text-color-gray">Additionally, Power BI REST APIs are invaluable for automating projects, gathering reports, and streamlining the development process, making your operations more efficient and effective.</strong></div>
+            </div>
+            <div class="space-5"></div>
+            <div>
+              <h2 class="text-align-center">Power BI Embedded vs. Power BI service: Key differences</h2>
+              <div class="space-1"></div>
+              <div class="text-align-center text-color-gray text-size-medium">There are a few key differences between Power BI and Power BI embedded. Both of them have many of the same features but Power BI Embedded is meant to be used to create custom solutions on websites and inside of applications. Some of the biggest key differences have been detailed in the sections below:</div>
+              <div class="space-5"></div>
+              <h3 class="text-align-center">Key Differences</h3>
+              <div class="space-3"></div>
+              <div class="use-bi-features key-difference">
+                <div class="why-bi-card border-color-change v1"><img src="../assets/images/key-icon-01.webp" loading="lazy" alt="Blue key icon with three horizontal lines on the right side." class="bi-card-icon-use-icon key-diff">
+                  <h4 class="text-color-gray">User Interface and Access</h4>
+                  <div class="space-1"></div>
+                  <div class="text-color-gray w-richtext">
+                    <ul role="list">
+                      <li><strong>Power BI:</strong> Designed with end-users in mind, offering an intuitive interface for data exploration, analysis, and report creation.</li>
+                      <li><strong>Power BI Embedded:</strong> Aimed at developers, enabling the seamless embedding of reports into custom applications so that end-users can access insights without needing a Power BI account.</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="why-bi-card border-color-change v1"><img src="../assets/images/key-icon-02.webp" loading="lazy" alt="Blue rocket ship icon with circular window and flames." class="bi-card-icon-use-icon key-diff">
+                  <h4 class="text-color-gray">Deployment</h4>
+                  <div class="space-1"></div>
+                  <div class="text-color-gray w-richtext">
+                    <ul role="list">
+                      <li><strong>Power BI:</strong> Reports are deployed within the Power BI service and accessed through the Power BI web portal or mobile app.</li>
+                      <li><strong>Power BI Embedded:</strong> Reports are embedded directly into custom applications, creating a more integrated experience within the app itself.</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="why-bi-card border-color-change v1"><img src="../assets/images/key-icon-03.webp" loading="lazy" alt="Icon of a credit card with a magnetic stripe and chip." class="bi-card-icon-use-icon key-diff">
+                  <h4 class="text-color-gray">Licensing</h4>
+                  <div class="space-1"></div>
+                  <div class="text-color-gray w-richtext">
+                    <ul role="list">
+                      <li><strong>Power BI:</strong> Requires individual user licenses for access and usage.</li>
+                      <li><strong>Power BI Embedded: </strong>Operates on a capacity-based pricing model, where businesses purchase dedicated cloud resources to embed reports into their applications.</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="why-bi-card border-color-change v1"><img src="../assets/images/key-icon-04.webp" loading="lazy" alt="Blue key icon composed of square and plus shapes on white background." class="bi-card-icon-use-icon key-diff">
+                  <h4 class="text-color-gray">Customization</h4>
+                  <div class="space-1"></div>
+                  <div class="text-color-gray w-richtext">
+                    <ul role="list">
+                      <li><strong>Power BI:</strong> Offers customization options within the service, though with some limitations compared to Power BI Embedded.</li>
+                      <li><strong>Power BI Embedded:</strong> Provides extensive customization capabilities, allowing developers to align embedded reports with the application&#x27;s aesthetics and branding.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div>
+        <div class="section security"><img src="../assets/images/new_top_sec_bg.webp" loading="lazy" sizes="(max-width: 1919px) 100vw, 1920px" srcset="../assets/images/86ac51ed481bac52d22ed1b1d42dca39_new_top_sec_bg-p-500.webp 500w, ../assets/images/new_top_sec_bg.webp 1920w" alt="Abstract background with a diagonal split between light blue and dark navy blue colors.">
+          <div class="w-layout-blockcontainer container w-container">
+            <div class="security-title-wrap">
+              <h2 class="text-color-white text-align-center">Power BI Embedded Pricing</h2>
+              <p class="card-fonts text-color-white text-align-center">The overall cost of Power BI Embedded depends on the node kind selected and the range of nodes deployed. Node types differ based on number of V-cores and RAM as outlined in the table below:<br></p>
+            </div>
+            <div class="space-2"></div>
+            <div class="pricing-table-overflow">
+              <div class="pricing-table-wrapp">
+                <div class="pricing-row _1st">
+                  <div class="pricing-cell">
+                    <div class="text-color-white text-size-medium text-weight-bold">Node Type<br></div>
+                  </div>
+                  <div class="pricing-cell">
+                    <div class="text-color-white text-size-medium text-weight-bold">Virtual Cores</div>
+                  </div>
+                  <div class="pricing-cell">
+                    <div class="text-color-white text-size-medium text-weight-bold">Memory</div>
+                  </div>
+                  <div class="pricing-cell">
+                    <div class="text-color-white text-size-medium text-weight-bold">Price</div>
+                  </div>
+                </div>
+                <div class="pricing-row">
+                  <div class="pricing-cell trnsperant-bg">
+                    <div class="text-color-white text-size-medium text-weight-semibold">A1</div>
+                  </div>
+                  <div class="pricing-cell trnsperant-bg">
+                    <div class="text-color-white text-size-medium text-weight-semibold">1</div>
+                  </div>
+                  <div class="pricing-cell trnsperant-bg">
+                    <div class="text-color-white text-size-medium text-weight-semibold">3 GB RAM</div>
+                  </div>
+                  <div class="pricing-cell trnsperant-bg">
+                    <div class="text-color-white text-size-medium text-weight-semibold">$1.0081/hour</div>
+                  </div>
+                </div>
+                <div class="pricing-row">
+                  <div class="pricing-cell trnsperant-bg">
+                    <div class="text-color-white text-size-medium text-weight-semibold">A2</div>
+                  </div>
+                  <div class="pricing-cell trnsperant-bg">
+                    <div class="text-color-white text-size-medium text-weight-semibold">2</div>
+                  </div>
+                  <div class="pricing-cell trnsperant-bg">
+                    <div class="text-color-white text-size-medium text-weight-semibold">5 GB RAM</div>
+                  </div>
+                  <div class="pricing-cell trnsperant-bg">
+                    <div class="text-color-white text-size-medium text-weight-semibold">$2.0081/hour</div>
+                  </div>
+                </div>
+                <div class="pricing-row">
+                  <div class="pricing-cell trnsperant-bg">
+                    <div class="text-color-white text-size-medium text-weight-semibold">A3</div>
+                  </div>
+                  <div class="pricing-cell trnsperant-bg">
+                    <div class="text-color-white text-size-medium text-weight-semibold">3</div>
+                  </div>
+                  <div class="pricing-cell trnsperant-bg">
+                    <div class="text-color-white text-size-medium text-weight-semibold">10 GB RAM</div>
+                  </div>
+                  <div class="pricing-cell trnsperant-bg">
+                    <div class="text-color-white text-size-medium text-weight-semibold">$4.0242/hour</div>
+                  </div>
+                </div>
+                <div class="pricing-row">
+                  <div class="pricing-cell trnsperant-bg">
+                    <div class="text-color-white text-size-medium text-weight-semibold">A4</div>
+                  </div>
+                  <div class="pricing-cell trnsperant-bg">
+                    <div class="text-color-white text-size-medium text-weight-semibold">8</div>
+                  </div>
+                  <div class="pricing-cell trnsperant-bg">
+                    <div class="text-color-white text-size-medium text-weight-semibold">25 GB RAM</div>
+                  </div>
+                  <div class="pricing-cell trnsperant-bg">
+                    <div class="text-color-white text-size-medium text-weight-semibold">$8.0565/hour</div>
+                  </div>
+                </div>
+                <div class="pricing-row">
+                  <div class="pricing-cell trnsperant-bg">
+                    <div class="text-color-white text-size-medium text-weight-semibold">A5</div>
+                  </div>
+                  <div class="pricing-cell trnsperant-bg">
+                    <div class="text-color-white text-size-medium text-weight-semibold">16</div>
+                  </div>
+                  <div class="pricing-cell trnsperant-bg">
+                    <div class="text-color-white text-size-medium text-weight-semibold">50 GB RAM</div>
+                  </div>
+                  <div class="pricing-cell trnsperant-bg">
+                    <div class="text-color-white text-size-medium text-weight-semibold">$16.121/hour</div>
+                  </div>
+                </div>
+                <div class="pricing-row last">
+                  <div class="pricing-cell trnsperant-bg">
+                    <div class="text-color-white text-size-medium text-weight-semibold">A6</div>
+                  </div>
+                  <div class="pricing-cell trnsperant-bg">
+                    <div class="text-color-white text-size-medium text-weight-semibold">32</div>
+                  </div>
+                  <div class="pricing-cell trnsperant-bg">
+                    <div class="text-color-white text-size-medium text-weight-semibold">100 GB RAM</div>
+                  </div>
+                  <div class="pricing-cell trnsperant-bg">
+                    <div class="text-color-white text-size-medium text-weight-semibold">$32.2506/hour</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="curve-bg-wrap"><img src="../assets/images/dark-section-bg-bottom-1.svg" loading="lazy" alt="Background Image of dark-section-bg-bottom" class="carve-image"></div>
+      </div>
+    </div>
+            <section class="footer-section v1 section-2">
+      <div class="container">
+        <div class="foooter-top v1">
+          <div class="footer-left-left">
+            <div class="footer-icon-wrap"><img src="../assets/images/Symbol-1_2.webp" loading="lazy" alt="White Icon" class="icon"></div>
+            <div class="space-1-5"></div>
+            <div class="footer-title-top">Setup your <span class="highlight-text pure-blue">free trial</span> today!</div>
+            <div class="space-1"></div>
+            <p class="paragraph-regular">Get started today with a no-obligation 30-day free trial. The<br>Reporting Hub can be fully deployed to your Azure environment<br>by following our self-serve guided installer. <a href="../install-today.html" class="span-link">Learn more</a>
+            </p>
+            <div class="space-2"></div>
+            <div class="button-wrap left">
+              <a href="../install-today.html" class="button color-blue w-inline-block">
+                <div>Install Today</div>
+              </a>
+              <a href="../contact.html" class="button bg-transparent text-blue w-inline-block">
+                <div>Get in Touch</div><img src="../assets/images/Symbol-7.webp" loading="lazy" alt="Arrow" class="button-arrow">
+              </a>
+            </div>
+          </div>
+          <div class="footer-image-wrap"><img src="../assets/images/dashboard-trial-new-1_1.webp" loading="lazy" width="Auto" alt="Power Bi Dashboard" sizes="100vw" srcset="../assets/images/dashboard-trial-new-1_1-p-500.webp 500w, ../assets/images/dashboard-trial-new-1_1-p-800.webp 800w, ../assets/images/dashboard-trial-new-1_1-p-1080.webp 1080w, ../assets/images/dashboard-trial-new-1_1-p-1600.webp 1600w, ../assets/images/dashboard-trial-new-1_1-p-2000.webp 2000w, ../assets/images/dashboard-trial-new-1_1-p-2600.webp 2600w, ../assets/images/dashboard-trial-new-1_1-p-3200.webp 3200w, ../assets/images/dashboard-trial-new-1_1.webp 3936w" class="footer-image"></div>
+        </div>
+      </div>
+      <div class="space-5"></div>
+      <div class="w-layout-blockcontainer container w-container">
+        <div class="footer-component">
+          <div class="w-layout-grid footer-grid-wrap">
+            <div class="footer-left-call">
+              <div class="font-0-9">Contact US</div>
+              <div class="footer-menu-left">
+                <div class="footer-menu-group"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 15 12" fill="none" class="social-icon">
+                    <g clip-path="url(#clip0_9006_2830)">
+                      <path d="M1.52344 2.61654C1.52344 2.26292 1.66392 1.92378 1.91396 1.67373C2.16401 1.42368 2.50315 1.2832 2.85677 1.2832H12.1901C12.5437 1.2832 12.8828 1.42368 13.1329 1.67373C13.3829 1.92378 13.5234 2.26292 13.5234 2.61654M1.52344 2.61654V9.2832C1.52344 9.63683 1.66392 9.97596 1.91396 10.226C2.16401 10.476 2.50315 10.6165 2.85677 10.6165H12.1901C12.5437 10.6165 12.8828 10.476 13.1329 10.226C13.3829 9.97596 13.5234 9.63683 13.5234 9.2832V2.61654M1.52344 2.61654L7.52344 6.61654L13.5234 2.61654" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </g>
+                  </svg>
+                  <a href="mailto:info@thereportinghub.com?subject=You've%20got%20an%20email" class="footer-link">info@thereportinghub.com</a>
+                </div>
+                <div class="footer-menu-group"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 17 18" fill="none" class="social-icon">
+                    <path d="M3.85938 6.75618C3.85938 4.35756 5.94871 2.41309 8.52603 2.41309C11.1033 2.41309 13.1927 4.35756 13.1927 6.75618C13.1927 9.13601 11.7032 11.913 9.37942 12.9061C8.83769 13.1376 8.21439 13.1376 7.67267 12.9061C5.34882 11.913 3.85938 9.13601 3.85938 6.75618Z" stroke="currentColor" stroke-width="1.5"></path>
+                    <path d="M9.85417 7.0804C9.85417 7.81678 9.25722 8.41373 8.52084 8.41373C7.78446 8.41373 7.1875 7.81678 7.1875 7.0804C7.1875 6.34402 7.78446 5.74707 8.52084 5.74707C9.25722 5.74707 9.85417 6.34402 9.85417 7.0804Z" stroke="currentColor" stroke-width="1.5"></path>
+                    <path d="M14.4997 11.4131C14.9433 11.8147 15.1927 12.2675 15.1927 12.7464C15.1927 14.4033 12.2079 15.7464 8.52603 15.7464C4.84414 15.7464 1.85938 14.4033 1.85938 12.7464C1.85938 12.2675 2.10878 11.8147 2.55234 11.4131" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+                  </svg>
+                  <div class="max-width-11">
+                    <a href="https://maps.google.com/?q=707+7th+Avenue+SW+Calgary+AB+Canada+T2P+3H6" target="_blank" rel="noopener" class="footer-link">1150, 707 - 7th Avenue SW Calgary, AB Canada T2P 3H6</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="footer-call">
+              <div class="font-0-9">Website</div>
+              <div class="footer-menu-main">
+                <a href="../index.html" class="footer-link">Home</a>
+                <a href="../aaas.html" class="footer-link">AaaS Platform</a>
+                <a href="../pricing.html" class="footer-link">Pricing</a>
+                <a href="../learn-more.html" class="footer-link">What is Reporting Hub?</a>
+                <a href="../demo.html" class="footer-link">Demo</a>
+                <a href="../install-today.html" class="footer-link">Install Today</a>
+                <a href="../about-us.html" class="footer-link">About Us</a>
+                <a href="../contact.html" class="footer-link">Contact Us</a>
+              </div>
+            </div>
+            <div class="footer-call">
+              <div class="font-0-9">theHUB</div>
+              <div class="footer-menu-main">
+                <a href="https://docs.thereportinghub.com/" class="footer-link">Knowledge Center</a>
+                <a href="../blog.html" class="footer-link">Our Blog</a>
+                <a href="../power-bi.html" class="footer-link">About Power BI</a>
+                <a href="https://support.thereportinghub.com/support/home" class="footer-link">Get Support</a>
+                <a href="../support-plans.html" class="footer-link">Support Plans</a>
+                <a href="../policies.html" class="footer-link">Policies</a>
+                <a href="/policies#rh-terms" class="footer-link">Terms of Service</a>
+              </div>
+            </div>
+          </div>
+          <a href="#btt" class="direction-button w-inline-block"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 52 53" fill="none" class="button-icon">
+              <g clip-path="url(#clip0_9006_2933)">
+                <path d="M0 26.1602C0 40.5196 11.6406 52.1602 26 52.1602C40.3594 52.1602 52 40.5196 52 26.1602C52 11.8008 40.3594 0.160156 26 0.160156C11.6406 0.160156 0 11.8008 0 26.1602Z" fill="white" fill-opacity="0.1"></path>
+                <path d="M32.704 28.6752C33.1627 29.1422 33.9152 29.1422 34.3739 28.6752C34.8212 28.2199 34.8212 27.4902 34.3739 27.0348L26.7165 19.2396C26.3246 18.8407 25.6817 18.8407 25.2898 19.2396L17.6323 27.0348C17.1851 27.4902 17.1851 28.2199 17.6323 28.6752C18.0911 29.1422 18.8436 29.1422 19.3023 28.6752L25.2898 22.58C25.6817 22.181 26.3246 22.181 26.7165 22.58L32.704 28.6752Z" fill="currentColor" class="white"></path>
+              </g>
+            </svg></a>
+        </div>
+      </div>
+      <div class="space-3"></div>
+      <div class="global-line"></div>
+      <div class="footer-bottom">
+        <div class="space-3"></div>
+        <div class="w-layout-blockcontainer container w-container">
+          <div class="footer-bottom-contents">
+            <a href="../index.html" class="footer-left w-inline-block"><img src="../assets/images/rh-horizontal-white.svg" loading="lazy" alt="" class="image-small">
+              <div class="text-color-white margin-top-10">Microsoft partner</div>
+            </a>
+            <div class="footer-right">
+              <div class="new-footer-wrap">
+                <div class="font-0-9 text-align-right left-mobile">
+                  <a href="mailto:info@thereportinghub.com?subject=You've%20got%20email" class="link-8"><span class="text-span-2">info@thereportinghub.com</span></a>
+                </div>
+                <div class="social-media-wrap">
+                  <a href="https://www.facebook.com/people/The-Reporting-Hub/100064582883104/" class="social-media-link w-inline-block"><img src="../assets/images/fb.svg" loading="lazy" alt="" class="social-media-icon"></a>
+                  <a href="https://www.linkedin.com/company/the-reporting-hub/" class="social-media-link w-inline-block"><img src="../assets/images/in.svg" loading="lazy" alt="" class="social-media-icon"></a>
+                  <a href="https://x.com/thereportinghub" class="social-media-link w-inline-block"><img src="../assets/images/tw.svg" loading="lazy" alt="" class="social-media-icon"></a>
+                  <a href="https://www.instagram.com/thereportinghub/" class="social-media-link w-inline-block"><img src="../assets/images/insta.svg" loading="lazy" alt="" class="social-media-icon"></a>
+                </div>
+              </div>
+              <div class="font-0-9 text-align-right margin-top-16">2025 All Rights Reserved | The Reporting Hub</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <!-- jQuery removed -->
+  
+  
+  
+  <!--  Google Tag Manager (noscript)  -->
+  <noscript><iframe src="https://ss.thereportinghub.com/ns.html?id=GTM-MM9W9FH" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!--  End Google Tag Manager (noscript)  -->
+  <script>
+(function () {
+  function cssEscapeSafe(s) {
+    try { return CSS.escape(s); } catch (e) { return s.replace(/["\\]/g, "\\$&"); }
+  }
+  function normalizeTarget(target) {
+    // ✅ Ako ti URL i dalje dolazi kao #bi-genius-terms, mapiraj ga na rh-terms
+    if (target === "bi-genius-terms") return "rh-terms";
+    return target;
+  }
+  function openTabFromHash() {
+    var hash = window.location.hash;
+    if (!hash) return;
+    var target = hash.slice(1);
+    if (!target) return;
+    target = normalizeTarget(target);
+    // 1) traži custom data-tab="..."
+    var sel = '[data-tab="' + cssEscapeSafe(target) + '"]';
+    var el = document.querySelector(sel);
+    // 2) fallback: traži direktno webflow tab link po data-w-tab
+    var tabLink = null;
+    if (el) {
+      tabLink = (el.classList && el.classList.contains('w-tab-link'))
+        ? el
+        : (el.querySelector ? el.querySelector('.w-tab-link') : null);
+    }
+    if (!tabLink) {
+      tabLink = document.querySelector('.w-tab-link[data-w-tab="' + cssEscapeSafe(target) + '"]');
+    }
+    // 3) extra fallback: ako target == rh-terms, probaj naći BILO KOJI element sa data-tab="rh-terms"
+    // (ovo ti je “hard fix” da 100% radi)
+    if (!tabLink && target === "rh-terms") {
+      tabLink = document.querySelector('[data-tab="rh-terms"].w-tab-link, .w-tab-link[data-tab="rh-terms"]');
+    }
+    if (!tabLink) return;
+    var tries = 0;
+    (function tryClick() {
+      tries++;
+      tabLink.click();
+      if (!tabLink.classList.contains('w--current') && tries < 20) {
+        setTimeout(tryClick, 100);
+      }
+    })();
+  }
+  document.addEventListener('DOMContentLoaded', openTabFromHash);
+  window.addEventListener('hashchange', openTabFromHash);
+})();
+</script>
+  <script >
+    document.addEventListener('DOMContentLoaded', function () {
+        var youtubeIframes = document.querySelectorAll('iframe.lazyiframe');
+        youtubeIframes.forEach(function (youtubeIframe) {
+            var dataSrcValue = youtubeIframe.getAttribute('data-src');
+            if (dataSrcValue) {
+                youtubeIframe.setAttribute('src', dataSrcValue);
+                youtubeIframe.removeAttribute('data-src');
+            }
+        });
+    });
+</script>
+  <!-- Removed: xls loader trigger -->
+  
+  
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

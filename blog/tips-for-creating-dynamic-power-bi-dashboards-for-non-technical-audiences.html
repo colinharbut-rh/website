@@ -1,0 +1,1274 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="utf-8">
+  <title>Tips for Creating Dynamic Power BI Dashboards for Non-technical Audiences</title>
+  <meta content="1. Understand the Audience’s Needs‍Before jumping into the dashboard creation process, it’s essential to understand your target audience. Non-technical audience" name="description">
+  <meta content="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/69712d481582fdadb9c43bc9_How-to-Create-Dynamic-Power-BI-Dashboards-for-Non-Technical-Users.png" property="og:image">
+  <meta content="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/69712d481582fdadb9c43bc9_How-to-Create-Dynamic-Power-BI-Dashboards-for-Non-Technical-Users.png" property="twitter:image">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&amp;display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link href="../assets/css/base.css" rel="stylesheet" type="text/css">
+  <link href="../assets/css/styles.css" rel="stylesheet" type="text/css">
+
+  <!-- Favicon -->
+  <link href="../assets/images/favicon.ico" rel="shortcut icon" type="image/x-icon">
+  <link href="../assets/images/webclip.png" rel="apple-touch-icon">
+
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async="" defer=""></script></head>
+<body>
+  <div id="trtb" class="page-wrapper">
+    <div data-animation="default" class="navbar w-variant-5639baf4-9975-3636-61ef-0b730048b257 w-nav" data-easing2="ease" data-easing="ease" data-collapse="medium" role="banner" data-duration="400" id="nav">
+      <div class="navbar-continer w-container">
+        <div class="nav-item-wrap">
+          <a href="../index.html" class="brand w-nav-brand"><img src="../assets/images/rh-horizontal-white.svg" loading="eager" alt="" class="nav-brand-logo one"><img src="../assets/images/logo_white.svg" loading="lazy" alt="" class="nav-brand-logo two"></a>
+          <nav role="navigation" class="navigation w-nav-menu">
+            <a href="../index.html" class="nav-link w-nav-link">Home</a>
+            <div data-hover="false" data-delay="300" class="uui-navbar01_menu-dropdown w-dropdown">
+              <div class="uui-navbar01_dropdown-toggle w-dropdown-toggle">
+                <div class="uui-dropdown-icon w-embed"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg></div>
+                <div class="nav-link padding-right-0-25">Platform</div>
+              </div>
+              <nav class="uui-navbar01_dropdown-list w-dropdown-list">
+                <div class="uui-navbar01_container">
+                  <div class="uui-navbar01_dropdown-content">
+                    <div class="uui-navbar01_dropdown-content-left is-platform">
+                      <div class="uui-navbar01_dropdown-link-list">
+                        <h4 class="uui-navbar01_heading text-color-white">Platform</h4>
+                        <a href="../learn-more.html" class="uui-navbar01_dropdown-link w-inline-block">
+                          <div class="uui-navbar01_icon-wrapper"><img src="../assets/images/logo-white.svg" loading="lazy" alt="Bi White logo" class="icon-xsmall"></div>
+                          <div class="uui-navbar01_item-right">
+                            <div class="uui-navbar01_item-heading">Reporting Hub</div>
+                            <div class="uui-text-size-small hide-mobile-landscape">Custom-branded Power BI reporting delivery for teams and analytics clients</div>
+                          </div>
+                        </a>
+                      </div>
+                      <div class="uui-navbar01_dropdown-link-list is-bottom">
+                        <h4 class="uui-navbar01_heading opacity-0">Company</h4>
+                        <a href="../bi-genius.html" class="uui-navbar01_dropdown-link w-inline-block">
+                          <div class="uui-navbar01_icon-wrapper"><img src="../assets/images/new-bi-megamenu-logo-white.svg" loading="lazy" alt="Power Bi Megamenu white logo" class="icon-xsmall small"></div>
+                          <div class="uui-navbar01_item-right">
+                            <div class="uui-navbar01_item-heading">BI Genius</div>
+                            <div class="uui-text-size-small hide-mobile-landscape">Add-on fully customizable AI agents that drive insights with full transparency and control</div>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                    <div class="uui-navbar01_dropdown-content-right">
+                      <div class="uui-navbar01_dropdown-content-wrapper">
+                        <div class="blog-items-wrapper">
+                          <h4 class="uui-navbar01_dropdown-content-heading text-color-white">Latest from our blog</h4>
+                          <a href="../blog.html" class="uui-button-link is-button-xsmall w-inline-block">
+                            <div class="color_primary">See all posts ➝</div>
+                          </a>
+                        </div>
+                        <div class="w-dyn-list">
+                          <div role="list" class="uui-navbar01_dropdown-blog-list w-dyn-items"><div role="listitem" class="w-dyn-item">
+                              <a href="../blog/embedded-analytics-meets-generative-ai-how-saas-teams-monetize-bi-in-2025.html" class="uui-navbar01_blog-item w-inline-block">
+                                <div class="uui-navbar01_blog-image-wrapper"><img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/69600be56fa30d9d91a5f337_Embedded%20Analytics%20Meets%20Generative%20AI%20How%20SaaS%20Teams%20Monetize%20BI%20in%202025.png" loading="eager" alt="" class="uui-navbar01_blog-image"></div>
+                                <div class="uui-navbar01_large-item-content">
+                                  <div class="uui-navbar01_item-heading">Embedded Analytics Meets Generative AI: How SaaS Teams Monetize BI in 2026</div>
+                                  <div class="uui-navbar01_item-button-wrapper">
+                                    <div class="uui-button-row">
+                                      <div class="uui-button-link is-button-xsmall">
+                                        <div class="color_primary">Learn More ➝</div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </a>
+                            </div><div role="listitem" class="w-dyn-item">
+                              <a href="../blog/fabric-vs-power-bi-premium.html" class="uui-navbar01_blog-item w-inline-block">
+                                <div class="uui-navbar01_blog-image-wrapper"><img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/6961652bcf02c04b7b0edbe3_Fabric%20vs.%20Power%20BI%20Premium%20-%20Reddit.avif" loading="eager" alt="" class="uui-navbar01_blog-image"></div>
+                                <div class="uui-navbar01_large-item-content">
+                                  <div class="uui-navbar01_item-heading">Fabric vs. Power BI Premium</div>
+                                  <div class="uui-navbar01_item-button-wrapper">
+                                    <div class="uui-button-row">
+                                      <div class="uui-button-link is-button-xsmall">
+                                        <div class="color_primary">Learn More ➝</div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </a>
+                            </div><div role="listitem" class="w-dyn-item">
+                              <a href="../blog/how-to-structure-a-multi-tenant-analytics-delivery-system-without-rebuilding-everything.html" class="uui-navbar01_blog-item w-inline-block">
+                                <div class="uui-navbar01_blog-image-wrapper"><img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/69b03e0ca76a82d19058f954_Structure%20a%20Multi-Tenant%20Analytics%20Delivery.jpg" loading="eager" alt="" class="uui-navbar01_blog-image"></div>
+                                <div class="uui-navbar01_large-item-content">
+                                  <div class="uui-navbar01_item-heading">How to Structure a Multi-Tenant Analytics Delivery System Without Rebuilding Everything</div>
+                                  <div class="uui-navbar01_item-button-wrapper">
+                                    <div class="uui-button-row">
+                                      <div class="uui-button-link is-button-xsmall">
+                                        <div class="color_primary">Learn More ➝</div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </a>
+                            </div></div>
+                          
+                        </div>
+                      </div>
+                      <div class="uui-navbar01_dropdown-right-overlay-absolute"></div>
+                    </div>
+                  </div>
+                </div>
+              </nav>
+            </div>
+            <a href="../pricing.html" class="nav-link w-nav-link">Pricing</a>
+            <a href="../aaas.html" class="nav-link w-nav-link">AaaS Platform</a>
+            <div data-hover="false" data-delay="300" class="uui-navbar01_menu-dropdown w-dropdown">
+              <div class="uui-navbar01_dropdown-toggle w-dropdown-toggle">
+                <div class="uui-dropdown-icon w-embed"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg></div>
+                <div class="nav-link padding-right-0-25">Learn</div>
+              </div>
+              <nav class="uui-navbar01_dropdown-list w-dropdown-list">
+                <div class="uui-navbar01_container">
+                  <div class="uui-navbar01_dropdown-content">
+                    <div class="nav-items">
+                      <h4 class="uui-navbar01_heading large text-color-white">Learn</h4>
+                      <div class="uui-navbar01_dropdown-content-left">
+                        <div class="uui-navbar01_dropdown-link-list">
+                          <a href="https://docs.thereportinghub.com/?_gl=1*11en80c*_gcl_au*MjEyNTAwMzM0MC4xNzYwMDIyNzYzLjE5Nzk0NzY1MjguMTc2MjEwODgzNS4xNzYyMTA4ODM1*_ga*MzgyNDA3NDAxLjE3NjAwMjI3NjM." target="_blank" class="uui-navbar01_dropdown-link w-inline-block">
+                            <div class="uui-navbar01_icon-wrapper"><img src="../assets/images/Knowledge-Centre_icon.webp" loading="lazy" alt="" class="nav-image"></div>
+                            <div class="uui-navbar01_item-right">
+                              <div class="uui-navbar01_item-heading">Knowledge Center<br></div>
+                              <div class="uui-text-size-small hide-mobile-landscape">All the information you need to master B.I. delivery</div>
+                            </div>
+                          </a>
+                          <a href="../community.html" class="uui-navbar01_dropdown-link is-auto w-inline-block">
+                            <div class="uui-navbar01_icon-wrapper"><img src="../assets/images/About-Us_icon-1.webp" loading="lazy" alt="" class="nav-image"></div>
+                            <div class="uui-navbar01_item-right">
+                              <div class="uui-navbar01_item-heading">Community</div>
+                              <div class="uui-text-size-small hide-mobile-landscape">Connect and collaborate with active users</div>
+                            </div>
+                          </a>
+                        </div>
+                        <div class="uui-navbar01_dropdown-link-list">
+                          <h4 class="uui-navbar01_heading opacity-0">Company</h4>
+                          <a href="https://docs.thereportinghub.com/getting-started/deployment-step-by-step/self-serve-guided-install?_gl=1*1nvpg97*_gcl_au*MjEyNTAwMzM0MC4xNzYwMDIyNzYzLjE5Nzk0NzY1MjguMTc2MjEwODgzNS4xNzYyMTA4ODM1*_ga*MzgyNDA3NDAxLjE3NjAwMjI3NjM." target="_blank" class="uui-navbar01_dropdown-link w-inline-block">
+                            <div class="uui-navbar01_icon-wrapper"><img src="../assets/images/Getting-Started_icon.webp" loading="lazy" alt="" class="nav-image"></div>
+                            <div class="uui-navbar01_item-right">
+                              <div class="uui-navbar01_item-heading">Getting Started</div>
+                              <div class="uui-text-size-small hide-mobile-landscape">Step-by-step guides to get started with the Reporting Hub<br></div>
+                            </div>
+                          </a>
+                          <a href="https://www.youtube.com/@thereportinghub" class="uui-navbar01_dropdown-link is-auto w-inline-block">
+                            <div class="uui-navbar01_icon-wrapper"><img src="../assets/images/Video-Demos_icon.webp" loading="lazy" alt="" class="nav-image"></div>
+                            <div class="uui-navbar01_item-right">
+                              <div class="uui-navbar01_item-heading">Video Demos</div>
+                              <div class="uui-text-size-small hide-mobile-landscape">Our YouTube channel with helpful video demos</div>
+                            </div>
+                          </a>
+                        </div>
+                        <div id="w-node-a91421d3-b46b-1701-6a19-a49d5ae9c96d-17890035" class="uui-navbar01_dropdown-link-list flex">
+                          <h4 class="uui-navbar01_heading opacity-0 none">Company</h4>
+                          <a href="../resources.html" class="uui-navbar01_dropdown-link w-inline-block">
+                            <div class="uui-navbar01_icon-wrapper"><img src="../assets/images/Resources.webp" loading="lazy" alt="" class="nav-image"></div>
+                            <div class="uui-navbar01_item-right">
+                              <div class="uui-navbar01_item-heading">Resources</div>
+                              <div class="uui-text-size-small hide-mobile-landscape">Videos, white papers, and assets about Reporting Hub</div>
+                            </div>
+                          </a>
+                          <a href="https://support.thereportinghub.com/support/home" target="_blank" class="uui-navbar01_dropdown-link is-auto w-inline-block">
+                            <div class="uui-navbar01_icon-wrapper"><img src="../assets/images/Get-Help_icon.webp" loading="lazy" alt="" class="nav-image"></div>
+                            <div class="uui-navbar01_item-right">
+                              <div class="uui-navbar01_item-heading">Get Help</div>
+                              <div class="uui-text-size-small hide-mobile-landscape">Our Support team is here to help</div>
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+                      <div class="uui-navbar01_dropdown-content-left pt-0">
+                        <div class="uui-navbar01_dropdown-link-list one-item">
+                          <h4 class="uui-navbar01_heading large text-color-white">Services</h4>
+                          <a href="../partners.html" class="uui-navbar01_dropdown-link w-inline-block">
+                            <div class="uui-navbar01_icon-wrapper"><img src="../assets/images/Knowledge-Centre_icon.webp" loading="lazy" alt="" class="nav-image"></div>
+                            <div class="uui-navbar01_item-right">
+                              <div class="uui-navbar01_item-heading">Partner Programs<br></div>
+                              <div class="uui-text-size-small hide-mobile-landscape">Find or become a Reporting Hub Partner</div>
+                            </div>
+                          </a>
+                        </div>
+                        <div class="uui-navbar01_dropdown-link-list is-bottom">
+                          <h4 class="uui-navbar01_heading opacity-0">Company</h4>
+                          <a href="../professionalservices.html" class="uui-navbar01_dropdown-link w-inline-block">
+                            <div class="uui-navbar01_icon-wrapper"><img src="../assets/images/Professional-Services_icon.webp" loading="lazy" alt="" class="nav-image"></div>
+                            <div class="uui-navbar01_item-right">
+                              <div class="uui-navbar01_item-heading">Professional Services</div>
+                              <div class="uui-text-size-small hide-mobile-landscape">Get premium support from our team of experts</div>
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="uui-navbar01_dropdown-content-right">
+                      <div class="uui-navbar01_dropdown-content-wrapper">
+                        <div class="blog-items-wrapper">
+                          <h4 class="uui-navbar01_dropdown-content-heading text-color-white">Latest from our blog</h4>
+                          <a href="../blog.html" class="uui-button-link is-button-xsmall w-inline-block">
+                            <div class="color_primary">See all posts ➝</div>
+                          </a>
+                        </div>
+                        <div class="w-dyn-list">
+                          <div role="list" class="uui-navbar01_dropdown-blog-list w-dyn-items"><div role="listitem" class="w-dyn-item">
+                              <a href="../blog/embedded-analytics-meets-generative-ai-how-saas-teams-monetize-bi-in-2025.html" class="uui-navbar01_blog-item w-inline-block">
+                                <div class="uui-navbar01_blog-image-wrapper"><img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/69600be56fa30d9d91a5f337_Embedded%20Analytics%20Meets%20Generative%20AI%20How%20SaaS%20Teams%20Monetize%20BI%20in%202025.png" loading="eager" alt="" class="uui-navbar01_blog-image"></div>
+                                <div class="uui-navbar01_large-item-content">
+                                  <div class="uui-navbar01_item-heading">Embedded Analytics Meets Generative AI: How SaaS Teams Monetize BI in 2026</div>
+                                  <div class="uui-navbar01_item-button-wrapper">
+                                    <div class="uui-button-row">
+                                      <div class="uui-button-link is-button-xsmall">
+                                        <div class="color_primary">Learn More ➝</div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </a>
+                            </div><div role="listitem" class="w-dyn-item">
+                              <a href="../blog/fabric-vs-power-bi-premium.html" class="uui-navbar01_blog-item w-inline-block">
+                                <div class="uui-navbar01_blog-image-wrapper"><img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/6961652bcf02c04b7b0edbe3_Fabric%20vs.%20Power%20BI%20Premium%20-%20Reddit.avif" loading="eager" alt="" class="uui-navbar01_blog-image"></div>
+                                <div class="uui-navbar01_large-item-content">
+                                  <div class="uui-navbar01_item-heading">Fabric vs. Power BI Premium</div>
+                                  <div class="uui-navbar01_item-button-wrapper">
+                                    <div class="uui-button-row">
+                                      <div class="uui-button-link is-button-xsmall">
+                                        <div class="color_primary">Learn More ➝</div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </a>
+                            </div><div role="listitem" class="w-dyn-item">
+                              <a href="../blog/how-to-structure-a-multi-tenant-analytics-delivery-system-without-rebuilding-everything.html" class="uui-navbar01_blog-item w-inline-block">
+                                <div class="uui-navbar01_blog-image-wrapper"><img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/69b03e0ca76a82d19058f954_Structure%20a%20Multi-Tenant%20Analytics%20Delivery.jpg" loading="eager" alt="" class="uui-navbar01_blog-image"></div>
+                                <div class="uui-navbar01_large-item-content">
+                                  <div class="uui-navbar01_item-heading">How to Structure a Multi-Tenant Analytics Delivery System Without Rebuilding Everything</div>
+                                  <div class="uui-navbar01_item-button-wrapper">
+                                    <div class="uui-button-row">
+                                      <div class="uui-button-link is-button-xsmall">
+                                        <div class="color_primary">Learn More ➝</div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </a>
+                            </div></div>
+                          
+                        </div>
+                      </div>
+                      <div class="uui-navbar01_dropdown-right-overlay-absolute"></div>
+                    </div>
+                  </div>
+                </div>
+              </nav>
+            </div>
+            <a href="../demo.html" class="nav-link w-nav-link">Demo</a>
+            <a href="../install-today.html" class="nav-link w-nav-link">Install</a>
+            <a href="../about-us.html" class="nav-link w-nav-link">About Us</a>
+            <a href="../contact.html" class="nav-link w-nav-link">Contact Us</a>
+          </nav>
+          <div class="menu-button w-nav-button">
+            <div class="w-icon-nav-menu"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="main">
+      <section class="section blog-hero">
+        <div class="w-layout-blockcontainer container w-container">
+          <div class="blog-hero-contents">
+            <div class="blog-hero-left"><img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/69712d481582fdadb9c43bc9_How-to-Create-Dynamic-Power-BI-Dashboards-for-Non-Technical-Users.png" loading="lazy" alt="" class="human-centered-image"></div>
+            <div>
+              <h1 class="heading-2">Tips for Creating Dynamic Power BI Dashboards for Non-technical Audiences</h1>
+              <a href="../https://thereportinghub.com/author/brian-d" class="writer-image-wrap w-inline-block"><img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/6941a3f30361927cb1cee617_Brian%20DL.webp" loading="lazy" alt="" class="writer-image">
+                <div class="text-color-gray">Brian DeLuca</div>
+              </a>
+              <div>
+                <div class="space-1"></div>
+                <div class="text-color-gray">January 30, 2026</div>
+                <div class="space-1"></div>
+                <div class="time-icon"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFoAAABaCAYAAAA4qEECAAAACXBIWXMAAAsTAAALEwEAmpwYAAAD8klEQVR4nO2dSWsVQRDHC4wbil7VCCLiF4h6UjGIelUPKrhhNHpJIG7BqzeXUwj4NeJ2UPQDCBKNmosX9eKCZvVkBONPirTwxPdetl5qZvoH7zLMTHf9mdfTVV1dI5LJZDKZTCaTyWQymbkBLAF2AOeA28A94A3wDhgHfrrfuDv2xp1zy12zXe8xx+aqBbARuAg8BL6zeCaBB0AP0CpVBlgJnAKeAtOE4xfwBDgJrJCqAKx2T9on4vMNuA6slbICLAV6gTHSo324on2SMgHsBoaxx1tgnxQdHROBO8BvD6JMuadwnftddccWi/atH1guRQTYCrzEH1fqtKFDkS8GgS1SJPTv6GmaVsu6Ou2sxy86LdwrRQA4DPzwLABN2vONOkPHxDLAhVBzYmncZgjUhvNiEeCQcw6CII3bJaDYR8USOq55mgE0pEnbIdFh5IAYml34fvH9R5P2QzOZfDaic0/gRQRjadKHGAwmnWc7ZyQK0rgPseiPq+6/brUPj29ONOlHLNTWPbFFbgFeRzQSA0Lj4jXxAlGeXd8iCa1cihlPHq2w0KOqQQyhryUwDkNC1w1whQh7fk5hmdgS+osuxYUU+nQiwzAmtHI8pNC6kJoEsSf0o1Ait4YMGhVQ6OkgqQwu7yIZYk9opTuE0JrckgyxKfRAiDStiZQWiU2hJ7ymn7lcuKSITaGVbT6F7kxtjdgVusOn0JrVmRSxK/QNn0LfT22N2BXa3wsxdki0YEIP+RT6w0LTt7x1ogGk5734YgFh0bDRrRpIz4j4wi27z4fgT/JfSM+UJBR6vbfGZ4GSCT3foaPXW+OzQMmGjoW8DHtjPNmU7GWYfHpnmKFSOSyGGSiVC24Yry647kjN1OdMqcKkhmkrVeDfKH4D/05s3VudCbmU5YTWbcWZf+kKIfSGlOkGBvkVLKbjqgRkQibQOKG17EMmQkrYikTlH6wRNskxVRK6QS4HFdkJvUpDg1SX0SiJ6E5sXQ+sKj1RRK7ZLPSK6jEcvWoNsCvm9jcDxN/+ViO2Vm6pCn1JRK7Zoqzbd8vOc2BZMqGd2FvcxvQyR+g2iwWA9hBVZwygaRb7xRLAwZIFnaaBI2IRLY8TuPxlLPSB6RTLuJI/RR5GpsyV+Jml9M9kQV987VIkgE3AM4rDYPKSPoucZ/cb9yC1b33J58ke3fXX2EP7tFPKBDOBqEtGQqwjbrG5RcoKM/FsNfJjAoG/ukLda6QqMLMsdgJ4HNjR0Xs/0jW+SpWer4ermtsN3HVfo1gs4+5eXTG3eRQKZtLP2oCzwE3NBtIcZPcpkLGaz4OMuWND7hw9t8Ndmz8PkslkMplMJpPJZDIyR/4AHP79tg/mkAIAAAAASUVORK5CYII=" alt="Clock" class="icon-gray">
+                  <div class="text-color-gray">4 minutes</div>
+                </div>
+                <div class="space-1-5"></div>
+                <div class="text-color-gray">Subscribe to our blog to stay up to date on all the latest information from the Reporting Hub team! We’ll never share your email with anyone else.</div>
+                <div class="code-embed-9 w-embed w-script">
+                  <div class="custom_hbs_form paidsearchpage blog-email-only">
+                    <form action="https://formspree.io/f/xaqlkgry" method="POST" class="hs-form stacked">
+                      <fieldset class="form-columns-1">
+                        <div class="hs_email hs-email hs-fieldtype-text field hs-form-field">
+                          <div class="input"><input name="email" type="email" class="hs-input" required="" autocomplete="off" placeholder="Your email address"></div>
+                        </div>
+                      </fieldset>
+                      <div class="hs_submit hs-submit">
+                        <div class="actions"><div class="cf-turnstile" data-sitekey="0x4AAAAAAC1kqPKVfSHwCjeC" data-theme="light"></div><input type="submit" class="hs-button primary large" value="Subscribe"></div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section blog-elements">
+        <div class="w-layout-blockcontainer container w-container">
+          <div class="single-blog-contents-wrapper">
+            <div fc-toc="wrapper" class="post-content-wrapper"><button class="blog-post_open-toc-button">
+                <div class="circle"></div>
+              </button>
+              <div fc-toc="content" class="w-richtext"><h3><strong>1. Understand the Audience’s Needs</strong></h3><p>‍</p><p>Before jumping into the dashboard creation process, it’s essential to understand your <strong>target audience</strong>. Non-technical audiences are typically more interested in high-level insights rather than granular data points. Identify the key metrics that matter to them—for example, sales pipeline, customer satisfaction, or operational efficiency.</p><p>The goal is to <strong>minimize complexity</strong> while providing actionable insights. Focus on core metrics to avoid overwhelming your audience with unnecessary data and keep their attention on what’s most important to them.</p><p>‍</p><h3><strong>2. Start with a Clear Layout</strong></h3><p>The design and layout of your dashboard should be simple and intuitive.</p><div data-rt-embed-type="true"><style>
+
+.blog_dash546VB45_nav {
+  width: 100%;
+  font-family: Arial, sans-serif;
+}
+
+/* INTRO TEXT */
+.blog_dash546VB45_nav_title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #000;
+  margin-bottom: 30px;
+}
+
+/* GRID */
+.blog_dash546VB45_nav_grid {
+  display: flex;
+  gap: 40px;
+}
+
+/* ITEM */
+.blog_dash546VB45_nav_item {
+  flex: 1;
+  display: flex;
+  gap: 18px;
+}
+
+/* LEFT LINE */
+.blog_dash546VB45_nav_line {
+  width: 3px;
+  background-color: #1da1ff;
+  border-radius: 3px;
+}
+
+/* CONTENT */
+.blog_dash546VB45_nav_content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* ICON */
+.blog_dash546VB45_nav_icon {
+  
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.blog_dash546VB45_nav_icon img {
+  width: 32px;
+  height:32px;
+}
+
+/* TEXT */
+.blog_dash546VB45_nav_heading {
+  font-size: 18px;
+  font-weight: 700;
+  color: #000;
+}
+
+.blog_dash546VB45_nav_text {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #333;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .blog_dash546VB45_nav_grid {
+    flex-direction: column;
+    gap: 30px;
+  }
+}
+</style>	
+<div class="blog_dash546VB45_nav">
+
+  <div class="blog_dash546VB45_nav_title">
+    Use these best practices to create a dashboard that's easy to navigate:
+  </div>
+
+  <div class="blog_dash546VB45_nav_grid">
+
+    <!-- ITEM 1 -->
+    <div class="blog_dash546VB45_nav_item">
+      <div class="blog_dash546VB45_nav_line"></div>
+      <div class="blog_dash546VB45_nav_content">
+        <div class="blog_dash546VB45_nav_icon">
+          <img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/69712f01cc0ed96a81da8777_solar_question-square-linear.webp" alt="">
+        </div>
+        <div class="blog_dash546VB45_nav_heading">Less is More</div>
+        <div class="blog_dash546VB45_nav_text">
+          Are they executives who need high-level KPIs?
+        </div>
+      </div>
+    </div>
+
+    <!-- ITEM 2 -->
+    <div class="blog_dash546VB45_nav_item">
+      <div class="blog_dash546VB45_nav_line"></div>
+      <div class="blog_dash546VB45_nav_content">
+        <div class="blog_dash546VB45_nav_icon">
+          <img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/69712f22faa22a3d1607efcd_solar_question-square-linear-1.webp" alt="">
+        </div>
+        <div class="blog_dash546VB45_nav_heading">Use Visual Hierarchy</div>
+        <div class="blog_dash546VB45_nav_text">
+          Place the most important metrics or KPIs (Key Performance Indicators) at the top of the dashboard.
+        </div>
+      </div>
+    </div>
+
+    <!-- ITEM 3 -->
+    <div class="blog_dash546VB45_nav_item">
+      <div class="blog_dash546VB45_nav_line"></div>
+      <div class="blog_dash546VB45_nav_content">
+        <div class="blog_dash546VB45_nav_icon">
+          <img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/69712f2c66fab4a088d21010_solar_question-square-linear%402x.webp" alt="">
+        </div>
+        <div class="blog_dash546VB45_nav_heading">Consistent Design</div>
+        <div class="blog_dash546VB45_nav_text">
+          Maintain a consistent design throughout the layout, with uniform fonts, colors, and chart types to avoid confusion.
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div></div><p>‍</p><h3><strong>3. Choose the Right Visualizations</strong></h3><p>Non-technical viewers often find it easier to understand data when it’s presented in simple visual formats.</p><p>Power BI offers a wide range of visualization options, but the key is to pick the right ones:</p><p>‍</p><div data-rt-embed-type="true"><style>
+.human-centered-image {
+    height: auto;
+}
+
+
+
+.blog_chartGHF45VDX_types {
+  width: 100%;
+  font-family: Arial, sans-serif;
+}
+
+/* GRID */
+.blog_chartGHF45VDX_types_grid {
+  display: flex;
+  gap: 40px;
+}
+
+/* ITEM */
+.blog_chartGHF45VDX_types_item {
+  flex: 1;
+  display: flex;
+  gap: 18px;
+}
+
+/* LEFT LINE */
+.blog_chartGHF45VDX_types_line {
+  width: 3px;
+  background-color: #a100ff;
+  border-radius: 3px;
+}
+
+/* CONTENT */
+.blog_chartGHF45VDX_types_content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* ICON */
+.blog_chartGHF45VDX_types_icon {
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.blog_chartGHF45VDX_types_icon img {
+  width: 32px;
+  height: 32px;
+}
+
+/* TEXT */
+.blog_chartGHF45VDX_types_heading {
+  font-size: 18px;
+  font-weight: 700;
+  color: #000;
+}
+
+.blog_chartGHF45VDX_types_text {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #333;
+}
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+  .blog_chartGHF45VDX_types_grid {
+    flex-wrap: wrap;
+  }
+  .blog_chartGHF45VDX_types_item {
+    flex: 0 0 calc(50% - 20px);
+  }
+}
+
+@media (max-width: 600px) {
+  .blog_chartGHF45VDX_types_item {
+    flex: 0 0 100%;
+  }
+}
+</style>	
+<div class="blog_chartGHF45VDX_types">
+
+  <div class="blog_chartGHF45VDX_types_grid">
+
+    <!-- ITEM 1 -->
+    <div class="blog_chartGHF45VDX_types_item">
+      <div class="blog_chartGHF45VDX_types_line"></div>
+      <div class="blog_chartGHF45VDX_types_content">
+        <div class="blog_chartGHF45VDX_types_icon">
+          <img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/6971352b2757d1aadfe3d7f0_solar_question-square-linear-2.webp" alt="">
+        </div>
+        <div class="blog_chartGHF45VDX_types_heading">Bar and Line Charts</div>
+        <div class="blog_chartGHF45VDX_types_text">
+          Ideal for showing trends and comparisons over time.
+        </div>
+      </div>
+    </div>
+
+    <!-- ITEM 2 -->
+    <div class="blog_chartGHF45VDX_types_item">
+      <div class="blog_chartGHF45VDX_types_line"></div>
+      <div class="blog_chartGHF45VDX_types_content">
+        <div class="blog_chartGHF45VDX_types_icon">
+          <img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/6971354e97e99d182e634248_solar_question-square-linear-3.webp" alt="">
+        </div>
+        <div class="blog_chartGHF45VDX_types_heading">Pie Charts and Donut Charts</div>
+        <div class="blog_chartGHF45VDX_types_text">
+          Great for illustrating proportions or parts of a whole.
+        </div>
+      </div>
+    </div>
+
+    <!-- ITEM 3 -->
+    <div class="blog_chartGHF45VDX_types_item">
+      <div class="blog_chartGHF45VDX_types_line"></div>
+      <div class="blog_chartGHF45VDX_types_content">
+        <div class="blog_chartGHF45VDX_types_icon">
+          <img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/6971355d4762f1ce69a40f02_solar_question-square-linear-4.webp" alt="">
+        </div>
+        <div class="blog_chartGHF45VDX_types_heading">KPIs</div>
+        <div class="blog_chartGHF45VDX_types_text">
+          Use KPI indicators to show quick, at-a-glance insights like sales growth or target achievement.
+        </div>
+      </div>
+    </div>
+
+    <!-- ITEM 4 -->
+    <div class="blog_chartGHF45VDX_types_item">
+      <div class="blog_chartGHF45VDX_types_line"></div>
+      <div class="blog_chartGHF45VDX_types_content">
+        <div class="blog_chartGHF45VDX_types_icon">
+          <img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/6971356beca78879d605251b_solar_question-square-linear-5.webp" alt="">
+        </div>
+        <div class="blog_chartGHF45VDX_types_heading">Card Visuals</div>
+        <div class="blog_chartGHF45VDX_types_text">
+          Perfect for displaying key figures such as total revenue, customer count, or product sales.
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div></div><p>‍</p><h3><strong>4. Incorporate Filters and Slicers</strong></h3><p>One of Power BI’s most powerful features is the ability to interact with data using slicers and filters, which allow viewers to manipulate the dashboard and focus on specific data points. The platform offers several types of filters.</p><h4>Here’s how to make them work for a non-technical audience:</h4><p>‍</p><div data-rt-embed-type="true"><style>
+
+.blog_dashboard_tipsXDCV34DF {
+  width: 100%;
+  font-family: Arial, sans-serif;
+}
+
+/* ITEM */
+.blog_dashboard_tipsXDCV34DF_item {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  margin-bottom: 26px;
+}
+
+/* ICON */
+.blog_dashboard_tipsXDCV34DF_icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.blog_dashboard_tipsXDCV34DF_icon img {
+  width: 120px;
+  height: 120px;
+}
+
+/* CONTENT */
+.blog_dashboard_tipsXDCV34DF_content {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+	margin-top:27px;
+}
+
+.blog_dashboard_tipsXDCV34DF_title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #000;
+}
+
+.blog_dashboard_tipsXDCV34DF_text {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #333;
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  .blog_dashboard_tipsXDCV34DF_item {
+    gap: 16px;
+  }
+}
+</style>	
+<div class="blog_dashboard_tipsXDCV34DF">
+
+  <!-- ITEM 1 -->
+  <div class="blog_dashboard_tipsXDCV34DF_item">
+    <div class="blog_dashboard_tipsXDCV34DF_icon">
+      <img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/697138c7c91e458e8189456d_icon_tutorial.webp" alt="">
+    </div>
+    <div class="blog_dashboard_tipsXDCV34DF_content">
+      <div class="blog_dashboard_tipsXDCV34DF_title">Slicers:</div>
+      <div class="blog_dashboard_tipsXDCV34DF_text">
+        Add slicers that allow viewers to filter data by time, product category, or geography with a simple click.
+      </div>
+    </div>
+  </div>
+
+  <!-- ITEM 2 -->
+  <div class="blog_dashboard_tipsXDCV34DF_item">
+    <div class="blog_dashboard_tipsXDCV34DF_icon">
+      <img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/697138db1a04180764698d9c_icon_tutorial-1.webp" alt="">
+    </div>
+    <div class="blog_dashboard_tipsXDCV34DF_content">
+      <div class="blog_dashboard_tipsXDCV34DF_title">Drill-through Pages:</div>
+      <div class="blog_dashboard_tipsXDCV34DF_text">
+        Enable drill-through functionality for viewers who may want to explore certain elements more deeply, but only when necessary.
+      </div>
+    </div>
+  </div>
+
+  <!-- ITEM 3 -->
+  <div class="blog_dashboard_tipsXDCV34DF_item">
+    <div class="blog_dashboard_tipsXDCV34DF_icon">
+      <img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/697138e52636615541f86687_icon_tutorial-2.webp" alt="">
+    </div>
+    <div class="blog_dashboard_tipsXDCV34DF_content">
+      <div class="blog_dashboard_tipsXDCV34DF_title">Tooltips:</div>
+      <div class="blog_dashboard_tipsXDCV34DF_text">
+        Use tooltips to provide additional context without overwhelming viewers with too much information on the dashboard from the get-go.
+      </div>
+    </div>
+  </div>
+
+</div></div><p>‍</p><h3><strong>5. Leverage Automated Data Alerts and Subscriptions</strong></h3><p>Help your non-technical audience stay up-to-date on analytics reporting by automating insights. Power BI allows users to set up data alerts and email subscriptions so they don’t have to constantly check the <a href="https://thereportinghub.com/power-bi/power-bi-dashboards?__hstc=41441981.2946053bf44fc5fcee2b2e1cf8b5a42b.1756152255927.1769024177284.1769091026185.97&amp;__hssc=41441981.1.1769091026185&amp;__hsfp=9390772cc46c41765c1590762ca42dec">Power BI dashboards</a>. These features ensure that viewers receive notifications whenever data crosses a predefined threshold or if new reports are published. This way, non-technical audiences can stay informed and react to changes quickly without having to actively check the dashboard.</p><p>‍</p><figure class="w-richtext-figure-type-image w-richtext-align-fullwidth" style="max-width:895px" data-rt-type="image" data-rt-align="fullwidth" data-rt-max-width="895px"><div><img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/697230059f70deb41fafd948_leverage-automated-data-alerts-and-subscriptions.png" loading="lazy" alt="leverage-automated-data-alerts-and-subscriptions" width="auto" height="auto"></div></figure><p>Automated alerts and subscriptions can also be tailored to specific user roles or groups, so that only relevant information is shared with each individual.</p><h3><strong>6. Provide Easy-to-Understand Explanations</strong></h3><p>To make dashboards truly user-friendly, provide easy-to-understand descriptions or titles for each visualization. Avoid jargon and technical language; instead, describe the visuals in everyday terms that resonate with your audience. For example:</p><p>‍</p><div data-rt-embed-type="true"><style>
+
+.blog_text_recommendationVFG435 {
+  width: 100%;
+  font-family: Arial, sans-serif;
+}
+
+/* ITEM */
+.blog_text_recommendationVFG435_item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+/* ICON */
+.blog_text_recommendationVFG435_icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.blog_text_recommendationVFG435_icon img {
+  width: 35px;
+  height: 35px;
+}
+
+/* TEXT */
+.blog_text_recommendationVFG435_text {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #000;
+}
+
+.blog_text_recommendationVFG435_text em {
+  font-style: italic;
+}
+
+.blog_text_recommendationVFG435_text strong {
+  font-weight: 700;
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  .blog_text_recommendationVFG435_text {
+    font-size: 15px;
+  }
+}
+</style>
+	
+<div class="blog_text_recommendationVFG435">
+
+  <!-- ITEM 1 -->
+  <div class="blog_text_recommendationVFG435_item">
+    <div class="blog_text_recommendationVFG435_icon">
+      <img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/697230e783a7f48262fa6f97_icon.webp" alt="">
+    </div>
+    <div class="blog_text_recommendationVFG435_text">
+      Instead of <em>“Sales Variance vs Budget by Region,”</em> use
+      <strong>“How our sales compare to our budget in different regions.”</strong>
+    </div>
+  </div>
+
+  <!-- ITEM 2 -->
+  <div class="blog_text_recommendationVFG435_item">
+    <div class="blog_text_recommendationVFG435_icon">
+      <img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/697230e783a7f48262fa6f97_icon.webp" alt="">
+    </div>
+    <div class="blog_text_recommendationVFG435_text">
+      Instead of <em>“Revenue Trend Analysis,”</em> use
+      <strong>“How our revenue has changed over time.”</strong>
+    </div>
+  </div>
+
+</div></div><p>‍</p><p>Use captions or descriptions when necessary to clarify what the visualizations represent and why they are important.</p><p>These simple changes can make a big difference in helping non-technical audiences understand the data and its implications.</p><p>‍</p><h3><strong>7. Ensure Mobile Accessibility</strong></h3><p>Many non-technical viewers will access dashboards via their smartphones or tablets, given the pace of work today. Power BI offers built-in mobile optimization, ensuring dashboards are responsive and readable on smaller screens. </p><p>Keep mobile accessibility in mind during the design process. Ensuring that key metrics and filters are easy to access on mobile devices. Consider creating separate mobile-specific dashboards, with fewer visualizations and a simplified layout for ease of use. </p><p>‍</p><figure class="w-richtext-figure-type-image w-richtext-align-fullwidth" style="max-width:656px" data-rt-type="image" data-rt-align="fullwidth" data-rt-max-width="656px"><div><img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/69723175e12d779cfc00dc9e_Ensure-Mobile-Accessibility-1.png" loading="lazy" alt="Ensure Mobile Accessibility" width="auto" height="auto"></div></figure><p>‍</p><h3><strong>8. Test for Simplicity</strong></h3><p>Once the dashboard is created, it’s important to test it with your target audience. Ask a few non-technical colleagues to explore the dashboard and provide feedback on its usability. </p><p>Ensure that all interactions (such as filters, slicers, and drill throughs) work smoothly and that the key takeaways are clear without requiring additional explanation. </p><p>Consider the feedback that you get from your colleagues and simplify the design as needed to make it easy for non-technical audiences to navigate and understand. </p><p>‍</p><h3><strong>Conclusion: Empower Non-Technical Audiences with Power BI</strong></h3><p>By focusing on simplicity, usability, and accessibility, you can create dynamic Power BI dashboards that empower non-technical audiences to make data-driven decisions. The key is to remove the technical complexity while maintaining the ability to dive deep into the data when needed. When done right, Power BI dashboards can become an invaluable tool for everyone in the organization, regardless of their technical expertise.</p><p><strong>With the right approach, you can use Power BI to bridge the gap between data and actionable insights for all users, and help to foster a culture of informed decision-making across your team.</strong></p><p>‍</p><figure class="w-richtext-figure-type-image w-richtext-align-fullwidth" style="max-width:947px" data-rt-type="image" data-rt-align="fullwidth" data-rt-max-width="947px"><div><img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/697231d8d48e95e45fc65ee8_Empower-Non-Technical-Users-with-Power-BI-Dashboards-.png" loading="lazy" alt="Empower-Non-Technical-Users-with-Power-BI-Dashboards" width="auto" height="auto"></div></figure></div>
+              <nav aria-label="Table of contents" class="blog-post_toc">
+                <div>Table of Contents</div>
+                <div fc-toc="close" class="blog-post_close-toc-overlay"></div>
+                <ol fc-toc-collapse="true" fc-toc="component" role="list" class="blog-post_toc-list">
+                  <li class="blog-post_toc-list-item">
+                    <a href="#" fc-toc="h2" class="toc_h2">heading 2</a>
+                    <div fc-toc-rotate="-45" fc-toc="open-group" class="toc_open-group-icon w-embed"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- !Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc. -->
+                        <path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 144L48 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l144 0 0 144c0 17.7 14.3 32 32 32s32-14.3 32-32l0-144 144 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-144 0 0-144z" fill="currentColor"></path>
+                      </svg></div>
+                  </li>
+                  <li class="blog-post_toc-list-item">
+                    <a fc-toc="h3" href="#" class="toc_h3">heading 3</a>
+                  </li>
+                  <li class="blog-post_toc-list-item">
+                    <a fc-toc="h4" href="#" class="toc_h4">heading 4</a>
+                  </li>
+                  <li class="blog-post_toc-list-item">
+                    <a fc-toc="h5" href="#" class="toc_h5">heading 5</a>
+                  </li>
+                  <li class="blog-post_toc-list-item">
+                    <a fc-toc="h6" href="#" class="toc_h6">heading 6</a>
+                  </li>
+                </ol>
+                <div class="related-blogs w-dyn-list">
+                  <div role="list" class="related-blogs-list w-dyn-items"><div role="listitem" class="related-blog-item w-dyn-item">
+                      <a href="embedded-analytics-meets-generative-ai-how-saas-teams-monetize-bi-in-2025.html" class="related-blog-link w-inline-block">
+                        <div class="related-blog-wrap"><img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/69600be56fa30d9d91a5f337_Embedded%20Analytics%20Meets%20Generative%20AI%20How%20SaaS%20Teams%20Monetize%20BI%20in%202025.png" loading="lazy" alt="" class="related-blog-img">
+                          <h3 class="related-blogs-h3">Embedded Analytics Meets Generative AI: How SaaS Teams Monetize BI in 2026</h3>
+                        </div>
+                      </a>
+                    </div><div role="listitem" class="related-blog-item w-dyn-item">
+                      <a href="fabric-vs-power-bi-premium.html" class="related-blog-link w-inline-block">
+                        <div class="related-blog-wrap"><img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/6961652bcf02c04b7b0edbe3_Fabric%20vs.%20Power%20BI%20Premium%20-%20Reddit.avif" loading="lazy" alt="" class="related-blog-img">
+                          <h3 class="related-blogs-h3">Fabric vs. Power BI Premium</h3>
+                        </div>
+                      </a>
+                    </div><div role="listitem" class="related-blog-item w-dyn-item">
+                      <a href="how-to-structure-a-multi-tenant-analytics-delivery-system-without-rebuilding-everything.html" class="related-blog-link w-inline-block">
+                        <div class="related-blog-wrap"><img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/69b03e0ca76a82d19058f954_Structure%20a%20Multi-Tenant%20Analytics%20Delivery.jpg" loading="lazy" alt="" class="related-blog-img">
+                          <h3 class="related-blogs-h3">How to Structure a Multi-Tenant Analytics Delivery System Without Rebuilding Everything</h3>
+                        </div>
+                      </a>
+                    </div></div>
+                  
+                </div>
+              </nav>
+              <div fc-toc="active-style" class="u-toc-current-link"></div>
+              <div class="toc-subitems"></div>
+              <div class="toc_script w-embed w-script">
+                <script>
+document.addEventListener('DOMContentLoaded', () => {
+  let preventAutoOpen = false;
+  let suppressNextScrollUpdate = false;
+  const tocWrappers = document.querySelectorAll('[fc-toc="wrapper"]');
+  if (!tocWrappers) return;
+  for (const wrapper of tocWrappers) {
+    // Grab key elements and settings
+    const tocComponent = wrapper.querySelector('[fc-toc="component"]');
+    const tocContent = wrapper.querySelector('[fc-toc="content"]');
+    const activeStyleElement = wrapper.querySelector('[fc-toc="active-style"]');
+    const activeClass = activeStyleElement?.className || '';
+    const debounceMs = 0;
+    const isCollapsible = tocComponent.getAttribute('fc-toc-collapse') === 'true';
+    if (!tocComponent || !tocContent) return;
+    // Map of heading levels to placeholder class names
+    const placeholderLinks = tocComponent.querySelectorAll('[fc-toc]');
+    const headingLevels = new Map();
+    placeholderLinks.forEach(link => {
+      const level = link.getAttribute('fc-toc');
+      const className = link.getAttribute('class') || '';
+      if (/^h[1-6]$/.test(level)) {
+        headingLevels.set(level.toLowerCase(), className);
+      }
+    });
+    // Find all target headings in the content
+    const selector = [...headingLevels.keys()].join(', ');
+    const headings = tocContent.querySelectorAll(selector);
+    // Generate unique IDs for headings
+    const usedIds = new Set();
+    const generateSlug = (text, index) => {
+      let slug = text.toLowerCase()
+        .normalize("NFD").replace(/[̀-ͯ]/g, "")
+        .replace(/[^a-z0-9\s-]/g, '')
+        .replace(/\s+/g, '-')
+        .replace(/-+/g, '-')
+        .replace(/^-|-$/g, '');
+      if (!slug) slug = `heading-${index}`;
+      let uniqueSlug = slug;
+      let count = 1;
+      while (usedIds.has(uniqueSlug)) {
+        uniqueSlug = `${slug}-${count++}`;
+      }
+      usedIds.add(uniqueSlug);
+      return uniqueSlug;
+    };
+    // Assign IDs to headings
+    headings.forEach((heading, index) => {
+      const id = generateSlug(heading.textContent.trim(), index);
+      heading.id = id;
+    });
+    // Build the TOC from placeholder links and real headings
+    let currentParentLi = null;
+    let subList = null;
+    headings.forEach((heading, index) => {
+      const level = heading.tagName.toLowerCase();
+      const className = headingLevels.get(level) || '';
+      const placeholderLink = tocComponent.querySelector(`[fc-toc="${level}"]`);
+      if (!placeholderLink) return;
+      const listItem = placeholderLink.closest('li');
+      if (!listItem) return;
+      const clonedItem = listItem.cloneNode(true);
+      const link = clonedItem.querySelector(`[fc-toc="${level}"]`);
+      if (link) {
+        link.href = `#${heading.id}`;
+        link.textContent = heading.textContent.trim();
+        link.setAttribute('fc-toc-link', level);
+      }
+      if (isCollapsible && level === 'h2') {
+        tocComponent.appendChild(clonedItem);
+        currentParentLi = clonedItem;
+        subList = document.createElement('ul');
+        subList.classList.add('toc-subitems');
+        currentParentLi.appendChild(subList);
+      } else if (isCollapsible && currentParentLi && subList) {
+        subList.appendChild(clonedItem);
+      } else {
+        tocComponent.appendChild(clonedItem);
+      }
+    });
+    // Initially collapse all groups if collapsible
+    if (isCollapsible) {
+      tocComponent.querySelectorAll('.toc-subitems').forEach(group => {
+        group.style.maxHeight = '0';
+      });
+    }
+    // Remove placeholder links
+    placeholderLinks.forEach(link => {
+      const parentLi = link.closest('li');
+      if (parentLi) parentLi.remove();
+    });
+    let debounceTimer;
+    let lastActiveLink = null;
+    let lastActiveGroupWrapper = null;
+    // Scroll TOC and manage group expansion on active link update
+    const scrollToActiveLink = () => {
+      if (suppressNextScrollUpdate) {
+        suppressNextScrollUpdate = false;
+        return;
+      }
+      if (preventAutoOpen) return;
+      const activeLink = tocComponent.querySelector('.w--current');
+      if (!activeLink || activeLink === lastActiveLink) return;
+      tocComponent.querySelectorAll('[fc-toc-link]').forEach(link => {
+        if (activeClass) link.classList.remove(activeClass);
+      });
+      if (activeClass) activeLink.classList.add(activeClass);
+      lastActiveLink = activeLink;
+      tocComponent.scrollBy({
+        top: activeLink.getBoundingClientRect().top - tocComponent.getBoundingClientRect().top - (tocComponent.getBoundingClientRect().height / 2) + (activeLink.getBoundingClientRect().height / 2),
+        behavior: 'smooth'
+      });
+      if (isCollapsible) {
+        const currentLi = activeLink.closest('li');
+        let groupWrapperLi = currentLi;
+        if (currentLi?.parentElement?.classList.contains('toc-subitems')) {
+          groupWrapperLi = currentLi.parentElement.closest('li');
+        }
+        tocComponent.querySelectorAll('li').forEach(li => {
+          const sub = li.querySelector('.toc-subitems');
+          if (
+            sub &&
+            li !== groupWrapperLi &&
+            sub.style.maxHeight !== '0px' &&
+            (!preventAutoOpen || li !== lastActiveGroupWrapper)
+          ) {
+            collapseElement(sub);
+          }
+        });
+        expandElement(groupWrapperLi.querySelector('.toc-subitems'));
+        lastActiveGroupWrapper = groupWrapperLi;
+      }
+    };
+    const debouncedScroll = () => {
+      clearTimeout(debounceTimer);
+      debounceTimer = setTimeout(scrollToActiveLink, debounceMs);
+    };
+    // Observe class changes to trigger scroll update
+    const observer = new MutationObserver(() => {
+      if (!isAutoScrolling) debouncedScroll();
+    });
+    observer.observe(tocComponent, {
+      subtree: true,
+      attributes: true,
+      attributeFilter: ['class']
+    });
+    // Expand group for active link on page load
+    const expandActiveGroupOnLoad = () => {
+      if (!isCollapsible) return;
+      let attempts = 0;
+      const tryExpand = () => {
+        const activeLink = tocComponent.querySelector('.w--current');
+        if (activeLink) {
+          scrollToActiveLink();
+        } else if (++attempts < 20) {
+          setTimeout(tryExpand, 50);
+        }
+      };
+      tryExpand();
+    };
+    // Set up toggle buttons for manual group expansion
+    const setupManualToggles = () => {
+      if (!isCollapsible) return;
+      tocComponent.querySelectorAll('[fc-toc="open-group"]').forEach(toggleBtn => {
+        const subList = toggleBtn.closest('li')?.querySelector('.toc-subitems');
+        if (!subList || subList.children.length === 0) {
+          toggleBtn.style.display = 'none';
+          return;
+        }
+        for (const item of tocComponent.querySelectorAll('li')) {
+        	item.style.display = 'grid';
+          item.style.gridTemplateColumns = '1fr auto';
+        }
+        subList.style.gridColumn = '1 / 3';
+        toggleBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          preventAutoOpen = true;
+          const listItem = toggleBtn.closest('li');
+          if (!listItem) return;
+          const subList = listItem.querySelector('.toc-subitems');
+          if (!subList) return;
+          const isOpen = subList.style.maxHeight !== '0px';
+          const hasActive = listItem.querySelector(`.${activeClass}`);
+          if (isOpen && !hasActive) {
+            collapseElement(subList);
+            if (lastActiveGroupWrapper === listItem) {
+              lastActiveGroupWrapper = null;
+            }
+          } else if (!isOpen) {
+            expandElement(subList);
+            if (
+              lastActiveGroupWrapper &&
+              lastActiveGroupWrapper !== listItem &&
+              !lastActiveGroupWrapper.querySelector(`.${activeClass}`)
+            ) {
+              const previousGroup = lastActiveGroupWrapper.querySelector('.toc-subitems');
+              if (previousGroup) collapseElement(previousGroup);
+            }
+            lastActiveGroupWrapper = listItem;
+          }
+          setTimeout(() => {
+            preventAutoOpen = false;
+          }, 100);
+        });
+      });
+    };
+    expandActiveGroupOnLoad();
+    setupManualToggles();
+    let isAutoScrolling = false;
+    let scrollTimeout;
+    const handleScrollStop = () => {
+      clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(() => {
+        isAutoScrolling = false;
+        debouncedScroll();
+      }, 150);
+    };
+    // Handle anchor clicks and scroll positioning
+    tocComponent.querySelectorAll('a[fc-toc-link]').forEach(link => {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href')?.substring(1);
+        const target = document.getElementById(targetId);
+        if (!target) return;
+        const originalHref = this.getAttribute('href');
+        this.removeAttribute('href');
+        isAutoScrolling = true;
+        window.addEventListener('scroll', handleScrollStop);
+        const rect = target.getBoundingClientRect();
+        const scrollTo = window.scrollY + rect.top - (window.innerHeight / 2) + (rect.height / 2);
+        window.scrollTo({ top: scrollTo, behavior: 'smooth' });
+        const closeToc = document.querySelector('[fc-toc = close]')
+        if(closeToc) closeToc.click()
+        setTimeout(() => {
+          this.setAttribute('href', originalHref);
+        }, 100);
+      });
+    });
+  }
+  // Expand/collapse utility with icon rotation
+  function expandElement(el) {
+    const clone = el.cloneNode(true);
+    clone.style.visibility = 'hidden';
+    clone.style.position = 'absolute';
+    clone.style.height = 'auto';
+    clone.style.maxHeight = 'none';
+    clone.style.pointerEvents = 'none';
+    clone.style.opacity = '0';
+    el.parentElement.appendChild(clone);
+    const fullHeight = clone.scrollHeight;
+    el.parentElement.removeChild(clone);
+    el.style.maxHeight = fullHeight + 'px';
+    const icon = el.closest('li')?.querySelector('[fc-toc="open-group"]');
+    if (icon) {
+      const rotation = icon.getAttribute('fc-toc-rotate') || '180deg';
+      icon.style.transform = `rotate(${rotation}deg)`;
+    }
+  }
+  function collapseElement(el) {
+    el.style.maxHeight = '0px';
+    const icon = el.closest('li')?.querySelector('[fc-toc="open-group"]');
+    if (icon) {
+      icon.style.transform = 'rotate(0deg)';
+    }
+  }
+});
+</script>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="space-7"></div>
+    </div>
+            <section class="footer-section v1 section-2">
+      <div class="container">
+        <div class="foooter-top v1">
+          <div class="footer-left-left">
+            <div class="footer-icon-wrap"><img src="../assets/images/Symbol-1_2.webp" loading="lazy" alt="White Icon" class="icon"></div>
+            <div class="space-1-5"></div>
+            <div class="footer-title-top">Setup your <span class="highlight-text pure-blue">free trial</span> today!</div>
+            <div class="space-1"></div>
+            <p class="paragraph-regular">Get started today with a no-obligation 30-day free trial. The<br>Reporting Hub can be fully deployed to your Azure environment<br>by following our self-serve guided installer. <a href="../install-today.html" class="span-link">Learn more</a>
+            </p>
+            <div class="space-2"></div>
+            <div class="button-wrap left">
+              <a href="../install-today.html" class="button color-blue w-inline-block">
+                <div>Install Today</div>
+              </a>
+              <a href="../contact.html" class="button bg-transparent text-blue w-inline-block">
+                <div>Get in Touch</div><img src="../assets/images/Symbol-7.webp" loading="lazy" alt="Arrow" class="button-arrow">
+              </a>
+            </div>
+          </div>
+          <div class="footer-image-wrap"><img src="../assets/images/dashboard-trial-new-1_1.webp" loading="lazy" width="Auto" alt="Power Bi Dashboard" sizes="100vw" srcset="../assets/images/dashboard-trial-new-1_1-p-500.webp 500w, ../assets/images/dashboard-trial-new-1_1-p-800.webp 800w, ../assets/images/dashboard-trial-new-1_1-p-1080.webp 1080w, ../assets/images/dashboard-trial-new-1_1-p-1600.webp 1600w, ../assets/images/dashboard-trial-new-1_1-p-2000.webp 2000w, ../assets/images/dashboard-trial-new-1_1-p-2600.webp 2600w, ../assets/images/dashboard-trial-new-1_1-p-3200.webp 3200w, ../assets/images/dashboard-trial-new-1_1.webp 3936w" class="footer-image"></div>
+        </div>
+      </div>
+      <div class="space-5"></div>
+      <div class="w-layout-blockcontainer container w-container">
+        <div class="footer-component">
+          <div class="w-layout-grid footer-grid-wrap">
+            <div class="footer-left-call">
+              <div class="font-0-9">Contact US</div>
+              <div class="footer-menu-left">
+                <div class="footer-menu-group"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 15 12" fill="none" class="social-icon">
+                    <g clip-path="url(#clip0_9006_2830)">
+                      <path d="M1.52344 2.61654C1.52344 2.26292 1.66392 1.92378 1.91396 1.67373C2.16401 1.42368 2.50315 1.2832 2.85677 1.2832H12.1901C12.5437 1.2832 12.8828 1.42368 13.1329 1.67373C13.3829 1.92378 13.5234 2.26292 13.5234 2.61654M1.52344 2.61654V9.2832C1.52344 9.63683 1.66392 9.97596 1.91396 10.226C2.16401 10.476 2.50315 10.6165 2.85677 10.6165H12.1901C12.5437 10.6165 12.8828 10.476 13.1329 10.226C13.3829 9.97596 13.5234 9.63683 13.5234 9.2832V2.61654M1.52344 2.61654L7.52344 6.61654L13.5234 2.61654" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </g>
+                  </svg>
+                  <a href="mailto:info@thereportinghub.com?subject=You've%20got%20an%20email" class="footer-link">info@thereportinghub.com</a>
+                </div>
+                <div class="footer-menu-group"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 17 18" fill="none" class="social-icon">
+                    <path d="M3.85938 6.75618C3.85938 4.35756 5.94871 2.41309 8.52603 2.41309C11.1033 2.41309 13.1927 4.35756 13.1927 6.75618C13.1927 9.13601 11.7032 11.913 9.37942 12.9061C8.83769 13.1376 8.21439 13.1376 7.67267 12.9061C5.34882 11.913 3.85938 9.13601 3.85938 6.75618Z" stroke="currentColor" stroke-width="1.5"></path>
+                    <path d="M9.85417 7.0804C9.85417 7.81678 9.25722 8.41373 8.52084 8.41373C7.78446 8.41373 7.1875 7.81678 7.1875 7.0804C7.1875 6.34402 7.78446 5.74707 8.52084 5.74707C9.25722 5.74707 9.85417 6.34402 9.85417 7.0804Z" stroke="currentColor" stroke-width="1.5"></path>
+                    <path d="M14.4997 11.4131C14.9433 11.8147 15.1927 12.2675 15.1927 12.7464C15.1927 14.4033 12.2079 15.7464 8.52603 15.7464C4.84414 15.7464 1.85938 14.4033 1.85938 12.7464C1.85938 12.2675 2.10878 11.8147 2.55234 11.4131" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+                  </svg>
+                  <div class="max-width-11">
+                    <a href="https://maps.google.com/?q=707+7th+Avenue+SW+Calgary+AB+Canada+T2P+3H6" target="_blank" rel="noopener" class="footer-link">1150, 707 - 7th Avenue SW Calgary, AB Canada T2P 3H6</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="footer-call">
+              <div class="font-0-9">Website</div>
+              <div class="footer-menu-main">
+                <a href="../index.html" class="footer-link">Home</a>
+                <a href="../aaas.html" class="footer-link">AaaS Platform</a>
+                <a href="../pricing.html" class="footer-link">Pricing</a>
+                <a href="../learn-more.html" class="footer-link">What is Reporting Hub?</a>
+                <a href="../demo.html" class="footer-link">Demo</a>
+                <a href="../install-today.html" class="footer-link">Install Today</a>
+                <a href="../about-us.html" class="footer-link">About Us</a>
+                <a href="../contact.html" class="footer-link">Contact Us</a>
+              </div>
+            </div>
+            <div class="footer-call">
+              <div class="font-0-9">theHUB</div>
+              <div class="footer-menu-main">
+                <a href="https://docs.thereportinghub.com/" class="footer-link">Knowledge Center</a>
+                <a href="../blog.html" class="footer-link">Our Blog</a>
+                <a href="../power-bi.html" class="footer-link">About Power BI</a>
+                <a href="https://support.thereportinghub.com/support/home" class="footer-link">Get Support</a>
+                <a href="../support-plans.html" class="footer-link">Support Plans</a>
+                <a href="../policies.html" class="footer-link">Policies</a>
+                <a href="/policies#rh-terms" class="footer-link">Terms of Service</a>
+              </div>
+            </div>
+          </div>
+          <a href="#btt" class="direction-button w-inline-block"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 52 53" fill="none" class="button-icon">
+              <g clip-path="url(#clip0_9006_2933)">
+                <path d="M0 26.1602C0 40.5196 11.6406 52.1602 26 52.1602C40.3594 52.1602 52 40.5196 52 26.1602C52 11.8008 40.3594 0.160156 26 0.160156C11.6406 0.160156 0 11.8008 0 26.1602Z" fill="white" fill-opacity="0.1"></path>
+                <path d="M32.704 28.6752C33.1627 29.1422 33.9152 29.1422 34.3739 28.6752C34.8212 28.2199 34.8212 27.4902 34.3739 27.0348L26.7165 19.2396C26.3246 18.8407 25.6817 18.8407 25.2898 19.2396L17.6323 27.0348C17.1851 27.4902 17.1851 28.2199 17.6323 28.6752C18.0911 29.1422 18.8436 29.1422 19.3023 28.6752L25.2898 22.58C25.6817 22.181 26.3246 22.181 26.7165 22.58L32.704 28.6752Z" fill="currentColor" class="white"></path>
+              </g>
+            </svg></a>
+        </div>
+      </div>
+      <div class="space-3"></div>
+      <div class="global-line"></div>
+      <div class="footer-bottom">
+        <div class="space-3"></div>
+        <div class="w-layout-blockcontainer container w-container">
+          <div class="footer-bottom-contents">
+            <a href="../index.html" class="footer-left w-inline-block"><img src="../assets/images/rh-horizontal-white.svg" loading="lazy" alt="" class="image-small">
+              <div class="text-color-white margin-top-10">Microsoft partner</div>
+            </a>
+            <div class="footer-right">
+              <div class="new-footer-wrap">
+                <div class="font-0-9 text-align-right left-mobile">
+                  <a href="mailto:info@thereportinghub.com?subject=You've%20got%20email" class="link-8"><span class="text-span-2">info@thereportinghub.com</span></a>
+                </div>
+                <div class="social-media-wrap">
+                  <a href="https://www.facebook.com/people/The-Reporting-Hub/100064582883104/" class="social-media-link w-inline-block"><img src="../assets/images/fb.svg" loading="lazy" alt="" class="social-media-icon"></a>
+                  <a href="https://www.linkedin.com/company/the-reporting-hub/" class="social-media-link w-inline-block"><img src="../assets/images/in.svg" loading="lazy" alt="" class="social-media-icon"></a>
+                  <a href="https://x.com/thereportinghub" class="social-media-link w-inline-block"><img src="../assets/images/tw.svg" loading="lazy" alt="" class="social-media-icon"></a>
+                  <a href="https://www.instagram.com/thereportinghub/" class="social-media-link w-inline-block"><img src="../assets/images/insta.svg" loading="lazy" alt="" class="social-media-icon"></a>
+                </div>
+              </div>
+              <div class="font-0-9 text-align-right margin-top-16">2025 All Rights Reserved | The Reporting Hub</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  
+  
+  
+  
+  <!--  Google Tag Manager (noscript)  -->
+  <noscript><iframe src="https://ss.thereportinghub.com/ns.html?id=GTM-MM9W9FH" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!--  End Google Tag Manager (noscript)  -->
+  <script>
+(function () {
+  function cssEscapeSafe(s) {
+    try { return CSS.escape(s); } catch (e) { return s.replace(/["\\]/g, "\\$&"); }
+  }
+  function normalizeTarget(target) {
+    // ✅ Ako ti URL i dalje dolazi kao #bi-genius-terms, mapiraj ga na rh-terms
+    if (target === "bi-genius-terms") return "rh-terms";
+    return target;
+  }
+  function openTabFromHash() {
+    var hash = window.location.hash;
+    if (!hash) return;
+    var target = hash.slice(1);
+    if (!target) return;
+    target = normalizeTarget(target);
+    // 1) traži custom data-tab="..."
+    var sel = '[data-tab="' + cssEscapeSafe(target) + '"]';
+    var el = document.querySelector(sel);
+    // 2) fallback: traži direktno webflow tab link po data-w-tab
+    var tabLink = null;
+    if (el) {
+      tabLink = (el.classList && el.classList.contains('w-tab-link'))
+        ? el
+        : (el.querySelector ? el.querySelector('.w-tab-link') : null);
+    }
+    if (!tabLink) {
+      tabLink = document.querySelector('.w-tab-link[data-w-tab="' + cssEscapeSafe(target) + '"]');
+    }
+    // 3) extra fallback: ako target == rh-terms, probaj naći BILO KOJI element sa data-tab="rh-terms"
+    // (ovo ti je “hard fix” da 100% radi)
+    if (!tabLink && target === "rh-terms") {
+      tabLink = document.querySelector('[data-tab="rh-terms"].w-tab-link, .w-tab-link[data-tab="rh-terms"]');
+    }
+    if (!tabLink) return;
+    var tries = 0;
+    (function tryClick() {
+      tries++;
+      tabLink.click();
+      if (!tabLink.classList.contains('w--current') && tries < 20) {
+        setTimeout(tryClick, 100);
+      }
+    })();
+  }
+  document.addEventListener('DOMContentLoaded', openTabFromHash);
+  window.addEventListener('hashchange', openTabFromHash);
+})();
+</script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var youtubeIframes = document.querySelectorAll('iframe.lazyiframe');
+        youtubeIframes.forEach(function (youtubeIframe) {
+            var dataSrcValue = youtubeIframe.getAttribute('data-src');
+            if (dataSrcValue) {
+                youtubeIframe.setAttribute('src', dataSrcValue);
+                youtubeIframe.removeAttribute('data-src');
+            }
+        });
+    });
+</script>
+  
+  
+  
+
+<script src="../assets/js/main.js"></script>
+</body></html>

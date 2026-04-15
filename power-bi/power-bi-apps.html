@@ -1,0 +1,1290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Power BI Apps: Everything You Need to Know</title>
+  <meta content="Learn everything you need to know about Power BI Apps, including their benefits, how to build and update them, best practices for optimizing performance, and key differences between Desktop and Web Apps." name="description">
+  <meta content="" property="og:image">
+  <meta content="" property="twitter:image">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link href="../assets/css/base.css" rel="stylesheet" type="text/css">
+  <link href="../assets/css/styles.css" rel="stylesheet" type="text/css">
+
+  <!-- Favicon -->
+  <link href="../assets/images/favicon.ico" rel="shortcut icon" type="image/x-icon">
+  <link href="../assets/images/webclip.png" rel="apple-touch-icon">
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s);j.async=true;j.src="https://ss.thereportinghub.com/eszeqvibt.js?"+i;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','5mssr8=HQZUMSUoVz45Wz5PNy1cBUlQR0dXARROAAoMBBQVFQEACwcRGRAYXRcNBA%3D%3D');</script>
+  <!-- End Google Tag Manager -->
+</head>
+<body>
+  <div class="page-wrapper">
+    <html><head></head><body><html><head></head><body><html><head></head><body><html><head></head><body><html><head></head><body><html><head></head><body><html><head></head><body><html><head></head><body><html><head></head><body><div data-animation="default" class="navbar w-nav" data-easing2="ease" data-easing="ease" data-collapse="medium" role="banner" data-duration="400" id="nav">
+      <div class="navbar-continer w-container">
+        <div class="nav-item-wrap">
+          <a href="../index.html" class="brand w-nav-brand"><img src="../assets/images/rh-horizontal-white.svg" loading="eager" alt="" class="nav-brand-logo one"><img src="../assets/images/logo_white.svg" loading="lazy" alt="" class="nav-brand-logo two"></a>
+          <nav role="navigation" class="navigation w-nav-menu">
+            <a href="../index.html" class="nav-link w-nav-link">Home</a>
+            <div data-hover="false" data-delay="300" class="uui-navbar01_menu-dropdown w-dropdown">
+              <div class="uui-navbar01_dropdown-toggle w-dropdown-toggle">
+                <div class="uui-dropdown-icon w-embed"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg></div>
+                <div class="nav-link padding-right-0-25">Platform</div>
+              </div>
+              <nav class="uui-navbar01_dropdown-list w-dropdown-list">
+                <div class="uui-navbar01_container">
+                  <div class="uui-navbar01_dropdown-content">
+                    <div class="uui-navbar01_dropdown-content-left is-platform">
+                      <div class="uui-navbar01_dropdown-link-list">
+                        <h4 class="uui-navbar01_heading text-color-white">Platform</h4>
+                        <a href="../learn-more.html" class="uui-navbar01_dropdown-link w-inline-block">
+                          <div class="uui-navbar01_icon-wrapper"><img src="../assets/images/logo-white.svg" loading="lazy" alt="Bi White logo" class="icon-xsmall"></div>
+                          <div class="uui-navbar01_item-right">
+                            <div class="uui-navbar01_item-heading">Reporting Hub</div>
+                            <div class="uui-text-size-small hide-mobile-landscape">Custom-branded Power BI reporting delivery for teams and analytics clients</div>
+                          </div>
+                        </a>
+                      </div>
+                      <div class="uui-navbar01_dropdown-link-list is-bottom">
+                        <h4 class="uui-navbar01_heading opacity-0">Company</h4>
+                        <a href="../bi-genius.html" class="uui-navbar01_dropdown-link w-inline-block">
+                          <div class="uui-navbar01_icon-wrapper"><img src="../assets/images/new-bi-megamenu-logo-white.svg" loading="lazy" alt="Power Bi Megamenu white logo" class="icon-xsmall small"></div>
+                          <div class="uui-navbar01_item-right">
+                            <div class="uui-navbar01_item-heading">BI Genius</div>
+                            <div class="uui-text-size-small hide-mobile-landscape">Add-on fully customizable AI agents that drive insights with full transparency and control</div>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                    <div class="uui-navbar01_dropdown-content-right">
+                      <div class="uui-navbar01_dropdown-content-wrapper">
+                        <div class="blog-items-wrapper">
+                          <h4 class="uui-navbar01_dropdown-content-heading text-color-white">Latest from our blog</h4>
+                          <a href="../blog.html" class="uui-button-link is-button-xsmall w-inline-block">
+                            <div class="color_primary">See all posts ➝</div>
+                          </a>
+                        </div>
+                        <div class="w-dyn-list">
+                          <div role="list" class="uui-navbar01_dropdown-blog-list w-dyn-items"><div role="listitem" class="w-dyn-item">
+                              <a href="../blog/how-to-audit-your-external-analytics-delivery-for-scale-readiness.html" class="uui-navbar01_blog-item w-inline-block">
+                                <div class="uui-navbar01_blog-image-wrapper"><img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/69cd73430b9cefbe82f556cb_How%20to%20Audit%20Your%20External%20Analytics%20Delivery%20for%20Scale%20Readiness.jpg" loading="eager" alt="" class="uui-navbar01_blog-image"></div>
+                                <div class="uui-navbar01_large-item-content">
+                                  <div class="uui-navbar01_item-heading">How to Audit Your External Analytics Delivery for Scale Readiness</div>
+                                  <div class="uui-navbar01_item-button-wrapper">
+                                    <div class="uui-button-row">
+                                      <div class="uui-button-link is-button-xsmall">
+                                        <div class="color_primary">Learn More ➝</div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </a>
+                            </div><div role="listitem" class="w-dyn-item">
+                              <a href="../blog/the-real-cost-of-manual-report-distribution-a-framework-for-analytics-leaders.html" class="uui-navbar01_blog-item w-inline-block">
+                                <div class="uui-navbar01_blog-image-wrapper"><img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/69cd68937a2e494d59815dfa_The%20Real%20Cost%20of%20Manual%20Report%20Distribution%20A%20Framework%20for%20Analytics%20Leaders.jpg" loading="eager" alt="" class="uui-navbar01_blog-image"></div>
+                                <div class="uui-navbar01_large-item-content">
+                                  <div class="uui-navbar01_item-heading">The Real Cost of Manual Report Distribution: A Framework for Analytics Leaders</div>
+                                  <div class="uui-navbar01_item-button-wrapper">
+                                    <div class="uui-button-row">
+                                      <div class="uui-button-link is-button-xsmall">
+                                        <div class="color_primary">Learn More ➝</div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </a>
+                            </div><div role="listitem" class="w-dyn-item">
+                              <a href="../blog/7-best-ways-to-share-power-bi-reports-with-external-users.html" class="uui-navbar01_blog-item w-inline-block">
+                                <div class="uui-navbar01_blog-image-wrapper"><img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/69c6b68337f93532ba00256c_7%20Best%20Ways%20To%20Share%20Power%20BI%20Reports%20With%20External%20Users.jpg" loading="eager" alt="" class="uui-navbar01_blog-image"></div>
+                                <div class="uui-navbar01_large-item-content">
+                                  <div class="uui-navbar01_item-heading">7 Best Ways To Share Power BI Reports With External Users</div>
+                                  <div class="uui-navbar01_item-button-wrapper">
+                                    <div class="uui-button-row">
+                                      <div class="uui-button-link is-button-xsmall">
+                                        <div class="color_primary">Learn More ➝</div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </a>
+                            </div></div>
+                          
+                        </div>
+                      </div>
+                      <div class="uui-navbar01_dropdown-right-overlay-absolute"></div>
+                    </div>
+                  </div>
+                </div>
+              </nav>
+            </div>
+            <a href="../pricing.html" class="nav-link w-nav-link">Pricing</a>
+            <a href="../aaas.html" class="nav-link w-nav-link">AaaS Platform</a>
+            <div data-hover="false" data-delay="300" class="uui-navbar01_menu-dropdown w-dropdown">
+              <div class="uui-navbar01_dropdown-toggle w-dropdown-toggle">
+                <div class="uui-dropdown-icon w-embed"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg></div>
+                <div class="nav-link padding-right-0-25">Learn</div>
+              </div>
+              <nav class="uui-navbar01_dropdown-list w-dropdown-list">
+                <div class="uui-navbar01_container">
+                  <div class="uui-navbar01_dropdown-content">
+                    <div class="nav-items">
+                      <h4 class="uui-navbar01_heading large text-color-white">Learn</h4>
+                      <div class="uui-navbar01_dropdown-content-left">
+                        <div class="uui-navbar01_dropdown-link-list">
+                          <a href="https://docs.thereportinghub.com/?_gl=1*11en80c*_gcl_au*MjEyNTAwMzM0MC4xNzYwMDIyNzYzLjE5Nzk0NzY1MjguMTc2MjEwODgzNS4xNzYyMTA4ODM1*_ga*MzgyNDA3NDAxLjE3NjAwMjI3NjM." target="_blank" class="uui-navbar01_dropdown-link w-inline-block">
+                            <div class="uui-navbar01_icon-wrapper"><img src="../assets/images/Knowledge-Centre_icon.webp" loading="lazy" alt="" class="nav-image"></div>
+                            <div class="uui-navbar01_item-right">
+                              <div class="uui-navbar01_item-heading">Knowledge Center<br></div>
+                              <div class="uui-text-size-small hide-mobile-landscape">All the information you need to master B.I. delivery</div>
+                            </div>
+                          </a>
+                          <a href="../community.html" class="uui-navbar01_dropdown-link is-auto w-inline-block">
+                            <div class="uui-navbar01_icon-wrapper"><img src="../assets/images/About-Us_icon-1.webp" loading="lazy" alt="" class="nav-image"></div>
+                            <div class="uui-navbar01_item-right">
+                              <div class="uui-navbar01_item-heading">Community</div>
+                              <div class="uui-text-size-small hide-mobile-landscape">Connect and collaborate with active users</div>
+                            </div>
+                          </a>
+                        </div>
+                        <div class="uui-navbar01_dropdown-link-list">
+                          <h4 class="uui-navbar01_heading opacity-0">Company</h4>
+                          <a href="https://docs.thereportinghub.com/getting-started/deployment-step-by-step/self-serve-guided-install?_gl=1*1nvpg97*_gcl_au*MjEyNTAwMzM0MC4xNzYwMDIyNzYzLjE5Nzk0NzY1MjguMTc2MjEwODgzNS4xNzYyMTA4ODM1*_ga*MzgyNDA3NDAxLjE3NjAwMjI3NjM." target="_blank" class="uui-navbar01_dropdown-link w-inline-block">
+                            <div class="uui-navbar01_icon-wrapper"><img src="../assets/images/Getting-Started_icon.webp" loading="lazy" alt="" class="nav-image"></div>
+                            <div class="uui-navbar01_item-right">
+                              <div class="uui-navbar01_item-heading">Getting Started</div>
+                              <div class="uui-text-size-small hide-mobile-landscape">Step-by-step guides to get started with the Reporting Hub<br></div>
+                            </div>
+                          </a>
+                          <a href="https://www.youtube.com/@thereportinghub" class="uui-navbar01_dropdown-link is-auto w-inline-block">
+                            <div class="uui-navbar01_icon-wrapper"><img src="../assets/images/Video-Demos_icon.webp" loading="lazy" alt="" class="nav-image"></div>
+                            <div class="uui-navbar01_item-right">
+                              <div class="uui-navbar01_item-heading">Video Demos</div>
+                              <div class="uui-text-size-small hide-mobile-landscape">Our YouTube channel with helpful video demos</div>
+                            </div>
+                          </a>
+                        </div>
+                        <div id="w-node-a91421d3-b46b-1701-6a19-a49d5ae9c96d-17890035" class="uui-navbar01_dropdown-link-list flex">
+                          <h4 class="uui-navbar01_heading opacity-0 none">Company</h4>
+                          <a href="../resources.html" class="uui-navbar01_dropdown-link w-inline-block">
+                            <div class="uui-navbar01_icon-wrapper"><img src="../assets/images/Resources.webp" loading="lazy" alt="" class="nav-image"></div>
+                            <div class="uui-navbar01_item-right">
+                              <div class="uui-navbar01_item-heading">Resources</div>
+                              <div class="uui-text-size-small hide-mobile-landscape">Videos, white papers, and assets about Reporting Hub</div>
+                            </div>
+                          </a>
+                          <a href="https://support.thereportinghub.com/support/home" target="_blank" class="uui-navbar01_dropdown-link is-auto w-inline-block">
+                            <div class="uui-navbar01_icon-wrapper"><img src="../assets/images/Get-Help_icon.webp" loading="lazy" alt="" class="nav-image"></div>
+                            <div class="uui-navbar01_item-right">
+                              <div class="uui-navbar01_item-heading">Get Help</div>
+                              <div class="uui-text-size-small hide-mobile-landscape">Our Support team is here to help</div>
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+                      <div class="uui-navbar01_dropdown-content-left pt-0">
+                        <div class="uui-navbar01_dropdown-link-list one-item">
+                          <h4 class="uui-navbar01_heading large text-color-white">Services</h4>
+                          <a href="../partners.html" class="uui-navbar01_dropdown-link w-inline-block">
+                            <div class="uui-navbar01_icon-wrapper"><img src="../assets/images/Knowledge-Centre_icon.webp" loading="lazy" alt="" class="nav-image"></div>
+                            <div class="uui-navbar01_item-right">
+                              <div class="uui-navbar01_item-heading">Partner Programs<br></div>
+                              <div class="uui-text-size-small hide-mobile-landscape">Find or become a Reporting Hub Partner</div>
+                            </div>
+                          </a>
+                        </div>
+                        <div class="uui-navbar01_dropdown-link-list is-bottom">
+                          <h4 class="uui-navbar01_heading opacity-0">Company</h4>
+                          <a href="../professionalservices.html" class="uui-navbar01_dropdown-link w-inline-block">
+                            <div class="uui-navbar01_icon-wrapper"><img src="../assets/images/Professional-Services_icon.webp" loading="lazy" alt="" class="nav-image"></div>
+                            <div class="uui-navbar01_item-right">
+                              <div class="uui-navbar01_item-heading">Professional Services</div>
+                              <div class="uui-text-size-small hide-mobile-landscape">Get premium support from our team of experts</div>
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="uui-navbar01_dropdown-content-right">
+                      <div class="uui-navbar01_dropdown-content-wrapper">
+                        <div class="blog-items-wrapper">
+                          <h4 class="uui-navbar01_dropdown-content-heading text-color-white">Latest from our blog</h4>
+                          <a href="../blog.html" class="uui-button-link is-button-xsmall w-inline-block">
+                            <div class="color_primary">See all posts ➝</div>
+                          </a>
+                        </div>
+                        <div class="w-dyn-list">
+                          <div role="list" class="uui-navbar01_dropdown-blog-list w-dyn-items"><div role="listitem" class="w-dyn-item">
+                              <a href="../blog/how-to-audit-your-external-analytics-delivery-for-scale-readiness.html" class="uui-navbar01_blog-item w-inline-block">
+                                <div class="uui-navbar01_blog-image-wrapper"><img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/69cd73430b9cefbe82f556cb_How%20to%20Audit%20Your%20External%20Analytics%20Delivery%20for%20Scale%20Readiness.jpg" loading="eager" alt="" class="uui-navbar01_blog-image"></div>
+                                <div class="uui-navbar01_large-item-content">
+                                  <div class="uui-navbar01_item-heading">How to Audit Your External Analytics Delivery for Scale Readiness</div>
+                                  <div class="uui-navbar01_item-button-wrapper">
+                                    <div class="uui-button-row">
+                                      <div class="uui-button-link is-button-xsmall">
+                                        <div class="color_primary">Learn More ➝</div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </a>
+                            </div><div role="listitem" class="w-dyn-item">
+                              <a href="../blog/the-real-cost-of-manual-report-distribution-a-framework-for-analytics-leaders.html" class="uui-navbar01_blog-item w-inline-block">
+                                <div class="uui-navbar01_blog-image-wrapper"><img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/69cd68937a2e494d59815dfa_The%20Real%20Cost%20of%20Manual%20Report%20Distribution%20A%20Framework%20for%20Analytics%20Leaders.jpg" loading="eager" alt="" class="uui-navbar01_blog-image"></div>
+                                <div class="uui-navbar01_large-item-content">
+                                  <div class="uui-navbar01_item-heading">The Real Cost of Manual Report Distribution: A Framework for Analytics Leaders</div>
+                                  <div class="uui-navbar01_item-button-wrapper">
+                                    <div class="uui-button-row">
+                                      <div class="uui-button-link is-button-xsmall">
+                                        <div class="color_primary">Learn More ➝</div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </a>
+                            </div><div role="listitem" class="w-dyn-item">
+                              <a href="../blog/7-best-ways-to-share-power-bi-reports-with-external-users.html" class="uui-navbar01_blog-item w-inline-block">
+                                <div class="uui-navbar01_blog-image-wrapper"><img src="https://cdn.prod.website-files.com/68f2718c8f2b5c94912d3129/69c6b68337f93532ba00256c_7%20Best%20Ways%20To%20Share%20Power%20BI%20Reports%20With%20External%20Users.jpg" loading="eager" alt="" class="uui-navbar01_blog-image"></div>
+                                <div class="uui-navbar01_large-item-content">
+                                  <div class="uui-navbar01_item-heading">7 Best Ways To Share Power BI Reports With External Users</div>
+                                  <div class="uui-navbar01_item-button-wrapper">
+                                    <div class="uui-button-row">
+                                      <div class="uui-button-link is-button-xsmall">
+                                        <div class="color_primary">Learn More ➝</div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </a>
+                            </div></div>
+                          
+                        </div>
+                      </div>
+                      <div class="uui-navbar01_dropdown-right-overlay-absolute"></div>
+                    </div>
+                  </div>
+                </div>
+              </nav>
+            </div>
+            <a href="../demo.html" class="nav-link w-nav-link">Demo</a>
+            <a href="../install-today.html" class="nav-link w-nav-link">Install</a>
+            <a href="../about-us.html" class="nav-link w-nav-link">About Us</a>
+            <a href="../contact.html" class="nav-link w-nav-link">Contact Us</a>
+          </nav>
+          <div class="menu-button w-nav-button">
+            <div class="w-icon-nav-menu"></div>
+          </div>
+        </div>
+      </div>
+    </div></body></html></body></html></body></html></body></html></body></html></body></html></body></html></body></html></body></html>
+    <div class="main">
+      <section class="hero-section apps">
+        <div class="w-layout-blockcontainer container w-container">
+          <div class="hero-contents">
+            <div class="max-width-969 apps">
+              <div class="max-width-40">
+                <h1 class="heading-style-h1">Power BI Apps: Everything You Need to Know</h1>
+                <div class="space-1"></div>
+                <div class="text-color-gray text-weight-500">In a data-driven world, quick access to accurate information is crucial for success. Millions of companies today are leveraging Power BI, one of the most widely used business intelligence tools to transform raw data into valuable insights.<br><br>The data connectivity and visualization platform is a top choice for businesses in need of robust tools they can use to build analyses based on complex datasets.<br><br>Central to this ecosystem are Power BI Apps, curated collections of dashboards and reports designed to streamline insights distribution within organizations.</div>
+              </div>
+              <div><img src="../assets/images/power_bi_app_dashboard.svg" loading="lazy" alt="Dashboard Image"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section microsoft-power-bi">
+        <div class="w-layout-blockcontainer container w-container">
+          <div>
+            <h2 class="heading-style-h1 power-bi">Introduction to Power BI</h2>
+            <div class="space-1-5"></div>
+            <div class="text-size-medium">Power BI Apps are packaged dashboards, reports, and datasets into a single, streamlined distribution for end-users. Power BI designers create them in workspaces, where team members collaborate on content. Once ready, the app is published to a group of users or the entire organization.<br><br>The term &quot;Power BI Apps&quot; can be confusing for some, because Microsoft uses &quot;app&quot; in multiple ways within Power BI. Generally, &quot;Power BI Apps&quot; are packages that bundle multiple dashboards and reports in Power BI into a single app for easy access, navigation, and sharing, which is different than data connectors and integrations.</div>
+            <div class="space-2-5"></div>
+            <div class="microsoft-cards _2-col">
+              <div class="microsoft-bi-card introduction"><img src="../assets/images/service-icon-04.svg" loading="lazy" alt="Icon" class="introduction-image">
+                <div class="space-1"></div>
+                <h3 class="heading-style-h4 small-varsion">Data Connectors/Integrations:</h3>
+                <div class="space-1"></div>
+                <div class="text-size-medium text-color-gary">These are the connections Power BI can establish with various platforms, like Azure, Dynamics 365, Salesforce, and Google Analytics. They allow data to flow from these sources into Power BI so you can create reports and dashboards.</div>
+              </div>
+              <div class="microsoft-bi-card introduction"><img src="../assets/images/service-icon.svg" loading="lazy" alt="Icon" class="introduction-image">
+                <div class="space-1"></div>
+                <h3 class="heading-style-h4 small-varsion">Power BI Apps:</h3>
+                <div class="space-1"></div>
+                <div class="text-size-medium text-color-gary">Once you use these connectors to pull data into Power BI and build relevant reports and dashboards, you can package them together as a Power BI App. This app can be shared across your organization or with specific teams.</div>
+              </div>
+            </div>
+            <div class="space-2-5"></div>
+            <div class="text-size-medium">Power BI Apps provide a tailored view for users, showing only finalized and approved content. This ensures users see accurate information ready for consumption. They offer an ideal way to distribute reports to a large audience. Users can easily access the content from their browsers or mobile devices by clicking a link. There&#x27;s no need to navigate through complex workspace structures, simplifying the experience for everyone.</div>
+          </div>
+        </div>
+      </section>
+      <div>
+        <div class="section security apps"><img src="../assets/images/new_top_sec_bg.webp" loading="lazy" alt="Abstract background with a diagonal split between light blue and dark navy blue colors.">
+          <div class="w-layout-blockcontainer container w-container">
+            <div class="apps-use">
+              <div class="security-title-wrap apps">
+                <h2 class="heading-style-h2 text-color-white">Why Use Power BI Apps?</h2>
+                <p class="card-fonts align-left">Power BI Apps provide valuable benefits for organizations looking to simplify data sharing and improve business intelligence. They ensure all users have access to the same up-to-date information, without needing to manually check for updates. When new content is released, users are automatically notified or see the changes immediately. One key advantage is the separation between developer and user environments. Developers work in the workspace, while users interact with the finished content in the app. Power BI Apps are designed for end-users, providing easy access to curated content from specific App Workspaces. Fabric Workspace Admins control the content within these apps, which can include Power BI reports, dashboards, Excel workbooks, and Paginated Reports.</p>
+              </div>
+              <div class="apps-use-image-wrap"><img src="../assets/images/Group-1.webp" loading="lazy" alt="Two dashboard screenshots from ReportingHub showing sales funnel overview and program performance metrics, including charts for qualification, proposals, program targets, and roadmap activities."></div>
+            </div>
+          </div>
+        </div>
+        <div class="curve-bg-wrap"><img src="../assets/images/dark-section-bg-bottom-1.svg" loading="lazy" alt="Background Image of dark-section-bg-bottom" class="carve-image"></div>
+      </div>
+      <section class="section disasvantage margin-top-24">
+        <div class="w-layout-blockcontainer container w-container">
+          <div class="benefits-of-power-bi-apps">
+            <h2 class="heading-style-h2"><span class="text-color-secondary">Benefits</span> of Power BI Apps</h2>
+            <div class="text-size-medium text-color-gary">Power BI Apps are a key enabler for self-service adoption of Power BI, making it easy for users to access and consume content.<br><br></div>
+            <div class="heading-style-h4 small-varsion">Key Benefits:<br></div>
+            <div class="space-0-5"></div>
+            <div class="key-benefits-cards background-white">
+              <div id="w-node-_67e8f9bb-18b4-6e7f-5084-92244632b7fa-22d4e3b2" class="key-benefits-card"><img src="../assets/images/tickicon.svg" loading="lazy" alt="Icon" class="key-advantage-images">
+                <div class="space-1-5"></div>
+                <div class="heading-style-h4 small-varsion">Ease of Access:</div>
+                <div class="space-1"></div>
+                <div class="text-size-medium text-color-gary">Allows large groups of users to effortlessly access and consume data without needing to create content.<br><br></div>
+              </div>
+              <div id="w-node-_67e8f9bb-18b4-6e7f-5084-92244632b802-22d4e3b2" class="key-benefits-card"><img src="../assets/images/tickicon.svg" loading="lazy" alt="Icon" class="key-advantage-images">
+                <div class="space-1-5"></div>
+                <div class="heading-style-h4 small-varsion">Integrated Sharing:<br></div>
+                <div class="space-1"></div>
+                <div class="text-size-medium text-color-gary">Packages reports and dashboards into a single, user-friendly app, ensuring consistent views for all users.<br><br></div>
+              </div>
+              <div id="w-node-_67e8f9bb-18b4-6e7f-5084-92244632b80a-22d4e3b2" class="key-benefits-card"><img src="../assets/images/tickicon.svg" loading="lazy" alt="Icon" class="key-advantage-images">
+                <div class="space-1-5"></div>
+                <div class="heading-style-h4 small-varsion">Enhanced Security:<br></div>
+                <div class="space-1"></div>
+                <div class="text-size-medium text-color-gary">Provides optimal control over who can view and interact with the data, ensuring security and compliance.<br></div>
+              </div>
+              <div id="w-node-_67e8f9bb-18b4-6e7f-5084-92244632b813-22d4e3b2" class="key-benefits-card"><img src="../assets/images/tickicon.svg" loading="lazy" alt="Icon" class="key-advantage-images">
+                <div class="space-1-5"></div>
+                <div class="heading-style-h4 small-varsion">Personalization and Branding:<br></div>
+                <div class="space-1"></div>
+                <div class="text-size-medium text-color-gary">Offers customization options for uniform branding and structured navigation, enhancing user engagement.<br><br></div>
+              </div>
+              <div id="w-node-_67e8f9bb-18b4-6e7f-5084-92244632b81c-22d4e3b2" class="key-benefits-card"><img src="../assets/images/tickicon.svg" loading="lazy" alt="Icon" class="key-advantage-images">
+                <div class="space-1-5"></div>
+                <div class="heading-style-h4 small-varsion">Regular Updates:<br></div>
+                <div class="space-1"></div>
+                <div class="text-size-medium text-color-gary">Facilitates easy content updates within the app, keeping decision-makers informed with the latest insights.<br><br></div>
+              </div>
+            </div>
+            <div class="space-1-5"></div>
+            <div class="text-size-medium text-color-blacks text-align-center">Power BI Apps streamline the distribution and management of business intelligence, making it easier for organizations to leverage data strategically and efficiently.</div>
+          </div>
+        </div>
+      </section>
+      <section class="section disasvantage">
+        <div class="w-layout-blockcontainer container w-container">
+          <div>
+            <h2 class="heading-style-h2"><span class="text-color-red">Drawbacks</span> of Power BI Apps</h2>
+            <div class="space-1"></div>
+            <div class="text-size-medium text-color-gary">While Power BI Apps offer many benefits, they have some limitations compared to workspaces:</div>
+            <div class="space-3"></div>
+            <div class="use-bi-features drobacks">
+              <div class="why-bi-card border-1x v1"><img src="../assets/images/closeicon.svg" loading="lazy" alt="Icon" class="bi-card-icon-use-icon v10">
+                <div class="heading-style-h4 small-varsion text-color-black">Limited Personalization:</div>
+                <div class="space-1"></div>
+                <div class="text-size-medium text-color-gary">Users cannot personalize or apply filters to reports shared within apps.</div>
+              </div>
+              <div class="why-bi-card border-1x v1"><img src="../assets/images/closeicon.svg" loading="lazy" alt="Icon" class="bi-card-icon-use-icon v10">
+                <div class="heading-style-h4 small-varsion text-color-black">Dataset Rebinding:</div>
+                <div class="space-1"></div>
+                <div class="text-size-medium text-color-gary">Users cannot personalize or apply filters to reports shared within apps.</div>
+              </div>
+              <div class="why-bi-card border-1x v1"><img src="../assets/images/closeicon.svg" loading="lazy" alt="Icon" class="bi-card-icon-use-icon v10">
+                <div class="heading-style-h4 small-varsion text-color-black">Premium Access Required:</div>
+                <div class="space-1"></div>
+                <div class="text-size-medium text-color-gary">Users cannot personalize or apply filters to reports shared within apps.</div>
+              </div>
+            </div>
+            <div class="space-2"></div>
+            <div class="text-size-medium text-color-blacks text-align-center">Despite these constraints, Power BI Apps remain a robust and efficient way to distribute and manage business intelligence content within organizations.</div>
+          </div>
+        </div>
+      </section>
+      <div>
+        <div class="section security"><img src="../assets/images/new_top_sec_bg.webp" loading="lazy" alt="Abstract background with a diagonal split between light blue and dark navy blue colors.">
+          <div class="w-layout-blockcontainer container w-container">
+            <div class="security-title-wrap">
+              <h2 class="heading-style-h2 text-color-white">How <span class="text-color-secondary">Easy</span> Is Power BI to Learn?</h2>
+              <p class="card-fonts text-color-white">When analyzing Power BI&#x27;s shortcomings, a number of reasons become apparent:<br></p>
+            </div>
+            <div class="space-2"></div>
+            <div class="most-popular-cards">
+              <div class="most-popular-card"><img src="../assets/images/dynamics_365.svg" loading="lazy" alt="Logo" class="easy-learn-card-image">
+                <div class="heading-style-h4 small-varsion text-color-black">Dynamics 365:</div>
+                <div class="space-1"></div>
+                <div class="text-size-medium text-color-blacks color-black">For those using Microsoft Dynamics 365, this app provides insights across ERP and CRM data, with dashboards for sales, customer service, and operations, making it a go-to for businesses leveraging Dynamics.</div>
+                <div class="space-1"></div>
+                <a href="#" class="view-now-btn w-inline-block">
+                  <div>View Now ➝</div>
+                </a>
+              </div>
+              <div class="most-popular-card"><img src="../assets/images/adobe_analytics.svg" loading="lazy" alt="Logo" class="easy-learn-card-image _2">
+                <div class="heading-style-h4 small-varsion text-color-black">Adobe Analytics:</div>
+                <div class="space-1"></div>
+                <div class="text-size-medium text-color-blacks color-black">This app is popular for digital marketers and e-commerce businesses, providing analytics around user behavior, conversion rates, and website performance, all pulled directly from Adobe Analytics.</div>
+                <div class="space-1"></div>
+                <a href="https://business.adobe.com/products/adobe-analytics.html" class="view-now-btn w-inline-block">
+                  <div>View Now ➝</div>
+                </a>
+              </div>
+              <div class="most-popular-card"><img src="../assets/images/salesforce.svg" loading="lazy" alt="Logo" class="easy-learn-card-image">
+                <div class="heading-style-h4 small-varsion text-color-black">Salesforce:</div>
+                <div class="space-1"></div>
+                <div class="text-size-medium text-color-blacks color-black">With this app, businesses using Salesforce can quickly visualize customer and sales data, track KPIs, and monitor pipeline health without needing to build reports from scratch.</div>
+                <div class="space-1"></div>
+                <a href="https://www.salesforce.com/" class="view-now-btn w-inline-block">
+                  <div>View Now ➝</div>
+                </a>
+              </div>
+              <div class="most-popular-card"><img src="../assets/images/github.svg" loading="lazy" alt="Logo" class="easy-learn-card-image mb-1">
+                <div class="heading-style-h4 small-varsion text-color-black">GitHub Activity:</div>
+                <div class="space-1"></div>
+                <div class="text-size-medium text-color-blacks color-black">For development teams, this app offers insights into repository activity, pull requests, issues, and code performance, helping developers and project managers track project health.</div>
+                <div class="space-1"></div>
+                <a href="https://github.com/" class="view-now-btn w-inline-block">
+                  <div>View Now ➝</div>
+                </a>
+              </div>
+              <div class="most-popular-card"><img src="../assets/images/google_analytics.svg" loading="lazy" alt="Google Analytics Logo" class="easy-learn-card-image mb-1">
+                <div class="heading-style-h4 small-varsion text-color-black">Google Analytics:<br></div>
+                <div class="space-1"></div>
+                <div class="text-size-medium text-color-blacks color-black">This app lets users access web traffic and user behavior data from Google Analytics within Power BI, allowing for a comprehensive view of online performance alongside other business data.</div>
+                <div class="space-1"></div>
+                <a href="https://marketingplatform.google.com/about/analytics/" class="view-now-btn w-inline-block">
+                  <div>View Now ➝</div>
+                </a>
+              </div>
+              <div class="most-popular-card"><img src="../assets/images/mailchimp.svg" loading="lazy" alt="Mailchimp Logo" class="easy-learn-card-image mb-1">
+                <div class="heading-style-h4 small-varsion text-color-black">Mailchimp:<br></div>
+                <div class="space-1"></div>
+                <div class="text-size-medium text-color-blacks color-black">Popular among marketing teams, this app helps analyze email campaign performance, audience engagement, and click-through rates from Mailchimp data, enabling teams to track and optimize campaigns.<br></div>
+                <div class="space-1"></div>
+                <a href="https://mailchimp.com/" class="view-now-btn w-inline-block">
+                  <div>View Now ➝</div>
+                </a>
+              </div>
+              <div class="most-popular-card"><img src="../assets/images/azure_devOps.svg" loading="lazy" alt="Azure DevOps Logo" class="easy-learn-card-image">
+                <div class="heading-style-h4 small-varsion text-color-black">Azure DevOps:<br></div>
+                <div class="space-1"></div>
+                <div class="text-size-medium text-color-blacks color-black">This app supports development and project management teams by tracking work items, bugs, project timelines, and build health directly within Power BI.</div>
+                <div class="space-1"></div>
+                <a href="https://azure.microsoft.com/en-in/products/devops" class="view-now-btn w-inline-block">
+                  <div>View Now ➝</div>
+                </a>
+              </div>
+              <div class="most-popular-card"><img src="../assets/images/microsoft_teams.svg" loading="lazy" alt="Microsoft Team Logo" class="easy-learn-card-image mb-1">
+                <div class="heading-style-h4 small-varsion text-color-black">Microsoft Teams:<br></div>
+                <div class="space-1"></div>
+                <div class="text-size-medium text-color-blacks color-black">This app is used to view Power BI insights directly within the Microsoft Teams environment, making it easier to share insights and collaborate without leaving Teams.</div>
+                <div class="space-1"></div>
+                <a href="https://www.microsoft.com/en-in/microsoft-teams/group-chat-software" class="view-now-btn w-inline-block">
+                  <div>View Now ➝</div>
+                </a>
+              </div>
+              <div class="most-popular-card"><img src="../assets/images/quickbooks.svg" loading="lazy" alt="Quickbooks Logo" class="easy-learn-card-image mb-1">
+                <div class="heading-style-h4 small-varsion text-color-black">QuickBooks Online:<br></div>
+                <div class="space-1"></div>
+                <div class="text-size-medium text-color-blacks color-black">A popular app for small to medium-sized businesses, this app helps finance teams analyze cash flow, expenses, and income, creating an at-a-glance view of financial health.</div>
+                <div class="space-1"></div>
+                <a href="https://quickbooks.intuit.com/" class="view-now-btn w-inline-block">
+                  <div>View Now ➝</div>
+                </a>
+              </div>
+              <div class="most-popular-card"><img src="../assets/images/saphana.svg" loading="lazy" alt="Sap Hana logo" class="easy-learn-card-image mb-1">
+                <div class="heading-style-h4 small-varsion text-color-black">SAP HANA:<br></div>
+                <div class="space-1"></div>
+                <div class="text-size-medium text-color-blacks color-black">For enterprises using SAP, this app allows integration with SAP HANA data, offering insights into operations, finance, and sales for deeper analytics on ERP data<br></div>
+                <div class="space-1"></div>
+                <a href="https://www.sap.com/" class="view-now-btn w-inline-block">
+                  <div>View Now ➝</div>
+                </a>
+              </div>
+              <div class="most-popular-card"><img src="../assets/images/microsoft_project_online.svg" loading="lazy" alt="Logo" class="easy-learn-card-image">
+                <div class="heading-style-h4 small-varsion text-color-black">Microsoft Project Online:<br></div>
+                <div class="space-1"></div>
+                <div class="text-size-medium text-color-blacks color-black">This app provides project managers with dashboards to track project progress, resource allocation, costs, and timelines, making it a go-to for project-oriented teams.</div>
+                <div class="space-1"></div>
+                <a href="https://www.microsoft.com/en-in/microsoft-365/project/project-management-software" class="view-now-btn w-inline-block">
+                  <div>View Now ➝</div>
+                </a>
+              </div>
+              <div class="most-popular-card"><img src="../assets/images/servicenow.svg" loading="lazy" alt="Servicenow logo" class="easy-learn-card-image">
+                <div class="heading-style-h4 small-varsion text-color-black">ServiceNow:<br></div>
+                <div class="space-1"></div>
+                <div class="text-size-medium text-color-blacks color-black">ServiceNow users can leverage this app to monitor incident response times, ticket volumes, and service performance, making it essential for IT service management.</div>
+                <div class="space-1"></div>
+                <a href="https://www.servicenow.com/" class="view-now-btn w-inline-block">
+                  <div>View Now ➝</div>
+                </a>
+              </div>
+              <div class="most-popular-card"><img src="../assets/images/zendesk.svg" loading="lazy" alt="Icon" class="easy-learn-card-image mb-1">
+                <div class="heading-style-h4 small-varsion text-color-black">Zendesk:<br></div>
+                <div class="space-1"></div>
+                <div class="text-size-medium text-color-blacks color-black">For customer support teams, this app offers insights into ticketing data, customer satisfaction, agent performance, and service level adherence.</div>
+                <div class="space-1"></div>
+                <a href="https://www.zendesk.com/" class="view-now-btn w-inline-block">
+                  <div>View Now ➝</div>
+                </a>
+              </div>
+              <div class="most-popular-card"><img src="../assets/images/GoogleBigQuery.svg" loading="lazy" alt="Icon" class="easy-learn-card-image">
+                <div class="heading-style-h4 small-varsion text-color-black">Google BigQuery:<br></div>
+                <div class="space-1"></div>
+                <div class="text-size-medium text-color-blacks color-black">This app is valuable for data teams using Google BigQuery, allowing them to analyze large datasets, perform in-depth analytics, and visualize results in Power BI.</div>
+                <div class="space-1"></div>
+                <a href="https://cloud.google.com/bigquery" class="view-now-btn w-inline-block">
+                  <div>View Now ➝</div>
+                </a>
+              </div>
+              <div class="most-popular-card"><img src="../assets/images/GoogleBigQuery.svg" loading="lazy" alt="Icon" class="easy-learn-card-image">
+                <div class="heading-style-h4 small-varsion text-color-black">Azure Active Directory:</div>
+                <div class="space-1"></div>
+                <div class="text-size-medium text-color-blacks color-black">This app is popular with IT administrators for tracking user activity, logins, security events, and other directory-related data, enhancing security monitoring.</div>
+                <div class="space-1"></div>
+                <a href="https://www.microsoft.com/en-in/security/business/identity-access/microsoft-entra-id" class="view-now-btn w-inline-block">
+                  <div>View Now ➝</div>
+                </a>
+              </div>
+              <div class="most-popular-card"><img src="../assets/images/shopify.svg" loading="lazy" alt="Icon" class="easy-learn-card-image mb-1">
+                <div class="heading-style-h4 small-varsion text-color-black">Shopify:<br></div>
+                <div class="space-1"></div>
+                <div class="text-size-medium text-color-blacks color-black">E-commerce businesses use this app to view sales data, track inventory, analyze customer trends, and monitor store performance.<br></div>
+                <div class="space-1"></div>
+                <a href="https://www.shopify.com/" class="view-now-btn w-inline-block">
+                  <div>View Now ➝</div>
+                </a>
+              </div>
+              <div class="most-popular-card"><img src="../assets/images/Marketo.svg" loading="lazy" alt="Icon" class="easy-learn-card-image mb-1">
+                <div class="heading-style-h4 small-varsion text-color-black">Marketo:<br></div>
+                <div class="space-1"></div>
+                <div class="text-size-medium text-color-blacks color-black">For marketing automation, this app enables teams to analyze lead generation, campaign performance, and engagement, helping improve marketing efforts.<br></div>
+                <div class="space-1"></div>
+                <a href="https://nation.marketo.com/" class="view-now-btn w-inline-block">
+                  <div>View Now ➝</div>
+                </a>
+              </div>
+              <div class="most-popular-card"><img src="../assets/images/Workday.svg" loading="lazy" alt="Icon" class="easy-learn-card-image mb2">
+                <div class="heading-style-h4 small-varsion text-color-black">Workday</div>
+                <div class="space-1"></div>
+                <div class="text-size-medium text-color-blacks color-black">Often used by HR teams, this app helps with tracking workforce metrics, performance, payroll data, and employee engagement.</div>
+                <div class="space-1"></div>
+                <a href="https://www.workday.com/" class="view-now-btn w-inline-block">
+                  <div>View Now ➝</div>
+                </a>
+              </div>
+              <div class="most-popular-card"><img src="../assets/images/jira.svg" loading="lazy" alt="Icon" class="easy-learn-card-image mb-1">
+                <div class="heading-style-h4 small-varsion text-color-black">Jira:<br></div>
+                <div class="space-1"></div>
+                <div class="text-size-medium text-color-blacks color-black">Used by software development teams, this app provides visibility into project progress, sprint completion, issue tracking, and team performance, making it ideal for agile workflows.</div>
+                <div class="space-1"></div>
+                <a href="https://www.atlassian.com/software/jira" class="view-now-btn w-inline-block">
+                  <div>View Now ➝</div>
+                </a>
+              </div>
+              <div class="most-popular-card"><img src="../assets/images/Square.svg" loading="lazy" alt="Logo" class="easy-learn-card-image mb-1">
+                <div class="heading-style-h4 small-varsion text-color-black">Square:<br></div>
+                <div class="space-1"></div>
+                <div class="text-size-medium text-color-blacks color-black">For retail and small business users, this app helps analyze point-of-sale data, including sales trends, product performance, and customer demographics, essential for retail analytics.<br></div>
+                <div class="space-1"></div>
+                <a href="https://squareup.com/us/en" class="view-now-btn w-inline-block">
+                  <div>View Now ➝</div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="curve-bg-wrap"><img src="../assets/images/dark-section-bg-bottom-1.svg" loading="lazy" alt="Background Image of dark-section-bg-bottom" class="carve-image"></div>
+      </div>
+      <section class="section set-up-power-bi">
+        <div class="w-layout-blockcontainer container w-container">
+          <div class="set-up-power-bi-contents">
+            <h2>How to Navigate the Power BI App Development Lifecycle</h2>
+            <div class="space-3"></div>
+            <div class="navigate-cards">
+              <div class="title-wrap">
+                <h3 class="heading-style-h4 how-to-navigate">Building Content in Power BI Desktop App</h3>
+              </div>
+              <div class="navigation-cards">
+                <div id="w-node-b480a36b-c054-6ecd-cf62-722e74331131-22d4e3b2" class="navigation-card"><img src="../assets/images/app_pink_icon_01.svg" loading="lazy" alt="Icons">
+                  <div class="card-line"><img src="../assets/images/pink_bullet.svg" loading="lazy" alt="Icons"></div>
+                  <div class="space-2"></div>
+                  <h4 class="text-align-center">1. Install Power BI Desktop:</h4>
+                  <div class="text-size-medium text-color-blacks color-black text-align-center">Content creators install this powerful application on their local machines.</div>
+                </div>
+                <div id="w-node-_94359793-6ca8-4fb1-961d-cbee3f119e25-22d4e3b2" class="navigation-card"><img src="../assets/images/app_pink_icon_02.svg" loading="lazy" alt="Icons">
+                  <div class="card-line"><img src="../assets/images/pink_bullet.svg" loading="lazy" alt="Icons"></div>
+                  <div class="space-2"></div>
+                  <h4 class="text-align-center">2. Data Modeling:</h4>
+                  <div class="text-size-medium text-color-blacks color-black text-align-center">Use the Power Query Editor to clean and transform data from various sources. Establish relationships between tables in the Model View.</div>
+                </div>
+                <div id="w-node-c000cb88-aef2-0239-9579-9b056fe3d95e-22d4e3b2" class="navigation-card"><img src="../assets/images/app_pink_icon_03.svg" loading="lazy" alt="Icons">
+                  <div class="card-line"><img src="../assets/images/pink_bullet.svg" loading="lazy" alt="Icons"></div>
+                  <div class="space-2"></div>
+                  <h4 class="text-align-center">3. Creating Visuals:</h4>
+                  <div class="text-size-medium text-color-blacks color-black text-align-center">Craft engaging visuals in the Canvas View and create complex DAX measures for unique calculations.</div>
+                </div>
+                <div id="w-node-_28dee661-655f-bff3-e362-e5c8fd477956-22d4e3b2" class="navigation-card"><img src="../assets/images/app_pink_icon_04.svg" loading="lazy" alt="Icons">
+                  <div class="card-line"><img src="../assets/images/pink_bullet.svg" loading="lazy" alt="Icons"></div>
+                  <div class="space-2"></div>
+                  <h4 class="text-align-center">4. Publishing:</h4>
+                  <div class="text-size-medium text-color-blacks color-black text-align-center">Publish reports and datasets to Power BI Service for collaboration and feedback.<br><br></div>
+                </div>
+              </div>
+            </div>
+            <div class="navigate-cards">
+              <div class="title-wrap">
+                <h3 class="heading-style-h4 how-to-navigate">Advancing Through the Development Lifecycle</h3>
+              </div>
+              <div class="navigation-cards">
+                <div id="w-node-e54149d9-229f-ce23-8c7c-489d9fb02d2f-22d4e3b2" class="navigation-card"><img src="../assets/images/app_pink_icon_05.svg" loading="lazy" alt="Icons">
+                  <div class="card-line"><img src="../assets/images/pink_bullet.svg" loading="lazy" alt="Icons"></div>
+                  <div class="space-2"></div>
+                  <h4 class="text-align-center">1. Outline the Process:</h4>
+                  <div class="text-size-medium text-color-blacks color-black text-align-center">Understand each phase of the project.</div>
+                </div>
+                <div id="w-node-e54149d9-229f-ce23-8c7c-489d9fb02d38-22d4e3b2" class="navigation-card"><img src="../assets/images/app_pink_icon_06.svg" loading="lazy" alt="Icons">
+                  <div class="card-line"><img src="../assets/images/pink_bullet.svg" loading="lazy" alt="Icons"></div>
+                  <div class="space-2"></div>
+                  <h4 class="text-align-center">2. Source Control Strategy:</h4>
+                  <div class="text-size-medium text-color-blacks color-black text-align-center">Use tools like SharePoint, OneDrive, or Git to store and track changes.</div>
+                </div>
+                <div id="w-node-e54149d9-229f-ce23-8c7c-489d9fb02d41-22d4e3b2" class="navigation-card"><img src="../assets/images/app_pink_icon_07.svg" loading="lazy" alt="Icons">
+                  <div class="card-line"><img src="../assets/images/pink_bullet.svg" loading="lazy" alt="Icons"></div>
+                  <div class="space-2"></div>
+                  <h4 class="text-align-center">3. Deployment Strategy:</h4>
+                  <div class="text-size-medium text-color-blacks color-black text-align-center">Plan how reports move from development to production.</div>
+                </div>
+                <div id="w-node-e54149d9-229f-ce23-8c7c-489d9fb02d4a-22d4e3b2" class="navigation-card"><img src="../assets/images/app_pink_icon_08.svg" loading="lazy" alt="Icons">
+                  <div class="card-line"><img src="../assets/images/pink_bullet.svg" loading="lazy" alt="Icons"></div>
+                  <div class="space-2"></div>
+                  <h4 class="text-align-center">4. Governance:</h4>
+                  <div class="text-size-medium text-color-blacks color-black text-align-center">Manage requirements, ensure data security, and control deployments.</div>
+                </div>
+              </div>
+            </div>
+            <div class="navigate-cards">
+              <div class="title-wrap">
+                <h3 class="heading-style-h4 how-to-navigate">Creating and Updating Apps for End Users</h3>
+              </div>
+              <div class="navigation-cards _5col">
+                <div id="w-node-c4d00bf0-466f-f920-b591-8b7d9a35cb0b-22d4e3b2" class="navigation-card"><img src="../assets/images/app_pink_icon_09.svg" loading="lazy" alt="Icons">
+                  <div class="card-line"><img src="../assets/images/pink_bullet.svg" loading="lazy" alt="Icons"></div>
+                  <div class="space-2"></div>
+                  <div class="p-24">
+                    <h4 class="text-align-center">1. Licensing and Roles:</h4>
+                  </div>
+                  <div class="p-24">
+                    <div class="text-size-medium text-color-blacks color-black text-align-center">App creators need a Pro or PPU license and must be an Admin or Member of the Workspace.</div>
+                  </div>
+                </div>
+                <div id="w-node-c4d00bf0-466f-f920-b591-8b7d9a35cb14-22d4e3b2" class="navigation-card"><img src="../assets/images/app_pink_icon_10.svg" loading="lazy" alt="Icons">
+                  <div class="card-line"><img src="../assets/images/pink_bullet.svg" loading="lazy" alt="Icons"></div>
+                  <div class="space-2"></div>
+                  <div class="p-24">
+                    <h4 class="text-align-center">2. Customization:</h4>
+                  </div>
+                  <div class="p-24">
+                    <div class="text-size-medium text-color-blacks color-black text-align-center">Tweak the color scheme, logo, and add descriptions to make the App visually appealing and informative.<br><br></div>
+                  </div>
+                </div>
+                <div id="w-node-c4d00bf0-466f-f920-b591-8b7d9a35cb1d-22d4e3b2" class="navigation-card"><img src="../assets/images/app_pink_icon_11.svg" loading="lazy" alt="Icons">
+                  <div class="card-line"><img src="../assets/images/pink_bullet.svg" loading="lazy" alt="Icons"></div>
+                  <div class="space-2"></div>
+                  <div class="p-24">
+                    <h4 class="text-align-center">3. Specifying Content:</h4>
+                  </div>
+                  <div class="p-24">
+                    <div class="text-size-medium text-color-blacks color-black text-align-center">Choose which items to include and use the “Add a Link” feature to add additional content.</div>
+                  </div>
+                </div>
+                <div id="w-node-c4d00bf0-466f-f920-b591-8b7d9a35cb26-22d4e3b2" class="navigation-card"><img src="../assets/images/app_pink_icon_12.svg" loading="lazy" alt="Icons">
+                  <div class="card-line"><img src="../assets/images/pink_bullet.svg" loading="lazy" alt="Icons"></div>
+                  <div class="space-2"></div>
+                  <div class="p-24">
+                    <h4 class="text-align-center">4. Audience Configuration:</h4>
+                  </div>
+                  <div class="p-24">
+                    <div class="text-size-medium text-color-blacks color-black text-align-center">Tailor content visibility for different audiences within the same App.</div>
+                  </div>
+                </div>
+                <div id="w-node-_4cd253f0-b19a-6f79-d97d-e667bd0d50e2-22d4e3b2" class="navigation-card"><img src="../assets/images/app_pink_icon_13.svg" loading="lazy" alt="Icon">
+                  <div class="card-line"><img src="../assets/images/pink_bullet.svg" loading="lazy" alt="Icons"></div>
+                  <div class="space-2"></div>
+                  <div class="p-24">
+                    <h4 class="text-align-center">5. Publishing the App:</h4>
+                  </div>
+                  <div class="p-24">
+                    <div class="text-size-medium text-color-blacks color-black text-align-center">Hit “Publish App” to generate a URL link for end users.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="navigate-cards">
+              <div class="title-wrap">
+                <h3 class="heading-style-h4 how-to-navigate">Advancing Through the Development Lifecycle</h3>
+              </div>
+              <div class="navigation-cards">
+                <div id="w-node-c110baa9-9ab8-7c8a-d68f-ef19f0641256-22d4e3b2" class="navigation-card"><img src="../assets/images/app_pink_icon_14.svg" loading="lazy" alt="Icon">
+                  <div class="card-line"><img src="../assets/images/pink_bullet.svg" loading="lazy" alt="Icons"></div>
+                  <div class="space-2"></div>
+                  <h4 class="text-align-center">1. Access Requirements:</h4>
+                  <div class="text-size-medium text-color-blacks color-black text-align-center">End users need a Pro or PPU license.</div>
+                </div>
+                <div id="w-node-c110baa9-9ab8-7c8a-d68f-ef19f064125f-22d4e3b2" class="navigation-card"><img src="../assets/images/app_pink_icon_10.svg" loading="lazy" alt="Icons">
+                  <div class="card-line"><img src="../assets/images/pink_bullet.svg" loading="lazy" alt="Icons"></div>
+                  <div class="space-2"></div>
+                  <h4 class="text-align-center">2. Automatic Installation:</h4>
+                  <div class="text-size-medium text-color-blacks color-black text-align-center">If enabled, clicking the link will install the App automatically on web or mobile devices.</div>
+                </div>
+                <div id="w-node-c110baa9-9ab8-7c8a-d68f-ef19f0641268-22d4e3b2" class="navigation-card"><img src="../assets/images/app_pink_icon_16.svg" loading="lazy" alt="Icons">
+                  <div class="card-line"><img src="../assets/images/pink_bullet.svg" loading="lazy" alt="Icons"></div>
+                  <div class="space-2"></div>
+                  <h4 class="text-align-center">3. Manual Installation:</h4>
+                  <div class="p-24">
+                    <ul role="list">
+                      <li>Log in to Power BI Service.</li>
+                      <li>Go to the Apps tab and click “Get Apps.”</li>
+                      <li>Search and select the desired App, then click “Get it Now.”<br></li>
+                    </ul>
+                  </div>
+                </div>
+                <div id="w-node-c110baa9-9ab8-7c8a-d68f-ef19f0641271-22d4e3b2" class="navigation-card"><img src="../assets/images/app_pink_icon_17.svg" loading="lazy" alt="icons">
+                  <div class="card-line"><img src="../assets/images/pink_bullet.svg" loading="lazy" alt="Icons"></div>
+                  <div class="space-2"></div>
+                  <h4 class="text-align-center">4. Publishing:</h4>
+                  <div class="text-size-medium text-color-blacks color-black text-align-center">Publish reports and datasets to Power BI Service for collaboration and feedback.<br><br></div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div class="space-1-5"></div>
+              <div class="customn-radio">
+                <h3 class="heading-style-h4">Interaction with Published Apps:</h3>
+                <div class="custom-list-item"><img src="../assets/images/Screenshot-2025-10-30-172139.webp" loading="lazy" alt="Circular button with a filled purple center and a thin purple ring surrounding it.">
+                  <div>
+                    <div class="text-size-medium text-color-blacks color-black">If enabled, clicking the link will install the App automatically on web or mobile devices.</div>
+                  </div>
+                </div>
+                <div class="custom-list-item"><img src="../assets/images/Screenshot-2025-10-30-172139.webp" loading="lazy" alt="Circular button with a filled purple center and a thin purple ring surrounding it.">
+                  <div>
+                    <div class="text-size-medium text-color-blacks color-black">If enabled, clicking the link will install the App automatically on web or mobile devices.</div>
+                  </div>
+                </div>
+                <div class="space-1-5"></div>
+                <div class="text-size-medium text-color-blacks color-black-copy">Power BI Apps streamline the distribution and management of business intelligence content, making it easier for organizations to share and utilize data insights effectively.<br></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section security"><img src="../assets/images/new_top_sec_bg.webp" loading="lazy" alt="Abstract background with a diagonal split between light blue and dark navy blue colors.">
+        <div class="w-layout-blockcontainer container w-container">
+          <div>
+            <h2 class="heading-style-h2 text-align-center text-color-white">Power BI <span class="text-color-secondary">Desktop App vs. Web App:</span> Key Differences</h2>
+            <div class="space-1"></div>
+            <div class="max-width">
+              <div class="text-size-medium text-color-white text-align-center">Power BI offers two main interfaces: the Desktop App and the Web App. The Desktop App is a software application installed on your PC, while the Web App is accessible via a URL.</div>
+            </div>
+            <div class="space-3"></div>
+            <div class="div-block-7">
+              <div class="feature-board">
+                <div class="feature-board-row">
+                  <div class="feature-cell">
+                    <div class="featured-texts">Feature</div>
+                  </div>
+                  <div class="feature-cell _2 first"><img src="../assets/images/powerbi_desktop_icon.svg" loading="lazy" alt="Image of powerbi desktop">
+                    <div class="featured-texts small">Power BI Desktop App</div>
+                  </div>
+                  <div class="feature-cell _2 first"><img src="../assets/images/powerbi_mobile_icon.svg" loading="lazy" alt="Image of powerbi_mobile">
+                    <div class="featured-texts small">Power BI Web App</div>
+                  </div>
+                </div>
+                <div class="feature-board-row">
+                  <div class="feature-cell">
+                    <div class="featured-texts small">Installation<br></div>
+                  </div>
+                  <div class="feature-cell _2">
+                    <div class="featured-texts small">Installed on your PC<br></div>
+                  </div>
+                  <div class="feature-cell _2">
+                    <div class="featured-texts small">Accessible via a URL<br></div>
+                  </div>
+                </div>
+                <div class="feature-board-row">
+                  <div class="feature-cell">
+                    <div class="featured-texts small">Main Functions<br></div>
+                  </div>
+                  <div class="feature-cell _2">
+                    <div class="featured-texts small">Establish connections, build queries, and design visualizations<br></div>
+                  </div>
+                  <div class="feature-cell _2">
+                    <div class="featured-texts small">Collaboration, sharing, and viewing reports<br></div>
+                  </div>
+                </div>
+                <div class="feature-board-row">
+                  <div class="feature-cell">
+                    <div class="featured-texts small">Use<br></div>
+                  </div>
+                  <div class="feature-cell _2">
+                    <div class="featured-texts small">Query Editor, Data Visualization (Fields, Visualizations, Filters, Report View, Data View, Relationships View)<br></div>
+                  </div>
+                  <div class="feature-cell _2">
+                    <div class="featured-texts small">Report interaction and exploration, no design tools</div>
+                  </div>
+                </div>
+                <div class="feature-board-row">
+                  <div class="feature-cell">
+                    <div class="featured-texts small">Performance<br></div>
+                  </div>
+                  <div class="feature-cell _2">
+                    <div class="featured-texts small">Uses local machine processing for fast report creation and data modeling<br></div>
+                  </div>
+                  <div class="feature-cell _2">
+                    <div class="featured-texts small">Benefits from Microsoft&#x27;s cloud infrastructure for scalability<br></div>
+                  </div>
+                </div>
+                <div class="feature-board-row">
+                  <div class="feature-cell">
+                    <div class="featured-texts small">Offline Capability<br></div>
+                  </div>
+                  <div class="feature-cell _2">
+                    <div class="featured-texts small">Can be used offline, ideal for initial report building<br></div>
+                  </div>
+                  <div class="feature-cell _2">
+                    <div class="featured-texts small">Requires internet connection for access</div>
+                  </div>
+                </div>
+                <div class="feature-board-row">
+                  <div class="feature-cell">
+                    <div class="featured-texts small">Data Refresh<br></div>
+                  </div>
+                  <div class="feature-cell _2">
+                    <div class="featured-texts small">Refresh data manually or schedule refresh when online<br></div>
+                  </div>
+                  <div class="feature-cell _2">
+                    <div class="featured-texts small">Centrally managed scheduled refreshes to ensure up-to-date data<br></div>
+                  </div>
+                </div>
+                <div class="feature-board-row">
+                  <div class="feature-cell">
+                    <div class="featured-texts small">Collaboration<br></div>
+                  </div>
+                  <div class="feature-cell _2">
+                    <div class="featured-texts small">Not optimized for real-time collaboration<br></div>
+                  </div>
+                  <div class="feature-cell _2">
+                    <div class="featured-texts small">Multiple users can collaborate and access reports from anywhere<br></div>
+                  </div>
+                </div>
+                <div class="feature-board-row">
+                  <div class="feature-cell">
+                    <div class="featured-texts small">Customization<br></div>
+                  </div>
+                  <div class="feature-cell _2">
+                    <div class="featured-texts small">Allows extensive report customization and complex visuals<br></div>
+                  </div>
+                  <div class="feature-cell _2">
+                    <div class="featured-texts small">Users can interact with reports but cannot modify them<br></div>
+                  </div>
+                </div>
+                <div class="feature-board-row">
+                  <div class="feature-cell">
+                    <div class="featured-texts small">User Experience<br></div>
+                  </div>
+                  <div class="feature-cell _2">
+                    <div class="featured-texts small">Advanced interface for designers and data modelers<br></div>
+                  </div>
+                  <div class="feature-cell _2">
+                    <div class="featured-texts small">Clean, user-friendly interface for end-users<br></div>
+                  </div>
+                </div>
+                <div class="feature-board-row">
+                  <div class="feature-cell">
+                    <div class="featured-texts small">Complexity</div>
+                  </div>
+                  <div class="feature-cell _2">
+                    <div class="featured-texts small">Steep learning curve for beginners<br></div>
+                  </div>
+                  <div class="feature-cell _2">
+                    <div class="featured-texts small">Easy to use for non-technical users<br></div>
+                  </div>
+                </div>
+                <div class="feature-board-row">
+                  <div class="feature-cell">
+                    <div class="featured-texts small">Integration</div>
+                  </div>
+                  <div class="feature-cell _2">
+                    <div class="featured-texts small">Integrates with numerous data sources for in-depth modeling<br></div>
+                  </div>
+                  <div class="feature-cell _2">
+                    <div class="featured-texts small">Reports are already integrated, ready for sharing and viewing<br></div>
+                  </div>
+                </div>
+                <div class="feature-board-row">
+                  <div class="feature-cell">
+                    <div class="featured-texts small">Publishing<br></div>
+                  </div>
+                  <div class="feature-cell _2">
+                    <div class="featured-texts small">Publishes finalized reports to Power BI Service<br></div>
+                  </div>
+                  <div class="feature-cell _2">
+                    <div class="featured-texts small">Shares reports with specific users or groups<br></div>
+                  </div>
+                </div>
+                <div class="feature-board-row last">
+                  <div class="feature-cell">
+                    <div class="featured-texts small">Distribution<br></div>
+                  </div>
+                  <div class="feature-cell _2 last">
+                    <div class="featured-texts small">Develops reports, then publishes them for broader access<br></div>
+                  </div>
+                  <div class="feature-cell _2 last">
+                    <div class="featured-texts small">Distributes reports through Power BI Apps for secure sharing<br></div>
+                  </div>
+                </div>
+              </div>
+              <div class="width-100">
+                <div class="space-2-5"></div>
+                <div class="power-bi-breakpoints">
+                  <div class="desktop verticle"><img src="../assets/images/powerbi_desktop.svg" loading="lazy" alt="Image of powerbi_desktop">
+                    <div class="text-size-medium text-color-white">Power BI Desktop is ideal for report design and data preparation, utilizing local processing and offering robust customization.</div>
+                  </div>
+                  <div class="desktop verticle"><img src="../assets/images/powerbi_mobile.svg" loading="lazy" alt="Image of powerbi_mobile">
+                    <div class="text-size-medium text-color-white"><strong>Power BI Web App</strong> excels in <strong>sharing, collaboration</strong>, and <strong>real-time data access,</strong> leveraging cloud scalability for large organizations.<br></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="curve-bg-wrap"><img src="../assets/images/dark-section-bg-bottom-1.svg" loading="lazy" alt="Background Image of dark-section-bg-bottom" class="carve-image"></div>
+      <section class="section best-practices">
+        <div class="w-layout-blockcontainer container w-container">
+          <h2 class="heading-style-h2">Best Practices for Building Power BI Apps</h2>
+          <div class="text-size-medium">Building effective Power BI Apps requires following best practices to maximize their utility and impact:</div>
+          <div class="space-1-5"></div>
+          <div class="practice-steps-wrapper"><img src="../assets/images/number_01.svg" loading="lazy" alt="Icon of number_01">
+            <div class="div-block-5">
+              <div class="text-size-large">Understand Your Audience:<br></div>
+              <ul role="list" class="best-practise-list">
+                <li>Tailor content and layout to meet the needs of end users.</li>
+                <li>Create different views for different user groups to ensure relevance.<br></li>
+              </ul>
+            </div>
+          </div>
+          <div class="practice-steps-wrapper"><img src="../assets/images/number_02.svg" loading="lazy" alt="Icon of number_02">
+            <div class="div-block-5">
+              <div class="text-size-large">Maintain Data Quality:<br></div>
+              <ul role="list" class="best-practise-list">
+                <li>Ensure data is accurate, clean, and up-to-date.</li>
+                <li>Regularly refresh datasets and perform data validation checks.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="practice-steps-wrapper"><img src="../assets/images/number_03.svg" loading="lazy" alt="Icon of number_03">
+            <div class="div-block-5">
+              <div class="text-size-large">Optimize Performance:<br></div>
+              <ul role="list" class="best-practise-list">
+                <li>Design with performance in mind, avoiding complex calculations in visuals.</li>
+                <li>Use aggregations and measures to reduce processing time.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="practice-steps-wrapper"><img src="../assets/images/number_04.svg" loading="lazy" alt="Icon of Number 4">
+            <div class="div-block-5">
+              <div class="text-size-large">Use Consistent Branding:<br></div>
+              <ul role="list" class="best-practise-list">
+                <li>Align the app&#x27;s appearance with your organization&#x27;s branding.</li>
+                <li>Use consistent colors, logos, and fonts for a professional look.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="practice-steps-wrapper"><img src="../assets/images/number_05.svg" loading="lazy" alt="Icon of number_05">
+            <div class="div-block-5">
+              <div class="text-size-large">Provide Context:<br></div>
+              <ul role="list" class="best-practise-list">
+                <li>Include descriptions and tooltips to help users understand the purpose and content of reports.</li>
+                <li>Contextual information aids data interpretation and decision-making.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="practice-steps-wrapper"><img src="../assets/images/number_06.svg" loading="lazy" alt="Icon of Number 6">
+            <div class="div-block-5">
+              <div class="text-size-large">Secure Your Data:<br></div>
+              <ul role="list" class="best-practise-list">
+                <li>Utilize Power BI’s security features to control access to sensitive information.</li>
+                <li>Implement role-based access controls and ensure compliance with data privacy regulations.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="practice-steps-wrapper"><img src="../assets/images/number_07.svg" loading="lazy" alt="Icon of Number 7">
+            <div class="div-block-5">
+              <div class="text-size-large">Foster Collaboration:<br></div>
+              <ul role="list" class="best-practise-list">
+                <li>Encourage feedback and collaboration among users</li>
+                <li>Use comments and sharing features to facilitate discussions and insights.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="space-1-5"></div>
+          <div class="max-width-50">
+            <div class="text-size-medium text-color-gray">Following these best practices ensures your Power BI Apps are user-friendly, efficient, and secure, enhancing their overall effectiveness and impact.</div>
+          </div>
+        </div>
+      </section>
+      <section class="section distribution">
+        <div class="w-layout-blockcontainer container w-container">
+          <div>
+            <h2 class="heading-style-h2">Future Trends in Power BI Applications</h2>
+            <div class="text-size-medium">As technology evolves, Power BI applications are advancing rapidly. Here are key trends to watch:</div>
+          </div>
+          <div class="space-3"></div>
+          <div>
+            <div class="use-bi-features distribution">
+              <div class="why-bi-card border-blue distribution"><img src="../assets/images/applications_icon_01.svg" loading="lazy" alt="applications_icon" class="bi-card-icon-use-icon distribution">
+                <div class="space-1"></div>
+                <div class="text-size-large text-color-gray">AI and Machine Learning Integration:<br></div>
+                <div class="space-1"></div>
+                <div class="text-color-gray text-size-medium">Expect full-scale integration of AI capabilities, machine learning, and deep learning into Power BI.<br><br></div>
+              </div>
+              <div class="why-bi-card border-blue-v1"><img src="../assets/images/applications_icon_02.svg" loading="lazy" alt="applications_icon" class="bi-card-icon-use-icon distribution">
+                <div class="space-1"></div>
+                <div class="text-size-large text-color-gray">Enhanced Real-Time Data:<br></div>
+                <div class="space-1"></div>
+                <div class="text-color-gray text-size-medium">Improvements in real-time data processing and streaming will provide more dynamic and timely insights.<br><br></div>
+              </div>
+              <div class="why-bi-card border-blue-v1"><img src="../assets/images/applications_icon_03.svg" loading="lazy" alt="applications_icon" class="bi-card-icon-use-icon distribution">
+                <div class="space-1"></div>
+                <div class="text-size-large text-color-gray">Greater Customization:<br></div>
+                <div class="space-1"></div>
+                <div class="text-color-gray text-size-medium">Advanced options for personalizing and branding report experiences will become more prevalent.<br><br></div>
+              </div>
+              <div class="why-bi-card border-blue-v1"><img src="../assets/images/applications_icon_04.svg" loading="lazy" alt="applications_icon" class="bi-card-icon-use-icon distribution">
+                <div class="space-1"></div>
+                <div class="text-size-large text-color-gray">Cross-Platform Capabilities:<br></div>
+                <div class="space-1"></div>
+                <div class="text-color-gray text-size-medium">Power BI will enhance seamless experiences across multiple devices and operating systems<br><br></div>
+              </div>
+              <div class="why-bi-card border-blue-v1"><img src="../assets/images/applications_icon_05.svg" loading="lazy" alt="applications_icon" class="bi-card-icon-use-icon distribution">
+                <div class="space-1"></div>
+                <div class="text-size-large text-color-gray">Extended Data Connectivity:<br></div>
+                <div class="space-1"></div>
+                <div class="text-color-gray text-size-medium">New adapters and integration options will broaden the range of information sources available for analysis.<br><br></div>
+              </div>
+              <div class="why-bi-card border-blue-v1"><img src="../assets/images/applications_icon_06.svg" loading="lazy" alt="applications_icon" class="bi-card-icon-use-icon distribution">
+                <div class="space-1"></div>
+                <div class="text-size-large text-color-gray">Augmented Analytics:<br></div>
+                <div class="space-1"></div>
+                <div class="text-color-gray text-size-medium">Increased use of advanced analytical functionality through natural language processing and conversational interfaces.<br><br></div>
+              </div>
+              <div class="why-bi-card border-blue-v1"><img src="../assets/images/applications_icon_07.svg" loading="lazy" alt="applications_icon" class="bi-card-icon-use-icon distribution">
+                <div class="space-1"></div>
+                <div class="text-size-large text-color-gray">Improved Collaboration Tools:<br></div>
+                <div class="space-1"></div>
+                <div class="text-color-gray text-size-medium">Enhancements in team collaboration over data projects are likely, fostering better teamwork and data sharing.<br><br></div>
+              </div>
+            </div>
+            <div class="space-1-5"></div>
+            <div class="text-size-medium text-weight-medium">These trends indicate a future where Power BI becomes even more powerful, flexible, and user-friendly, enabling deeper insights and more effective decision-making.</div>
+          </div>
+        </div>
+      </section>
+    </div>
+            <section class="footer-section v1 section-2">
+      <div class="container">
+        <div class="foooter-top v1">
+          <div class="footer-left-left">
+            <div class="footer-icon-wrap"><img src="../assets/images/Symbol-1_2.webp" loading="lazy" alt="White Icon" class="icon"></div>
+            <div class="space-1-5"></div>
+            <div class="footer-title-top">Setup your <span class="highlight-text pure-blue">free trial</span> today!</div>
+            <div class="space-1"></div>
+            <p class="paragraph-regular">Get started today with a no-obligation 30-day free trial. The<br>Reporting Hub can be fully deployed to your Azure environment<br>by following our self-serve guided installer. <a href="../install-today.html" class="span-link">Learn more</a>
+            </p>
+            <div class="space-2"></div>
+            <div class="button-wrap left">
+              <a href="../install-today.html" class="button color-blue w-inline-block">
+                <div>Install Today</div>
+              </a>
+              <a href="../contact.html" class="button bg-transparent text-blue w-inline-block">
+                <div>Get in Touch</div><img src="../assets/images/Symbol-7.webp" loading="lazy" alt="Arrow" class="button-arrow">
+              </a>
+            </div>
+          </div>
+          <div class="footer-image-wrap"><img src="../assets/images/dashboard-trial-new-1_1.webp" loading="lazy" width="Auto" alt="Power Bi Dashboard" sizes="100vw" srcset="../assets/images/dashboard-trial-new-1_1-p-500.webp 500w, ../assets/images/dashboard-trial-new-1_1-p-800.webp 800w, ../assets/images/dashboard-trial-new-1_1-p-1080.webp 1080w, ../assets/images/dashboard-trial-new-1_1-p-1600.webp 1600w, ../assets/images/dashboard-trial-new-1_1-p-2000.webp 2000w, ../assets/images/dashboard-trial-new-1_1-p-2600.webp 2600w, ../assets/images/dashboard-trial-new-1_1-p-3200.webp 3200w, ../assets/images/dashboard-trial-new-1_1.webp 3936w" class="footer-image"></div>
+        </div>
+      </div>
+      <div class="space-5"></div>
+      <div class="w-layout-blockcontainer container w-container">
+        <div class="footer-component">
+          <div class="w-layout-grid footer-grid-wrap">
+            <div class="footer-left-call">
+              <div class="font-0-9">Contact US</div>
+              <div class="footer-menu-left">
+                <div class="footer-menu-group"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 15 12" fill="none" class="social-icon">
+                    <g clip-path="url(#clip0_9006_2830)">
+                      <path d="M1.52344 2.61654C1.52344 2.26292 1.66392 1.92378 1.91396 1.67373C2.16401 1.42368 2.50315 1.2832 2.85677 1.2832H12.1901C12.5437 1.2832 12.8828 1.42368 13.1329 1.67373C13.3829 1.92378 13.5234 2.26292 13.5234 2.61654M1.52344 2.61654V9.2832C1.52344 9.63683 1.66392 9.97596 1.91396 10.226C2.16401 10.476 2.50315 10.6165 2.85677 10.6165H12.1901C12.5437 10.6165 12.8828 10.476 13.1329 10.226C13.3829 9.97596 13.5234 9.63683 13.5234 9.2832V2.61654M1.52344 2.61654L7.52344 6.61654L13.5234 2.61654" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </g>
+                  </svg>
+                  <a href="mailto:info@thereportinghub.com?subject=You've%20got%20an%20email" class="footer-link">info@thereportinghub.com</a>
+                </div>
+                <div class="footer-menu-group"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 17 18" fill="none" class="social-icon">
+                    <path d="M3.85938 6.75618C3.85938 4.35756 5.94871 2.41309 8.52603 2.41309C11.1033 2.41309 13.1927 4.35756 13.1927 6.75618C13.1927 9.13601 11.7032 11.913 9.37942 12.9061C8.83769 13.1376 8.21439 13.1376 7.67267 12.9061C5.34882 11.913 3.85938 9.13601 3.85938 6.75618Z" stroke="currentColor" stroke-width="1.5"></path>
+                    <path d="M9.85417 7.0804C9.85417 7.81678 9.25722 8.41373 8.52084 8.41373C7.78446 8.41373 7.1875 7.81678 7.1875 7.0804C7.1875 6.34402 7.78446 5.74707 8.52084 5.74707C9.25722 5.74707 9.85417 6.34402 9.85417 7.0804Z" stroke="currentColor" stroke-width="1.5"></path>
+                    <path d="M14.4997 11.4131C14.9433 11.8147 15.1927 12.2675 15.1927 12.7464C15.1927 14.4033 12.2079 15.7464 8.52603 15.7464C4.84414 15.7464 1.85938 14.4033 1.85938 12.7464C1.85938 12.2675 2.10878 11.8147 2.55234 11.4131" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+                  </svg>
+                  <div class="max-width-11">
+                    <a href="https://maps.google.com/?q=707+7th+Avenue+SW+Calgary+AB+Canada+T2P+3H6" target="_blank" rel="noopener" class="footer-link">1150, 707 - 7th Avenue SW Calgary, AB Canada T2P 3H6</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="footer-call">
+              <div class="font-0-9">Website</div>
+              <div class="footer-menu-main">
+                <a href="../index.html" class="footer-link">Home</a>
+                <a href="../aaas.html" class="footer-link">AaaS Platform</a>
+                <a href="../pricing.html" class="footer-link">Pricing</a>
+                <a href="../learn-more.html" class="footer-link">What is Reporting Hub?</a>
+                <a href="../demo.html" class="footer-link">Demo</a>
+                <a href="../install-today.html" class="footer-link">Install Today</a>
+                <a href="../about-us.html" class="footer-link">About Us</a>
+                <a href="../contact.html" class="footer-link">Contact Us</a>
+              </div>
+            </div>
+            <div class="footer-call">
+              <div class="font-0-9">theHUB</div>
+              <div class="footer-menu-main">
+                <a href="https://docs.thereportinghub.com/" class="footer-link">Knowledge Center</a>
+                <a href="../blog.html" class="footer-link">Our Blog</a>
+                <a href="../power-bi.html" class="footer-link">About Power BI</a>
+                <a href="https://support.thereportinghub.com/support/home" class="footer-link">Get Support</a>
+                <a href="../support-plans.html" class="footer-link">Support Plans</a>
+                <a href="../policies.html" class="footer-link">Policies</a>
+                <a href="/policies#rh-terms" class="footer-link">Terms of Service</a>
+              </div>
+            </div>
+          </div>
+          <a href="#btt" class="direction-button w-inline-block"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 52 53" fill="none" class="button-icon">
+              <g clip-path="url(#clip0_9006_2933)">
+                <path d="M0 26.1602C0 40.5196 11.6406 52.1602 26 52.1602C40.3594 52.1602 52 40.5196 52 26.1602C52 11.8008 40.3594 0.160156 26 0.160156C11.6406 0.160156 0 11.8008 0 26.1602Z" fill="white" fill-opacity="0.1"></path>
+                <path d="M32.704 28.6752C33.1627 29.1422 33.9152 29.1422 34.3739 28.6752C34.8212 28.2199 34.8212 27.4902 34.3739 27.0348L26.7165 19.2396C26.3246 18.8407 25.6817 18.8407 25.2898 19.2396L17.6323 27.0348C17.1851 27.4902 17.1851 28.2199 17.6323 28.6752C18.0911 29.1422 18.8436 29.1422 19.3023 28.6752L25.2898 22.58C25.6817 22.181 26.3246 22.181 26.7165 22.58L32.704 28.6752Z" fill="currentColor" class="white"></path>
+              </g>
+            </svg></a>
+        </div>
+      </div>
+      <div class="space-3"></div>
+      <div class="global-line"></div>
+      <div class="footer-bottom">
+        <div class="space-3"></div>
+        <div class="w-layout-blockcontainer container w-container">
+          <div class="footer-bottom-contents">
+            <a href="../index.html" class="footer-left w-inline-block"><img src="../assets/images/rh-horizontal-white.svg" loading="lazy" alt="" class="image-small">
+              <div class="text-color-white margin-top-10">Microsoft partner</div>
+            </a>
+            <div class="footer-right">
+              <div class="new-footer-wrap">
+                <div class="font-0-9 text-align-right left-mobile">
+                  <a href="mailto:info@thereportinghub.com?subject=You've%20got%20email" class="link-8"><span class="text-span-2">info@thereportinghub.com</span></a>
+                </div>
+                <div class="social-media-wrap">
+                  <a href="https://www.facebook.com/people/The-Reporting-Hub/100064582883104/" class="social-media-link w-inline-block"><img src="../assets/images/fb.svg" loading="lazy" alt="" class="social-media-icon"></a>
+                  <a href="https://www.linkedin.com/company/the-reporting-hub/" class="social-media-link w-inline-block"><img src="../assets/images/in.svg" loading="lazy" alt="" class="social-media-icon"></a>
+                  <a href="https://x.com/thereportinghub" class="social-media-link w-inline-block"><img src="../assets/images/tw.svg" loading="lazy" alt="" class="social-media-icon"></a>
+                  <a href="https://www.instagram.com/thereportinghub/" class="social-media-link w-inline-block"><img src="../assets/images/insta.svg" loading="lazy" alt="" class="social-media-icon"></a>
+                </div>
+              </div>
+              <div class="font-0-9 text-align-right margin-top-16">2025 All Rights Reserved | The Reporting Hub</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <!-- jQuery removed -->
+  
+  
+  
+  <!--  Google Tag Manager (noscript)  -->
+  <noscript><iframe src="https://ss.thereportinghub.com/ns.html?id=GTM-MM9W9FH" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!--  End Google Tag Manager (noscript)  -->
+  <script>
+(function () {
+  function cssEscapeSafe(s) {
+    try { return CSS.escape(s); } catch (e) { return s.replace(/["\\]/g, "\\$&"); }
+  }
+  function normalizeTarget(target) {
+    // ✅ Ako ti URL i dalje dolazi kao #bi-genius-terms, mapiraj ga na rh-terms
+    if (target === "bi-genius-terms") return "rh-terms";
+    return target;
+  }
+  function openTabFromHash() {
+    var hash = window.location.hash;
+    if (!hash) return;
+    var target = hash.slice(1);
+    if (!target) return;
+    target = normalizeTarget(target);
+    // 1) traži custom data-tab="..."
+    var sel = '[data-tab="' + cssEscapeSafe(target) + '"]';
+    var el = document.querySelector(sel);
+    // 2) fallback: traži direktno webflow tab link po data-w-tab
+    var tabLink = null;
+    if (el) {
+      tabLink = (el.classList && el.classList.contains('w-tab-link'))
+        ? el
+        : (el.querySelector ? el.querySelector('.w-tab-link') : null);
+    }
+    if (!tabLink) {
+      tabLink = document.querySelector('.w-tab-link[data-w-tab="' + cssEscapeSafe(target) + '"]');
+    }
+    // 3) extra fallback: ako target == rh-terms, probaj naći BILO KOJI element sa data-tab="rh-terms"
+    // (ovo ti je “hard fix” da 100% radi)
+    if (!tabLink && target === "rh-terms") {
+      tabLink = document.querySelector('[data-tab="rh-terms"].w-tab-link, .w-tab-link[data-tab="rh-terms"]');
+    }
+    if (!tabLink) return;
+    var tries = 0;
+    (function tryClick() {
+      tries++;
+      tabLink.click();
+      if (!tabLink.classList.contains('w--current') && tries < 20) {
+        setTimeout(tryClick, 100);
+      }
+    })();
+  }
+  document.addEventListener('DOMContentLoaded', openTabFromHash);
+  window.addEventListener('hashchange', openTabFromHash);
+})();
+</script>
+  <script >
+    document.addEventListener('DOMContentLoaded', function () {
+        var youtubeIframes = document.querySelectorAll('iframe.lazyiframe');
+        youtubeIframes.forEach(function (youtubeIframe) {
+            var dataSrcValue = youtubeIframe.getAttribute('data-src');
+            if (dataSrcValue) {
+                youtubeIframe.setAttribute('src', dataSrcValue);
+                youtubeIframe.removeAttribute('data-src');
+            }
+        });
+    });
+</script>
+  <!-- Removed: xls loader trigger -->
+  
+  
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>
