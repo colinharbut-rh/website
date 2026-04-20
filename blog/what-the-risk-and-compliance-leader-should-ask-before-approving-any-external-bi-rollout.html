@@ -307,82 +307,129 @@
             <div fc-toc="wrapper" class="post-content-wrapper"><button class="blog-post_open-toc-button">
                 <div class="circle"></div>
               </button>
-              <div fc-toc="content" class="w-richtext"><p>Compliance often enters the analytics conversation too late. By then, tools are chosen, systems are set up, and clients have already been promised access. Only after that do risk teams step in and start asking the hard questions.</p>
+              <div fc-toc="content" class="w-richtext"><div data-rt-embed-type="true"><style>
+.rh-blockquote {
+  background: #eef6f7;
+  border-left: 4px solid #006eff;
+  border-radius: 0 6px 6px 0;
+  padding: 16px 20px;
+  margin: 24px 0;
+  font-style: italic;
+  color: #1a2e3b;
+  font-size: 17px;
+  line-height: 1.6;
+}
+.rh-questions-wrap {
+  background: #f5f9ff;
+  border: 1px solid #d0e4ff;
+  border-radius: 8px;
+  padding: 20px 24px;
+  margin: 16px 0 28px;
+}
+.rh-questions-label {
+  text-transform: uppercase;
+  color: #006eff;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.rh-questions-label svg {
+  flex-shrink: 0;
+}
+.rh-question-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.rh-question-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid #d0e4ff;
+  font-size: 15px;
+  line-height: 1.55;
+  color: #1a2e3b;
+}
+.rh-question-list li:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+.rh-q-icon {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  margin-top: 1px;
+  color: #006eff;
+}
+.rh-approach-card {
+  background: #f5f9ff;
+  border-left: 4px solid #006eff;
+  border-radius: 0 8px 8px 0;
+  padding: 18px 22px;
+  margin: 16px 0;
+}
+.rh-approach-card h4 {
+  margin: 0 0 8px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #0f2134;
+}
+.rh-approach-card p {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #3a4f5e;
+}
+</style></div>
+<p>Compliance often enters the analytics conversation too late. By then, tools are chosen, systems are set up, and clients have already been promised access. Only after that do risk teams step in and start asking the hard questions.</p>
 <p>This approach creates bigger problems later. As PwC's Digital Assurance &amp; Transparency practice notes, compliance isn't something you fix at the end — it needs to be built in from the start. Once key decisions are locked, fixing gaps often means rebuilding, not tweaking.</p>
 <p>External analytics makes this even more critical. When data reaches clients, the risks grow, and mistakes become visible. A small access issue isn't just internal — it can turn into a serious breach with real consequences.</p>
-<p>Risk and compliance leaders need to be in the room when external BI architecture is designed — not when it's already running.</p>
+<div data-rt-embed-type="true"><div class="rh-blockquote">Risk and compliance leaders need to be in the room when external BI architecture is designed — not when it's already running.</div></div>
 <p>The questions below are the ones that matter. Not a checklist for its own sake, but the questions that surface whether an external analytics rollout is genuinely compliant-by-design or whether it's compliant-by-hope.</p>
 
 <h3><strong>Where Is the Data, and Who Has the Keys?</strong></h3>
 <p>Data residency has quickly become a strategic risk, not just a compliance detail. Gartner reported a 305% increase in inquiries about cloud sovereignty and geopatriation in early 2025. That's no longer a niche concern. It's a mainstream question that risk functions at every scale are now accountable for.</p>
 <p>For external analytics, the matter is even more pressing. Client data flows through your systems and reaches external users, and every step has legal implications. With rules like the EU AI Act, GDPR, India's DPDP Act, and U.S. DOJ restrictions, the landscape is becoming more complex and fragmented.</p>
-<p><strong>Questions to put to the BI team:</strong></p>
-<ul>
-  <li>Where is data stored and processed, and does it meet GDPR, DPDP, and local rules?</li>
-  <li>Does the vendor have a clear Data Processing Agreement with full sub-processor visibility?</li>
-  <li>Can the platform provide written assurance that it meets regional data residency requirements?</li>
-  <li>Who can access raw dashboard data, and is that access properly logged for RoPA compliance?</li>
-</ul>
+<div data-rt-embed-type="true"><div class="rh-questions-wrap"><div class="rh-questions-label"><svg class="rh-q-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path stroke-linecap="round" stroke-linejoin="round" d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17" stroke-linecap="round"/></svg>Questions to put to the BI team</div><ul class="rh-question-list"><li><svg class="rh-q-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path stroke-linecap="round" stroke-linejoin="round" d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17" stroke-linecap="round"/></svg>Where is data stored and processed, and does it meet GDPR, DPDP, and local rules?</li><li><svg class="rh-q-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path stroke-linecap="round" stroke-linejoin="round" d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17" stroke-linecap="round"/></svg>Does the vendor have a clear Data Processing Agreement with full sub-processor visibility?</li><li><svg class="rh-q-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path stroke-linecap="round" stroke-linejoin="round" d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17" stroke-linecap="round"/></svg>Can the platform provide written assurance that it meets regional data residency requirements?</li><li><svg class="rh-q-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path stroke-linecap="round" stroke-linejoin="round" d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17" stroke-linecap="round"/></svg>Who can access raw dashboard data, and is that access properly logged for RoPA compliance?</li></ul></div></div>
 
 <h3><strong>Can One Client's Data Ever Reach Another Client's Eyes?</strong></h3>
 <p>This is one of the most critical questions in any external analytics rollout, yet it's often not tested deeply enough before launch. At its core, it asks whether your system can truly keep client data separate under all conditions. If that answer isn't clear, you're taking on hidden risk.</p>
 <p>In multi-tenant setups, isolation must be built into the architecture, not left to process or human care. Structural separation ensures data stays protected even when mistakes happen. As the FINRA 2026 Annual Oversight Report states, responsibility doesn't shift to the vendor — you still own the risk and the consequences.</p>
 <p>If tenant isolation relies on your team following the right steps every time, it will fail at scale. Architecture has to do the work.</p>
 <p>This matters acutely when AI is added to the mix. BI Genius — Reporting Hub's AI agent layer — is built to query governed semantic models within properly isolated tenant environments.</p>
-<p><strong>Questions to put to the BI team:</strong></p>
-<ul>
-  <li>Has tenant isolation been independently tested — not just configured and assumed? When?</li>
-  <li>What happens to tenant separation if a user is accidentally assigned the wrong role? Is there a structural guardrail, or does it depend on the error being caught manually?</li>
-  <li>Does the platform maintain separate audit logs per tenant, or does it aggregate access logging across clients?</li>
-  <li>Can you produce evidence of tenant isolation testing that would satisfy a regulatory examiner?</li>
-</ul>
+<div data-rt-embed-type="true"><div class="rh-questions-wrap"><div class="rh-questions-label"><svg class="rh-q-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path stroke-linecap="round" stroke-linejoin="round" d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17" stroke-linecap="round"/></svg>Questions to put to the BI team</div><ul class="rh-question-list"><li><svg class="rh-q-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path stroke-linecap="round" stroke-linejoin="round" d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17" stroke-linecap="round"/></svg>Has tenant isolation been independently tested — not just configured and assumed? When?</li><li><svg class="rh-q-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path stroke-linecap="round" stroke-linejoin="round" d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17" stroke-linecap="round"/></svg>What happens to tenant separation if a user is accidentally assigned the wrong role? Is there a structural guardrail, or does it depend on the error being caught manually?</li><li><svg class="rh-q-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path stroke-linecap="round" stroke-linejoin="round" d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17" stroke-linecap="round"/></svg>Does the platform maintain separate audit logs per tenant, or does it aggregate access logging across clients?</li><li><svg class="rh-q-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path stroke-linecap="round" stroke-linejoin="round" d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17" stroke-linecap="round"/></svg>Can you produce evidence of tenant isolation testing that would satisfy a regulatory examiner?</li></ul></div></div>
 
 <h3><strong>What Does the Vendor Actually Have Access To, and What Happens if They're Breached?</strong></h3>
 <p>Third-party vendor risk is now a top concern across industries. Around 65% of companies have formal risk protocols, though gaps remain. Even where policies exist, they often don't fully cover analytics delivery platforms as they should.</p>
 <p>Your BI vendor plays a direct role in handling client data. Their security posture, sub-processors, and response timelines matter as much as your own controls. If something goes wrong, clients will expect answers from you, not the vendor.</p>
 <p>Regulations are tightening around this responsibility. Regulation S-P amendments and the SEC's 2026 Examination Priorities make cyber risk a core compliance obligation, not just an IT issue. Risk leaders are now accountable for vendor oversight as much as they are for their own systems.</p>
-<p><strong>Questions to put to the BI team and the vendor:</strong></p>
-<ul>
-  <li>Does the platform vendor have SOC 2 Type II, and is the latest report available?</li>
-  <li>Which sub-processors handle data, storage, and delivery, and are they assessed?</li>
-  <li>What is the breach notification timeline, and does it support your compliance deadlines?</li>
-  <li>If there's an outage, what are the SLAs and your continuity rights?</li>
-</ul>
+<div data-rt-embed-type="true"><div class="rh-questions-wrap"><div class="rh-questions-label"><svg class="rh-q-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path stroke-linecap="round" stroke-linejoin="round" d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17" stroke-linecap="round"/></svg>Questions to put to the BI team and the vendor</div><ul class="rh-question-list"><li><svg class="rh-q-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path stroke-linecap="round" stroke-linejoin="round" d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17" stroke-linecap="round"/></svg>Does the platform vendor have SOC 2 Type II, and is the latest report available?</li><li><svg class="rh-q-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path stroke-linecap="round" stroke-linejoin="round" d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17" stroke-linecap="round"/></svg>Which sub-processors handle data, storage, and delivery, and are they assessed?</li><li><svg class="rh-q-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path stroke-linecap="round" stroke-linejoin="round" d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17" stroke-linecap="round"/></svg>What is the breach notification timeline, and does it support your compliance deadlines?</li><li><svg class="rh-q-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path stroke-linecap="round" stroke-linejoin="round" d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17" stroke-linecap="round"/></svg>If there's an outage, what are the SLAs and your continuity rights?</li></ul></div></div>
 
 <h3><strong>If the Numbers Are Wrong, Who Finds Out First, and How?</strong></h3>
 <p>This is an uncomfortable question, but an important one to ask. When you deliver analytics externally, clients rely on your data to make real decisions. If the numbers are wrong, they won't know; they'll just act on bad information.</p>
 <p>These issues often come from small gaps. A metric changes, a pipeline breaks, or reports drift from the main model. As B EYE's 2026 BI research highlights, when key metrics aren't consistent and repeatable, decisions don't improve — they amplify errors.</p>
 <p>The risk goes beyond trust. In regulated industries, inaccurate reporting can lead to compliance issues, legal exposure, and audit problems. It's not just about fixing errors; it's about understanding why they weren't caught early.</p>
-<p><strong>Questions to put to the BI team:</strong></p>
-<ul>
-  <li>Is there a single certified semantic model that governs the definitions behind all external client reports — or do report-level calculations drift independently?</li>
-  <li>What data quality monitoring runs continuously across the reporting pipeline? Who is alerted when anomalies are detected?</li>
-  <li>If a client receives an incorrect report, what's the notification and remediation process? Is it documented?</li>
-  <li>Is there an audit trail that can demonstrate data lineage — where a number came from, through what transformations, at what timestamp — in a form that would satisfy a regulatory examiner?</li>
-</ul>
+<div data-rt-embed-type="true"><div class="rh-questions-wrap"><div class="rh-questions-label"><svg class="rh-q-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path stroke-linecap="round" stroke-linejoin="round" d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17" stroke-linecap="round"/></svg>Questions to put to the BI team</div><ul class="rh-question-list"><li><svg class="rh-q-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path stroke-linecap="round" stroke-linejoin="round" d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17" stroke-linecap="round"/></svg>Is there a single certified semantic model that governs the definitions behind all external client reports — or do report-level calculations drift independently?</li><li><svg class="rh-q-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path stroke-linecap="round" stroke-linejoin="round" d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17" stroke-linecap="round"/></svg>What data quality monitoring runs continuously across the reporting pipeline? Who is alerted when anomalies are detected?</li><li><svg class="rh-q-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path stroke-linecap="round" stroke-linejoin="round" d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17" stroke-linecap="round"/></svg>If a client receives an incorrect report, what's the notification and remediation process? Is it documented?</li><li><svg class="rh-q-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path stroke-linecap="round" stroke-linejoin="round" d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17" stroke-linecap="round"/></svg>Is there an audit trail that can demonstrate data lineage — where a number came from, through what transformations, at what timestamp — in a form that would satisfy a regulatory examiner?</li></ul></div></div>
 
 <h3><strong>When AI Gets Added to External Reporting, Does Governance Keep Up?</strong></h3>
 <p>This is a question many BI teams still haven't answered. AI is often added after the core system is already built, not designed into it from the start. That creates gaps in control, visibility, and governance.</p>
 <p>But AI in external analytics is already here. Tools like Power BI Modeling, MCP Server, and Reporting Hub's BI Genius provide direct, conversational access to data. These are live capabilities, not experiments, and they need proper oversight.</p>
 <p>Regulators are paying attention. FINRA's 2026 Annual Oversight Report, the SEC's 2026 priorities, and the EU AI Act all stress the need for clear governance before deployment. AI use in analytics is now a compliance responsibility, not just a feature.</p>
-<p>The compliance question isn't whether to use AI in external analytics. It's whether the governance architecture can answer for what the AI did and why.</p>
-<p>The distinction matters practically. An AI layer that queries a properly governed, tenant-isolated semantic model and produces auditable responses is a defensible system.</p>
-<p><strong>Questions to put to the BI team:</strong></p>
-<ul>
-  <li>Are AI queries logged with data access, results, and context?</li>
-  <li>Has a DPIA been completed for AI features handling client data?</li>
-  <li>Can AI access be restricted per tenant to prevent cross-client exposure?</li>
-  <li>Who owns AI governance, and how does it align with compliance?</li>
-</ul>
+<p>The compliance question isn't whether to use AI in external analytics. It's whether the governance architecture can answer for what the AI did and why. An AI layer that queries a properly governed, tenant-isolated semantic model and produces auditable responses is a defensible system.</p>
+<div data-rt-embed-type="true"><div class="rh-questions-wrap"><div class="rh-questions-label"><svg class="rh-q-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path stroke-linecap="round" stroke-linejoin="round" d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17" stroke-linecap="round"/></svg>Questions to put to the BI team</div><ul class="rh-question-list"><li><svg class="rh-q-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path stroke-linecap="round" stroke-linejoin="round" d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17" stroke-linecap="round"/></svg>Are AI queries logged with data access, results, and context?</li><li><svg class="rh-q-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path stroke-linecap="round" stroke-linejoin="round" d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17" stroke-linecap="round"/></svg>Has a DPIA been completed for AI features handling client data?</li><li><svg class="rh-q-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path stroke-linecap="round" stroke-linejoin="round" d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17" stroke-linecap="round"/></svg>Can AI access be restricted per tenant to prevent cross-client exposure?</li><li><svg class="rh-q-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path stroke-linecap="round" stroke-linejoin="round" d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17" stroke-linecap="round"/></svg>Who owns AI governance, and how does it align with compliance?</li></ul></div></div>
 
 <h3><strong>How Reporting Hub Approaches These Questions by Design</strong></h3>
 <p>Reporting Hub was built for organisations delivering Power BI analytics to external clients at scale. Compliance architecture isn't a feature layer; it's foundational to the product.</p>
-<h4>Structural Tenant Isolation</h4>
-<p>Tenant isolation is built into the architecture, not left to manual processes. Each client operates in a separate environment, reducing the risk of data leaks. Automated workflows handle onboarding and access, lowering human error.</p>
-<h4>Centralised Semantic Model</h4>
-<p>The semantic model sits at the core of delivery. All reports pull from the same governed source, keeping metrics consistent. This also ensures clear traceability for every number shown.</p>
-<h4>AI Within Governance</h4>
-<p>BI Genius runs within the same controlled framework. Clients can explore data conversationally without crossing boundaries. Access controls and audit logs ensure AI use stays compliant and explainable.</p>
+<div data-rt-embed-type="true">
+<div class="rh-approach-card"><h4>Structural Tenant Isolation</h4><p>Tenant isolation is built into the architecture, not left to manual processes. Each client operates in a separate environment, reducing the risk of data leaks. Automated workflows handle onboarding and access, lowering human error.</p></div>
+<div class="rh-approach-card"><h4>Centralised Semantic Model</h4><p>The semantic model sits at the core of delivery. All reports pull from the same governed source, keeping metrics consistent. This also ensures clear traceability for every number shown.</p></div>
+<div class="rh-approach-card"><h4>AI Within Governance</h4><p>BI Genius runs within the same controlled framework. Clients can explore data conversationally without crossing boundaries. Access controls and audit logs ensure AI use stays compliant and explainable.</p></div>
+</div>
 
 <h3><strong>Get in the Room Before the Architecture Is Set</strong></h3>
 <p>The questions in this post aren't meant to block external analytics rollouts. They're meant to make them defensible — to the board, to regulators, and to clients who are trusting you with their data and their decisions.</p>
