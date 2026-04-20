@@ -213,7 +213,9 @@ function cmdInjectNav(targetFiles) {
     const rendered = renderNav(navTemplate, prefix, pageName);
 
     // Replace the old nav with the new one
-    const newHtml = html.substring(0, result.navStart) + rendered + html.substring(result.navEnd);
+    // Strip any accumulated <html><head></head><body> wrappers injected by previous runs
+    const htmlPrefix = html.substring(0, result.navStart).replace(/(?:<html><head><\/head><body>)+/g, '');
+    const newHtml = htmlPrefix + rendered + html.substring(result.navEnd);
 
     if (newHtml !== html) {
       fs.writeFileSync(filePath, newHtml, 'utf-8');

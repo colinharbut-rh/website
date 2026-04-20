@@ -560,7 +560,6 @@
     var singles = [
       { sel: '.section-heading',    dir: 'up'    },
       { sel: '.heading-style-h1',   dir: 'up'    },
-      { sel: '.heading-style-h2',   dir: 'up'    },
       { sel: '.anothe-title',       dir: 'up'    },
       { sel: '.subtitle',           dir: 'up'    },
       { sel: '.hero-left',          dir: 'left'  },
@@ -569,7 +568,6 @@
       { sel: '.microsoft-top',      dir: 'up'    },
       { sel: '.microsoft-overlay',  dir: 'up'    },
       { sel: '.solution-component', dir: 'up'    },
-      { sel: '.foooter-top',        dir: 'up'    },
       { sel: '.footer-component',   dir: 'up'    },
       { sel: '.customiz-header',    dir: 'up'    },
       { sel: '.customize-paragraph', dir: 'up'   },
@@ -640,6 +638,41 @@
       var delay = el.getAttribute('data-aos-delay');
       if (delay) el.style.transitionDelay = delay + 'ms';
       observer.observe(el);
+    });
+  }
+
+  // ============================================================
+  // Pricing Comparison Table Accordion
+  // ============================================================
+
+  function initPricingTableAccordion() {
+    document.querySelectorAll('.pricing_table_trigger').forEach(function (trigger) {
+      var plansDropdown = trigger.closest('.plans-dropdown');
+      if (!plansDropdown) return;
+      var wrapper = trigger.closest('.pricing_table_wrapper');
+      if (!wrapper) return;
+      var ans = wrapper.querySelector('.dropdown-ans');
+      if (!ans) return;
+      var arrow = trigger.querySelector('.dropdown-text');
+
+      // Sections start open — set initial height so toggle can collapse smoothly
+      ans.style.overflow = 'hidden';
+      ans.style.height = ans.scrollHeight + 'px';
+      plansDropdown.classList.add('is-open');
+      if (arrow) arrow.style.transform = 'rotate(90deg)';
+
+      trigger.style.cursor = 'pointer';
+
+      trigger.addEventListener('click', function () {
+        var isOpen = plansDropdown.classList.toggle('is-open');
+        if (isOpen) {
+          ans.style.height = ans.scrollHeight + 'px';
+          if (arrow) arrow.style.transform = 'rotate(90deg)';
+        } else {
+          ans.style.height = '0px';
+          if (arrow) arrow.style.transform = 'rotate(0deg)';
+        }
+      });
     });
   }
 
@@ -771,6 +804,7 @@
     initHubSpotMeetings();
     initScrollAnimations();
     initBlogPagination();
+    initPricingTableAccordion();
     initTurnstileGuard();
   }
 
