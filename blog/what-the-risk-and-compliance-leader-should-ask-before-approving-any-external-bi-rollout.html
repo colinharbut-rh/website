@@ -313,7 +313,7 @@
 <p>Risk and compliance leaders need to be in the room when external BI architecture is designed — not when it's already running.</p>
 <p>The questions below are the ones that matter. Not a checklist for its own sake, but the questions that surface whether an external analytics rollout is genuinely compliant-by-design or whether it's compliant-by-hope.</p>
 
-<h2><strong>Where Is the Data, and Who Has the Keys?</strong></h2>
+<h3><strong>Where Is the Data, and Who Has the Keys?</strong></h3>
 <p>Data residency has quickly become a strategic risk, not just a compliance detail. Gartner reported a 305% increase in inquiries about cloud sovereignty and geopatriation in early 2025. That's no longer a niche concern. It's a mainstream question that risk functions at every scale are now accountable for.</p>
 <p>For external analytics, the matter is even more pressing. Client data flows through your systems and reaches external users, and every step has legal implications. With rules like the EU AI Act, GDPR, India's DPDP Act, and U.S. DOJ restrictions, the landscape is becoming more complex and fragmented.</p>
 <p><strong>Questions to put to the BI team:</strong></p>
@@ -324,7 +324,7 @@
   <li>Who can access raw dashboard data, and is that access properly logged for RoPA compliance?</li>
 </ul>
 
-<h2><strong>Can One Client's Data Ever Reach Another Client's Eyes?</strong></h2>
+<h3><strong>Can One Client's Data Ever Reach Another Client's Eyes?</strong></h3>
 <p>This is one of the most critical questions in any external analytics rollout, yet it's often not tested deeply enough before launch. At its core, it asks whether your system can truly keep client data separate under all conditions. If that answer isn't clear, you're taking on hidden risk.</p>
 <p>In multi-tenant setups, isolation must be built into the architecture, not left to process or human care. Structural separation ensures data stays protected even when mistakes happen. As the FINRA 2026 Annual Oversight Report states, responsibility doesn't shift to the vendor — you still own the risk and the consequences.</p>
 <p>If tenant isolation relies on your team following the right steps every time, it will fail at scale. Architecture has to do the work.</p>
@@ -337,7 +337,7 @@
   <li>Can you produce evidence of tenant isolation testing that would satisfy a regulatory examiner?</li>
 </ul>
 
-<h2><strong>What Does the Vendor Actually Have Access To, and What Happens if They're Breached?</strong></h2>
+<h3><strong>What Does the Vendor Actually Have Access To, and What Happens if They're Breached?</strong></h3>
 <p>Third-party vendor risk is now a top concern across industries. Around 65% of companies have formal risk protocols, though gaps remain. Even where policies exist, they often don't fully cover analytics delivery platforms as they should.</p>
 <p>Your BI vendor plays a direct role in handling client data. Their security posture, sub-processors, and response timelines matter as much as your own controls. If something goes wrong, clients will expect answers from you, not the vendor.</p>
 <p>Regulations are tightening around this responsibility. Regulation S-P amendments and the SEC's 2026 Examination Priorities make cyber risk a core compliance obligation, not just an IT issue. Risk leaders are now accountable for vendor oversight as much as they are for their own systems.</p>
@@ -349,7 +349,7 @@
   <li>If there's an outage, what are the SLAs and your continuity rights?</li>
 </ul>
 
-<h2><strong>If the Numbers Are Wrong, Who Finds Out First, and How?</strong></h2>
+<h3><strong>If the Numbers Are Wrong, Who Finds Out First, and How?</strong></h3>
 <p>This is an uncomfortable question, but an important one to ask. When you deliver analytics externally, clients rely on your data to make real decisions. If the numbers are wrong, they won't know; they'll just act on bad information.</p>
 <p>These issues often come from small gaps. A metric changes, a pipeline breaks, or reports drift from the main model. As B EYE's 2026 BI research highlights, when key metrics aren't consistent and repeatable, decisions don't improve — they amplify errors.</p>
 <p>The risk goes beyond trust. In regulated industries, inaccurate reporting can lead to compliance issues, legal exposure, and audit problems. It's not just about fixing errors; it's about understanding why they weren't caught early.</p>
@@ -361,7 +361,7 @@
   <li>Is there an audit trail that can demonstrate data lineage — where a number came from, through what transformations, at what timestamp — in a form that would satisfy a regulatory examiner?</li>
 </ul>
 
-<h2><strong>When AI Gets Added to External Reporting, Does Governance Keep Up?</strong></h2>
+<h3><strong>When AI Gets Added to External Reporting, Does Governance Keep Up?</strong></h3>
 <p>This is a question many BI teams still haven't answered. AI is often added after the core system is already built, not designed into it from the start. That creates gaps in control, visibility, and governance.</p>
 <p>But AI in external analytics is already here. Tools like Power BI Modeling, MCP Server, and Reporting Hub's BI Genius provide direct, conversational access to data. These are live capabilities, not experiments, and they need proper oversight.</p>
 <p>Regulators are paying attention. FINRA's 2026 Annual Oversight Report, the SEC's 2026 priorities, and the EU AI Act all stress the need for clear governance before deployment. AI use in analytics is now a compliance responsibility, not just a feature.</p>
@@ -375,16 +375,16 @@
   <li>Who owns AI governance, and how does it align with compliance?</li>
 </ul>
 
-<h2><strong>How Reporting Hub Approaches These Questions by Design</strong></h2>
+<h3><strong>How Reporting Hub Approaches These Questions by Design</strong></h3>
 <p>Reporting Hub was built for organisations delivering Power BI analytics to external clients at scale. Compliance architecture isn't a feature layer; it's foundational to the product.</p>
-<h3>Structural Tenant Isolation</h3>
+<h4>Structural Tenant Isolation</h4>
 <p>Tenant isolation is built into the architecture, not left to manual processes. Each client operates in a separate environment, reducing the risk of data leaks. Automated workflows handle onboarding and access, lowering human error.</p>
-<h3>Centralised Semantic Model</h3>
+<h4>Centralised Semantic Model</h4>
 <p>The semantic model sits at the core of delivery. All reports pull from the same governed source, keeping metrics consistent. This also ensures clear traceability for every number shown.</p>
-<h3>AI Within Governance</h3>
+<h4>AI Within Governance</h4>
 <p>BI Genius runs within the same controlled framework. Clients can explore data conversationally without crossing boundaries. Access controls and audit logs ensure AI use stays compliant and explainable.</p>
 
-<h2><strong>Get in the Room Before the Architecture Is Set</strong></h2>
+<h3><strong>Get in the Room Before the Architecture Is Set</strong></h3>
 <p>The questions in this post aren't meant to block external analytics rollouts. They're meant to make them defensible — to the board, to regulators, and to clients who are trusting you with their data and their decisions.</p>
 <p>The organisations that handle this well are those where risk and compliance inputs shape the architecture. That requires being in the conversation early, asking the hard questions before commitments are made, and insisting on platforms where governance is a design principle rather than a configuration option.</p>
 <p>Want to see how Reporting Hub handles data isolation, audit logging, and AI governance for external analytics delivery?</p>
