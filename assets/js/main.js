@@ -309,7 +309,12 @@
   function openVideoModal(url) {
     buildVideoModal();
     var frame = videoModal.querySelector('.rh-video-frame');
-    frame.innerHTML = '<iframe src="' + url + '" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>';
+    var embedUrl = url;
+    var ytMatch = url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([^&?#]+)/);
+    if (ytMatch) {
+      embedUrl = 'https://www.youtube.com/embed/' + ytMatch[1] + '?autoplay=1';
+    }
+    frame.innerHTML = '<iframe src="' + embedUrl + '" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>';
     videoModal.classList.add('is-open');
     document.body.style.overflow = 'hidden';
   }
@@ -600,6 +605,9 @@
       { sel: '.partners-grid',                   dir: 'scale' },
       { sel: '.blog-grid',                       dir: 'scale' },
       { sel: '.lp-cards-grid',                   dir: 'scale' },
+      { sel: '.support-card',                    dir: 'scale' },
+      { sel: '.whats-included-cards',            dir: 'scale' },
+      { sel: '.analytics-grid',                  dir: 'up'    },
     ];
 
     var observer = new IntersectionObserver(function(entries) {
@@ -719,6 +727,10 @@
 
       currentPage = page;
 
+      // Update href so hovering shows the target page URL
+      prevBtn.setAttribute('href', page > 1 ? '?page=' + (page - 1) : '#');
+      nextBtn.setAttribute('href', page < totalPages ? '?page=' + (page + 1) : '#');
+
       // Scroll to top of the blog section (skip on initial load)
       if (scroll) {
         var scrollTarget = list.closest('.blog-list-wrapper') || list;
@@ -738,6 +750,10 @@
 
     // Initialise first page (no scroll)
     showPage(1, false);
+
+    // Read ?page= from URL on load
+    var urlPage = parseInt(new URLSearchParams(window.location.search).get('page'), 10);
+    if (urlPage > 1 && urlPage <= totalPages) showPage(urlPage, false);
   }
 
   // ============================================================

@@ -343,6 +343,11 @@
 .custom_hbs_form .hs_submit {
   margin: 0 !important;
   align-self: flex-start !important;
+  flex: 0 0 auto !important;
+}
+.custom_hbs_form .cf-turnstile {
+  flex: 0 0 100% !important;
+  margin-top: 6px !important;
 }
 .custom_hbs_form .hs_submit .hs-button,
 .custom_hbs_form .hs_submit input[type="submit"] {
@@ -365,8 +370,9 @@
                         </div>
                       </fieldset>
                       <div class="hs_submit hs-submit">
-                        <div class="actions"><div class="cf-turnstile" data-sitekey="0x4AAAAAAC1kqPKVfSHwCjeC" data-theme="light"></div><input type="submit" class="hs-button primary large" value="Subscribe"></div>
+                        <div class="actions"><input type="submit" class="hs-button primary large" value="Subscribe"></div>
                       </div>
+                      <div class="cf-turnstile" data-sitekey="0x4AAAAAAC1kqPKVfSHwCjeC" data-theme="light"></div>
                     </form>
                   </div>
                 </div>
