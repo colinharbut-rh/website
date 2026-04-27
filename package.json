@@ -8,7 +8,8 @@
     "sort-blog": "node scripts/sort-blog-index.js",
     "sitemap": "node scripts/generate-sitemap.js",
     "apply-assets-cdn": "node scripts/apply-assets-cdn-base.js",
-    "strip-resources-tail": "node build.js strip-resources-tail"
+    "strip-resources-tail": "node build.js strip-resources-tail",
+    "revert-assets-placeholder": "node scripts/revert-assets-placeholder.js"
   },
   "keywords": [],
   "author": "",
