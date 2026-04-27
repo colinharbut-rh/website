@@ -23,7 +23,9 @@ jobs:
         env:
           # Repository variable: public HTTPS origin for R2 (or any CDN) mirroring `assets/` paths.
           RH_ASSETS_BASE_URL: ${{ vars.RH_ASSETS_BASE_URL }}
-        run: npm ci && npm run sort-blog && npm run sitemap && npm run apply-assets-cdn
+          # Optional: public origin for PDFs in R2 bucket root (see scripts/apply-resource-r2-pdfs.js).
+          RH_RESOURCES_PDF_BASE: ${{ vars.RH_RESOURCES_PDF_BASE }}
+        run: npm ci && npm run sort-blog && npm run sitemap && npm run apply-assets-cdn && npm run apply-resource-r2-pdfs
 
       - name: Deploy
         uses: cloudflare/wrangler-action@v3

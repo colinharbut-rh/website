@@ -9,7 +9,8 @@
     "sitemap": "node scripts/generate-sitemap.js",
     "apply-assets-cdn": "node scripts/apply-assets-cdn-base.js",
     "strip-resources-tail": "node build.js strip-resources-tail",
-    "revert-assets-placeholder": "node scripts/revert-assets-placeholder.js"
+    "revert-assets-placeholder": "node scripts/revert-assets-placeholder.js",
+    "apply-resource-r2-pdfs": "node scripts/apply-resource-r2-pdfs.js"
   },
   "keywords": [],
   "author": "",
