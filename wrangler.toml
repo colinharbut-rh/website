@@ -1,7 +1,11 @@
 # Static HTML site — assets are served at the edge.
+# Optional: set GitHub variable RH_ASSETS_BASE_URL to a public R2 (or CDN) origin so deploy
+# rewrites HTML to load assets/images, assets/css, assets/js from that host (see apply-assets-cdn script).
 name = "reportinghub-website"
 compatibility_date = "2026-03-23"
 
 [assets]
 directory = "."
+# Match clean URLs like production (extensionless + trailing slash where applicable).
+html_handling = "auto-trailing-slash"
 not_found_handling = "404-page"

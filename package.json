@@ -4,7 +4,11 @@
   "description": "",
   "main": "migrate.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sort-blog": "node scripts/sort-blog-index.js",
+    "sitemap": "node scripts/generate-sitemap.js",
+    "apply-assets-cdn": "node scripts/apply-assets-cdn-base.js",
+    "strip-resources-tail": "node build.js strip-resources-tail"
   },
   "keywords": [],
   "author": "",

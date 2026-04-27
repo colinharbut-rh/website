@@ -38,6 +38,52 @@ function getAllHtmlFiles() {
   return files;
 }
 
+const STRIP_BODY_SKIP = new Set(['node_modules', '.git', 'scripts']);
+
+/** Remove duplicate </body></html> sequences, keeping only the final document close. */
+function stripSpuriousBodyClosings(html) {
+  const marker = '</body></html>';
+  const lastIdx = html.lastIndexOf(marker);
+  if (lastIdx === -1) return html;
+  const before = html.slice(0, lastIdx);
+  const after = html.slice(lastIdx);
+  if (!before.includes(marker)) return html;
+  const cleanedBefore = before.split(marker).join('');
+  return cleanedBefore + after;
+}
+
+/** Homepage sections accidentally merged after resource detail body; strip through main close before footer. */
+const RESOURCE_PAGE_TAIL_BEFORE_FOOTER = new RegExp(
+  '(' +
+    '<a href="\\.\\./resources\\.html" class="back-to-files w-inline-block">\\s*' +
+    '<p class="paragraph">Back to All Resources</p>\\s*</a>\\s*</div>\\s*</div>\\s*</section>' +
+  ')' +
+  '([\\s\\S]*?)' +
+  '(\\r?\\n    </div>\\r?\\n            <section class="footer-section v1 section-2">)'
+);
+
+function stripResourceDetailHomepageTail(html) {
+  if (!html.includes('class="back-to-files')) return html;
+  return html.replace(RESOURCE_PAGE_TAIL_BEFORE_FOOTER, '$1$3');
+}
+
+function walkAllHtmlFiles(relDir = '') {
+  const out = [];
+  const dir = relDir ? path.join(ROOT, relDir) : ROOT;
+  if (!fs.existsSync(dir)) return out;
+  for (const name of fs.readdirSync(dir, { withFileTypes: true })) {
+    if (STRIP_BODY_SKIP.has(name.name)) continue;
+    const sub = relDir ? `${relDir}/${name.name}` : name.name;
+    const full = path.join(ROOT, sub);
+    if (name.isDirectory()) {
+      out.push(...walkAllHtmlFiles(sub));
+    } else if (name.name.endsWith('.html')) {
+      out.push(sub.replace(/\\/g, '/'));
+    }
+  }
+  return out;
+}
+
 /**
  * Extract the nav block from HTML content.
  * Returns { navHtml, navStart, navEnd } or null if not found.
@@ -215,7 +261,7 @@ function cmdInjectNav(targetFiles) {
     // Replace the old nav with the new one
     // Strip any accumulated <html><head></head><body> wrappers injected by previous runs
     const htmlPrefix = html.substring(0, result.navStart).replace(/(?:<html><head><\/head><body>)+/g, '');
-    const newHtml = htmlPrefix + rendered + html.substring(result.navEnd);
+    const newHtml = stripSpuriousBodyClosings(htmlPrefix + rendered + html.substring(result.navEnd));
 
     if (newHtml !== html) {
       fs.writeFileSync(filePath, newHtml, 'utf-8');
@@ -279,6 +325,48 @@ function cmdStatus() {
   console.log(`  No nav: ${missing}`);
 }
 
+function cmdStripSpuriousBody() {
+  const files = walkAllHtmlFiles();
+  let updated = 0;
+  for (const relPath of files) {
+    const filePath = path.join(ROOT, relPath);
+    const html = fs.readFileSync(filePath, 'utf-8');
+    const next = stripSpuriousBodyClosings(html);
+    if (next !== html) {
+      fs.writeFileSync(filePath, next, 'utf-8');
+      console.log(`  STRIP: ${relPath}`);
+      updated++;
+    }
+  }
+  console.log(`\n=== strip-spurious-body ===`);
+  console.log(`  Updated: ${updated}`);
+  console.log(`  Unchanged: ${files.length - updated}`);
+}
+
+function cmdStripResourcesTail() {
+  const dir = path.join(ROOT, 'resources');
+  if (!fs.existsSync(dir)) {
+    console.error('ERROR: resources/ not found');
+    process.exit(1);
+  }
+  const files = fs.readdirSync(dir).filter(f => f.endsWith('.html'));
+  let updated = 0;
+  for (const name of files) {
+    const relPath = `resources/${name}`;
+    const filePath = path.join(dir, name);
+    const html = fs.readFileSync(filePath, 'utf-8');
+    const next = stripResourceDetailHomepageTail(html);
+    if (next !== html) {
+      fs.writeFileSync(filePath, next, 'utf-8');
+      console.log(`  STRIP: ${relPath}`);
+      updated++;
+    }
+  }
+  console.log(`\n=== strip-resources-tail ===`);
+  console.log(`  Updated: ${updated}`);
+  console.log(`  Unchanged: ${files.length - updated}`);
+}
+
 // ===== MAIN =====
 
 const args = process.argv.slice(2);
@@ -294,10 +382,18 @@ switch (command) {
   case 'status':
     cmdStatus();
     break;
+  case 'strip-spurious-body':
+    cmdStripSpuriousBody();
+    break;
+  case 'strip-resources-tail':
+    cmdStripResourcesTail();
+    break;
   default:
     console.log('Usage:');
     console.log('  node build.js extract-nav          - Extract nav from index.html');
     console.log('  node build.js inject-nav           - Inject nav into all pages');
     console.log('  node build.js inject-nav page.html - Inject into specific page');
     console.log('  node build.js status               - Check nav consistency');
+    console.log('  node build.js strip-spurious-body  - Remove duplicate </body></html> before final close');
+    console.log('  node build.js strip-resources-tail - Remove merged homepage block after Back to All Resources');
 }
