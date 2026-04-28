@@ -13,6 +13,10 @@
 
 const fs = require('fs');
 const path = require('path');
+const cheerio = require('cheerio');
+
+/** Keep entities and URLs stable when parsing large Webflow HTML. */
+const CHEERIO_HTML = { decodeEntities: false };
 
 const ROOT = __dirname;
 const PARTIALS_DIR = path.join(ROOT, 'assets', 'partials');
@@ -86,54 +90,30 @@ function walkAllHtmlFiles(relDir = '') {
 
 /**
  * Extract the nav block from HTML content.
- * Returns { navHtml, navStart, navEnd } or null if not found.
+ * Returns { navHtml } or null if not found.
+ * Uses cheerio so inline scripts inside the nav (e.g. strings containing "<div")
+ * do not break extraction.
  */
 function extractNavFromHtml(html) {
-  // Find the nav opening tag
-  const navOpenRegex = /<div[^>]*class="navbar w-nav"[^>]*id="nav">/;
-  const match = html.match(navOpenRegex);
-  if (!match) return null;
+  const $ = cheerio.load(html, CHEERIO_HTML);
+  const $nav = $('#nav').first();
+  if (!$nav.length) return null;
+  const navHtml = $.html($nav);
+  if (!navHtml) return null;
+  return { navHtml };
+}
 
-  const navStart = match.index;
-
-  // Find the matching closing div by counting brace depth
-  // We need to find the closing </div> that matches the opening <div...navbar>
-  let depth = 0;
-  let i = navStart;
-  const divOpenRegex = /<div[\s>]/g;
-  const divCloseRegex = /<\/div>/g;
-
-  // Walk through the HTML character by character tracking div depth
-  while (i < html.length) {
-    // Check for opening div tag
-    if (html.substring(i, i + 4) === '<div' && (html[i + 4] === ' ' || html[i + 4] === '>')) {
-      depth++;
-      // Skip to end of tag
-      const tagEnd = html.indexOf('>', i);
-      if (tagEnd === -1) break;
-      i = tagEnd + 1;
-      continue;
-    }
-
-    // Check for closing div tag
-    if (html.substring(i, i + 6) === '</div>') {
-      depth--;
-      if (depth === 0) {
-        const navEnd = i + 6;
-        return {
-          navHtml: html.substring(navStart, navEnd),
-          navStart,
-          navEnd
-        };
-      }
-      i += 6;
-      continue;
-    }
-
-    i++;
-  }
-
-  return null;
+/**
+ * Replace the #nav block with rendered HTML (full outer nav markup).
+ */
+function replaceNavInHtml(html, renderedNavHtml) {
+  const $ = cheerio.load(html, CHEERIO_HTML);
+  const $nav = $('#nav').first();
+  if (!$nav.length) return null;
+  const $frag = cheerio.load(renderedNavHtml, CHEERIO_HTML, false);
+  const $replacement = $frag.root().children();
+  $nav.replaceWith($replacement);
+  return stripSpuriousBodyClosings($.html());
 }
 
 /**
@@ -149,9 +129,12 @@ function normalizeNav(navHtml) {
   normalized = normalized.replace(/(?:\.\.\/)*assets\/js\//g, '{{PREFIX}}assets/js/');
 
   // Replace page links with placeholder
-  // Handle both root (page.html) and subfolder (../page.html) patterns
+  // Handle root (page.html), subfolder (../blog/slug.html), and multi-segment paths
   // But skip external links (http/https) and anchor-only links (#)
-  normalized = normalized.replace(/href="(?:\.\.\/)*([a-z][a-z0-9-]*\.html)"/g, 'href="{{PREFIX}}$1"');
+  normalized = normalized.replace(
+    /href="(?:\.\.\/)*([a-z0-9][a-z0-9/-]*\.html)"/gi,
+    'href="{{PREFIX}}$1"'
+  );
 
   // Remove aria-current and w--current (these are page-specific)
   normalized = normalized.replace(/\s*aria-current="page"/g, '');
@@ -256,20 +239,23 @@ function cmdInjectNav(targetFiles) {
 
     const prefix = getAssetPrefix(relPath);
     const pageName = path.basename(relPath);
-    const rendered = renderNav(navTemplate, prefix, pageName);
 
-    // Replace the old nav with the new one
-    // Strip any accumulated <html><head></head><body> wrappers injected by previous runs
-    const htmlPrefix = html.substring(0, result.navStart).replace(/(?:<html><head><\/head><body>)+/g, '');
-    const newHtml = stripSpuriousBodyClosings(htmlPrefix + rendered + html.substring(result.navEnd));
-
-    if (newHtml !== html) {
-      fs.writeFileSync(filePath, newHtml, 'utf-8');
-      console.log(`  UPDATED: ${relPath}`);
-      updated++;
-    } else {
+    if (normalizeNav(result.navHtml) === navTemplate) {
       console.log(`  OK: ${relPath} (already up to date)`);
+      continue;
     }
+
+    const rendered = renderNav(navTemplate, prefix, pageName);
+    const newHtml = replaceNavInHtml(html, rendered);
+    if (!newHtml) {
+      console.log(`  SKIP: ${relPath} (replace failed)`);
+      skipped++;
+      continue;
+    }
+
+    fs.writeFileSync(filePath, newHtml, 'utf-8');
+    console.log(`  UPDATED: ${relPath}`);
+    updated++;
   }
 
   console.log(`\n=== Summary ===`);
