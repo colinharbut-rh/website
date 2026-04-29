@@ -44,6 +44,20 @@
         });
       }
     });
+
+    // Close flyout after navigating to a real page link (megamenu anchors)
+    document.querySelectorAll('.w-nav-menu').forEach(function (menu) {
+      menu.addEventListener('click', function (e) {
+        var a = e.target.closest && e.target.closest('a[href]');
+        if (!a) return;
+        var href = a.getAttribute('href');
+        if (!href || href === '#' || href.charAt(0) === '#') return;
+        menu.classList.remove('w--open');
+        var nav = menu.closest('.w-nav');
+        var btn = nav && nav.querySelector('.w-nav-button');
+        if (btn) btn.classList.remove('w--open');
+      });
+    });
   }
 
   // ============================================================
