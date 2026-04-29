@@ -11237,16 +11237,17 @@ strong {
     padding-top: 0;
   }
 
+  /* Desktop uses huge padding-top to align with footer SVG; on tablet/phone that reads as a blank white slab */
   .footer-section.v1 {
-    padding-top: 35rem;
+    padding-top: 5rem;
   }
 
   .footer-section.v1:where(.w-variant-21d7bfd3-6f7d-a6b3-47c9-f9092f089a3e) {
-    padding-top: 15rem;
+    padding-top: 4rem;
   }
 
   .footer-section.v1.is-rd {
-    padding-top: 20rem;
+    padding-top: 6rem;
   }
 
   .foooter-top {
@@ -11357,6 +11358,9 @@ strong {
     padding: 1.5rem 1rem;
     position: absolute;
     overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+    touch-action: pan-y;
   }
 
   .menu-button {
@@ -11443,7 +11447,7 @@ strong {
     padding-top: 1rem;
     padding-left: 0;
     padding-right: 0;
-    overflow: hidden;
+    overflow: visible;
   }
 
   .uui-navbar01_menu-dropdown {
@@ -11470,9 +11474,11 @@ strong {
     min-width: 100%;
   }
 
+  /* overflow:hidden clipped megamenu + blocked scroll inside mobile flyout */
   .uui-navbar01_dropdown-list {
     position: relative;
-    overflow: hidden;
+    overflow: visible;
+    max-height: none;
   }
 
   .uui-navbar01_dropdown-list.w--open {
@@ -11486,6 +11492,7 @@ strong {
     top: 0;
     left: 0;
     right: 0;
+    overflow: visible;
   }
 
   .uui-navbar01_heading.opacity-0.none {
