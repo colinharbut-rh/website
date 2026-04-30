@@ -9,6 +9,9 @@
  *   node build.js inject-nav           - Inject nav partial into all pages
  *   node build.js inject-nav about-us.html  - Inject into specific page
  *   node build.js status               - Show which pages have outdated nav
+ *   node build.js extract-footer       - Extract main site footer into partial
+ *   node build.js inject-footer        - Inject footer partial into all pages
+ *   node build.js footer-status        - Show which pages have outdated footer
  */
 
 const fs = require('fs');
@@ -21,6 +24,7 @@ const CHEERIO_HTML = { decodeEntities: false };
 const ROOT = __dirname;
 const PARTIALS_DIR = path.join(ROOT, 'assets', 'partials');
 const NAV_PARTIAL = path.join(PARTIALS_DIR, 'nav.html');
+const FOOTER_PARTIAL = path.join(PARTIALS_DIR, 'footer.html');
 const SUBFOLDERS = ['', 'ai-data-analysis', 'author', 'power-bi', 'lp', 'blog', 'partners', 'resources', 'marketing-dashboards', 'reporting-tools'];
 
 // ===== HELPERS =====
@@ -117,24 +121,25 @@ function replaceNavInHtml(html, renderedNavHtml) {
 }
 
 /**
- * Normalize the nav HTML to use {{PREFIX}} placeholders
+ * Shared path normalization for nav/footer partials ({{PREFIX}} placeholders).
  */
-function normalizeNav(navHtml) {
-  let normalized = navHtml;
-
-  // Replace asset paths with placeholder
-  // Handle both root (assets/) and subfolder (../assets/) patterns
+function applySharedPathPrefixes(html) {
+  let normalized = html;
   normalized = normalized.replace(/(?:\.\.\/)*assets\/images\//g, '{{PREFIX}}assets/images/');
   normalized = normalized.replace(/(?:\.\.\/)*assets\/css\//g, '{{PREFIX}}assets/css/');
   normalized = normalized.replace(/(?:\.\.\/)*assets\/js\//g, '{{PREFIX}}assets/js/');
-
-  // Replace page links with placeholder
-  // Handle root (page.html), subfolder (../blog/slug.html), and multi-segment paths
-  // But skip external links (http/https) and anchor-only links (#)
   normalized = normalized.replace(
     /href="(?:\.\.\/)*([a-z0-9][a-z0-9/-]*\.html)"/gi,
     'href="{{PREFIX}}$1"'
   );
+  return normalized;
+}
+
+/**
+ * Normalize the nav HTML to use {{PREFIX}} placeholders
+ */
+function normalizeNav(navHtml) {
+  let normalized = applySharedPathPrefixes(navHtml);
 
   // Remove aria-current and w--current (these are page-specific)
   normalized = normalized.replace(/\s*aria-current="page"/g, '');
@@ -177,6 +182,62 @@ function renderNav(navTemplate, prefix, currentPage) {
   }
 
   return rendered;
+}
+
+/** Stable anchor for footer injection (added on extract). */
+const FOOTER_SECTION_SELECTOR = 'section.footer-section.v1.section-2';
+
+function stripSiteFooterIdForCompare(html) {
+  return html.replace(/\s+id="site-footer"/gi, '');
+}
+
+/**
+ * Normalize footer markup for comparing page vs partial (paths only; ignore optional id).
+ * Strips {{PREFIX}} first so comparing injected pages to the partial does not double-prefix.
+ */
+function normalizeFooterForCompare(footerHtml) {
+  const sansId = stripSiteFooterIdForCompare(footerHtml);
+  const strippedPrefix = sansId.replace(/\{\{PREFIX\}\}/g, '');
+  return applySharedPathPrefixes(strippedPrefix);
+}
+
+/**
+ * Extract the main marketing footer from HTML.
+ */
+function extractFooterFromHtml(html) {
+  const $ = cheerio.load(html, CHEERIO_HTML);
+  const $footer = $(FOOTER_SECTION_SELECTOR).first();
+  if (!$footer.length) return null;
+  const footerHtml = $.html($footer);
+  if (!footerHtml) return null;
+  return { footerHtml };
+}
+
+/**
+ * Replace footer section with rendered HTML.
+ */
+function replaceFooterInHtml(html, renderedFooterHtml) {
+  const $ = cheerio.load(html, CHEERIO_HTML);
+  const $footer = $('#site-footer').first().length
+    ? $('#site-footer').first()
+    : $(FOOTER_SECTION_SELECTOR).first();
+  if (!$footer.length) return null;
+  const $frag = cheerio.load(renderedFooterHtml, CHEERIO_HTML, false);
+  const $replacement = $frag.root().children();
+  $footer.replaceWith($replacement);
+  return stripSpuriousBodyClosings($.html());
+}
+
+function ensureFooterPartialHasId(footerHtml) {
+  if (/\bid="site-footer"/i.test(footerHtml)) return footerHtml;
+  return footerHtml.replace(
+    /<section(\s+class="footer-section v1 section-2")/i,
+    '<section id="site-footer"$1'
+  );
+}
+
+function renderFooter(footerTemplate, prefix) {
+  return footerTemplate.replace(/\{\{PREFIX\}\}/g, prefix);
 }
 
 // ===== COMMANDS =====
@@ -311,6 +372,128 @@ function cmdStatus() {
   console.log(`  No nav: ${missing}`);
 }
 
+function cmdExtractFooter() {
+  console.log('Extracting footer from index.html...\n');
+
+  const indexHtml = fs.readFileSync(path.join(ROOT, 'index.html'), 'utf-8');
+  const result = extractFooterFromHtml(indexHtml);
+
+  if (!result) {
+    console.error(`ERROR: Could not find footer (${FOOTER_SECTION_SELECTOR}) in index.html`);
+    process.exit(1);
+  }
+
+  const withId = ensureFooterPartialHasId(result.footerHtml);
+  const normalized = applySharedPathPrefixes(withId);
+
+  if (!fs.existsSync(PARTIALS_DIR)) {
+    fs.mkdirSync(PARTIALS_DIR, { recursive: true });
+  }
+
+  fs.writeFileSync(FOOTER_PARTIAL, normalized, 'utf-8');
+  console.log(`  Extracted footer partial (${(normalized.length / 1024).toFixed(1)} KB)`);
+  console.log(`  Saved to: assets/partials/footer.html`);
+  console.log(`  Contains ${(normalized.match(/\{\{PREFIX\}\}/g) || []).length} path placeholders`);
+}
+
+function cmdInjectFooter(targetFiles) {
+  if (!fs.existsSync(FOOTER_PARTIAL)) {
+    console.error('ERROR: Footer partial not found. Run "node build.js extract-footer" first.');
+    process.exit(1);
+  }
+
+  const footerTemplate = fs.readFileSync(FOOTER_PARTIAL, 'utf-8');
+  const files = targetFiles.length > 0 ? targetFiles : getAllHtmlFiles();
+
+  console.log(`Injecting footer into ${files.length} pages...\n`);
+
+  let updated = 0;
+  let skipped = 0;
+
+  for (const relPath of files) {
+    const filePath = path.join(ROOT, relPath);
+    if (!fs.existsSync(filePath)) {
+      console.log(`  SKIP: ${relPath} (not found)`);
+      skipped++;
+      continue;
+    }
+
+    const html = fs.readFileSync(filePath, 'utf-8');
+    const result = extractFooterFromHtml(html);
+
+    if (!result) {
+      console.log(`  SKIP: ${relPath} (no matching footer section)`);
+      skipped++;
+      continue;
+    }
+
+    const prefix = getAssetPrefix(relPath);
+
+    const templateNorm = normalizeFooterForCompare(footerTemplate);
+    if (normalizeFooterForCompare(result.footerHtml) === templateNorm) {
+      console.log(`  OK: ${relPath} (already up to date)`);
+      continue;
+    }
+
+    const rendered = renderFooter(footerTemplate, prefix);
+    const newHtml = replaceFooterInHtml(html, rendered);
+    if (!newHtml) {
+      console.log(`  SKIP: ${relPath} (replace failed)`);
+      skipped++;
+      continue;
+    }
+
+    fs.writeFileSync(filePath, newHtml, 'utf-8');
+    console.log(`  UPDATED: ${relPath}`);
+    updated++;
+  }
+
+  console.log(`\n=== Summary ===`);
+  console.log(`  Updated: ${updated}`);
+  console.log(`  Skipped: ${skipped}`);
+}
+
+function cmdFooterStatus() {
+  if (!fs.existsSync(FOOTER_PARTIAL)) {
+    console.error('No footer partial found. Run "node build.js extract-footer" first.');
+    process.exit(1);
+  }
+
+  const footerTemplate = fs.readFileSync(FOOTER_PARTIAL, 'utf-8');
+  const files = getAllHtmlFiles();
+
+  console.log(`Checking footer status across ${files.length} pages...\n`);
+
+  let upToDate = 0;
+  let outdated = 0;
+  let missing = 0;
+
+  for (const relPath of files) {
+    const filePath = path.join(ROOT, relPath);
+    const html = fs.readFileSync(filePath, 'utf-8');
+    const result = extractFooterFromHtml(html);
+
+    if (!result) {
+      console.log(`  NO FOOTER: ${relPath}`);
+      missing++;
+      continue;
+    }
+
+    const templateNorm = normalizeFooterForCompare(footerTemplate);
+    if (normalizeFooterForCompare(result.footerHtml) === templateNorm) {
+      upToDate++;
+    } else {
+      console.log(`  OUTDATED: ${relPath}`);
+      outdated++;
+    }
+  }
+
+  console.log(`\n=== Summary ===`);
+  console.log(`  Up to date: ${upToDate}`);
+  console.log(`  Outdated: ${outdated}`);
+  console.log(`  No footer: ${missing}`);
+}
+
 function cmdStripSpuriousBody() {
   const files = walkAllHtmlFiles();
   let updated = 0;
@@ -368,6 +551,15 @@ switch (command) {
   case 'status':
     cmdStatus();
     break;
+  case 'extract-footer':
+    cmdExtractFooter();
+    break;
+  case 'inject-footer':
+    cmdInjectFooter(args.slice(1));
+    break;
+  case 'footer-status':
+    cmdFooterStatus();
+    break;
   case 'strip-spurious-body':
     cmdStripSpuriousBody();
     break;
@@ -380,6 +572,9 @@ switch (command) {
     console.log('  node build.js inject-nav           - Inject nav into all pages');
     console.log('  node build.js inject-nav page.html - Inject into specific page');
     console.log('  node build.js status               - Check nav consistency');
+    console.log('  node build.js extract-footer       - Extract footer from index.html');
+    console.log('  node build.js inject-footer        - Inject footer into all pages');
+    console.log('  node build.js footer-status        - Check footer consistency');
     console.log('  node build.js strip-spurious-body  - Remove duplicate </body></html> before final close');
     console.log('  node build.js strip-resources-tail - Remove merged homepage block after Back to All Resources');
 }
