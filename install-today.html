@@ -403,15 +403,17 @@
     if(!tsInput||!tsInput.value){if(errorEl){errorEl.textContent='Please complete the security check above.';errorEl.style.display='block';}return;}
     if(errorEl)errorEl.style.display='none';
     if(btn){btn.innerHTML='Submitting\u2026';btn.disabled=true;}
-    var payload={
-      firstname:form.querySelector('[name=firstname]').value.trim(),
-      lastname:form.querySelector('[name=lastname]').value.trim(),
-      email:form.querySelector('[name=email]').value.trim(),
-      company:form.querySelector('[name=company]').value.trim(),
-      'cf-turnstile-response':tsInput.value
-    };
-    ['utm_campaign','utm_source','utm_medium','utm_term','utm_content'].forEach(function(p){var v=getParam(p);if(v)payload[p]=v;});
-    fetch(ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(payload)})
+    var emailVal=form.querySelector('[name=email]').value.trim();
+    var params=new URLSearchParams();
+    params.append('firstname',form.querySelector('[name=firstname]').value.trim());
+    params.append('lastname',form.querySelector('[name=lastname]').value.trim());
+    params.append('email',emailVal);
+    params.append('_replyto',emailVal);
+    params.append('_subject','Reporting Hub - Install Now trial request');
+    params.append('company',form.querySelector('[name=company]').value.trim());
+    params.append('cf-turnstile-response',tsInput.value);
+    ['utm_campaign','utm_source','utm_medium','utm_term','utm_content'].forEach(function(p){var v=getParam(p);if(v)params.append(p,v);});
+    fetch(ENDPOINT,{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded','Accept':'application/json'},body:params.toString()})
     .then(function(res){return res.json().then(function(data){return{ok:res.ok,data:data};});})
     .then(function(result){
       if(result.ok){form.style.display='none';if(successEl)successEl.style.display='block';}
