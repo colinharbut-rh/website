@@ -10,7 +10,8 @@
     "apply-assets-cdn": "node scripts/apply-assets-cdn-base.js",
     "strip-resources-tail": "node build.js strip-resources-tail",
     "revert-assets-placeholder": "node scripts/revert-assets-placeholder.js",
-    "apply-resource-r2-pdfs": "node scripts/apply-resource-r2-pdfs.js"
+    "apply-resource-r2-pdfs": "node scripts/apply-resource-r2-pdfs.js",
+    "parity-live": "node scripts/live-site-parity-check.js"
   },
   "keywords": [],
   "author": "",
