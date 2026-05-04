@@ -12,6 +12,7 @@
  *   node build.js extract-footer       - Extract main site footer into partial
  *   node build.js inject-footer        - Inject footer partial into all pages
  *   node build.js footer-status        - Show which pages have outdated footer
+ *   node build.js inject-social-meta   - Add OG + Twitter Card meta from title & description
  */
 
 const fs = require('fs');
@@ -81,6 +82,7 @@ function walkAllHtmlFiles(relDir = '') {
   if (!fs.existsSync(dir)) return out;
   for (const name of fs.readdirSync(dir, { withFileTypes: true })) {
     if (STRIP_BODY_SKIP.has(name.name)) continue;
+    if (name.name.startsWith('.')) continue;
     const sub = relDir ? `${relDir}/${name.name}` : name.name;
     const full = path.join(ROOT, sub);
     if (name.isDirectory()) {
@@ -90,6 +92,135 @@ function walkAllHtmlFiles(relDir = '') {
     }
   }
   return out;
+}
+
+/** Meta tags managed by inject-social-meta (removed before re-insert). */
+const SOCIAL_META_REMOVE_SELECTORS = [
+  'meta[property="og:title"]',
+  'meta[property="og:description"]',
+  'meta[property="og:type"]',
+  'meta[property="twitter:title"]',
+  'meta[name="twitter:title"]',
+  'meta[property="twitter:description"]',
+  'meta[name="twitter:description"]',
+  'meta[name="twitter:card"]',
+  'meta[property="twitter:card"]'
+];
+
+/**
+ * Ensure OG + Twitter Card tags exist, aligned with title and meta description.
+ * Idempotent. Requires non-empty <title> and meta description.
+ * @returns {{ html: string, skip: string|null }}
+ */
+function injectSocialMeta(html) {
+  const $ = cheerio.load(html, CHEERIO_HTML);
+  const titleText = $('title')
+    .first()
+    .text()
+    .trim();
+  const $desc = $('meta[name="description"], meta[name="Description"]').first();
+  const descContent = ($desc.attr('content') || '').trim();
+
+  if (!titleText) {
+    return { html, skip: 'no title' };
+  }
+  if (!descContent) {
+    return { html, skip: 'no meta description' };
+  }
+
+  SOCIAL_META_REMOVE_SELECTORS.forEach(sel => $(sel).remove());
+
+  const $descAnchor = $('meta[name="description"], meta[name="Description"]').first();
+  if (!$descAnchor.length) {
+    return { html, skip: 'no meta description after sanitize' };
+  }
+
+  const ogTitle = $('<meta />').attr({ content: titleText, property: 'og:title' });
+  const ogDesc = $('<meta />').attr({ content: descContent, property: 'og:description' });
+  $descAnchor.after(ogTitle);
+  ogTitle.after(ogDesc);
+
+  const twTitle = $('<meta />').attr({ content: titleText, property: 'twitter:title' });
+  const twDesc = $('<meta />').attr({ content: descContent, property: 'twitter:description' });
+
+  const $twImg = $('meta[property="twitter:image"]').first();
+  const $ogImg = $('meta[property="og:image"]').first();
+
+  if ($twImg.length) {
+    $twImg.before(twTitle);
+    twTitle.after(twDesc);
+  } else if ($ogImg.length) {
+    $ogImg.after(twTitle);
+    twTitle.after(twDesc);
+  } else {
+    ogDesc.after(twTitle);
+    twTitle.after(twDesc);
+  }
+
+  const ogType = $('<meta />').attr({ content: 'website', property: 'og:type' });
+  const twCard = $('<meta />').attr({ content: 'summary_large_image', name: 'twitter:card' });
+
+  const $twImgAfter = $('meta[property="twitter:image"]').first();
+  if ($twImgAfter.length) {
+    $twImgAfter.after(ogType);
+    ogType.after(twCard);
+  } else {
+    twDesc.after(ogType);
+    ogType.after(twCard);
+  }
+
+  return { html: $.html(), skip: null };
+}
+
+function cmdInjectSocialMeta(targetFiles) {
+  const files =
+    targetFiles.length > 0 ? targetFiles : walkAllHtmlFiles().sort();
+
+  console.log(`Injecting social meta into ${files.length} HTML files...\n`);
+
+  let updated = 0;
+  let skipped = 0;
+  let unchanged = 0;
+  const warnSkip = [];
+
+  for (const relPath of files) {
+    if (relPath.startsWith('assets/partials/')) {
+      continue;
+    }
+    const filePath = path.join(ROOT, relPath.replace(/\//g, path.sep));
+    if (!fs.existsSync(filePath)) {
+      console.log(`  SKIP (missing): ${relPath}`);
+      skipped++;
+      continue;
+    }
+
+    const before = fs.readFileSync(filePath, 'utf-8');
+    const { html: after, skip } = injectSocialMeta(before);
+
+    if (skip) {
+      warnSkip.push({ relPath, skip });
+      skipped++;
+      continue;
+    }
+
+    if (after === before) {
+      unchanged++;
+      continue;
+    }
+
+    fs.writeFileSync(filePath, after, 'utf-8');
+    console.log(`  UPDATED: ${relPath}`);
+    updated++;
+  }
+
+  console.log(`\n=== inject-social-meta ===`);
+  console.log(`  Updated: ${updated}`);
+  console.log(`  Unchanged: ${unchanged}`);
+  console.log(`  Skipped: ${skipped}`);
+  if (warnSkip.length) {
+    console.log(`\n  Skipped pages (need title + meta description):`);
+    warnSkip.forEach(({ relPath, skip }) => console.log(`    ${relPath} — ${skip}`));
+  }
 }
 
 /**
@@ -566,6 +697,9 @@ switch (command) {
   case 'strip-resources-tail':
     cmdStripResourcesTail();
     break;
+  case 'inject-social-meta':
+    cmdInjectSocialMeta(args.slice(1));
+    break;
   default:
     console.log('Usage:');
     console.log('  node build.js extract-nav          - Extract nav from index.html');
@@ -577,4 +711,5 @@ switch (command) {
     console.log('  node build.js footer-status        - Check footer consistency');
     console.log('  node build.js strip-spurious-body  - Remove duplicate </body></html> before final close');
     console.log('  node build.js strip-resources-tail - Remove merged homepage block after Back to All Resources');
+    console.log('  node build.js inject-social-meta    - Add OG + Twitter Card meta sitewide');
 }
