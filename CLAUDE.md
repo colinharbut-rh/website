@@ -19,15 +19,22 @@ But when using previous site's feature, don't use webflow's builtin files, webfl
 
 Run directly with `node <script>`:
 
-| Command                     | Purpose                                            |
-| --------------------------- | -------------------------------------------------- |
-| `node build.js inject-nav`  | Inject `assets/partials/nav.html` into all pages   |
-| `node build.js extract-nav` | Pull nav from index.html into the partial          |
-| `node build.js status`      | Check nav consistency across pages                 |
-| `node cleanup.js --report`  | Identify unused CSS classes and images             |
-| `node migrate.js`           | One-time Webflow → static migration (don't re-run) |
+| Command | Purpose |
+| --- | --- |
+| `node build.js inject-nav` | Inject `assets/partials/nav.html` into all pages |
+| `node build.js extract-nav` | Pull nav from index.html into the partial |
+| `node build.js status` | Check nav consistency across pages |
+| `node build.js extract-footer` | Extract main footer from `index.html` into `assets/partials/footer.html` |
+| `node build.js inject-footer` | Inject footer partial into all pages |
+| `node build.js footer-status` | Check footer consistency across pages |
+| `node build.js inject-social-meta` | Add/update OG + Twitter Card meta from each page `title` + `meta description` |
+| `npm run parity-live` | Compare local HTML URLs and `<title>` to `thereportinghub.com` (report gitignored) |
+| `node cleanup.js --report` | Identify unused CSS classes and images |
+| `node migrate.js` | One-time Webflow → static migration (don't re-run) |
 
 **After editing the nav**, always run `node build.js inject-nav` to propagate changes.
+
+**After bulk edits to `<title>` or meta description**, run `node build.js inject-social-meta` so Open Graph and Twitter tags stay aligned.
 
 ## Nav Partial System
 
